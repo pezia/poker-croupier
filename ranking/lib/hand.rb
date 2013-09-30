@@ -10,6 +10,7 @@ class Hand
   attr_reader :cards
   attr_reader :rank
   attr_reader :value
+  attr_reader :kickers
 
   def initialize(*args)
     @cards = []
@@ -26,6 +27,10 @@ class Hand
   def defeats?(other_hand)
     return self.rank > other_hand.rank unless self.rank == other_hand.rank
     return self.value > other_hand.value unless self.value == other_hand.value
+    self.kickers.each_with_index do |kicker,index|
+      return kicker > other_hand.kickers[index] unless kicker == other_hand.kickers[index]
+    end
+    return false
   end
 
 
@@ -34,6 +39,7 @@ class Hand
   def calculate_rank
     @rank = hand_type.rank
     @value = hand_type.value
+    @kickers = hand_type.kickers 
   end
 
   def hand_type

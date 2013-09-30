@@ -36,6 +36,21 @@ describe 'Hand' do
           should_defeat hand('8 of Clubs', '8 of Hearts', 'King of Spades')
     end
 
+    it "should rank same pairs base on kicker" do
+      hand('9 of Hearts','9 of Diamonds','Ace of Spades').
+          should_defeat hand('9 of Clubs','9 of Spades','King of Clubs')
+    end
+
+    it "should rank same pairs based on third kicker" do
+      hand('9 of Hearts','9 of Diamonds','Ace of Spades','King of Clubs','Queen of Hearts').
+          should_defeat hand('9 of Clubs','9 of Spades','Ace of Spades', 'King of Clubs','Jack of Hearts')
+    end
+
+    it "should rank pairs equal after three kickers" do
+      hand('9 of Hearts','9 of Diamonds','Ace of Spades','King of Clubs','Queen of Hearts','6 of Spades').
+          should_tie_with hand('9 of Clubs','9 of Spades','Ace of Spades', 'King of Clubs','Queen of Hearts', 'Jack of Hearts')
+    end
+    
     it 'should rank two pairs over a pair' do
       hand('Jack of Spades', 'Jack of Hearts', '10 of Spades', '10 of Hearts').
           should_defeat hand('Queen of Spades', 'Queen of Hearts', 'Jack of Hearts', '10 of Diamonds')

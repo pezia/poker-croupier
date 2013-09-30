@@ -14,5 +14,9 @@ module HandType
       highestSameValue 2
     end
 
+    def numberOfKickers
+      3
+    end
+
   end
 end

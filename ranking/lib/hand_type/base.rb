@@ -18,6 +18,10 @@ module HandType
       highestSameValueExcept n, 0
     end
 
+    def numberOfKickers
+      5
+    end
+
     def highestSameValueExcept(n, skipped_value)
       value = 0
       count = 1
@@ -33,5 +37,15 @@ module HandType
       end
       value
     end
+
+    def kickers
+      kickers = []
+      @cards.map(&:value).reverse.each do |value|
+        kickers << value if @cards.map(&:value).count(value) == 1
+      end
+      kickers[0..numberOfKickers-1]
+    end
+
+
   end
 end
