@@ -14,6 +14,10 @@ module HandType
       highestSameValue 2
     end
 
+    def numberOfKickers
+      1
+    end
+
     private
 
     def has_two_pair?

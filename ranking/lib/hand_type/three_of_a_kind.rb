@@ -6,6 +6,10 @@ module HandType
       nOfAKind? 3
     end
 
+    def numberOfKickers
+      2
+    end
+
     def rank
       3
     end
