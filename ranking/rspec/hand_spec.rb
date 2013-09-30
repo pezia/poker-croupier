@@ -61,6 +61,11 @@ describe 'Hand' do
           should_defeat hand('King of Spades', '10 of Spades', '10 of Hearts', '9 of Diamonds', '9 of Clubs')
     end
 
+    it 'should rank two pair based on second pair' do
+      hand('Jack of Spades', 'Jack of Hearts', '8 of Diamonds', '8 of Clubs','Ace of Hearts').
+          should_defeat hand('Jack of Spades', 'Jack of Hearts', '7 of Diamonds', '7 of Clubs','Ace of Hearts')
+    end
+
     it 'should rank two pairs based on the kicker' do
       hand('Queen of Spades', 'Jack of Spades', 'Jack of Hearts', '8 of Diamonds', '8 of Clubs').
           should_defeat hand('2 of Spades', 'Jack of Spades', 'Jack of Hearts', '8 of Diamonds', '8 of Clubs')
@@ -69,6 +74,11 @@ describe 'Hand' do
     it "should tie two pairs with the same kicker" do
       hand('Queen of Spades', 'Jack of Spades', 'Jack of Hearts', '8 of Diamonds', '8 of Clubs', '7 of Clubs', '6 of Clubs').
           should_tie_with hand('Queen of Spades', 'Jack of Spades', 'Jack of Hearts', '8 of Diamonds', '8 of Clubs', '5 of Clubs','4 of Clubs')
+    end
+
+    it 'should rank three pair higher if third pair is a higher kicker' do
+      hand('Jack of Spades', 'Jack of Hearts', '8 of Diamonds', '8 of Clubs','7 of Diamonds','7 of Clubs').
+          should_defeat hand('Jack of Spades', 'Jack of Hearts', '8 of Diamonds', '8 of Clubs','6 of Hearts', '5 of Hearts')
     end
 
     it 'should rank three of a kind over two pair' do
@@ -90,8 +100,6 @@ describe 'Hand' do
       hand('Queen of Diamonds', 'Jack of Spades', 'Jack of Hearts', 'Jack of Clubs','Ace of Hearts','4 of Diamonds').
           should_tie_with hand('Queen of Diamonds', 'Jack of Spades', 'Jack of Hearts', 'Jack of Clubs','Ace of Hearts','2 of Hearts')
     end
-
-
 
     it 'should rank a straight over three of a kind' do
       hand('8 of Clubs', '9 of Spades', '10 of Spades', 'Jack of Hearts', 'Queen of Diamonds').
@@ -177,6 +185,23 @@ describe 'Hand' do
       hand('Jack of Diamonds', 'Jack of Hearts', 'Jack of Spades', 'Jack of Clubs', 'Queen of Hearts').
           should_defeat hand('10 of Diamonds', '10 of Hearts', '10 of Spades', '10 of Clubs', 'Ace of Spades')
     end
+
+    it 'should rank four of a kind with the kicker' do
+      hand('Jack of Diamonds', 'Jack of Hearts', 'Jack of Spades', 'Jack of Clubs', 'Queen of Hearts').
+          should_defeat hand('Jack of Diamonds', 'Jack of Hearts', 'Jack of Spades', 'Jack of Clubs', '5 of Hearts')
+    end
+
+    it 'should rank four of kind equally after first kicker' do
+      hand('Jack of Diamonds', 'Jack of Hearts', 'Jack of Spades', 'Jack of Clubs', 'Queen of Hearts', '7 of Hearts').
+          should_tie_with hand('Jack of Diamonds', 'Jack of Hearts', 'Jack of Spades', 'Jack of Clubs', 'Queen of Hearts', '5 of Hearts')
+    end
+
+    it "should rank four of a kind kicker higher even if the kicker is a pair" do
+      hand('Jack of Diamonds', 'Jack of Hearts', 'Jack of Spades', 'Jack of Clubs', 'Queen of Hearts','Queen of Spades').
+          should_defeat hand('Jack of Diamonds', 'Jack of Hearts', 'Jack of Spades', 'Jack of Clubs', '5 of Hearts', '4 of Hearts')
+
+    end
+    
 
     it 'should rank a straight flush over four of a kind' do
       hand('10 of Spades', 'Jack of Spades', 'Queen of Spades', 'King of Spades', 'Ace of Spades').
