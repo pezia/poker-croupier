@@ -3,7 +3,7 @@ module HandType
   class Pair < Base
 
     def handles?
-      nOfAKind? 2
+      n_of_a_kind? 2
     end
 
     def rank
@@ -11,10 +11,10 @@ module HandType
     end
 
     def value
-      highestSameValue 2
+      highest_same_value 2
     end
 
-    def numberOfKickers
+    def number_of_kickers
       3
     end
 

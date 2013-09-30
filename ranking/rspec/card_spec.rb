@@ -22,14 +22,14 @@ describe 'Card' do
     lCard = Card.new 8
     rCard = Card.new 9
 
-    lCard.worthLessThan rCard
-    rCard.worthLessThan lCard
+    lCard.worth_less_than rCard
+    rCard.worth_less_than lCard
 
     lCard = Card.new 21
     rCard = Card.new 10
 
-    lCard.worthLessThan rCard
-    rCard.worthLessThan lCard
+    lCard.worth_less_than rCard
+    rCard.worth_less_than lCard
   end
 
   it 'should have a suit' do

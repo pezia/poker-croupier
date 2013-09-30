@@ -11,19 +11,19 @@ module HandType
     end
 
     def value
-      highestSameValue 2
+      highest_same_value 2
     end
 
-    def numberOfKickers
+    def number_of_kickers
       1
     end
 
     def second_value
-      highestSameValueExcept(2, value)
+      highest_same_value_except(2, value)
     end
 
     def kickers
-      [[super,highestSameValueExcept(2,[value,second_value])].flatten.max]
+      [[super,highest_same_value_except(2,[value,second_value])].flatten.max]
     end
 
     private

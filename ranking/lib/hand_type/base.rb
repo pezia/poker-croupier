@@ -10,15 +10,15 @@ module HandType
       cards[-1].value
     end
 
-    def nOfAKind?(n)
-      highestSameValue(n) > 0
+    def n_of_a_kind?(n)
+      highest_same_value(n) > 0
     end
 
-    def highestSameValue(n)
-      highestSameValueExcept n, 0
+    def highest_same_value(n)
+      highest_same_value_except n, 0
     end
 
-    def numberOfKickers
+    def number_of_kickers
       5
     end
 
@@ -26,7 +26,7 @@ module HandType
       value
     end
 
-    def highestSameValueExcept(n, skipped_values)
+    def highest_same_value_except(n, skipped_values)
       skipped_values = [skipped_values] unless skipped_values.respond_to? :include?
       value = 0
       count = 1
@@ -48,7 +48,7 @@ module HandType
       @cards.map(&:value).reverse.each do |value|
         kickers << value if @cards.map(&:value).count(value) == 1
       end
-      kickers[0..numberOfKickers-1]
+      kickers[0..number_of_kickers-1]
     end
 
 

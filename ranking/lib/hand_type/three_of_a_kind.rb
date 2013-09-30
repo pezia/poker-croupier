@@ -3,10 +3,10 @@ module HandType
   class ThreeOfAKind < Base
 
     def handles?
-      nOfAKind? 3
+      n_of_a_kind? 3
     end
 
-    def numberOfKickers
+    def number_of_kickers
       2
     end
 
@@ -15,7 +15,7 @@ module HandType
     end
 
     def value
-      highestSameValue 3
+      highest_same_value 3
     end
 
   end

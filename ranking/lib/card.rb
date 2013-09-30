@@ -34,8 +34,8 @@ class Card
     end
   end
 
-  def worthLessThan otherHand
-    @value < otherHand.value
+  def worth_less_than other_hand
+    @value < other_hand.value
   end
 
   def to_s

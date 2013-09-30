@@ -2,11 +2,11 @@ module HandType
   class FullHouse < Base
 
     def handles?
-      return false unless nOfAKind? 3
+      return false unless n_of_a_kind? 3
 
-      value = highestSameValue 3
+      value = highest_same_value 3
 
-      highestSameValueExcept(2, value) > 0
+      highest_same_value_except(2, value) > 0
     end
 
     def rank
@@ -14,7 +14,7 @@ module HandType
     end
 
     def value
-      highestSameValue 3
+      highest_same_value 3
     end
   end
 end

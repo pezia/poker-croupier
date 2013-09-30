@@ -3,10 +3,10 @@ module HandType
   class FourOfAKind < Base
 
     def handles?
-      nOfAKind? 4
+      n_of_a_kind? 4
     end
 
-    def numberOfKickers
+    def number_of_kickers
       1
     end
 
@@ -15,12 +15,12 @@ module HandType
     end
 
     def value
-      highestSameValue 4
+      highest_same_value 4
     end
 
     #because the kicker could be part of a pair
     def kickers
-      [[super,highestSameValueExcept(2,value)].flatten.max]
+      [[super,highest_same_value_except(2,value)].flatten.max]
     end
 
   end
