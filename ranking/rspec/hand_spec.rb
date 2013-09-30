@@ -176,6 +176,11 @@ describe 'Hand' do
       should_defeat hand('3 of Spades', '4 of Spades', '5 of Spades', '6 of Spades', '7 of Spades', 'King of Spades')
     end
 
+    it 'should rank pairs based on 3 low kicker correctly' do
+      hand('4 of Spades', '6 of Hearts', '8 of Diamonds', 'Jack of Hearts', 'Jack of Spades').
+      should_defeat hand('3 of Spades', '6 of Hearts', '8 of Diamonds', 'Jack of Hearts', 'Jack of Spades')
+    end
+
   end
 
 end
