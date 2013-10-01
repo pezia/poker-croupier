@@ -21,4 +21,20 @@ describe "Flush" do
     hand('2 of Hearts', '4 of Hearts', '5 of Hearts', '9 of Hearts', 'King of Hearts').
         should_defeat hand('2 of Clubs', '4 of Clubs', '5 of Clubs', '9 of Clubs', 'Jack of Clubs')
   end
+
+  it 'should rank the flush on each of the values' do
+    hand('2 of Hearts', '4 of Hearts', '5 of Hearts', '9 of Hearts', 'King of Hearts').
+        should_defeat hand('2 of Clubs', '3 of Clubs', '5 of Clubs', '9 of Clubs', 'King of Clubs')
+  end
+
+  it 'should ignore the extra cards when determining kickers' do
+    hand('2 of Hearts', '4 of Hearts', '5 of Hearts', '9 of Hearts', 'King of Hearts', 'Queen of Spades').
+        should_defeat hand('2 of Clubs', '3 of Clubs', '5 of Clubs', '9 of Clubs', 'King of Clubs','Ace of Spades')
+  end
+
+  it 'should only count a flush as 5 cards' do
+    hand('6 of Hearts', '7 of Hearts', '8 of Hearts', '9 of Hearts', 'King of Hearts', '2 of Hearts').
+        should_tie_with hand('6 of Clubs', '7 of Clubs', '8 of Clubs', '9 of Clubs', 'King of Clubs','3 of Clubs')
+  end
+
 end
