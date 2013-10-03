@@ -1,3 +1,7 @@
+#
+# This code will be rephrased as a cucumber acceptance test
+#
+
 $:.push('thrift_interface')
 
 require 'thrift'
