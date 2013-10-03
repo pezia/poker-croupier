@@ -1,20 +1,13 @@
-$:.push('gen-rb')
+$:.push('thrift_interface')
 
 require 'thrift'
 require 'player'
+require 'croupier'
 
-begin
-  port = ARGV[0] || 9090
+require_relative 'lib/croupier_handler'
 
-  transport = Thrift::BufferedTransport.new(Thrift::Socket.new('localhost', port))
-  protocol = Thrift::BinaryProtocol.new(transport)
-  client = Player::Client.new(protocol)
-
-  transport.open()
-
-  client.new_game()
-
-  transport.close()
-rescue
-  puts $!
-end
+processor = Croupier::Processor.new(CroupierHandler.new())
+transport = Thrift::ServerSocket.new(9090)
+transportFactory = Thrift::BufferedTransportFactory.new()
+server = Thrift::ThreadPoolServer.new(processor, transport, transportFactory)
+server.serve()

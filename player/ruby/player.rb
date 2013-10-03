@@ -1,18 +1,14 @@
 
-$:.push('gen-rb')
+$:.push('thrift_interface')
 
 require 'thrift'
 require 'player'
 
-class PlayerHandler
-  def new_game
-    puts "New Game"
-  end
-end
+require_relative 'lib/player_handler'
 
 
 processor = Player::Processor.new(PlayerHandler.new())
-transport = Thrift::ServerSocket.new(9090)
+transport = Thrift::ServerSocket.new(9091)
 transportFactory = Thrift::BufferedTransportFactory.new()
 server = Thrift::ThreadPoolServer.new(processor, transport, transportFactory)
 server.serve()

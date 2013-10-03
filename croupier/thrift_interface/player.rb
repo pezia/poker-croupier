@@ -11,18 +11,19 @@ module Player
   class Client
     include ::Thrift::Client
 
-    def new_game()
-      send_new_game()
-      recv_new_game()
+    def name()
+      send_name()
+      return recv_name()
     end
 
-    def send_new_game()
-      send_message('new_game', New_game_args)
+    def send_name()
+      send_message('name', Name_args)
     end
 
-    def recv_new_game()
-      result = receive_message(New_game_result)
-      return
+    def recv_name()
+      result = receive_message(Name_result)
+      return result.success unless result.success.nil?
+      raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'name failed: unknown result')
     end
 
   end
@@ -30,18 +31,18 @@ module Player
   class Processor
     include ::Thrift::Processor
 
-    def process_new_game(seqid, iprot, oprot)
-      args = read_args(iprot, New_game_args)
-      result = New_game_result.new()
-      @handler.new_game()
-      write_result(result, oprot, 'new_game', seqid)
+    def process_name(seqid, iprot, oprot)
+      args = read_args(iprot, Name_args)
+      result = Name_result.new()
+      result.success = @handler.name()
+      write_result(result, oprot, 'name', seqid)
     end
 
   end
 
   # HELPER FUNCTIONS AND STRUCTURES
 
-  class New_game_args
+  class Name_args
     include ::Thrift::Struct, ::Thrift::Struct_Union
 
     FIELDS = {
@@ -56,11 +57,12 @@ module Player
     ::Thrift::Struct.generate_accessors self
   end
 
-  class New_game_result
+  class Name_result
     include ::Thrift::Struct, ::Thrift::Struct_Union
+    SUCCESS = 0
 
     FIELDS = {
-
+      SUCCESS => {:type => ::Thrift::Types::STRING, :name => 'success'}
     }
 
     def struct_fields; FIELDS; end
