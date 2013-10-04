@@ -14,5 +14,7 @@ client = Croupier::Client.new(protocol)
 transport.open()
 
 client.register_player('localhost',9091)
+client.register_player('localhost',9092)
+client.start_sit_and_go()
 
 transport.close()

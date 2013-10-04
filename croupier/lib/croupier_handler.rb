@@ -13,7 +13,6 @@ class CroupierHandler
 
       transport.open()
       p "Registered #{player.name()} at #{host}:#{port}"
-      transport.close()
 
       @players.push player
       @transports.push transport
@@ -30,7 +29,13 @@ class CroupierHandler
   end
 
   def start_sit_and_go
+    @players.each do |player|
+      competitor = Competitor.new
+      competitor.name = player.name
+      competitor.stack = 1000
 
+      @players.each { |other_player| other_player.competitor_status(competitor) }
+    end
   end
 
 end

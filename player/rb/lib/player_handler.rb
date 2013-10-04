@@ -1,6 +1,10 @@
 
 class PlayerHandler
   def name
-    "Robert Negreanu"
+    ARGV.first
+  end
+
+  def competitor_status(competitor)
+    p competitor
   end
 end
