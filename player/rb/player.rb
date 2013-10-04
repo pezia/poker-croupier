@@ -2,12 +2,12 @@
 $:.push('thrift_interface')
 
 require 'thrift'
-require 'player'
+require 'player_strategy'
 
-require_relative 'lib/player_handler'
+require_relative 'lib/player_strategy_handler'
 
 
-processor = Player::Processor.new(PlayerHandler.new())
+processor = PlayerStrategy::Processor.new(PlayerStrategyHandler.new())
 transport = Thrift::ServerSocket.new(ARGV[1])
 transportFactory = Thrift::BufferedTransportFactory.new()
 server = Thrift::ThreadPoolServer.new(processor, transport, transportFactory)

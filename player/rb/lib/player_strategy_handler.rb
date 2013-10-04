@@ -1,5 +1,5 @@
 
-class PlayerHandler
+class PlayerStrategyHandler
   def name
     ARGV.first
   end

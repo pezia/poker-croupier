@@ -5,5 +5,5 @@
 #
 
 require 'thrift'
-require 'player_types'
+require 'player_strategy_types'
 

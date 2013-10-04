@@ -1,7 +1,7 @@
 $:.push('thrift_interface')
 
 require 'thrift'
-require 'player'
+require 'player_strategy'
 require 'croupier'
 
 require_relative 'lib/croupier_handler'

@@ -18,7 +18,7 @@ struct Card
     2:Suit suit
 }
 
-service Player
+service PlayerStrategy
 {
     string name()
 

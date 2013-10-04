@@ -9,7 +9,7 @@ class CroupierHandler
     begin
       transport = Thrift::BufferedTransport.new(Thrift::Socket.new(host, port))
       protocol = Thrift::BinaryProtocol.new(transport)
-      player = Player::Client.new(protocol)
+      player = PlayerStrategy::Client.new(protocol)
 
       transport.open()
       p "Registered #{player.name()} at #{host}:#{port}"
