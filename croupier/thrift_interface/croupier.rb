@@ -53,20 +53,6 @@ module Croupier
       return
     end
 
-    def start_live_action_game()
-      send_start_live_action_game()
-      recv_start_live_action_game()
-    end
-
-    def send_start_live_action_game()
-      send_message('start_live_action_game', Start_live_action_game_args)
-    end
-
-    def recv_start_live_action_game()
-      result = receive_message(Start_live_action_game_result)
-      return
-    end
-
   end
 
   class Processor
@@ -91,13 +77,6 @@ module Croupier
       result = Start_sit_and_go_result.new()
       @handler.start_sit_and_go()
       write_result(result, oprot, 'start_sit_and_go', seqid)
-    end
-
-    def process_start_live_action_game(seqid, iprot, oprot)
-      args = read_args(iprot, Start_live_action_game_args)
-      result = Start_live_action_game_result.new()
-      @handler.start_live_action_game()
-      write_result(result, oprot, 'start_live_action_game', seqid)
     end
 
   end
@@ -186,36 +165,6 @@ module Croupier
   end
 
   class Start_sit_and_go_result
-    include ::Thrift::Struct, ::Thrift::Struct_Union
-
-    FIELDS = {
-
-    }
-
-    def struct_fields; FIELDS; end
-
-    def validate
-    end
-
-    ::Thrift::Struct.generate_accessors self
-  end
-
-  class Start_live_action_game_args
-    include ::Thrift::Struct, ::Thrift::Struct_Union
-
-    FIELDS = {
-
-    }
-
-    def struct_fields; FIELDS; end
-
-    def validate
-    end
-
-    ::Thrift::Struct.generate_accessors self
-  end
-
-  class Start_live_action_game_result
     include ::Thrift::Struct, ::Thrift::Struct_Union
 
     FIELDS = {

@@ -33,7 +33,4 @@ class CroupierHandler
 
   end
 
-  def start_live_action_game
-
-  end
 end
