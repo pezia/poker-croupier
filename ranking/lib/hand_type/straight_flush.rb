@@ -1,7 +1,7 @@
 module HandType
   class StraightFlush < Base
 
-    SUITS = %w(Spades Hearts Diamonds Clubs)
+    SUITS = %w(Hearts Diamonds Spades Clubs)
 
     def handles?
       (value > 0)

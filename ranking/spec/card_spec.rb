@@ -34,10 +34,10 @@ describe 'Card' do
 
   it 'should have a suit' do
     card = Card.new 8
-    card.suit.should == "Spades"
+    card.suit.should == "Hearts"
 
     card = Card.new 13
-    card.suit.should == "Hearts"
+    card.suit.should == "Diamonds"
   end
 
   [
@@ -60,7 +60,7 @@ describe 'Card' do
   it 'should return the name' do
     card = Card.new 22
 
-    card.to_s.should == 'Jack of Hearts'
+    card.to_s.should == 'Jack of Diamonds'
   end
 
 end
