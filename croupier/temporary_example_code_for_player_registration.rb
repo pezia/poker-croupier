@@ -2,7 +2,7 @@
 # This code will be rephrased as a test
 #
 
-$:.push('thrift_interface')
+$:.push('lib/api')
 
 require 'thrift'
 require 'croupier'

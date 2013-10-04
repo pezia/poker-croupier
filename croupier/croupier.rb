@@ -1,4 +1,4 @@
-$:.push('thrift_interface')
+$:.push('lib/api')
 
 require 'thrift'
 require 'player_strategy'
