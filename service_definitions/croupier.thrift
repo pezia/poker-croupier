@@ -1,3 +1,4 @@
+namespace rb API
 
 service Croupier
 {

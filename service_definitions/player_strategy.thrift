@@ -1,3 +1,5 @@
+namespace rb API
+
 struct Competitor
 {
     1:string name

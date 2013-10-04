@@ -7,3 +7,5 @@
 require 'thrift'
 require 'croupier_types'
 
+module API
+end

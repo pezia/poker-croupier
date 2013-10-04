@@ -7,227 +7,229 @@
 require 'thrift'
 require 'player_strategy_types'
 
-module PlayerStrategy
-  class Client
-    include ::Thrift::Client
+module API
+  module PlayerStrategy
+    class Client
+      include ::Thrift::Client
 
-    def name()
-      send_name()
-      return recv_name()
+      def name()
+        send_name()
+        return recv_name()
+      end
+
+      def send_name()
+        send_message('name', Name_args)
+      end
+
+      def recv_name()
+        result = receive_message(Name_result)
+        return result.success unless result.success.nil?
+        raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'name failed: unknown result')
+      end
+
+      def competitor_status(competitor)
+        send_competitor_status(competitor)
+        recv_competitor_status()
+      end
+
+      def send_competitor_status(competitor)
+        send_message('competitor_status', Competitor_status_args, :competitor => competitor)
+      end
+
+      def recv_competitor_status()
+        result = receive_message(Competitor_status_result)
+        return
+      end
+
+      def hole_card(card)
+        send_hole_card(card)
+        recv_hole_card()
+      end
+
+      def send_hole_card(card)
+        send_message('hole_card', Hole_card_args, :card => card)
+      end
+
+      def recv_hole_card()
+        result = receive_message(Hole_card_result)
+        return
+      end
+
+      def community_card(card)
+        send_community_card(card)
+        recv_community_card()
+      end
+
+      def send_community_card(card)
+        send_message('community_card', Community_card_args, :card => card)
+      end
+
+      def recv_community_card()
+        result = receive_message(Community_card_result)
+        return
+      end
+
     end
 
-    def send_name()
-      send_message('name', Name_args)
+    class Processor
+      include ::Thrift::Processor
+
+      def process_name(seqid, iprot, oprot)
+        args = read_args(iprot, Name_args)
+        result = Name_result.new()
+        result.success = @handler.name()
+        write_result(result, oprot, 'name', seqid)
+      end
+
+      def process_competitor_status(seqid, iprot, oprot)
+        args = read_args(iprot, Competitor_status_args)
+        result = Competitor_status_result.new()
+        @handler.competitor_status(args.competitor)
+        write_result(result, oprot, 'competitor_status', seqid)
+      end
+
+      def process_hole_card(seqid, iprot, oprot)
+        args = read_args(iprot, Hole_card_args)
+        result = Hole_card_result.new()
+        @handler.hole_card(args.card)
+        write_result(result, oprot, 'hole_card', seqid)
+      end
+
+      def process_community_card(seqid, iprot, oprot)
+        args = read_args(iprot, Community_card_args)
+        result = Community_card_result.new()
+        @handler.community_card(args.card)
+        write_result(result, oprot, 'community_card', seqid)
+      end
+
     end
 
-    def recv_name()
-      result = receive_message(Name_result)
-      return result.success unless result.success.nil?
-      raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'name failed: unknown result')
+    # HELPER FUNCTIONS AND STRUCTURES
+
+    class Name_args
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+
+      FIELDS = {
+
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
     end
 
-    def competitor_status(competitor)
-      send_competitor_status(competitor)
-      recv_competitor_status()
+    class Name_result
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+      SUCCESS = 0
+
+      FIELDS = {
+        SUCCESS => {:type => ::Thrift::Types::STRING, :name => 'success'}
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
     end
 
-    def send_competitor_status(competitor)
-      send_message('competitor_status', Competitor_status_args, :competitor => competitor)
+    class Competitor_status_args
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+      COMPETITOR = 1
+
+      FIELDS = {
+        COMPETITOR => {:type => ::Thrift::Types::STRUCT, :name => 'competitor', :class => ::API::Competitor}
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
     end
 
-    def recv_competitor_status()
-      result = receive_message(Competitor_status_result)
-      return
+    class Competitor_status_result
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+
+      FIELDS = {
+
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
     end
 
-    def hole_card(card)
-      send_hole_card(card)
-      recv_hole_card()
+    class Hole_card_args
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+      CARD = 1
+
+      FIELDS = {
+        CARD => {:type => ::Thrift::Types::STRUCT, :name => 'card', :class => ::API::Card}
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
     end
 
-    def send_hole_card(card)
-      send_message('hole_card', Hole_card_args, :card => card)
+    class Hole_card_result
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+
+      FIELDS = {
+
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
     end
 
-    def recv_hole_card()
-      result = receive_message(Hole_card_result)
-      return
+    class Community_card_args
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+      CARD = 1
+
+      FIELDS = {
+        CARD => {:type => ::Thrift::Types::STRUCT, :name => 'card', :class => ::API::Card}
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
     end
 
-    def community_card(card)
-      send_community_card(card)
-      recv_community_card()
+    class Community_card_result
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+
+      FIELDS = {
+
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
     end
 
-    def send_community_card(card)
-      send_message('community_card', Community_card_args, :card => card)
-    end
-
-    def recv_community_card()
-      result = receive_message(Community_card_result)
-      return
-    end
-
-  end
-
-  class Processor
-    include ::Thrift::Processor
-
-    def process_name(seqid, iprot, oprot)
-      args = read_args(iprot, Name_args)
-      result = Name_result.new()
-      result.success = @handler.name()
-      write_result(result, oprot, 'name', seqid)
-    end
-
-    def process_competitor_status(seqid, iprot, oprot)
-      args = read_args(iprot, Competitor_status_args)
-      result = Competitor_status_result.new()
-      @handler.competitor_status(args.competitor)
-      write_result(result, oprot, 'competitor_status', seqid)
-    end
-
-    def process_hole_card(seqid, iprot, oprot)
-      args = read_args(iprot, Hole_card_args)
-      result = Hole_card_result.new()
-      @handler.hole_card(args.card)
-      write_result(result, oprot, 'hole_card', seqid)
-    end
-
-    def process_community_card(seqid, iprot, oprot)
-      args = read_args(iprot, Community_card_args)
-      result = Community_card_result.new()
-      @handler.community_card(args.card)
-      write_result(result, oprot, 'community_card', seqid)
-    end
-
-  end
-
-  # HELPER FUNCTIONS AND STRUCTURES
-
-  class Name_args
-    include ::Thrift::Struct, ::Thrift::Struct_Union
-
-    FIELDS = {
-
-    }
-
-    def struct_fields; FIELDS; end
-
-    def validate
-    end
-
-    ::Thrift::Struct.generate_accessors self
-  end
-
-  class Name_result
-    include ::Thrift::Struct, ::Thrift::Struct_Union
-    SUCCESS = 0
-
-    FIELDS = {
-      SUCCESS => {:type => ::Thrift::Types::STRING, :name => 'success'}
-    }
-
-    def struct_fields; FIELDS; end
-
-    def validate
-    end
-
-    ::Thrift::Struct.generate_accessors self
-  end
-
-  class Competitor_status_args
-    include ::Thrift::Struct, ::Thrift::Struct_Union
-    COMPETITOR = 1
-
-    FIELDS = {
-      COMPETITOR => {:type => ::Thrift::Types::STRUCT, :name => 'competitor', :class => ::Competitor}
-    }
-
-    def struct_fields; FIELDS; end
-
-    def validate
-    end
-
-    ::Thrift::Struct.generate_accessors self
-  end
-
-  class Competitor_status_result
-    include ::Thrift::Struct, ::Thrift::Struct_Union
-
-    FIELDS = {
-
-    }
-
-    def struct_fields; FIELDS; end
-
-    def validate
-    end
-
-    ::Thrift::Struct.generate_accessors self
-  end
-
-  class Hole_card_args
-    include ::Thrift::Struct, ::Thrift::Struct_Union
-    CARD = 1
-
-    FIELDS = {
-      CARD => {:type => ::Thrift::Types::STRUCT, :name => 'card', :class => ::Card}
-    }
-
-    def struct_fields; FIELDS; end
-
-    def validate
-    end
-
-    ::Thrift::Struct.generate_accessors self
-  end
-
-  class Hole_card_result
-    include ::Thrift::Struct, ::Thrift::Struct_Union
-
-    FIELDS = {
-
-    }
-
-    def struct_fields; FIELDS; end
-
-    def validate
-    end
-
-    ::Thrift::Struct.generate_accessors self
-  end
-
-  class Community_card_args
-    include ::Thrift::Struct, ::Thrift::Struct_Union
-    CARD = 1
-
-    FIELDS = {
-      CARD => {:type => ::Thrift::Types::STRUCT, :name => 'card', :class => ::Card}
-    }
-
-    def struct_fields; FIELDS; end
-
-    def validate
-    end
-
-    ::Thrift::Struct.generate_accessors self
-  end
-
-  class Community_card_result
-    include ::Thrift::Struct, ::Thrift::Struct_Union
-
-    FIELDS = {
-
-    }
-
-    def struct_fields; FIELDS; end
-
-    def validate
-    end
-
-    ::Thrift::Struct.generate_accessors self
   end
 
 end
-

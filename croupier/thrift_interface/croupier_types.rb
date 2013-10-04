@@ -6,3 +6,5 @@
 
 require 'thrift'
 
+module API
+end

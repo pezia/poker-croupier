@@ -7,3 +7,5 @@
 require 'thrift'
 require 'player_strategy_types'
 
+module API
+end
