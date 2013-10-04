@@ -1,5 +1,5 @@
 #
-# This code will be rephrased as a cucumber acceptance test
+# This code will be rephrased as a test
 #
 
 $:.push('thrift_interface')

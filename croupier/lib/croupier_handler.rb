@@ -16,8 +16,6 @@ class CroupierHandler
 
       @players.push player
       @transports.push transport
-
-
     rescue
       puts $!
     end
