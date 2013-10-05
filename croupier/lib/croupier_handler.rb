@@ -1,14 +1,14 @@
 
 require_relative 'player_builder'
 
-class CroupierHandler
+class Croupier::Handler
   def initialize
     @players = []
   end
 
   def register_player(host, port)
     begin
-      player_strategy = PlayerBuilder.new.build_strategy(host,port)
+      player_strategy = Croupier::PlayerBuilder.new.build_strategy(host,port)
 
       @players.push player_strategy
     rescue

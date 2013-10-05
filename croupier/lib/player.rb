@@ -1,5 +1,5 @@
 
-class Player
+class Croupier::Player
   def initialize
 
   end
