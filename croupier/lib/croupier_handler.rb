@@ -1,21 +1,18 @@
 
+require_relative 'player_builder'
+
 class CroupierHandler
   def initialize
     @players = []
-    @transports = []
   end
 
   def register_player(host, port)
     begin
-      transport = Thrift::BufferedTransport.new(Thrift::Socket.new(host, port))
-      protocol = Thrift::BinaryProtocol.new(transport)
-      player = API::PlayerStrategy::Client.new(protocol)
+      player_strategy = PlayerBuilder.new.build_strategy(host,port)
 
-      transport.open()
-      p "Registered #{player.name()} at #{host}:#{port}"
+      p "Registered #{player_strategy.name()} at #{host}:#{port}"
 
-      @players.push player
-      @transports.push transport
+      @players.push player_strategy
     rescue
       puts $!
     end
