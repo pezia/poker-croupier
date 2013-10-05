@@ -7,7 +7,9 @@ class Croupier::PlayerBuilder
     protocol = Thrift::BinaryProtocol.new(transport)
     strategy = API::PlayerStrategy::Client.new(protocol)
     transport.open()
-    log.info "Connected #{strategy.name()} at #{host}:#{port}"
+
+    Croupier.logger.info "Connected #{strategy.name()} at #{host}:#{port}"
+
     strategy
   end
 end
