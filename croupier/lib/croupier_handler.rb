@@ -10,8 +10,6 @@ class CroupierHandler
     begin
       player_strategy = PlayerBuilder.new.build_strategy(host,port)
 
-      p "Registered #{player_strategy.name()} at #{host}:#{port}"
-
       @players.push player_strategy
     rescue
       puts $!
