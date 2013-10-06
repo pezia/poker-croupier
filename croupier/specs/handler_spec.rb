@@ -21,6 +21,7 @@ describe Croupier::Handler do
 
       it "should register player when connection is successful and log an info message" do
         croupier.should_receive(:register_player).with(player)
+        player.should_receive(:open)
         player.should_receive(:name).and_return('Joe')
         logger_mock.should_receive(:info).with('Connected Joe at some.host:10001')
 
