@@ -7,13 +7,7 @@ class Croupier::Handler
   end
 
   def register_player(host, port)
-    begin
-      player_strategy = Croupier::PlayerBuilder.new.build_strategy(host,port)
-
-      @players.push player_strategy
-    rescue
-      puts $!
-    end
+    @players.push Croupier::PlayerBuilder.new.build_player(host,port)
   end
 
 
@@ -25,7 +19,7 @@ class Croupier::Handler
     @players.each do |player|
       competitor = API::Competitor.new
       competitor.name = player.name
-      competitor.stack = 1000
+      competitor.stack = player.stack
 
       @players.each { |other_player| other_player.competitor_status(competitor) }
     end
