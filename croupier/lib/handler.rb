@@ -1,13 +1,14 @@
 
 require_relative 'player_builder'
+require_relative 'croupier'
 
 class Croupier::Handler
   def initialize
-    @players = []
+    @croupier = Croupier::Croupier.new
   end
 
   def register_player(host, port)
-    @players.push Croupier::PlayerBuilder.new.build_player(host,port)
+    @croupier.register_player Croupier::PlayerBuilder.new.build_player(host,port)
   end
 
 
@@ -16,13 +17,7 @@ class Croupier::Handler
   end
 
   def start_sit_and_go
-    @players.each do |player|
-      competitor = API::Competitor.new
-      competitor.name = player.name
-      competitor.stack = player.stack
-
-      @players.each { |other_player| other_player.competitor_status(competitor) }
-    end
+    @croupier.start_sit_and_go
   end
 
 end
