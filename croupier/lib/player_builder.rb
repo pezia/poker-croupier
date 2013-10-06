@@ -7,17 +7,8 @@ class Croupier::PlayerBuilder
     transport = Thrift::BufferedTransport.new(Thrift::Socket.new(host, port))
     protocol = Thrift::BinaryProtocol.new(transport)
     strategy = API::PlayerStrategy::Client.new(protocol)
-    begin
-      transport.open()
-
-      Croupier.logger.info "Connected #{strategy.name()} at #{host}:#{port}"
-
-      strategy
-    rescue Exception => e
-      Croupier.logger.error $!
-      raise e
-    end
-
+    transport.open()
+    strategy
   end
 
   def build_player(host, port)
