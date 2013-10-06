@@ -1,7 +1,4 @@
 
-require_relative 'player_builder'
-require_relative 'croupier'
-
 class Croupier::Handler
   def initialize
     @croupier = Croupier::Croupier.new

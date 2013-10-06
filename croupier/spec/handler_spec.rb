@@ -1,5 +1,4 @@
 require_relative 'spec_helper.rb'
-require_relative '../lib/handler'
 
 describe Croupier::Handler do
   describe "#register_player" do

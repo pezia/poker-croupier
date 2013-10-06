@@ -10,7 +10,9 @@ class Croupier::Croupier
 
   def start_sit_and_go
     @players.each do |other_player|
-      @players.each { |player| player.competitor_status(other_player) }
+      @players.each do |player|
+        player.competitor_status(other_player)
+      end
     end
   end
 end

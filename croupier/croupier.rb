@@ -1,9 +1,17 @@
 $:.push(File.join(File.dirname(__FILE__), 'lib/api'))
+$:.push(File.join(File.dirname(__FILE__)))
 
 require 'thrift'
-require 'croupier'
+require_relative 'lib/api/croupier'
 
 module Croupier
+
+  autoload :Croupier, 'lib/croupier'
+  autoload :Handler, 'lib/handler'
+  autoload :Player, 'lib/player'
+  autoload :PlayerBuilder, 'lib/player_builder'
+  autoload :TestFramework, 'lib/test_framework'
+
   class << self
     def logger
       @logger ||= Logger.new(STDOUT)
