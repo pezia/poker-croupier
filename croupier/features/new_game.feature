@@ -9,3 +9,6 @@ Feature: new game of poker
     Then "Adam" gets the following list of players:
       | Adam |
       | Bob  |
+    And "Bob" gets the following list of players:
+      | Adam |
+      | Bob  |
