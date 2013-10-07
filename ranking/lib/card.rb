@@ -4,17 +4,17 @@ class Card
   RANKS = %w(2 3 4 5 6 7 8 9 10 Jack Queen King Ace)
   SUITS = %w(Hearts Diamonds Spades Clubs)
 
-  def initialize id
-    if id.is_a? Integer
-      @value = id % 13 + 2
-
-      @suit = SUITS[id / 13]
-    end
-
+  def initialize(id)
     if id.is_a? String
       rank, suit = id.split /\s+of\s+/
       set_value_by_rank_name(rank)
       @suit = suit
+    end
+
+    if id.is_a? Integer
+      @value = id % 13 + 2
+
+      @suit = SUITS[id / 13]
     end
 
     @rank = RANKS[@value - 2]
@@ -34,7 +34,7 @@ class Card
     end
   end
 
-  def worth_less_than other_hand
+  def worth_less_than(other_hand)
     @value < other_hand.value
   end
 
