@@ -13,9 +13,9 @@ class Hand
   attr_reader :second_value
   attr_reader :kickers
 
-  def initialize(*args)
+  def initialize(*cards)
     @cards = []
-    args.each do |card_name|
+    cards.each do |card_name|
       @cards << Card.new(card_name)
     end
     @cards.sort_by! { |card| card.value }

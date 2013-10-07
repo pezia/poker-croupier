@@ -1,6 +1,6 @@
 module Helpers
-  def hand(*args)
-    Hand.new(*args)
+  def hand(*cards)
+    Hand.new(*cards)
   end
 end
 
