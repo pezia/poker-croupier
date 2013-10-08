@@ -42,6 +42,10 @@ class Card
     "#@rank of #@suit"
   end
 
+  def ==(other_card)
+    @value == other_card.value && @rank == other_card.rank
+  end
+
   attr_reader :value
   attr_reader :rank
   attr_reader :suit

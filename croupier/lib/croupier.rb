@@ -14,5 +14,14 @@ class Croupier::Croupier
         player.competitor_status(other_player)
       end
     end
+
+    deck = Croupier::Deck.new
+
+    0.upto(2).each do |_|
+      @players.each do |player|
+        card = deck.next_card
+        player.hole_card card.value, card.suit
+      end
+    end
   end
 end

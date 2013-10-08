@@ -1,5 +1,8 @@
-require_relative '../../croupier'
+$:.push(File.join(File.dirname(__FILE__), '../../../common/lib'))
 
+require_relative '../../croupier'
+require 'card'
+require 'cucumber/rspec/doubles'
 
 
 Given(/^the croupier is ready for a game$/) do
@@ -31,12 +34,20 @@ end
 
 
 
-When(/^the deck contains the following cards:$/) do |table|
+Then(/^the deck contains the following cards:$/) do |table|
+  fake_deck = double("Fake deck")
+  list_of_cards_in_deck = table.raw.map { |name| Card.new name.first }
 
+  fake_deck.stub(:next_card).and_return(*list_of_cards_in_deck)
+  Croupier::Deck.stub(:new).and_return(fake_deck)
 end
 
 
 
-When(/^"([^"]*)" gets the following hole cards:$/) do |player_name, table|
-
+Then(/^"([^"]*)" gets the following hole cards:$/) do |player_name, cards|
+  player = Croupier::TestFramework::FakePlayerRegistry.instance.find(player_name)
+  cards.raw.each do |card_name|
+    card = Card.new(card_name.first)
+    player.next_message.should == [:hole_card, card.value, card.suit]
+  end
 end

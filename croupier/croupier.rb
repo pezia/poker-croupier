@@ -7,6 +7,7 @@ require_relative 'lib/api/croupier'
 module Croupier
 
   autoload :Croupier, 'lib/croupier'
+  autoload :Deck, 'lib/deck'
   autoload :Handler, 'lib/handler'
   autoload :Player, 'lib/player'
   autoload :PlayerBuilder, 'lib/player_builder'
