@@ -1,4 +1,4 @@
-require_relative 'card'
+require 'card'
 
 require_relative 'hand_type'
 

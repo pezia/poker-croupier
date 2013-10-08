@@ -3,6 +3,5 @@ rvm:
   - "1.9.3"
 # uncomment this line if your project needs to run something other than `rake`:
 # script: bundle exec rspec spec
-script: bundle exec rspec ranking/spec/*_spec.rb
-script: bundle exec rspec croupier/spec/*_spec.rb
-script: bundle exec cucumber croupier/features/*.feature
+script: bundle exec rspec */spec/*_spec.rb
+script: bundle exec cucumber */features/*.feature

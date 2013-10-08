@@ -1,3 +1,6 @@
+$:.push(File.join(File.dirname(__FILE__), '../../common/lib'))
+
+
 module Helpers
   def hand(*cards)
     Hand.new(*cards)
