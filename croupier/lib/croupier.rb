@@ -17,9 +17,10 @@ class Croupier::Croupier
 
     deck = Croupier::Deck.new
 
-    0.upto(2).each do |_|
+    0.upto(1).each do |_|
       @players.each do |player|
         card = deck.next_card
+        p card
         player.hole_card card.value, card.suit
       end
     end

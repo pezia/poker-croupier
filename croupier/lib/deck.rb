@@ -12,6 +12,6 @@ class Croupier::Deck
   end
 
   def reset
-    @permutation = (0.upto 52).to_a.shuffle
+    @permutation = (0.upto 51).to_a.shuffle
   end
 end

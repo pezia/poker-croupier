@@ -1,13 +1,11 @@
 
 class Croupier::Player
 
-  attr_reader :name
   attr_reader :stack
 
   def initialize(strategy, transport)
     @strategy = strategy
     @transport = transport
-    @name = strategy.name
     @stack = 1000
   end
 
@@ -25,5 +23,17 @@ class Croupier::Player
     competitor.stack = player.stack
 
     @strategy.competitor_status competitor
+  end
+
+  def name
+    @name ||= @strategy.name
+  end
+
+  def hole_card(value, suit)
+    card = API::Card.new
+    card.value = value
+    card.suit = API::Suit.const_get(suit.to_sym)
+
+    @strategy.hole_card(card)
   end
 end

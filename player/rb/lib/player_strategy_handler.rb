@@ -9,7 +9,7 @@ class PlayerStrategyHandler
   end
 
   def hole_card(card)
-    p "hole card #{card}"
+    p "hole card #{card.value} of #{card.suit}"
   end
 
   def community_card(card)
