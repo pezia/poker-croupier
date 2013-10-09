@@ -29,11 +29,12 @@ class Croupier::Player
     @name ||= @strategy.name
   end
 
-  def hole_card(value, suit)
-    card = API::Card.new
-    card.value = value
-    card.suit = API::Suit.const_get(suit.to_sym)
+  def hole_card(card)
+    api_card = API::Card.new
+    api_card.value = card.value
+    api_card.suit = API::Suit.const_get(card.suit.to_sym)
+    api_card.name = card.to_s
 
-    @strategy.hole_card(card)
+    @strategy.hole_card(api_card)
   end
 end

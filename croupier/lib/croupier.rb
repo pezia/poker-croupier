@@ -19,9 +19,7 @@ class Croupier::Croupier
 
     0.upto(1).each do |_|
       @players.each do |player|
-        card = deck.next_card
-        player.hole_card card.value, card.suit
-        Croupier.logger.info "Dealt #{card} to #{player.name}"
+        player.hole_card deck.next_card
       end
     end
   end

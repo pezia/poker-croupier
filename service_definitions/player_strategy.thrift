@@ -18,6 +18,7 @@ struct Card
 {
     1:i16 value
     2:Suit suit
+    3:string name
 }
 
 service PlayerStrategy

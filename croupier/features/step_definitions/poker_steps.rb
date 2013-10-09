@@ -48,6 +48,6 @@ Then(/^"([^"]*)" gets the following hole cards:$/) do |player_name, cards|
   player = Croupier::TestFramework::FakePlayerRegistry.instance.find(player_name)
   cards.raw.each do |card_name|
     card = Card.new(card_name.first)
-    player.next_message.should == [:hole_card, card.value, card.suit]
+    player.next_message.should == [:hole_card, card]
   end
 end

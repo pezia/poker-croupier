@@ -14,8 +14,8 @@ class Croupier::TestFramework::FakePlayer
     @messages.push [:competitor_status, player]
   end
 
-  def hole_card(value, suit)
-    @messages.push [:hole_card, value, suit]
+  def hole_card(card)
+    @messages.push [:hole_card, card]
   end
 
   def next_message
