@@ -1,7 +1,6 @@
 Feature: new game of poker
 
-  Scenario: Two players are registered, and they get notified about each other. After that they get their hole cards
-  and the small blind player - Bob - folds. The first round is over and the winner is the big blind player, Adam.
+  Scenario: Two players are registered, and they get notified about each other. After that they get their hole cards.
 
     Given the croupier is ready for a game
     And "Adam" is a player
