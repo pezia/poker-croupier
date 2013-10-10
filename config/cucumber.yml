@@ -1,0 +1,3 @@
+efault:
+  --backtrace
+  --tags ~@wip

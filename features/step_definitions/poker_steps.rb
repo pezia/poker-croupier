@@ -1,6 +1,6 @@
-$:.push(File.join(File.dirname(__FILE__), '../../../common/lib'))
+$:.push(File.join(File.dirname(__FILE__), '../../common/lib'))
 
-require_relative '../../croupier'
+require_relative '../../croupier/croupier'
 require 'card'
 require 'cucumber/rspec/doubles'
 
