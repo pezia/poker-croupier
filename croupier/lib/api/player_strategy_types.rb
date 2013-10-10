@@ -16,6 +16,16 @@ module API
     VALID_VALUES = Set.new([Hearts, Diamonds, Spades, Clubs]).freeze
   end
 
+  module BetType
+    Fold = 0
+    Check = 1
+    Call = 2
+    Blind = 3
+    Raise = 4
+    VALUE_MAP = {0 => "Fold", 1 => "Check", 2 => "Call", 3 => "Blind", 4 => "Raise"}
+    VALID_VALUES = Set.new([Fold, Check, Call, Blind, Raise]).freeze
+  end
+
   class Competitor
     include ::Thrift::Struct, ::Thrift::Struct_Union
     NAME = 1
@@ -51,6 +61,27 @@ module API
     def validate
       unless @suit.nil? || ::API::Suit::VALID_VALUES.include?(@suit)
         raise ::Thrift::ProtocolException.new(::Thrift::ProtocolException::UNKNOWN, 'Invalid value of field suit!')
+      end
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class Bet
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    AMOUNT = 1
+    TYPE = 2
+
+    FIELDS = {
+      AMOUNT => {:type => ::Thrift::Types::I64, :name => 'amount'},
+      TYPE => {:type => ::Thrift::Types::I32, :name => 'type', :enum_class => ::API::BetType}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+      unless @type.nil? || ::API::BetType::VALID_VALUES.include?(@type)
+        raise ::Thrift::ProtocolException.new(::Thrift::ProtocolException::UNKNOWN, 'Invalid value of field type!')
       end
     end
 

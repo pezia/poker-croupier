@@ -41,6 +41,20 @@ module API
         return
       end
 
+      def bet(competitor, bet)
+        send_bet(competitor, bet)
+        recv_bet()
+      end
+
+      def send_bet(competitor, bet)
+        send_message('bet', Bet_args, :competitor => competitor, :bet => bet)
+      end
+
+      def recv_bet()
+        result = receive_message(Bet_result)
+        return
+      end
+
       def hole_card(card)
         send_hole_card(card)
         recv_hole_card()
@@ -86,6 +100,13 @@ module API
         result = Competitor_status_result.new()
         @handler.competitor_status(args.competitor)
         write_result(result, oprot, 'competitor_status', seqid)
+      end
+
+      def process_bet(seqid, iprot, oprot)
+        args = read_args(iprot, Bet_args)
+        result = Bet_result.new()
+        @handler.bet(args.competitor, args.bet)
+        write_result(result, oprot, 'bet', seqid)
       end
 
       def process_hole_card(seqid, iprot, oprot)
@@ -154,6 +175,39 @@ module API
     end
 
     class Competitor_status_result
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+
+      FIELDS = {
+
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
+    end
+
+    class Bet_args
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+      COMPETITOR = 1
+      BET = 2
+
+      FIELDS = {
+        COMPETITOR => {:type => ::Thrift::Types::STRUCT, :name => 'competitor', :class => ::API::Competitor},
+        BET => {:type => ::Thrift::Types::STRUCT, :name => 'bet', :class => ::API::Bet}
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
+    end
+
+    class Bet_result
       include ::Thrift::Struct, ::Thrift::Struct_Union
 
       FIELDS = {

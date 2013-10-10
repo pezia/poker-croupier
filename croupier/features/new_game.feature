@@ -1,7 +1,7 @@
-Feature: new game of poker
+Feature: New game of poker
 
-  Scenario: Two players are registered, and they get notified about each other. After that they get their hole cards.
-
+  Scenario: Two players are registered, and they get notified about each other. After that they post their blinds and
+            get their hole cards.
     Given the croupier is ready for a game
     And "Adam" is a player
     And "Bob" is a player
@@ -11,12 +11,11 @@ Feature: new game of poker
       | 7 of Spades   |
       | 8 of Clubs    |
     When I start a sit and go
-    Then "Adam" gets the following list of players:
+    Then Players get the following list of players:
       | Adam |
       | Bob  |
-    And "Bob" gets the following list of players:
-      | Adam |
-      | Bob  |
+    And "Adam" is reported to have posted the small blind
+    And "Bob" is reported to have posted the big blind
     And "Adam" gets the following hole cards:
       | 5 of Diamonds |
       | 7 of Spades   |

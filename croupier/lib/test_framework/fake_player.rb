@@ -18,6 +18,10 @@ class Croupier::TestFramework::FakePlayer
     @messages.push [:hole_card, card]
   end
 
+  def bet(player, bet)
+    @messages.push [:bet, player, bet]
+  end
+
   def next_message
     @current_message += 1
     @messages[@current_message]

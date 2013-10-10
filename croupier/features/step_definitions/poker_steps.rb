@@ -24,11 +24,12 @@ end
 
 
 
-Then(/^"([^"]*)" gets the following list of players:$/) do |player_name, received_statuses|
-  player = Croupier::TestFramework::FakePlayerRegistry.instance.find(player_name)
-  received_statuses.raw.each do |competitor_name|
-    competitor = Croupier::TestFramework::FakePlayerRegistry.instance.find(competitor_name.first)
-    player.next_message.should == [:competitor_status, competitor]
+Then(/^Players get the following list of players:$/) do |received_statuses|
+  Croupier::TestFramework::FakePlayerRegistry.instance.each do |player|
+    received_statuses.raw.each do |competitor_name|
+      competitor = Croupier::TestFramework::FakePlayerRegistry.instance.find(competitor_name.first)
+      player.next_message.should == [:competitor_status, competitor]
+    end
   end
 end
 
@@ -50,4 +51,21 @@ Then(/^"([^"]*)" gets the following hole cards:$/) do |player_name, cards|
     card = Card.new(card_name.first)
     player.next_message.should == [:hole_card, card]
   end
+end
+
+
+When(/^"([^"]*)" is reported to have posted the (small|big) blind$/) do |player_name, blind_size|
+  croupier = Croupier::TestFramework::TestCroupier.instance
+  blind = (blind_size == "big") ? croupier.big_blind : croupier.small_blind
+
+  betting_player = Croupier::TestFramework::FakePlayerRegistry.instance.find(player_name)
+
+  bet = Croupier::Bet.new
+  bet.amount = blind
+  bet.type = :blind
+
+  Croupier::TestFramework::FakePlayerRegistry.instance.each do |player|
+    player.next_message.should == [:bet, betting_player, bet]
+  end
+
 end

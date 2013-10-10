@@ -12,6 +12,10 @@ class Croupier::TestFramework::FakePlayerRegistry
     @players[player_name]
   end
 
+  def each
+    @players.each_value { |player| yield player }
+  end
+
   def self.instance
     @inst ||= self.new
   end

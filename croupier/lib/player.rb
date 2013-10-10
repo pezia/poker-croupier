@@ -1,4 +1,3 @@
-
 class Croupier::Player
 
   attr_reader :stack
@@ -36,5 +35,15 @@ class Croupier::Player
     api_card.name = card.to_s
 
     @strategy.hole_card(api_card)
+  end
+
+  def bet(player, bet)
+    competitor = API::Competitor.new
+    competitor.name = player.name
+    competitor.stack = player.stack
+
+    api_bet = API::Bet.new
+    api_bet.amount = bet.amount
+    api_bet.type = API::BetType.const_get(bet.type)
   end
 end
