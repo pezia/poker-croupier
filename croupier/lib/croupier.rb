@@ -2,15 +2,13 @@
 class Croupier::Croupier
 
   include Croupier::GameSteps
-  GAME_STEPS = [IntroducePlayers.new, ShuffleCards.new, PostBlinds.new]
+  GAME_STEPS = [IntroducePlayers.new, ShuffleCards.new, PostBlinds.new, DealHoleCards.new]
 
   def initialize
-    @players = []
     @game_state = Croupier::GameState.new
   end
 
   def register_player(player)
-    @players.push player
     @game_state.register_player player
   end
 
@@ -18,12 +16,6 @@ class Croupier::Croupier
   def start_sit_and_go
     GAME_STEPS.each do |step_type|
       step_type.run(@game_state)
-    end
-
-    0.upto(1).each do |_|
-      @players.each do |player|
-        player.hole_card @game_state.deck.next_card
-      end
     end
   end
 
