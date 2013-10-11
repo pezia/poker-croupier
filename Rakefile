@@ -20,6 +20,8 @@ namespace :test do
     task.pattern = './*/spec{,/*/**}/*_spec.rb'
     task.verbose = false
     task.rspec_opts = "--order random"
+    task.rspec_opts = "--color"
+    task.rspec_opts = "--format documentation"
     task.rspec_opts << " --seed #{ENV['RSPEC_SEED']}" if ENV['RSPEC_SEED']
   end
 

@@ -5,20 +5,19 @@ class Croupier::Croupier
 
   def initialize
     @players = []
+    @game_state = Croupier::GameState.new
     @small_blind = 10
     @big_blind = 20
   end
 
   def register_player(player)
     @players.push player
+    @game_state.register_player player
   end
 
   def start_sit_and_go
-    @players.each do |other_player|
-      @players.each do |player|
-        player.competitor_status(other_player)
-      end
-    end
+    step = Croupier::GameSteps::IntroducePlayers.new
+    step.run(@game_state)
 
     force_bet(@players[0], small_blind)
     force_bet(@players[1], big_blind)

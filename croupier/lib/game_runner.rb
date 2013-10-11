@@ -1,0 +1,3 @@
+class Croupier::GameRunner
+
+end
