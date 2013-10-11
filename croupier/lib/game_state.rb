@@ -12,4 +12,8 @@ class Croupier::GameState
   def register_player(player)
     @players << player
   end
+
+  def deck
+    @deck ||= Croupier::Deck.new
+  end
 end

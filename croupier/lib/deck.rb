@@ -2,7 +2,7 @@ require 'card'
 
 class Croupier::Deck
   def initialize
-    reset
+    shuffle
   end
 
   def next_card
@@ -11,7 +11,7 @@ class Croupier::Deck
     return Card.new id unless id.nil?
   end
 
-  def reset
+  def shuffle
     @permutation = (0.upto 51).to_a.shuffle
   end
 end
