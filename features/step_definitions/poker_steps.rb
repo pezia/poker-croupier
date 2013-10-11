@@ -60,9 +60,7 @@ When(/^"([^"]*)" is reported to have posted the (small|big) blind$/) do |player_
 
   betting_player = Croupier::TestFramework::FakePlayerRegistry.instance.find(player_name)
 
-  bet = Croupier::Bet.new
-  bet.amount = blind
-  bet.type = :blind
+  bet = { amount: blind, type: :blind }
 
   Croupier::TestFramework::FakePlayerRegistry.instance.each do |player|
     player.next_message.should == [:bet, betting_player, bet]

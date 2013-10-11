@@ -1,5 +1,8 @@
 
 class Croupier::Croupier
+
+  include Croupier::GameSteps
+
   attr_reader :small_blind
   attr_reader :big_blind
 
@@ -16,11 +19,11 @@ class Croupier::Croupier
   end
 
   def start_sit_and_go
-    step = Croupier::GameSteps::IntroducePlayers.new
-    step.run(@game_state)
 
-    force_bet(@players[0], small_blind)
-    force_bet(@players[1], big_blind)
+
+    [IntroducePlayers.new, PostBlinds.new].each do |step_type|
+      step_type.run(@game_state)
+    end
 
     deck = Croupier::Deck.new
 
@@ -28,15 +31,6 @@ class Croupier::Croupier
       @players.each do |player|
         player.hole_card deck.next_card
       end
-    end
-  end
-
-  def force_bet(betting_player, bet_amount)
-    bet = Croupier::Bet.new
-    bet.amount = bet_amount
-    bet.type = :blind
-    @players.each do |player|
-      player.bet(betting_player, bet)
     end
   end
 end

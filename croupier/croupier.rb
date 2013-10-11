@@ -6,7 +6,6 @@ require_relative 'lib/api/croupier'
 
 module Croupier
 
-  autoload :Bet, 'lib/bet'
   autoload :Croupier, 'lib/croupier'
   autoload :Deck, 'lib/deck'
   autoload :GameRunner, 'lib/game_runner'
