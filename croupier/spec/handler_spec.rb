@@ -9,7 +9,7 @@ describe Croupier::Handler do
 
     before(:each) do
       Croupier::PlayerBuilder.stub(:new).and_return(player_builder)
-      Croupier::Croupier.stub(:new).and_return(croupier)
+      Croupier::GameRunner.stub(:new).and_return(croupier)
       Croupier.stub(:logger).and_return(logger_mock)
     end
 

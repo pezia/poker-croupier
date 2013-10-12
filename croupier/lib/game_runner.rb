@@ -1,5 +1,5 @@
 
-class Croupier::Croupier
+class Croupier::GameRunner
 
   include Croupier::GameSteps
   GAME_STEPS = [IntroducePlayers.new, ShuffleCards.new, PostBlinds.new, DealHoleCards.new]

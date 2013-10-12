@@ -1,7 +1,7 @@
 
 class Croupier::Handler
   def initialize
-    @croupier = Croupier::Croupier.new
+    @croupier = Croupier::GameRunner.new
   end
 
   def register_player(host, port)
