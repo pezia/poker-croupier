@@ -43,9 +43,9 @@ class Croupier::Player
     competitor.stack = player.stack
 
     api_bet = API::Bet.new
-    p api_bet
-    p api_bet
     api_bet.amount = bet[:amount]
-    api_bet.type = API::BetType.const_get(bet[:type])
+    api_bet.type = API::BetType.const_get(bet[:type].capitalize)
+
+    @strategy.bet(competitor, api_bet)
   end
 end

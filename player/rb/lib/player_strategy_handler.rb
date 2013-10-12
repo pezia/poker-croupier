@@ -15,4 +15,8 @@ class PlayerStrategyHandler
   def community_card(card)
     p "community card #{card}"
   end
+
+  def bet(competitor, bet)
+    p competitor, bet
+  end
 end
