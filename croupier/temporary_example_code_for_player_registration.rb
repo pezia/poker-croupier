@@ -15,6 +15,7 @@ transport.open()
 
 client.register_player('localhost',9091)
 client.register_player('localhost',9092)
+client.register_spectator('localhost',9093)
 client.start_sit_and_go()
 
 transport.close()
