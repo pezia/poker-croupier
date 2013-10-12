@@ -5,7 +5,7 @@ class Croupier::Deck
     shuffle
   end
 
-  def next_card
+  def next_card!
     id = @permutation.pop
 
     return Card.new id unless id.nil?

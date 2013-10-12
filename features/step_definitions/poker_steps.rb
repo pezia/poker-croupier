@@ -40,7 +40,7 @@ Then(/^the deck contains the following cards:$/) do |table|
   list_of_cards_in_deck = table.raw.map { |name| Card.new name.first }
 
   fake_deck.should_receive(:shuffle)
-  fake_deck.stub(:next_card).and_return(*list_of_cards_in_deck)
+  fake_deck.stub(:next_card!).and_return(*list_of_cards_in_deck)
   Croupier::Deck.stub(:new).and_return(fake_deck)
 end
 

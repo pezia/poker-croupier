@@ -6,6 +6,9 @@ class Croupier::PlayerBuilder
     Croupier::Player.new *build_strategy(host, port)
   end
 
+  def build_spectator(host, port)
+    Croupier::Player.new *build_strategy(host, port)
+  end
 
   private
 

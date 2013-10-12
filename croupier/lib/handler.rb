@@ -18,7 +18,15 @@ class Croupier::Handler
 
 
   def register_spectator(host, port)
-
+    begin
+      spectator = Croupier::PlayerBuilder.new.build_spectator(host, port)
+      spectator.open
+      @croupier.register_spectator spectator
+      Croupier.logger.info "Connected #{spectator.name} at #{host}:#{port}"
+    rescue Exception => e
+      Croupier.logger.error $!.message
+      raise e
+    end
   end
 
   def start_sit_and_go
