@@ -12,7 +12,6 @@ class Croupier::GameRunner
     @game_state.register_player player
   end
 
-
   def start_sit_and_go
     GAME_STEPS.each do |step_type|
       step_type.run(@game_state)
