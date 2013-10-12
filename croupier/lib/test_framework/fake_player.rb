@@ -1,6 +1,7 @@
 
 class Croupier::TestFramework::FakePlayer
   attr_reader :name
+  attr_accessor :stack
 
   def initialize(name)
     @name = name
@@ -8,6 +9,8 @@ class Croupier::TestFramework::FakePlayer
 
     @messages = []
     @current_message = -1
+
+    @stack = 1000
   end
 
   def competitor_status(player)

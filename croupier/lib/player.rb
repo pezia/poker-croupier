@@ -1,6 +1,6 @@
 class Croupier::Player
 
-  attr_reader :stack
+  attr_accessor :stack
 
   def initialize(strategy, transport)
     @strategy = strategy
