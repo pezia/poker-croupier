@@ -11,7 +11,7 @@ class Croupier::GameSteps::DealHoleCards
       next_card = game_state.deck.next_card!
       player.hole_card(next_card)
       game_state.each_spectator do |observer|
-        observer.hole_card(next_card)
+        observer.hole_card(player, next_card)
       end
     end
   end

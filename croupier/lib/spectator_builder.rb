@@ -1,9 +1,9 @@
-require 'player_strategy'
+require 'spectator'
 
-class Croupier::PlayerBuilder
+class Croupier::SpectatorBuilder
 
-  def build_player(host, port)
-    Croupier::Player.new *build_strategy(host, port)
+  def build_spectator(host, port)
+    Croupier::Spectator.new *build_strategy(host, port)
   end
 
   private
@@ -11,7 +11,7 @@ class Croupier::PlayerBuilder
   def build_strategy(host, port)
     transport = Thrift::BufferedTransport.new(Thrift::Socket.new(host, port))
     protocol = Thrift::BinaryProtocol.new(transport)
-    strategy = API::PlayerStrategy::Client.new(protocol)
+    strategy = API::Spectator::Client.new(protocol)
     [strategy, transport]
   end
 end

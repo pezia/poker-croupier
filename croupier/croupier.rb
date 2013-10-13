@@ -13,6 +13,8 @@ module Croupier
   autoload :Handler, 'lib/handler'
   autoload :Player, 'lib/player'
   autoload :PlayerBuilder, 'lib/player_builder'
+  autoload :Spectator, 'lib/spectator'
+  autoload :SpectatorBuilder, 'lib/spectator_builder'
   autoload :TestFramework, 'lib/test_framework'
 
   class << self
