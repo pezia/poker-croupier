@@ -37,4 +37,9 @@ describe "Flush" do
         should_tie_with hand('6 of Clubs', '7 of Clubs', '8 of Clubs', '9 of Clubs', 'King of Clubs','3 of Clubs')
   end
 
+  it "should still be a flush as long as we have 5" do
+    hand('6 of Hearts', '7 of Hearts', '8 of Hearts', '9 of Hearts', 'King of Hearts', '2 of Hearts').
+        should_tie_with hand('6 of Clubs', '7 of Clubs', '8 of Clubs', '9 of Clubs', 'King of Clubs','3 of Diamonds')
+  end
+
 end
