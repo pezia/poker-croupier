@@ -14,7 +14,7 @@ task :features => :'test:features'
 
 desc "Runs the thrift compiler to refresh generated code of service end points"
 task :thrift do
-  ruby "service_definitions/thrift_compiler.rb"
+  ruby "rake/thrift_compiler.rb"
 end
 
 namespace :test do
