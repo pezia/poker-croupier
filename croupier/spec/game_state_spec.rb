@@ -33,7 +33,7 @@ describe Croupier::GameState do
         player.should_receive(:the_message)
       end
 
-      game_state.send_message_to_everyone do |observer|
+      game_state.each_player_and_spectator do |observer|
         observer.the_message
       end
     end
@@ -45,7 +45,7 @@ describe Croupier::GameState do
         spectator.should_receive(:the_message)
       end
 
-      game_state.send_message_to_everyone do |observer|
+      game_state.each_player_and_spectator do |observer|
         observer.the_message
       end
     end
@@ -55,7 +55,7 @@ describe Croupier::GameState do
     it "should not send the messages to the players" do
       game_state = MakeGameState.with players: [double("First player"), double("Second player")]
 
-      game_state.send_message_to_spectators do |observer|
+      game_state.each_spectator do |observer|
         observer.the_message
       end
     end
@@ -70,7 +70,7 @@ describe Croupier::GameState do
         spectator.should_receive(:the_message)
       end
 
-      game_state.send_message_to_spectators do |observer|
+      game_state.each_spectator do |observer|
         observer.the_message
       end
     end
