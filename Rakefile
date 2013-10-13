@@ -12,6 +12,7 @@ task :spec => :'test:spec'
 desc "Run Cucumber features (options: CUCUMBER_SEED=seed)"
 task :features => :'test:features'
 
+desc "Runs the thrift compiler to refresh generated code of service end points"
 task :thrift do
   ruby "service_definitions/thrift_compiler.rb"
 end
