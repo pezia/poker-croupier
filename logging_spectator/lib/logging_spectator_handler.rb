@@ -5,11 +5,11 @@ class LoggingSpectatorHandler
   end
 
   def competitor_status(competitor)
-    p competitor
+    p "#{competitor.name} has #{competitor.stack} chips"
   end
 
   def hole_card(competitor, card)
-    p "[#{competitor.name}] hole card #{card.name} (#{card.value}, #{card.suit})"
+    p "#{competitor.name} got hole card #{card.name} (#{card.value}, #{card.suit})"
   end
 
   def community_card(card)
@@ -17,6 +17,6 @@ class LoggingSpectatorHandler
   end
 
   def bet(competitor, bet)
-    p competitor, bet
+    p "#{competitor.name} made a bet of #{bet.amount} (#{bet.type}) and is left with #{competitor.stack} chips"
   end
 end
