@@ -11,5 +11,5 @@ port = ARGV[1]
 processor = API::PlayerStrategy::Processor.new(PlayerStrategyHandler.new())
 transport = Thrift::ServerSocket.new(port)
 transportFactory = Thrift::BufferedTransportFactory.new()
-server = Thrift::ThreadPoolServer.new(processor, transport, transportFactory)
+server = Thrift::SimpleServer.new(processor, transport, transportFactory)
 server.serve()
