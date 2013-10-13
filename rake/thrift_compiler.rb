@@ -16,6 +16,7 @@ compile_module 'player/php', 'php', 'player_strategy'
 compile_module 'player/php', 'php', 'types'
 compile_module 'player/rb', 'rb', 'player_strategy'
 compile_module 'player/rb', 'rb', 'types'
-compile_module 'spectator', 'rb', 'spectator'
-compile_module 'spectator', 'rb', 'types'
+compile_module 'logging_spectator', 'rb', 'spectator'
+compile_module 'logging_spectator', 'rb', 'types'
+
 

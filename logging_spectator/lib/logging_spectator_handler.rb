@@ -1,5 +1,5 @@
 
-class SpectatorHandler
+class LoggingSpectatorHandler
   def name
     ARGV.first
   end
