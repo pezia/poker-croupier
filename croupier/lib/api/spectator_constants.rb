@@ -5,8 +5,7 @@
 #
 
 require 'thrift'
-require 'types_types'
-
+require 'spectator_types'
 
 module API
 end

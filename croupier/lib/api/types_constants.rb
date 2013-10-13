@@ -7,6 +7,5 @@
 require 'thrift'
 require 'types_types'
 
-
 module API
 end
