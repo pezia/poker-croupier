@@ -13,7 +13,7 @@ class LoggingSpectatorHandler
   end
 
   def community_card(card)
-    p "community card #{card}"
+    p "community card #{card.name}"
   end
 
   def bet(competitor, bet)
