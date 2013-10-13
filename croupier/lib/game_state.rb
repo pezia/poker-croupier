@@ -25,14 +25,13 @@ class Croupier::GameState
     @deck ||= Croupier::Deck.new
   end
 
-  def send_community_message
+  def send_message_to_everyone
     (@players + @spectators).each do |observer|
       yield observer
     end
   end
 
-  def send_private_message_to(player)
-    yield player
+  def send_message_to_spectators
     @spectators.each do |observer|
       yield observer
     end

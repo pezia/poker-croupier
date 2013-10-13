@@ -25,7 +25,7 @@ describe Croupier::GameState do
     end
   end
 
-  describe "#send_community_message" do
+  describe "#send_message_to_everyone" do
     it "should send the messages to each player" do
       game_state = MakeGameState.with players: [double("First player"), double("Second player")]
 
@@ -33,7 +33,7 @@ describe Croupier::GameState do
         player.should_receive(:the_message)
       end
 
-      game_state.send_community_message do |observer|
+      game_state.send_message_to_everyone do |observer|
         observer.the_message
       end
     end
@@ -45,20 +45,17 @@ describe Croupier::GameState do
         spectator.should_receive(:the_message)
       end
 
-      game_state.send_community_message do |observer|
+      game_state.send_message_to_everyone do |observer|
         observer.the_message
       end
     end
   end
 
-  describe "#send_private_message_to" do
-    it "should only send the messages to the player addressed" do
+  describe "#send_message_to_spectators" do
+    it "should not send the messages to the players" do
       game_state = MakeGameState.with players: [double("First player"), double("Second player")]
 
-      player = game_state.players[0]
-      player.should_receive(:the_message)
-
-      game_state.send_private_message_to player do |observer|
+      game_state.send_message_to_spectators do |observer|
         observer.the_message
       end
     end
@@ -73,7 +70,7 @@ describe Croupier::GameState do
         spectator.should_receive(:the_message)
       end
 
-      game_state.send_private_message_to DummyClass.new do |observer|
+      game_state.send_message_to_spectators do |observer|
         observer.the_message
       end
     end

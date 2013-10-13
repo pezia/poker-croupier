@@ -9,7 +9,8 @@ class Croupier::GameSteps::DealHoleCards
   def deal_one_card_to_each_player(game_state)
     game_state.players.each do |player|
       next_card = game_state.deck.next_card!
-      game_state.send_private_message_to player do |observer|
+      player.hole_card(next_card)
+      game_state.send_message_to_spectators do |observer|
         observer.hole_card(next_card)
       end
     end
