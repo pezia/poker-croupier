@@ -1,3 +1,5 @@
+require 'player_strategy'
+
 class Croupier::Player
 
   attr_reader :stack
