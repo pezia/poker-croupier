@@ -3,11 +3,11 @@ $:.push(File.join(File.dirname(__FILE__)))
 
 require 'thrift'
 require 'spectator'
-require 'logger'
+require 'logging_spectator'
 
 module LoggingSpectator
 
-  autoload :Handler, 'lib/logging_spectator_handler'
+  autoload :Handler, 'lib/handler'
 
   class << self
     def logger
@@ -15,12 +15,3 @@ module LoggingSpectator
     end
   end
 end
-
-require_relative 'lib/logging_spectator_handler'
-
-port = ARGV.first
-
-processor = API::Spectator::Processor.new(LoggingSpectator::Handler.new())
-transport = Thrift::ServerSocket.new(port)
-server = Thrift::ThreadPoolServer.new(processor, transport)
-server.serve()

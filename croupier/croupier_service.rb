@@ -1,10 +1,7 @@
 $:.push(File.join(File.dirname(__FILE__), '../common/lib'))
 
+require 'thrift_builder'
 require_relative 'croupier'
-require_relative 'lib/handler'
 
-processor = API::Croupier::Processor.new(Croupier::Handler.new())
-transport = Thrift::ServerSocket.new(9090)
-server = Thrift::ThreadPoolServer.new(processor, transport)
-server.serve()
+ThriftBuilder.server(API::Croupier::Processor, Croupier::Handler, 9090).serve()
 
