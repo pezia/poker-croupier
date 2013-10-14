@@ -36,4 +36,19 @@ class Croupier::GameState
       yield observer
     end
   end
+
+  def transfer_bet(player, amount)
+    transfer player, amount
+  end
+
+  def transfer_prize(player, amount)
+    transfer player, -amount
+  end
+
+  private
+
+  def transfer(player, amount)
+    player.withdraw amount
+    @pot += amount
+  end
 end

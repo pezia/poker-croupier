@@ -1,6 +1,6 @@
 class Croupier::Player
 
-  attr_accessor :stack
+  attr_reader :stack
 
   def initialize(strategy, transport)
     @strategy = strategy
@@ -47,5 +47,9 @@ class Croupier::Player
     api_bet.type = API::BetType.const_get(bet[:type].capitalize)
 
     @strategy.bet(api_competitor, api_bet)
+  end
+
+  def withdraw(bet)
+    @stack -= bet
   end
 end
