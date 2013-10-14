@@ -22,6 +22,5 @@ port = ARGV.first
 
 processor = API::Spectator::Processor.new(LoggingSpectator::Handler.new())
 transport = Thrift::ServerSocket.new(port)
-transportFactory = Thrift::BufferedTransportFactory.new()
-server = Thrift::ThreadPoolServer.new(processor, transport, transportFactory)
+server = Thrift::ThreadPoolServer.new(processor, transport)
 server.serve()
