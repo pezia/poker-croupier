@@ -1,6 +1,8 @@
+require 'player_strategy'
+
 class Croupier::Player
 
-  attr_accessor :stack
+  attr_reader :stack
 
   def initialize(strategy, transport)
     @strategy = strategy
@@ -16,12 +18,12 @@ class Croupier::Player
     @transport.close
   end
 
-  def competitor_status(player)
-    competitor = API::Competitor.new
-    competitor.name = player.name
-    competitor.stack = player.stack
+  def competitor_status(competitor)
+    api_competitor = API::Competitor.new
+    api_competitor.name = competitor.name
+    api_competitor.stack = competitor.stack
 
-    @strategy.competitor_status competitor
+    @strategy.competitor_status api_competitor
   end
 
   def name
@@ -37,15 +39,19 @@ class Croupier::Player
     @strategy.hole_card(api_card)
   end
 
-  def bet(player, bet)
-    competitor = API::Competitor.new
-    competitor.name = player.name
-    competitor.stack = player.stack
+  def bet(competitor, bet)
+    api_competitor = API::Competitor.new
+    api_competitor.name = competitor.name
+    api_competitor.stack = competitor.stack
 
     api_bet = API::Bet.new
     api_bet.amount = bet[:amount]
     api_bet.type = API::BetType.const_get(bet[:type].capitalize)
 
-    @strategy.bet(competitor, api_bet)
+    @strategy.bet(api_competitor, api_bet)
+  end
+
+  def withdraw(bet)
+    @stack -= bet
   end
 end

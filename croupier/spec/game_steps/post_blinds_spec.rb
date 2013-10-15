@@ -7,10 +7,8 @@ describe Croupier::GameSteps::PostBlinds do
     small_blind = { amount: 10, type: :blind }
     big_blind = { amount: 20, type: :blind }
 
-    game_state.players[0].should_receive(:stack).and_return(1000)
-    game_state.players[0].should_receive(:stack=).and_return(9990)
-    game_state.players[1].should_receive(:stack).and_return(1000)
-    game_state.players[1].should_receive(:stack=).and_return(9980)
+    game_state.players[0].should_receive(:withdraw).and_return(10)
+    game_state.players[1].should_receive(:withdraw).and_return(20)
     game_state.players[0].should_receive(:bet).once.with(game_state.players[0], small_blind)
     game_state.players[0].should_receive(:bet).once.with(game_state.players[1], big_blind)
     game_state.players[1].should_receive(:bet).once.with(game_state.players[0], small_blind)

@@ -4,13 +4,10 @@ require 'rspec/core/rake_task'
 
 
 desc "Run test suite (all RSpec examples and Cucumber features)"
-task :test => [:'test:spec', :'test:features']
+task :test => [:'test:spec']
 
 desc "Run RSpec code examples (options: RSPEC_SEED=seed)"
 task :spec => :'test:spec'
-
-desc "Run Cucumber features (options: CUCUMBER_SEED=seed)"
-task :features => :'test:features'
 
 desc "Runs the thrift compiler to refresh generated code of service end points"
 task :thrift do
@@ -28,8 +25,5 @@ namespace :test do
     task.rspec_opts = "--format documentation"
     task.rspec_opts << " --seed #{ENV['RSPEC_SEED']}" if ENV['RSPEC_SEED']
   end
-
-
-  Cucumber::Rake::Task.new(:features, "Run Cucumber features (options: CUCUMBER_SEED=seed)")
 
 end

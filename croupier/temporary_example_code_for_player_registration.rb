@@ -6,15 +6,15 @@ $:.push('lib/api')
 
 
 player1 = fork do
-  exec "bundle exec ruby ../player/rb/player.rb 'Daniel' 9091"
+  exec "bundle exec ruby ../player/rb/player_service.rb 'Daniel' 9091"
 end
 
 player2 = fork do
-  exec "bundle exec ruby ../player/rb/player.rb 'Robert' 9092"
+  exec "bundle exec ruby ../player/rb/player_service.rb 'Robert' 9092"
 end
 
 logger = fork do
-  exec "bundle exec ruby ../logging_spectator/logging_spectator.rb 9093"
+  exec "bundle exec ruby ../logging_spectator/logging_spectator_service.rb 9093"
 end
 
 croupier = fork do
