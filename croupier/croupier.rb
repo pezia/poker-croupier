@@ -15,7 +15,6 @@ module Croupier
   autoload :PlayerBuilder, 'lib/player_builder'
   autoload :Spectator, 'lib/spectator'
   autoload :SpectatorBuilder, 'lib/spectator_builder'
-  autoload :TestFramework, 'lib/test_framework'
 
   class << self
     def logger
