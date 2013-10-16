@@ -11,6 +11,8 @@ class Croupier::GameState
     @small_blind = 10
     @big_blind = 20
     @pot = 0
+    @current_player = 0
+    @player_on_first_position = 0
   end
 
   def register_player(player)
@@ -46,6 +48,18 @@ class Croupier::GameState
 
   def transfer_prize(player, amount)
     transfer player, -amount
+  end
+
+  def player_in_action
+    players[@current_player]
+  end
+
+  def next_player
+    @current_player = (@current_player + 1) % @players.length
+  end
+
+  def reset_to_first_position
+    @current_player = @player_on_first_position
   end
 
   private

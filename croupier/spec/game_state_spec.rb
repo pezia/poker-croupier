@@ -110,4 +110,29 @@ describe Croupier::GameState do
     end
 
   end
+
+  describe "#player_in_action" do
+    let(:game_state) { SpecHelper::MakeGameState.with players: [SpecHelper::FakePlayer.new, SpecHelper::FakePlayer.new] }
+
+    it "should return the the first player by default" do
+      game_state.player_in_action.should == game_state.players[0]
+    end
+
+    it "should return the second player once #next_player is called" do
+      game_state.next_player
+      game_state.player_in_action.should == game_state.players[1]
+    end
+
+    it "should return the first again if #next_player is called twice" do
+      game_state.next_player
+      game_state.next_player
+      game_state.player_in_action.should == game_state.players[0]
+    end
+
+    it "should return the first player if #reset_to_first_position is called after #next_player" do
+      game_state.next_player
+      game_state.reset_to_first_position
+      game_state.player_in_action.should == game_state.players[0]
+    end
+  end
 end
