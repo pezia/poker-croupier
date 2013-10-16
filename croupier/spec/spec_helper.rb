@@ -1,25 +1,10 @@
 $:.push(File.join(File.dirname(__FILE__), '../../common/lib'))
+$:.push(File.join(File.dirname(__FILE__)))
 
 require_relative '../croupier'
 
-class MakeGameState
-  def self.with(options)
-    game_state = Croupier::GameState.new
-    players = options[:players] || []
-    spectators = options[:spectators] || []
-
-    players.each do |player|
-      game_state.register_player(player)
-    end
-    spectators.each do |spectator|
-      game_state.register_spectator(spectator)
-    end
-    game_state
-  end
-end
-
-class DummyClass
-  def method_missing(method, *args)
-
-  end
+module SpecHelper
+  autoload :DummyClass, 'spec_helper/dummy_class'
+  autoload :FakePlayer, 'spec_helper/fake_player'
+  autoload :MakeGameState, 'spec_helper/make_game_state'
 end

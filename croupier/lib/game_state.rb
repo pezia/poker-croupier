@@ -3,7 +3,7 @@ class Croupier::GameState
   attr_reader :spectators
   attr_reader :small_blind
   attr_reader :big_blind
-  attr_accessor :pot
+  attr_reader :pot
 
   def initialize
     @players = []

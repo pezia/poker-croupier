@@ -27,6 +27,21 @@ module API
         raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'name failed: unknown result')
       end
 
+      def bet_request()
+        send_bet_request()
+        return recv_bet_request()
+      end
+
+      def send_bet_request()
+        send_message('bet_request', Bet_request_args)
+      end
+
+      def recv_bet_request()
+        result = receive_message(Bet_request_result)
+        return result.success unless result.success.nil?
+        raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'bet_request failed: unknown result')
+      end
+
       def competitor_status(competitor)
         send_competitor_status(competitor)
         recv_competitor_status()
@@ -95,6 +110,13 @@ module API
         write_result(result, oprot, 'name', seqid)
       end
 
+      def process_bet_request(seqid, iprot, oprot)
+        args = read_args(iprot, Bet_request_args)
+        result = Bet_request_result.new()
+        result.success = @handler.bet_request()
+        write_result(result, oprot, 'bet_request', seqid)
+      end
+
       def process_competitor_status(seqid, iprot, oprot)
         args = read_args(iprot, Competitor_status_args)
         result = Competitor_status_result.new()
@@ -148,6 +170,37 @@ module API
 
       FIELDS = {
         SUCCESS => {:type => ::Thrift::Types::STRING, :name => 'success'}
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
+    end
+
+    class Bet_request_args
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+
+      FIELDS = {
+
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
+    end
+
+    class Bet_request_result
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+      SUCCESS = 0
+
+      FIELDS = {
+        SUCCESS => {:type => ::Thrift::Types::I64, :name => 'success'}
       }
 
       def struct_fields; FIELDS; end

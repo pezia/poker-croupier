@@ -2,7 +2,7 @@ require_relative '../spec_helper.rb'
 
 describe Croupier::GameSteps::PostBlinds do
   it "should notify each player about the blinds that have been posted and update stacks" do
-    game_state = MakeGameState.with players: [double("First player"), double("Second player")]
+    game_state = SpecHelper::MakeGameState.with players: [double("First player"), double("Second player")]
 
     small_blind = { amount: 10, type: :blind }
     big_blind = { amount: 20, type: :blind }
