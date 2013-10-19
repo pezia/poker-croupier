@@ -100,7 +100,7 @@ describe Croupier::GameState do
   end
 
   describe "#transfer_prize" do
-    it "should transfer the amount requested from the pot ro the player" do
+    it "should transfer the amount requested from the pot to the player" do
       game_state = SpecHelper::MakeGameState.with players: [Croupier::Player.new(nil, nil)]
 
       game_state.transfer_prize game_state.players.first, 40
