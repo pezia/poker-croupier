@@ -1,0 +1,56 @@
+.player-panel {
+    width: 150px;
+    float: left;
+    margin: 15px;
+}
+
+.spades{
+    color: black;
+}
+.spades:before {
+    content: '♠';
+}
+
+.clubs {
+    color: black;
+}
+.clubs:before {
+    content: '♣';
+}
+
+.diamonds{
+    color: red;
+}
+
+.diamonds:before{
+    content: '♥';
+}
+.hearts{
+    color: red;
+}
+
+.hearts:before{
+    content: '♦';
+}
+
+.card {
+    float: left;
+    margin-right: 5px;
+    font-size: 20px;
+    border-radius: 3px;
+    border: 1px lightgrey solid;
+    width: 40px;
+    height: 60px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+
+.pokertable {
+    height: 400px;
+    width: 800px;
+    border: 1px lightgrey solid;
+    border-radius: 200px;
+    margin: 0px auto;
+}
+
