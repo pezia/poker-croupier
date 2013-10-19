@@ -12,42 +12,52 @@
 }
 
 #player1 {
-    left: 175px;
+    left: 150px;
     top: 50px;
 }
 
 #player2 {
-    left: 425px;
+    left: 350px;
 }
 
 
 #player3 {
-    left: 675px;
+    left: 550px;
 }
+
 
 #player4 {
-    left: 925px;
-    top: 50px;
-}
-
-#player8 {
-    left: 175px;
-    top: 350px;
-}
-
-#player7 {
-    left: 425px;
-    top: 400px;
-}
-
-
-#player6 {
-    left: 675px;
-    top: 400px;
+    left: 750px;
 }
 
 #player5 {
-    left: 925px;
+    left: 950px;
+    top: 50px;
+}
+
+#player10 {
+    left: 150px;
+    top: 350px;
+}
+
+#player9 {
+    left: 350px;
+    top: 400px;
+}
+
+#player7 {
+    top: 400px;
+    left: 750px;
+}
+
+
+#player8 {
+    left: 550px;
+    top: 400px;
+}
+
+#player6 {
+    left: 950px;
     top: 350px;
 }
 
