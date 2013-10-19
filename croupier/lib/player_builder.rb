@@ -3,7 +3,7 @@ require 'player_strategy'
 class Croupier::PlayerBuilder
 
   def build_player(host, port)
-    Croupier::Player.new *build_strategy(host, port)
+    Croupier::Player.new(Croupier::PlayerStrategy.new(*build_strategy(host, port)))
   end
 
   private

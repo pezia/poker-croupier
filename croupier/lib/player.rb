@@ -1,19 +1,16 @@
-require 'player_strategy'
-
-class Croupier::Player < Croupier::ThriftObserver
-
+class Croupier::Player
   attr_reader :stack
 
-  def initialize(strategy, transport)
-    super(strategy, transport)
+  def initialize(strategy)
+    @strategy = strategy
     @stack = 1000
-  end
-
-  def hole_card(card)
-    strategy.hole_card(gateway[card])
   end
 
   def withdraw(bet)
     @stack -= bet
+  end
+
+  def method_missing(method, *args)
+    @strategy.send(method, *args)
   end
 end

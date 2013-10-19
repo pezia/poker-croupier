@@ -12,6 +12,7 @@ module Croupier
   autoload :GameSteps, 'lib/game_steps'
   autoload :Handler, 'lib/handler'
   autoload :Player, 'lib/player'
+  autoload :PlayerStrategy, 'lib/player_strategy'
   autoload :PlayerBuilder, 'lib/player_builder'
   autoload :Spectator, 'lib/spectator'
   autoload :SpectatorBuilder, 'lib/spectator_builder'
