@@ -2,55 +2,152 @@
     width: 150px;
     float: left;
     margin: 15px;
+    position: absolute;
+    z-index: 2;
+    text-align: center;
 }
+
+.player-panel .panel-body div:first-child {
+    margin-left: 15px;
+}
+
+#player1 {
+    left: 175px;
+    top: 50px;
+}
+
+#player2 {
+    left: 425px;
+}
+
+
+#player3 {
+    left: 675px;
+}
+
+#player4 {
+    left: 925px;
+    top: 50px;
+}
+
+#player8 {
+    left: 175px;
+    top: 350px;
+}
+
+#player7 {
+    left: 425px;
+    top: 400px;
+}
+
+
+#player6 {
+    left: 675px;
+    top: 400px;
+}
+
+#player5 {
+    left: 925px;
+    top: 350px;
+}
+
+
 
 .spades{
     color: black;
 }
-.spades:before {
+.spades:after {
     content: '♠';
+    display: block;
 }
 
 .clubs {
     color: black;
 }
-.clubs:before {
+.clubs:after {
     content: '♣';
+    display: block;
 }
 
 .diamonds{
     color: red;
 }
 
-.diamonds:before{
+.diamonds:after{
     content: '♥';
+    display: block;
 }
 .hearts{
     color: red;
 }
 
-.hearts:before{
+.hearts:after{
     content: '♦';
+    display: block;
 }
 
 .card {
     float: left;
     margin-right: 5px;
-    font-size: 20px;
+    font-size: 30px;
     border-radius: 3px;
     border: 1px lightgrey solid;
     width: 40px;
     height: 60px;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 10px;
+    background-color: white;
+    line-height: 20px;
 }
 
 
 .pokertable {
     height: 400px;
     width: 800px;
-    border: 1px lightgrey solid;
+    border: 2px darkgreen solid;
+    background-color: #efe;
     border-radius: 200px;
-    margin: 0px auto;
+    margin: 50px auto;
+    position: relative;
+    top: 75px;
+    z-index: 1;
 }
 
+#cards {
+    position: absolute;
+    top: 150px;
+    left: 275px;
+}
+
+#cards>div {
+    margin-right: 10px;
+    float:left;
+}
+
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+#pot {
+    position: absolute;
+    top: 220px;
+    left: 325px;
+    font-size: 25px;
+}
