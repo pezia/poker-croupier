@@ -11,7 +11,8 @@ module.exports = function(config) {
         files: [
             'visual_spectator/public/js/require.conf.js',
             {pattern: 'visual_spectator/public/js/**/*.js', included: false},
-            {pattern: 'visual_spectator/spec/*spec.js', included: false},
+            {pattern: 'visual_spectator/public/js/**/*.html', included: false},
+            {pattern: 'visual_spectator/spec/**/*spec.js', included: false},
             'visual_spectator/spec/requirekarma.conf.js'
         ],
 
