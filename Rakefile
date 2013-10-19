@@ -1,5 +1,5 @@
-require 'cucumber'
-require 'cucumber/rake/task'
+#require 'cucumber'
+#require 'cucumber/rake/task'
 require 'rspec/core/rake_task'
 
 
