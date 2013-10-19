@@ -41,5 +41,15 @@ describe Croupier::GameSteps::Betting do
       @game_state.pot.should == 40
     end
 
+    pending "need to isolate Player from API" do
+      it "should ask the first player again if the second raises" do
+        @player1.should_bet 20
+        @player2.should_bet 40
+        @player1.should_bet 20
+        run
+        @game_state.pot.should == 80
+      end
+    end
+
   end
 end
