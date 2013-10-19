@@ -5,6 +5,9 @@
     <title></title>
     <link rel="stylesheet" type="text/css" media="screen" href="css/master.css" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+    <script src="js/lib/require/require-2.1.8.js"></script>
+    <script src="js/require.conf.js"></script>
 </head>
 <body>
 <div class="container">
@@ -107,8 +110,11 @@
         </div>
     </div>
 </div>
+
+<script>
+    requirejs(['jquery'], function($) {
+
+    });
+</script>
 </body>
-
-
-
 </html>
