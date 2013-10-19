@@ -1,0 +1,11 @@
+{
+    "name": "Pokercroupie",
+
+    "dependencies": {
+        "karma": "~0.10",
+        "bower": "~1.2"
+    },
+    "scripts": {
+        "test": "./node_modules/.bin/karma start ./karma.conf.js --single-run --browsers PhantomJS"
+    }
+}
