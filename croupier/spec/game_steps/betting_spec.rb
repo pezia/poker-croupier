@@ -2,7 +2,7 @@ require_relative '../spec_helper'
 
 describe Croupier::GameSteps::Betting do
   before :each do
-    @player1 = SpecHelper::FakeStrategy.new
+    @player1 = Croupier::Player.new SpecHelper::FakeStrategy.new
     @game_state = SpecHelper::MakeGameState.with players: [@player1]
   end
 
@@ -19,12 +19,13 @@ describe Croupier::GameSteps::Betting do
     @player1.should_bet 20
     run
     @game_state.pot.should == 20
+    @player1.stack.should == 980
   end
 
   context "at least two players" do
 
     before :each do
-      @player2 = SpecHelper::FakeStrategy.new
+      @player2 = Croupier::Player.new SpecHelper::FakeStrategy.new
       @game_state.register_player @player2
     end
 
@@ -39,6 +40,8 @@ describe Croupier::GameSteps::Betting do
       @player2.should_bet 20
       run
       @game_state.pot.should == 40
+      @player1.stack.should == 980
+      @player2.stack.should == 980
     end
 
     pending "need to isolate Player from API" do
@@ -48,6 +51,8 @@ describe Croupier::GameSteps::Betting do
         @player1.should_bet 20
         run
         @game_state.pot.should == 80
+        @player1.stack.should == 960
+        @player2.stack.should == 960
       end
     end
 

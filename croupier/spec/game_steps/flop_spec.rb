@@ -1,6 +1,10 @@
 require_relative '../spec_helper.rb'
 
+
 describe Croupier::GameSteps::Flop do
+  def fake_player
+    Croupier::Player.new SpecHelper::FakeStrategy.new
+  end
 
   before(:each) do
     @cards = ['6 of Diamonds', 'Jack of Hearts', 'Ace of Spades', 'King of Clubs'].map { |name| Card.new name }
@@ -11,7 +15,7 @@ describe Croupier::GameSteps::Flop do
     Croupier::Deck.stub(:new).and_return(@deck)
 
     @game_state = SpecHelper::MakeGameState.with(
-          players: [SpecHelper::FakeStrategy.new, SpecHelper::FakeStrategy.new],
+          players: [fake_player, fake_player],
           spectators: [SpecHelper::FakeSpectator.new, SpecHelper::FakeSpectator.new]
     )
   end
