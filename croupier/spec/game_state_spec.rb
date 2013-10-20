@@ -112,7 +112,7 @@ describe Croupier::GameState do
   end
 
   describe "#player_in_action" do
-    let(:game_state) { SpecHelper::MakeGameState.with players: [SpecHelper::FakePlayer.new, SpecHelper::FakePlayer.new] }
+    let(:game_state) { SpecHelper::MakeGameState.with players: [SpecHelper::FakeStrategy.new, SpecHelper::FakeStrategy.new] }
 
     it "should return the the first player by default" do
       game_state.player_in_action.should == game_state.players[0]

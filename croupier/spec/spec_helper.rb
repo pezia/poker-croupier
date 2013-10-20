@@ -5,7 +5,7 @@ require_relative '../croupier'
 
 module SpecHelper
   autoload :DummyClass, 'spec_helper/dummy_class'
-  autoload :FakePlayer, 'spec_helper/fake_player'
+  autoload :FakeStrategy, 'spec_helper/fake_strategyer'
   autoload :FakeSpectator, 'spec_helper/fake_spectator'
   autoload :MakeGameState, 'spec_helper/make_game_state'
 end

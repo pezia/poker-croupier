@@ -11,7 +11,7 @@ describe Croupier::GameSteps::Flop do
     Croupier::Deck.stub(:new).and_return(@deck)
 
     @game_state = SpecHelper::MakeGameState.with(
-          players: [SpecHelper::FakePlayer.new, SpecHelper::FakePlayer.new],
+          players: [SpecHelper::FakeStrategy.new, SpecHelper::FakeStrategy.new],
           spectators: [SpecHelper::FakeSpectator.new, SpecHelper::FakeSpectator.new]
     )
   end

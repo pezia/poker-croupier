@@ -2,7 +2,7 @@ require_relative '../spec_helper'
 
 describe Croupier::GameSteps::Betting do
   before :each do
-    @player1 = SpecHelper::FakePlayer.new
+    @player1 = SpecHelper::FakeStrategy.new
     @game_state = SpecHelper::MakeGameState.with players: [@player1]
   end
 
@@ -24,7 +24,7 @@ describe Croupier::GameSteps::Betting do
   context "at least two players" do
 
     before :each do
-      @player2 = SpecHelper::FakePlayer.new
+      @player2 = SpecHelper::FakeStrategy.new
       @game_state.register_player @player2
     end
 
