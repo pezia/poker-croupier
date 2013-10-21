@@ -46,22 +46,6 @@ class Croupier::GameState
     end
   end
 
-  def transfer_prize(player, amount)
-    transfer player, -amount
-  end
-
-  def player_in_action
-    players[@current_player]
-  end
-
-  def next_player
-    @current_player = (@current_player + 1) % @players.length
-  end
-
-  def reset_to_first_position
-    @current_player = @player_on_first_position
-  end
-
   private
 
   def transfer(player, amount)

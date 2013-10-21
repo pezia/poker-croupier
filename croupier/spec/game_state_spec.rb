@@ -102,41 +102,4 @@ describe Croupier::GameState do
       game_state.pot.should == 40
     end
   end
-
-  describe "#transfer_prize" do
-    it "should transfer the amount requested from the pot to the player" do
-      game_state = SpecHelper::MakeGameState.with players: [Croupier::Player.new(Croupier::PlayerStrategy.new(nil, nil))]
-
-      game_state.transfer_prize game_state.players.first, 40
-
-      game_state.players.first.stack.should == 1040
-      game_state.pot.should == -40
-    end
-
-  end
-
-  describe "#player_in_action" do
-    let(:game_state) { SpecHelper::MakeGameState.with players: [fake_player, fake_player] }
-
-    it "should return the the first player by default" do
-      game_state.player_in_action.should == game_state.players[0]
-    end
-
-    it "should return the second player once #next_player is called" do
-      game_state.next_player
-      game_state.player_in_action.should == game_state.players[1]
-    end
-
-    it "should return the first again if #next_player is called twice" do
-      game_state.next_player
-      game_state.next_player
-      game_state.player_in_action.should == game_state.players[0]
-    end
-
-    it "should return the first player if #reset_to_first_position is called after #next_player" do
-      game_state.next_player
-      game_state.reset_to_first_position
-      game_state.player_in_action.should == game_state.players[0]
-    end
-  end
 end
