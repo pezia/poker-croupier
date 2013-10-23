@@ -29,6 +29,10 @@ class Croupier::GameSteps::Betting
   end
 
   def handle_player(in_action)
+    unless @game_state.players[in_action].active?
+      return
+    end
+
     bet = @game_state.players[in_action].bet_request
 
     @total_player_bets[in_action] += bet
@@ -40,6 +44,9 @@ class Croupier::GameSteps::Betting
     elsif @total_player_bets[in_action] == @current_buy_in
       bet_type = (@current_buy_in == 0) ? :check : :call
       @game_state.transfer_bet @game_state.players[in_action], bet, bet_type
+    else
+      @game_state.transfer_bet @game_state.players[in_action], 0, :fold
+      @game_state.players[in_action].fold
     end
   end
 

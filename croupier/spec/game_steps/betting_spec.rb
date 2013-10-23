@@ -14,9 +14,10 @@ describe Croupier::GameSteps::Betting do
     @spectator.should_receive(:bet).with(player, amount: amount, type: type)
   end
 
-  it "should request a bet from the player in action" do
+  it "should request a bet from the player in action, and the player should remain active" do
     should_bet(@player1, 0, :check)
     run
+    @player1.active?.should == true
   end
 
   def run()
@@ -62,5 +63,45 @@ describe Croupier::GameSteps::Betting do
       @player2.stack.should == 960
     end
 
+    it "should interpret a zero bet after a raise as a fold" do
+      should_bet @player1, 20, :raise
+      should_bet @player2, 0, :fold
+      run
+      @game_state.pot.should == 20
+    end
+
+    it "should mark a folded player inactive" do
+      should_bet @player1, 20, :raise
+      should_bet @player2, 0, :fold
+      run
+      @player2.active?.should == false
+    end
+
+    it "should interpret a bet smaller then the previous raise as a fold" do
+      should_bet @player1, 20, :raise
+
+      @player2.should_receive(:bet_request).and_return(19)
+      @spectator.should_receive(:bet).with(@player2, amount: 0, type: :fold)
+
+      run
+      @game_state.pot.should == 20
+    end
+
+    context "at least three players" do
+      before :each do
+        @player3 = Croupier::Player.new SpecHelper::FakeStrategy.new
+        @game_state.register_player @player3
+      end
+
+      it "should skip inactive players" do
+        should_bet @player1, 20, :raise
+        should_bet @player2, 0, :fold
+        should_bet @player3, 40, :raise
+        should_bet @player1, 20, :call
+        run
+      end
+    end
   end
+
+
 end
