@@ -1,8 +1,11 @@
 require_relative '../spec_helper.rb'
+require 'card'
 
 describe Croupier::GameSteps::DealHoleCards do
   it "should deal two cards to all of the players" do
-    cards = ['6 of Diamonds', 'Jack of Hearts', 'Ace of Spades', 'King of Clubs'].map { |name| Card.new name }
+    cards = ['6 of Diamonds', 'Jack of Hearts', 'Ace of Spades', 'King of Clubs'].map do |name|
+      Card.new name
+    end
 
     deck = double("Deck")
     deck.stub(:next_card!).and_return(*cards)
@@ -16,7 +19,6 @@ describe Croupier::GameSteps::DealHoleCards do
     game_state.players[0].should_receive(:hole_card).once.with(cards[2])
     game_state.players[1].should_receive(:hole_card).once.with(cards[3])
 
-    step = Croupier::GameSteps::DealHoleCards.new
-    step.run(game_state)
+    Croupier::GameSteps::DealHoleCards.new(game_state).run
   end
 end

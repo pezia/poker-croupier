@@ -1,5 +1,5 @@
-class Croupier::GameSteps::Flop
-  def run(game_state)
+class Croupier::GameSteps::Flop < Croupier::GameSteps::Base
+  def run
     cards = Array.new()
     3.times { cards.push(game_state.deck.next_card!) }
 

@@ -1,9 +1,14 @@
 require_relative '../spec_helper.rb'
 
 
+
 describe Croupier::GameSteps::Flop do
   def fake_player
     Croupier::Player.new SpecHelper::FakeStrategy.new
+  end
+
+  def run
+    Croupier::GameSteps::Flop.new(@game_state).run
   end
 
   before(:each) do
@@ -27,8 +32,7 @@ describe Croupier::GameSteps::Flop do
       end
     end
 
-    step = Croupier::GameSteps::Flop.new
-    step.run(@game_state)
+    run
   end
 
   it "should deal three community cards and notify the spectators" do
@@ -38,7 +42,6 @@ describe Croupier::GameSteps::Flop do
       end
     end
 
-    step = Croupier::GameSteps::Flop.new
-    step.run(@game_state)
+    run
   end
 end

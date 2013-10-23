@@ -8,7 +8,6 @@ describe Croupier::GameSteps::ShuffleCards do
     game_state.stub(:deck).and_return(deck)
     deck.should_receive(:shuffle)
 
-    step = Croupier::GameSteps::ShuffleCards.new
-    step.run(game_state)
+    Croupier::GameSteps::ShuffleCards.new(game_state).run
   end
 end

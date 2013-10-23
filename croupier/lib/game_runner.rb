@@ -2,7 +2,13 @@
 class Croupier::GameRunner
 
   include Croupier::GameSteps
-  GAME_STEPS = [IntroducePlayers.new, ShuffleCards.new, DealHoleCards.new]
+  GAME_STEPS = [
+      IntroducePlayers,
+      ShuffleCards,
+      DealHoleCards,
+      #Betting,
+      #Flop
+  ]
 
   def initialize
     @game_state = Croupier::GameState.new
@@ -18,7 +24,7 @@ class Croupier::GameRunner
 
   def start_sit_and_go
     GAME_STEPS.each do |step_type|
-      step_type.run(@game_state)
+      step_type.new(@game_state).run
     end
   end
 

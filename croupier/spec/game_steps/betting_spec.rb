@@ -21,7 +21,7 @@ describe Croupier::GameSteps::Betting do
   end
 
   def run()
-    Croupier::GameSteps::Betting.new.run(@game_state)
+    Croupier::GameSteps::Betting.new(@game_state).run
   end
 
   it "should transfer a non zero bet to the pot" do

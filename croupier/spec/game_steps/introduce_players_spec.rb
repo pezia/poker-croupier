@@ -9,7 +9,6 @@ describe Croupier::GameSteps::IntroducePlayers do
     game_state.players[1].should_receive(:competitor_status).once.with(game_state.players[0])
     game_state.players[1].should_receive(:competitor_status).once.with(game_state.players[1])
 
-    step = Croupier::GameSteps::IntroducePlayers.new
-    step.run(game_state)
+    Croupier::GameSteps::IntroducePlayers.new(game_state).run
   end
 end

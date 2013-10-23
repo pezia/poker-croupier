@@ -1,5 +1,5 @@
-class Croupier::GameSteps::ShuffleCards
-  def run(game_state)
+class Croupier::GameSteps::ShuffleCards < Croupier::GameSteps::Base
+  def run
     game_state.deck.shuffle
   end
 end

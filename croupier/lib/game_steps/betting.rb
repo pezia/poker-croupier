@@ -1,14 +1,5 @@
-class Croupier::GameSteps::Betting
-  def run(game_state)
-    @game_state = game_state
-
-    run_with_state
-    @game_state = nil
-  end
-
-  private
-
-  def run_with_state
+class Croupier::GameSteps::Betting < Croupier::GameSteps::Base
+  def run
     @total_player_bets = Array.new(@game_state.players.length, 0)
     @last_raise = 0
     @current_buy_in = 0
@@ -23,6 +14,9 @@ class Croupier::GameSteps::Betting
       in_action = (in_action + 1) % (@game_state.players.length)
     end
   end
+
+  private
+
 
   def betting_is_over?(in_action)
     @last_raise == in_action
