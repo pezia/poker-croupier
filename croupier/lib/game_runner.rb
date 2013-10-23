@@ -2,7 +2,7 @@
 class Croupier::GameRunner
 
   include Croupier::GameSteps
-  GAME_STEPS = [IntroducePlayers.new, ShuffleCards.new, PostBlinds.new, DealHoleCards.new]
+  GAME_STEPS = [IntroducePlayers.new, ShuffleCards.new, DealHoleCards.new]
 
   def initialize
     @game_state = Croupier::GameState.new
