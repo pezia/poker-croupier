@@ -31,17 +31,38 @@ class Croupier::GameSteps::Betting < Croupier::GameSteps::Base
 
     @total_player_bets[in_action] += bet
 
-    if @total_player_bets[in_action] > @current_buy_in
-      @current_buy_in = @total_player_bets[in_action]
-      @last_raise = in_action
-      @game_state.transfer_bet @game_state.players[in_action], bet, :raise
-    elsif @total_player_bets[in_action] == @current_buy_in
-      bet_type = (@current_buy_in == 0) ? :check : :call
-      @game_state.transfer_bet @game_state.players[in_action], bet, bet_type
+    if raise?(in_action)
+      handle_raise(bet, in_action)
+    elsif call?(in_action)
+      handle_call(bet, in_action)
     else
-      @game_state.transfer_bet @game_state.players[in_action], 0, :fold
-      @game_state.players[in_action].fold
+      handle_fold(in_action)
     end
   end
 
+  private
+
+  def call?(in_action)
+    @total_player_bets[in_action] == @current_buy_in
+  end
+
+  def handle_call(bet, in_action)
+    bet_type = (@current_buy_in == 0) ? :check : :call
+    @game_state.transfer_bet @game_state.players[in_action], bet, bet_type
+  end
+
+  def raise?(in_action)
+    @total_player_bets[in_action] > @current_buy_in
+  end
+
+  def handle_raise(bet, in_action)
+    @current_buy_in = @total_player_bets[in_action]
+    @last_raise = in_action
+    @game_state.transfer_bet @game_state.players[in_action], bet, :raise
+  end
+
+  def handle_fold(in_action)
+    @game_state.transfer_bet @game_state.players[in_action], 0, :fold
+    @game_state.players[in_action].fold
+  end
 end
