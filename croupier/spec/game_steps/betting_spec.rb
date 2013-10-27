@@ -87,21 +87,16 @@ describe Croupier::GameSteps::Betting do
       @game_state.pot.should == 20
     end
 
-    context "at least three players" do
-      before :each do
-        @player3 = Croupier::Player.new SpecHelper::FakeStrategy.new
-        @game_state.register_player @player3
-      end
+    it "should skip inactive players" do
+      @player3 = Croupier::Player.new SpecHelper::FakeStrategy.new
+      @game_state.register_player @player3
 
-      it "should skip inactive players" do
-        should_bet @player1, 20, :raise
-        should_bet @player2, 0, :fold
-        should_bet @player3, 40, :raise
-        should_bet @player1, 20, :call
-        run
-      end
+      should_bet @player1, 20, :raise
+      should_bet @player2, 0, :fold
+      should_bet @player3, 40, :raise
+      should_bet @player1, 20, :call
+      run
     end
   end
-
 
 end
