@@ -6,6 +6,7 @@ class Croupier::GameRunner
       IntroducePlayers,
       ShuffleCards,
       DealHoleCards,
+      RequestBlinds,
       Betting,
       Flop
   ]

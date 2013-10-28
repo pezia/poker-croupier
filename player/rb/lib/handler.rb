@@ -19,4 +19,8 @@ class PlayerStrategy::Handler
   def bet(competitor, bet)
     p competitor, bet
   end
+
+  def bet_request
+    rand(0..30)
+  end
 end
