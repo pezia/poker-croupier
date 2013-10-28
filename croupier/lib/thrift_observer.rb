@@ -27,4 +27,8 @@ class Croupier::ThriftObserver
   def bet(competitor, bet)
     @strategy.bet(@gateway[competitor], @gateway.bet(bet))
   end
+
+  def community_card(card)
+    @strategy.community_card @gateway[card]
+  end
 end
