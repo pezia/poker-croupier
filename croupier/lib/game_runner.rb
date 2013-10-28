@@ -6,8 +6,8 @@ class Croupier::GameRunner
       IntroducePlayers,
       ShuffleCards,
       DealHoleCards,
-      #Betting,
-      #Flop
+      Betting,
+      Flop
   ]
 
   def initialize

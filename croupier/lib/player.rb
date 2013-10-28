@@ -5,6 +5,7 @@ class Croupier::Player
     @strategy = strategy
     @stack = 1000
     @active = true
+    @forced_bet = nil
   end
 
   def withdraw(bet)
@@ -17,6 +18,16 @@ class Croupier::Player
 
   def fold
     @active = false
+  end
+
+  def force_bet bet
+    @forced_bet = bet
+  end
+
+  def bet_request
+    bet = @forced_bet || @strategy.bet_request
+    @forced_bet = nil
+    bet
   end
 
   def method_missing(method, *args)

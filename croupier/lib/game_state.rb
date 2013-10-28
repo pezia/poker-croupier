@@ -46,6 +46,14 @@ class Croupier::GameState
     end
   end
 
+  def first_player
+    @players[0]
+  end
+
+  def second_player
+    @players[1]
+  end
+
   private
 
   def transfer(player, amount)
