@@ -17,7 +17,7 @@ A poker retreat's aim is for participants to practice concepts related to lean s
 
 Since no poker retreats have been organized yet the format has not been finalized. Everything below is more of a draft. Please feel free to contribute your thoughts.
 
-One possibility is that 45 minute coding sessions are followed by sit-n-go games played by the robots, and a short break. In this case only the last sit-n-go round counts when we determine the winner. Other rounds are just for training from which teams can deduce hypothesises, and test them in subsequent training rounds.
+One possibility is that 45 minute coding sessions are followed by sit-n-go games played by the  robots, and a short break. In this case only the last sit-n-go round counts when we determine the winner. Other rounds are just for training from which teams can deduce hypothesises, and test them in subsequent training rounds.
 
 Another way to do it would concentrate a bit more on the continuous delivery aspect. In this case each team has infinite chips they can use to rebuy into the game any time they lost all their chips. The game is played continuously, but each team has a small time frame between rounds for deploying a new version of their robot, and each robot is free to leave the room for a while. The croupier would enforce an SLA. If a player is away from the table for a certain amount of time a penalty has to be payed before the next rebuy. This version lets teams do more experiments, and also forces them to be careful with their deployments. The team that has the best cash flow by the end of the day is the winner.
 
@@ -36,3 +36,13 @@ As with any code retreat like event: provide a free lunch but avoid pizza.
 Our [story board](https://trello.com/b/IqfZyfzl) is on Trello. If you would like to contribute, please request an access from [DeVill](https://github.com/devill). To [get started](https://github.com/devill/poker-croupier/wiki/Architectural-guide) as a contributor, read the [architectural guide](https://github.com/devill/poker-croupier/wiki/Architectural-guide).
 
 When implementing rules consult the [Texas Hold'em rules](http://www.pokerstars.com/poker/games/texas-holdem/) and [poker hand ranks](http://www.pokerstars.com/poker/games/rules/hand-rankings/) pages on PokerStars. We wish to play sit-n-go tournaments of No Limit Texas Hold'em.
+
+## Setting up your development environment
+
+- Clone the git repo
+- Install [rvm](http://rvm.io/) and ruby 1.9.3: `\curl -L https://get.rvm.io | bash -s stable --ruby=1.9.3`
+- Install bundler: `gem install bundler`
+- Install necessary gems with bundler: `bundle`
+- Test your environment by running the unit tests: `rake test`
+
+And that's it! You are all set to go.
