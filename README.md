@@ -33,7 +33,7 @@ As with any code retreat like event: provide a free lunch but avoid pizza.
 
 # How to get started as a contributor
 
-Our [story board](https://trello.com/b/IqfZyfzl) is on Trello. If you would like to contribute, please request an access from [DeVill](https://github.com/devill). To [get started](https://github.com/devill/poker-croupier/wiki/Architectural-guide) as a contributor, read the [architectural guide](https://github.com/devill/poker-croupier/wiki/Architectural-guide).
+Our [story board](https://trello.com/b/IqfZyfzl) is on Trello. If you would like to contribute, please request an access from [DeVill](https://github.com/devill). We also have a [mailing list at google groups](https://groups.google.com/forum/?hl=en#!forum/poker-croupier-developers). To understand the project structure, read the [architectural guide](https://github.com/devill/poker-croupier/wiki/Architectural-guide).
 
 When implementing rules consult the [Texas Hold'em rules](http://www.pokerstars.com/poker/games/texas-holdem/) and [poker hand ranks](http://www.pokerstars.com/poker/games/rules/hand-rankings/) pages on PokerStars. We wish to play sit-n-go tournaments of No Limit Texas Hold'em.
 
