@@ -9,3 +9,7 @@ module SpecHelper
   autoload :FakeSpectator, 'spec_helper/fake_spectator'
   autoload :MakeGameState, 'spec_helper/make_game_state'
 end
+
+def fake_player
+  Croupier::Player.new SpecHelper::FakeStrategy.new
+end

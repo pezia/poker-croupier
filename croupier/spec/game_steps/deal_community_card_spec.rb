@@ -2,10 +2,6 @@ require_relative '../spec_helper'
 require 'card'
 
 describe Croupier::GameSteps::DealCommunityCard do
-  def fake_player
-    Croupier::Player.new SpecHelper::FakeStrategy.new
-  end
-
   def run
     Croupier::GameSteps::DealCommunityCard.new(@game_state).run
   end

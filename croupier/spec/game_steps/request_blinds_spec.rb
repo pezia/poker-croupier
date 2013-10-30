@@ -1,10 +1,6 @@
 require_relative '../spec_helper'
 
 describe Croupier::GameSteps::RequestBlinds do
-  def fake_player
-    Croupier::Player.new SpecHelper::FakeStrategy.new
-  end
-
   before :each do
     @player1 = fake_player
     @player2 = fake_player
