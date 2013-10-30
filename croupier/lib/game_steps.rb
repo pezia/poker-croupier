@@ -4,7 +4,7 @@ module Croupier::GameSteps
   autoload :Betting, 'lib/game_steps/betting'
   autoload :DealCommunityCard, 'lib/game_steps/deal_community_card'
   autoload :DealHoleCards, 'lib/game_steps/deal_hole_cards'
-  autoload :Flop, 'lib/game_steps/flop'
+  autoload :DealFlop, 'lib/game_steps/deal_flop'
   autoload :IntroducePlayers, 'lib/game_steps/introduce_players'
   autoload :RequestBlinds, 'lib/game_steps/request_blinds'
   autoload :ShuffleCards, 'lib/game_steps/shuffle_cards'
