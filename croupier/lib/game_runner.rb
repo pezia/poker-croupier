@@ -8,7 +8,12 @@ class Croupier::GameRunner
       DealHoleCards,
       RequestBlinds,
       Betting,
-      Flop
+      Flop,
+      Betting,
+      DealCommunityCard,
+      Betting,
+      DealCommunityCard,
+      Betting
   ]
 
   def initialize
