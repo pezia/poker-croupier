@@ -26,9 +26,9 @@ describe Croupier::GameSteps::Flop do
   end
 
   it "should deal three community cards and notify the players" do
-    @game_state.players.each do |p|
+    @game_state.players.each do |player|
       @cards[0..2].each do |card|
-        p.should_receive(:community_card).with(card)
+        player.should_receive(:community_card).with(card)
       end
     end
 
@@ -36,9 +36,9 @@ describe Croupier::GameSteps::Flop do
   end
 
   it "should deal three community cards and notify the spectators" do
-    @game_state.spectators.each do |s|
+    @game_state.spectators.each do |spectator|
       @cards[0..2].each do |card|
-        s.should_receive(:community_card).with(card)
+        spectator.should_receive(:community_card).with(card)
       end
     end
 
