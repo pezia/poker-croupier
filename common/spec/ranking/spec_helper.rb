@@ -1,4 +1,4 @@
-$:.push(File.join(File.dirname(__FILE__), '../../common/lib'))
+$:.push(File.join(File.dirname(__FILE__), '../../lib'))
 
 
 module Helpers
@@ -10,7 +10,7 @@ end
 require 'rspec'
 include Helpers
 
-require_relative '../lib/hand'
+require_relative '../../lib/ranking/hand'
 
 
 module Ranking
