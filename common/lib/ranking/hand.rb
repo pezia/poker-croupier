@@ -17,11 +17,11 @@ module Ranking
 
     def initialize(*cards)
       @cards = []
-      cards.each do |card_name|
-        if card_name.is_a? Card
-          @cards << card_name
-        elsif card_name.is_a? String
-          @cards << Card.new(card_name)
+      cards.each do |card|
+        if card.is_a? Card
+          @cards << card
+        elsif card.is_a? String
+          @cards << Card.new(card)
         else
           raise "Hand initializer expects a card or a card name"
         end
