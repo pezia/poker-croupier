@@ -5,6 +5,8 @@ class Croupier::GameState
   attr_reader :big_blind
   attr_reader :pot
 
+  attr_accessor :community_cards
+
   def initialize
     @players = []
     @spectators = []
@@ -13,6 +15,7 @@ class Croupier::GameState
     @pot = 0
     @current_player = 0
     @player_on_first_position = 0
+    @community_cards = []
   end
 
   def register_player(player)

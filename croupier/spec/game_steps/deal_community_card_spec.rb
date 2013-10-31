@@ -28,7 +28,7 @@ describe Croupier::GameSteps::DealCommunityCard do
     run
   end
 
-  it "should deal three community cards and notify the spectators" do
+  it "should deal a community card and notify the spectators" do
     @game_state.spectators.each do |spectator|
       spectator.should_receive(:community_card).with(@cards.first)
     end
@@ -36,4 +36,9 @@ describe Croupier::GameSteps::DealCommunityCard do
     run
   end
 
+  it "should store the card dealt in game_state for later use" do
+    run
+
+    @game_state.community_cards.should == [@cards.first]
+  end
 end
