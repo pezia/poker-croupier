@@ -18,12 +18,18 @@ module Ranking
     def initialize(*cards)
       @cards = []
       cards.each do |card_name|
-        @cards << Card.new(card_name)
+        if card_name.is_a? Card
+          @cards << card_name
+        elsif card_name.is_a? String
+          @cards << Card.new(card_name)
+        else
+          raise "Hand initializer expects a card or a card name"
+        end
       end
+
       @cards.sort_by! { |card| card.value }
 
       calculate_rank
-
     end
 
 
