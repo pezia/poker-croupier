@@ -1,11 +1,13 @@
 class Croupier::Player
   attr_reader :stack
+  attr_reader :hole_cards
 
   def initialize(strategy)
     @strategy = strategy
     @stack = 1000
     @active = true
     @forced_bet = nil
+    @hole_cards = []
   end
 
   def withdraw(bet)
@@ -28,6 +30,11 @@ class Croupier::Player
     bet = @forced_bet || @strategy.bet_request
     @forced_bet = nil
     bet
+  end
+
+  def hole_card card
+    @strategy.hole_card card
+    @hole_cards << card
   end
 
   def method_missing(method, *args)
