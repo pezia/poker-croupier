@@ -7,6 +7,7 @@ module Croupier::GameSteps
   autoload :DealFlop, 'lib/game_steps/deal_flop'
   autoload :IntroducePlayers, 'lib/game_steps/introduce_players'
   autoload :RequestBlinds, 'lib/game_steps/request_blinds'
+  autoload :Showdown, 'lib/game_steps/showdown'
   autoload :ShuffleCards, 'lib/game_steps/shuffle_cards'
 
 end
