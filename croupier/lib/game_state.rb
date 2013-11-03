@@ -63,10 +63,8 @@ class Croupier::GameState
     @players[1]
   end
 
-  private
-
   def transfer(player, amount)
-    player.withdraw amount
+    player.stack -= amount
     @pot += amount
   end
 end

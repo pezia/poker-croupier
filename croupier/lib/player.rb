@@ -1,5 +1,5 @@
 class Croupier::Player
-  attr_reader :stack
+  attr_accessor :stack
   attr_reader :hole_cards
 
   def initialize(strategy)
@@ -10,8 +10,8 @@ class Croupier::Player
     @hole_cards = []
   end
 
-  def withdraw(bet)
-    @stack -= bet
+  def deposit(amount)
+    @stack += amount
   end
 
   def active?

@@ -62,6 +62,51 @@ describe Croupier::GameSteps::Showdown do
     end
   end
 
+  context "the pot is transferred to the winner" do
+
+    it "should transfer the entire pot when the winner is unique" do
+      game_state.transfer_bet game_state.players.first, 100, :raise
+      game_state.transfer_bet game_state.players.last, 100, :call
+
+      set_hole_cards_for(0, 'Jack of Diamonds', 'Jack of Hearts')
+      set_hole_cards_for(1, '4 of Clubs', 'Ace of Hearts')
+
+      run
+
+      game_state.players.first.stack.should == 1100
+      game_state.players.last.stack.should == 900
+      game_state.pot.should == 0
+    end
+
+    it "should split the pot when the winner is not unique" do
+      game_state.transfer_bet game_state.players.first, 100, :raise
+      game_state.transfer_bet game_state.players.last, 100, :call
+
+      set_hole_cards_for(0, '4 of Clubs', 'Jack of Hearts')
+      set_hole_cards_for(1, '4 of Hearts', 'Jack of Diamonds')
+
+      run
+
+      game_state.players.first.stack.should == 1000
+      game_state.players.last.stack.should == 1000
+      game_state.pot.should == 0
+    end
+
+    it "should give the remainder to the first few players when the pot is not divisible by number of players" do
+      game_state.transfer_bet game_state.players.first, 101, :raise
+      game_state.transfer_bet game_state.players.last, 100, :call
+
+      set_hole_cards_for(0, '4 of Clubs', 'Jack of Hearts')
+      set_hole_cards_for(1, '4 of Hearts', 'Jack of Diamonds')
+
+      run
+
+      game_state.players.first.stack.should == 1000
+      game_state.players.last.stack.should == 1000
+      game_state.pot.should == 0
+    end
+  end
+
   def run
     Croupier::GameSteps::Showdown.new(game_state).run
   end
