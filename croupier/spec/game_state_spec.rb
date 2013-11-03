@@ -33,7 +33,7 @@ describe Croupier::GameState do
         player.should_receive(:the_message)
       end
 
-      game_state.each_player_and_spectator do |observer|
+      game_state.each_observer do |observer|
         observer.the_message
       end
     end
@@ -45,7 +45,7 @@ describe Croupier::GameState do
         spectator.should_receive(:the_message)
       end
 
-      game_state.each_player_and_spectator do |observer|
+      game_state.each_observer do |observer|
         observer.the_message
       end
     end
@@ -98,4 +98,47 @@ describe Croupier::GameState do
       game_state.pot.should == 40
     end
   end
+
+  context "iterators" do
+    before :each do
+      @game_state = SpecHelper::MakeGameState.with(
+          players: [fake_player, fake_player],
+          spectators: [SpecHelper::FakeSpectator.new, SpecHelper::FakeSpectator.new]
+      )
+    end
+
+    describe "#each_player" do
+      it "should yield each player" do
+        players = []
+        @game_state.each_player do |player|
+          players << player
+        end
+
+        players.should == @game_state.players
+      end
+    end
+    
+    describe "#each_spectator" do
+      it "should yield each spectator" do
+        spectators = []
+        @game_state.each_spectator do |spectator|
+          spectators << spectator
+        end
+
+        spectators.should == @game_state.spectators
+      end
+    end
+    
+    describe "#each_player_and_spectator" do
+      it "should yield each player and spectator" do
+        observers = []
+        @game_state.each_observer do |observer|
+          observers << observer
+        end
+
+        observers.should == @game_state.players + @game_state.spectators
+      end
+    end
+  end
+
 end

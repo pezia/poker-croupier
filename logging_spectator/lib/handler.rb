@@ -19,4 +19,8 @@ class LoggingSpectator::Handler
   def bet(competitor, bet)
     LoggingSpectator.logger.info "#{competitor.name} made a bet of #{bet.amount} (#{API::BetType::VALUE_MAP[bet.type]}) and is left with #{competitor.stack} chips"
   end
+
+  def winner(competitor)
+    LoggingSpectator.logger.info "#{competitor.name} won the pot"
+  end
 end

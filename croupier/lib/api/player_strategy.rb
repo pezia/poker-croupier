@@ -98,6 +98,20 @@ module API
         return
       end
 
+      def winner(competitor)
+        send_winner(competitor)
+        recv_winner()
+      end
+
+      def send_winner(competitor)
+        send_message('winner', Winner_args, :competitor => competitor)
+      end
+
+      def recv_winner()
+        result = receive_message(Winner_result)
+        return
+      end
+
     end
 
     class Processor
@@ -143,6 +157,13 @@ module API
         result = Community_card_result.new()
         @handler.community_card(args.card)
         write_result(result, oprot, 'community_card', seqid)
+      end
+
+      def process_winner(seqid, iprot, oprot)
+        args = read_args(iprot, Winner_args)
+        result = Winner_result.new()
+        @handler.winner(args.competitor)
+        write_result(result, oprot, 'winner', seqid)
       end
 
     end
@@ -323,6 +344,37 @@ module API
     end
 
     class Community_card_result
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+
+      FIELDS = {
+
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
+    end
+
+    class Winner_args
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+      COMPETITOR = 1
+
+      FIELDS = {
+        COMPETITOR => {:type => ::Thrift::Types::STRUCT, :name => 'competitor', :class => ::API::Competitor}
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
+    end
+
+    class Winner_result
       include ::Thrift::Struct, ::Thrift::Struct_Union
 
       FIELDS = {

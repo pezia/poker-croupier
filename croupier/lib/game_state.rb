@@ -30,7 +30,7 @@ class Croupier::GameState
     @deck ||= Croupier::Deck.new
   end
 
-  def each_player_and_spectator
+  def each_observer
     (@players + @spectators).each do |observer|
       yield observer
     end
@@ -42,9 +42,15 @@ class Croupier::GameState
     end
   end
 
+  def each_player
+    @players.each do |observer|
+      yield observer
+    end
+  end
+
   def transfer_bet(player, amount, bet_type)
     transfer player, amount
-    each_player_and_spectator do |observer|
+    each_observer do |observer|
       observer.bet player, amount: amount, type: bet_type
     end
   end

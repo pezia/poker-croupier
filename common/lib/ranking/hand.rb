@@ -27,13 +27,23 @@ module Ranking
         end
       end
 
-      @cards.sort_by! { |card| card.value }
+      if @cards.length > 0
+        @cards.sort_by! { |card| card.value }
 
-      calculate_rank
+        calculate_rank
+      end
     end
 
 
     def defeats?(other_hand)
+      if @cards.length == 0
+        return false
+      end
+
+      if other_hand.cards.length == 0
+        return true
+      end
+
       return self.rank > other_hand.rank unless self.rank == other_hand.rank
       return self.value > other_hand.value unless self.value == other_hand.value
       return self.second_value > other_hand.second_value unless self.second_value == other_hand.second_value

@@ -13,7 +13,8 @@ class Croupier::GameRunner
       DealCommunityCard,
       Betting,
       DealCommunityCard,
-      Betting
+      Betting,
+      Showdown
   ]
 
   def initialize
