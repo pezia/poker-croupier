@@ -8,4 +8,12 @@ class Croupier::GameSteps::BettingState
     @current_buy_in = 0
     @last_raise = 0
   end
+
+  def players
+    @game_state.players
+  end
+
+  def transfer_bet(player, bet, bet_type)
+    @game_state.transfer_bet player, bet, bet_type
+  end
 end
