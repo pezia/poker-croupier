@@ -1,5 +1,7 @@
 class Croupier::GameSteps::BettingPlayer
 
+  attr_reader :total_bet
+
   def initialize(betting_state, index)
     @betting_state, @index = betting_state, index
     @player = betting_state.players[index]
@@ -23,6 +25,10 @@ class Croupier::GameSteps::BettingPlayer
     else
       handle_fold
     end
+  end
+
+  def active?
+    @player.active?
   end
 
   private

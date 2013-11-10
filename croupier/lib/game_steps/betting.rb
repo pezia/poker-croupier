@@ -12,7 +12,7 @@ class Croupier::GameSteps::Betting < Croupier::GameSteps::Base
     end
 
     in_action = 0
-    until betting_is_over? in_action
+    until betting_is_over?
       @betting_players[in_action].take_turn
       in_action = (in_action + 1) % (@betting_players.length)
     end
@@ -21,8 +21,13 @@ class Croupier::GameSteps::Betting < Croupier::GameSteps::Base
   private
 
 
-  def betting_is_over?(in_action)
-    @betting_state.last_raise == in_action
+  def betting_is_over?
+    @betting_players.each do |player|
+      if player.active? && player.total_bet != @betting_state.current_buy_in
+        return false
+      end
+    end
+    true
   end
 
 
