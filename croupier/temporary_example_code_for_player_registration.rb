@@ -31,7 +31,7 @@ end
 Process.detach(logger)
 Process.detach(croupier)
 
-sleep(1)
+sleep(2)
 
 require 'thrift'
 require 'croupier'
