@@ -4,25 +4,30 @@
 
 $:.push('lib/api')
 
+number_of_players = (ARGV.length > 0) ? ARGV[0].to_i : 3
 
-player1 = fork do
-  exec "bundle exec ruby ../player/rb/player_service.rb 'Daniel' 9091"
-end
+player_names = %w(Albert Bob Chuck Daniel Emily Franky George Huge Ivan Joe Kevin Leo Mike Nikki Oliver Peter Q Robert Steve Tom Ulric Victor Walt Xavier Yvette Zara)
 
-player2 = fork do
-  exec "bundle exec ruby ../player/rb/player_service.rb 'Robert' 9092"
+players = []
+
+player_names[0..number_of_players-1].each_with_index do |player_name, index|
+  players[index] = fork do
+    exec "bundle exec ruby ../player/rb/player_service.rb '#{player_name}' #{9200+index}"
+  end
 end
 
 logger = fork do
-  exec "bundle exec ruby ../logging_spectator/logging_spectator_service.rb 9093"
+  exec "bundle exec ruby ../logging_spectator/logging_spectator_service.rb 9100"
 end
 
 croupier = fork do
   exec "bundle exec ruby croupier_service.rb"
 end
 
-Process.detach(player1)
-Process.detach(player2)
+players.each do |player|
+  Process.detach(player)
+end
+
 Process.detach(logger)
 Process.detach(croupier)
 
@@ -37,9 +42,11 @@ client = API::Croupier::Client.new(protocol)
 
 transport.open()
 
-client.register_player('localhost',9091)
-client.register_player('localhost',9092)
-client.register_spectator('localhost',9093)
+players.each_index do |index|
+  client.register_player('localhost',9200+index)
+end
+
+client.register_spectator('localhost',9100)
 client.start_sit_and_go()
 
 transport.close()
