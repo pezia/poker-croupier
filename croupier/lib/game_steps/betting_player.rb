@@ -18,7 +18,10 @@ class Croupier::GameSteps::BettingPlayer
 
     @total_bet += bet
 
-    if raise?
+    if bet >= @player.stack
+      @betting_state.transfer_bet @player, @player.stack, :allin
+      @player.allin
+    elsif raise?
       handle_raise bet
     elsif call?
       handle_call bet
@@ -29,6 +32,10 @@ class Croupier::GameSteps::BettingPlayer
 
   def active?
     @player.active?
+  end
+
+  def allin?
+    @player.allin?
   end
 
   private

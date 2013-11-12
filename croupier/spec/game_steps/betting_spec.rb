@@ -85,6 +85,7 @@ describe Croupier::GameSteps::Betting do
 
       run
       @game_state.pot.should == 20
+      @player2.stack.should == 1000
     end
 
     it "should skip inactive players" do
@@ -97,6 +98,37 @@ describe Croupier::GameSteps::Betting do
       should_bet @player1, 20, :call
       run
     end
+
+
+    context "player has less money then needed to call" do
+      before :each do
+        @player2.stack = 20
+        should_bet @player1, 100, :raise
+      end
+
+      it "should let a player go all" do
+        should_bet @player2, 20, :allin
+
+        run
+
+        @player2.stack.should == 0
+
+        @game_state.pot.should == 120
+      end
+
+      it "should treat larger bet as an all in" do
+        @player2.should_receive(:bet_request).and_return(40)
+        @spectator.should_receive(:bet).with(@player2, amount: 20, type: :allin)
+
+        run
+
+        @player2.stack.should == 0
+
+        @game_state.pot.should == 120
+
+      end
+    end
+
   end
 
 end

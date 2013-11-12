@@ -36,12 +36,14 @@ final class BetType {
   const Call = 2;
   const Blind = 3;
   const Raise = 4;
+  const Allin = 5;
   static public $__names = array(
     0 => 'Fold',
     1 => 'Check',
     2 => 'Call',
     3 => 'Blind',
     4 => 'Raise',
+    5 => 'Allin',
   );
 }
 

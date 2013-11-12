@@ -22,8 +22,9 @@ module API
     Call = 2
     Blind = 3
     Raise = 4
-    VALUE_MAP = {0 => "Fold", 1 => "Check", 2 => "Call", 3 => "Blind", 4 => "Raise"}
-    VALID_VALUES = Set.new([Fold, Check, Call, Blind, Raise]).freeze
+    Allin = 5
+    VALUE_MAP = {0 => "Fold", 1 => "Check", 2 => "Call", 3 => "Blind", 4 => "Raise", 5 => "Allin"}
+    VALID_VALUES = Set.new([Fold, Check, Call, Blind, Raise, Allin]).freeze
   end
 
   class Competitor

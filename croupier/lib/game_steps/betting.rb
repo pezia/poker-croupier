@@ -23,7 +23,7 @@ class Croupier::GameSteps::Betting < Croupier::GameSteps::Base
 
   def betting_is_over?
     @betting_players.each do |player|
-      if player.active? && player.total_bet != @betting_state.current_buy_in
+      if player.active? && (!player.allin?) && player.total_bet != @betting_state.current_buy_in
         return false
       end
     end

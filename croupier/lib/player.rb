@@ -6,6 +6,7 @@ class Croupier::Player
     @strategy = strategy
     @stack = 1000
     @active = true
+    @allin = false
     @forced_bet = nil
     @hole_cards = []
   end
@@ -20,6 +21,14 @@ class Croupier::Player
 
   def fold
     @active = false
+  end
+
+  def allin
+    @allin = true
+  end
+
+  def allin?
+    @allin
   end
 
   def force_bet bet

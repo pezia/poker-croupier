@@ -21,6 +21,7 @@ enum BetType
     Call = 2
     Blind = 3
     Raise = 4
+    Allin = 5
 }
 
 struct Card
