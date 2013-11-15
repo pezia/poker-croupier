@@ -63,6 +63,10 @@ class Croupier::GameState
     @players[1]
   end
 
+  def third_player
+    @players[2]
+  end
+
   def transfer(player, amount)
     player.stack -= amount
     @pot += amount

@@ -7,12 +7,12 @@ class Croupier::GameRunner
       ShuffleCards,
       DealHoleCards,
       RequestBlinds,
-      Betting,
+      Betting,            # pre-flop
       DealFlop,
       Betting,
-      DealCommunityCard,
+      DealCommunityCard,  # turn
       Betting,
-      DealCommunityCard,
+      DealCommunityCard,  # river
       Betting,
       Showdown
   ]
