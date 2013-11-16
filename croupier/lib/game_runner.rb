@@ -3,7 +3,6 @@ class Croupier::GameRunner
 
   include Croupier::GameSteps
   GAME_STEPS = [
-      IntroducePlayers,
       ShuffleCards,
       DealHoleCards,
       RequestBlinds,
@@ -30,8 +29,13 @@ class Croupier::GameRunner
   end
 
   def start_sit_and_go
-    GAME_STEPS.each do |step_type|
-      step_type.new(@game_state).run
+    IntroducePlayers.new(@game_state)
+
+    while @game_state.players_has_stack.length >= 2 do
+      GAME_STEPS.each do |step_type|
+        step_type.new(@game_state).run
+      end
+      @game_state.next_round!
     end
   end
 

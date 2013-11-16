@@ -56,6 +56,11 @@ class Croupier::GameState
     end
   end
 
+  def transfer(player, amount)
+    player.stack -= amount
+    @pot += amount
+  end
+
   def first_player
     @players[player_on_first_position]
   end
@@ -70,8 +75,13 @@ class Croupier::GameState
     @players[third_player_index]
   end
 
-  def transfer(player, amount)
-    player.stack -= amount
-    @pot += amount
+  def players_has_stack
+    @players.select { |player| player.has_stack? }
   end
+
+  def next_round!
+    # give the dealer button to the next player
+    @player_on_first_position = players.index(second_player)
+  end
+
 end
