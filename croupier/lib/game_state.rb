@@ -6,7 +6,7 @@ class Croupier::GameState
   attr_reader :pot
 
   attr_accessor :community_cards
-  attr_accessor :player_on_first_position
+  attr_accessor :dealers_position
 
   def initialize
     @players = []
@@ -15,7 +15,7 @@ class Croupier::GameState
     @big_blind = 20
     @pot = 0
     @current_player = 0
-    @player_on_first_position = 0 # she has the dealer button
+    @dealers_position = 0
     @community_cards = []
   end
 
@@ -61,18 +61,18 @@ class Croupier::GameState
     @pot += amount
   end
 
+  def dealer
+    @players[dealers_position]
+  end
+
   def first_player
-    @players[player_on_first_position]
+    first_player_index = (dealers_position + 1) % players.count;
+    @players[first_player_index]
   end
 
   def second_player
-    second_player_index = (player_on_first_position + 1) % players.count;
+    second_player_index = (dealers_position + 2) % players.count;
     @players[second_player_index]
-  end
-
-  def third_player
-    third_player_index = (player_on_first_position + 2) % players.count;
-    @players[third_player_index]
   end
 
   def players_in_game
@@ -90,7 +90,7 @@ class Croupier::GameState
   private
 
   def orbit_completed
-    @player_on_first_position == 0
+    @dealers_position == 0
   end
 
   def double_the_blinds
@@ -99,7 +99,7 @@ class Croupier::GameState
   end
 
   def move_deal_button_to_next_player
-    @player_on_first_position = players.index(second_player)
+    @dealers_position = players.index(first_player)
   end
 
 end

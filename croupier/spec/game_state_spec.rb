@@ -131,23 +131,23 @@ describe Croupier::GameState do
     end
 
     it "should calculate the second player depends from the first" do
-      @game_state.second_player == @game_state.players[1]
+      @game_state.first_player == @game_state.players[1]
 
-      @game_state.player_on_first_position = 3;
-      @game_state.second_player == @game_state.players[4]
+      @game_state.dealers_position = 3;
+      @game_state.first_player == @game_state.players[4]
 
-      @game_state.player_on_first_position = 4;
-      @game_state.second_player == @game_state.players[0]
+      @game_state.dealers_position = 4;
+      @game_state.first_player == @game_state.players[0]
     end
 
     it "should calculate the third player depends from the first" do
-      @game_state.third_player == @game_state.players[2]
+      @game_state.second_player == @game_state.players[2]
 
-      @game_state.player_on_first_position = 3;
-      @game_state.third_player == @game_state.players[0]
+      @game_state.dealers_position = 3;
+      @game_state.second_player == @game_state.players[0]
 
-      @game_state.player_on_first_position = 4;
-      @game_state.third_player == @game_state.players[1]
+      @game_state.dealers_position = 4;
+      @game_state.second_player == @game_state.players[1]
     end
   end
 
