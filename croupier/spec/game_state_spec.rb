@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 
 describe Croupier::GameState do
-  describe "#regirster_player" do
+  describe "#register_player" do
     it "should add the player to the list of players" do
       first_player = double("First player")
       second_player = double("Second player")
@@ -99,6 +99,36 @@ describe Croupier::GameState do
     end
   end
 
+  describe "Calculate index of special players" do
+    before :each do
+      @game_state = Croupier::GameState.new
+
+      5.times do |c|
+        @game_state.register_player double("Player#{c}")
+      end
+    end
+
+    it "should calculate the second player depends from the first" do
+      @game_state.second_player == @game_state.players[1]
+
+      @game_state.player_on_first_position = 3;
+      @game_state.second_player == @game_state.players[4]
+
+      @game_state.player_on_first_position = 4;
+      @game_state.second_player == @game_state.players[0]
+    end
+
+    it "should calculate the third player depends from the first" do
+      @game_state.third_player == @game_state.players[2]
+
+      @game_state.player_on_first_position = 3;
+      @game_state.third_player == @game_state.players[0]
+
+      @game_state.player_on_first_position = 4;
+      @game_state.third_player == @game_state.players[1]
+    end
+  end
+
   context "iterators" do
     before :each do
       @game_state = SpecHelper::MakeGameState.with(
@@ -117,7 +147,7 @@ describe Croupier::GameState do
         players.should == @game_state.players
       end
     end
-    
+
     describe "#each_spectator" do
       it "should yield each spectator" do
         spectators = []
@@ -128,7 +158,7 @@ describe Croupier::GameState do
         spectators.should == @game_state.spectators
       end
     end
-    
+
     describe "#each_player_and_spectator" do
       it "should yield each player and spectator" do
         observers = []

@@ -6,6 +6,7 @@ class Croupier::GameState
   attr_reader :pot
 
   attr_accessor :community_cards
+  attr_accessor :player_on_first_position
 
   def initialize
     @players = []
@@ -14,7 +15,7 @@ class Croupier::GameState
     @big_blind = 20
     @pot = 0
     @current_player = 0
-    @player_on_first_position = 0
+    @player_on_first_position = 0 # she has the dealer button
     @community_cards = []
   end
 
@@ -56,15 +57,17 @@ class Croupier::GameState
   end
 
   def first_player
-    @players[0]
+    @players[player_on_first_position]
   end
 
   def second_player
-    @players[1]
+    second_player_index = (player_on_first_position + 1) % players.count;
+    @players[second_player_index]
   end
 
   def third_player
-    @players[2]
+    third_player_index = (player_on_first_position + 2) % players.count;
+    @players[third_player_index]
   end
 
   def transfer(player, amount)
