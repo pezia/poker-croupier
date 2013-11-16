@@ -75,7 +75,7 @@ class Croupier::GameState
     @players[third_player_index]
   end
 
-  def players_has_stack
+  def players_have_stack
     @players.select { |player| player.has_stack? }
   end
 
