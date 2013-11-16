@@ -11,13 +11,13 @@ describe Croupier::GameSteps::RequestBlinds do
     @step = Croupier::GameSteps::RequestBlinds.new @game_state
   end
 
-  it "should request the first player to post the small blind" do
-    @player1.should_receive(:force_bet).with(@game_state.small_blind)
+  it "should request the second player to post the small blind" do
+    @player2.should_receive(:force_bet).with(@game_state.small_blind)
     @step.run
   end
 
-  it "should request the second player to post the big blind" do
-    @player2.should_receive(:force_bet).with(@game_state.big_blind)
+  it "should request the third player to post the big blind" do
+    @player3.should_receive(:force_bet).with(@game_state.big_blind)
     @step.run
   end
 end

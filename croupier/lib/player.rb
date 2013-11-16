@@ -13,6 +13,10 @@ class Croupier::Player
     @hole_cards = []
   end
 
+  def has_stack?
+    @stack > 0
+  end
+
   def deposit(amount)
     @stack += amount
   end
