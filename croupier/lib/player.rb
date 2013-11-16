@@ -2,6 +2,8 @@ class Croupier::Player
   attr_accessor :stack
   attr_reader :hole_cards
 
+  attr_accessor :total_bet
+
   def initialize(strategy)
     @strategy = strategy
     @stack = 1000

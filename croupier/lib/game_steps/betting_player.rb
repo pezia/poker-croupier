@@ -1,12 +1,10 @@
 class Croupier::GameSteps::BettingPlayer
 
-  attr_reader :total_bet
-
   def initialize(betting_state, index)
     @betting_state, @index = betting_state, index
     @player = betting_state.players[index]
 
-    @total_bet = 0
+    @player.total_bet = 0
   end
 
   def take_turn
@@ -16,7 +14,7 @@ class Croupier::GameSteps::BettingPlayer
 
     bet = @player.bet_request
 
-    @total_bet += bet
+    @player.total_bet += bet
 
     if bet >= @player.stack
       @betting_state.transfer_bet @player, @player.stack, :allin
@@ -38,10 +36,14 @@ class Croupier::GameSteps::BettingPlayer
     @player.allin?
   end
 
+  def total_bet
+    @player.total_bet
+  end
+
   private
 
   def call?
-    @total_bet == @betting_state.current_buy_in
+    @player.total_bet == @betting_state.current_buy_in
   end
 
   def handle_call(bet)
@@ -50,11 +52,11 @@ class Croupier::GameSteps::BettingPlayer
   end
 
   def raise?
-    @total_bet > @betting_state.current_buy_in
+    @player.total_bet > @betting_state.current_buy_in
   end
 
   def handle_raise(bet)
-    @betting_state.current_buy_in = @total_bet
+    @betting_state.current_buy_in = @player.total_bet
     @betting_state.last_raise = @index
     @betting_state.transfer_bet @player, bet, :raise
   end
