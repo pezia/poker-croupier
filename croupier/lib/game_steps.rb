@@ -12,4 +12,6 @@ module Croupier::GameSteps
   autoload :Showdown, 'lib/game_steps/showdown'
   autoload :ShuffleCards, 'lib/game_steps/shuffle_cards'
 
+  DealTurnCard = DealCommunityCard
+  DealRiverCard = DealCommunityCard
 end
