@@ -82,6 +82,12 @@ class Croupier::GameState
   def next_round!
     # give the dealer button to the next player
     @player_on_first_position = players.index(second_player)
+
+    # double the blinds
+    if @player_on_first_position == 0
+      @small_blind *= 2
+      @big_blind *= 2
+    end
   end
 
 end
