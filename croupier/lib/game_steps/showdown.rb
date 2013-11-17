@@ -41,10 +41,18 @@ class Croupier::GameSteps::Showdown < Croupier::GameSteps::Base
   end
 
   def award
-    total_pot = game_state.pot
+    total_pot = current_main_pot
     remainder = total_pot % @winners.length
     @winners.each_with_index do |winner, index|
       game_state.transfer winner, -(total_pot / @winners.length).floor - (index < remainder ? 1 : 0)
     end
+  end
+
+  def current_main_pot
+    pot = 0
+    game_state.players.each do |player|
+      pot += player.total_bet
+    end
+    pot
   end
 end

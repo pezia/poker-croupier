@@ -4,106 +4,142 @@ require 'ranking/hand'
 
 
 describe Croupier::GameSteps::Showdown do
-  let(:game_state) do
-    SpecHelper::MakeGameState.with(
-        players: [fake_player, fake_player],
-        spectators: [SpecHelper::FakeSpectator.new, SpecHelper::FakeSpectator.new]
-    ).tap do |game_state|
-      game_state.community_cards =
-          ['3 of Diamonds', 'Jack of Clubs', 'Jack of Spades', 'Queen of Spades', 'King of Spades']
-          .map { |name| Card.new name }
-    end
-  end
+  context "there are two players" do
 
-  context "the winner is announced" do
-    it "should report the first player as a winner if it has a better hand" do
-      set_hole_cards_for(0, 'Jack of Diamonds', 'Jack of Hearts')
-      set_hole_cards_for(1, '4 of Clubs', 'Ace of Hearts')
-
-      expect_winner_to_be_announced(game_state.players.first)
-
-      run
+    let(:game_state) do
+      SpecHelper::MakeGameState.with(
+          players: [fake_player, fake_player],
+          spectators: [SpecHelper::FakeSpectator.new, SpecHelper::FakeSpectator.new]
+      ).tap do |game_state|
+        game_state.community_cards =
+            ['3 of Diamonds', 'Jack of Clubs', 'Jack of Spades', 'Queen of Spades', 'King of Spades']
+            .map { |name| Card.new name }
+      end
     end
 
-    it "should report the second player as a winner if it has a better hand" do
-      set_hole_cards_for(0, '4 of Clubs', 'Ace of Hearts')
-      set_hole_cards_for(1, 'Jack of Diamonds', 'Jack of Hearts')
+    context "the winner is announced" do
+      it "should report the first player as a winner if it has a better hand" do
+        set_hole_cards_for(0, 'Jack of Diamonds', 'Jack of Hearts')
+        set_hole_cards_for(1, '4 of Clubs', 'Ace of Hearts')
 
-      expect_winner_to_be_announced(game_state.players.last)
+        expect_winner_to_be_announced(game_state.players.first)
 
-      run
+        run
+      end
+
+      it "should report the second player as a winner if it has a better hand" do
+        set_hole_cards_for(0, '4 of Clubs', 'Ace of Hearts')
+        set_hole_cards_for(1, 'Jack of Diamonds', 'Jack of Hearts')
+
+        expect_winner_to_be_announced(game_state.players.last)
+
+        run
+      end
+
+      it "should skip inactive players" do
+        set_hole_cards_for(0, 'Jack of Diamonds', 'Jack of Hearts')
+        set_hole_cards_for(1, '4 of Clubs', 'Ace of Hearts')
+
+        game_state.players.first.fold
+
+        expect_winner_to_be_announced(game_state.players.last)
+
+        run
+      end
+
+      it "should report multiple winners when players have identical hands" do
+        set_hole_cards_for(0, '4 of Clubs', 'Jack of Hearts')
+        set_hole_cards_for(1, '4 of Hearts', 'Jack of Diamonds')
+
+        expect_winner_to_be_announced(game_state.players.first)
+        expect_winner_to_be_announced(game_state.players.last)
+
+        run
+      end
+
+      def expect_winner_to_be_announced(winner)
+        (game_state.players + game_state.spectators).each do |observer|
+          observer.should_receive(:winner).with(winner)
+        end
+      end
     end
 
-    it "should skip inactive players" do
-      set_hole_cards_for(0, 'Jack of Diamonds', 'Jack of Hearts')
-      set_hole_cards_for(1, '4 of Clubs', 'Ace of Hearts')
+    context "the pot is transferred to the winner" do
 
-      game_state.players.first.fold
+      it "should transfer the entire pot when the winner is unique" do
+        game_state.transfer_bet game_state.players.first, 100, :raise
+        game_state.transfer_bet game_state.players.last, 100, :call
 
-      expect_winner_to_be_announced(game_state.players.last)
+        set_hole_cards_for(0, 'Jack of Diamonds', 'Jack of Hearts')
+        set_hole_cards_for(1, '4 of Clubs', 'Ace of Hearts')
 
-      run
-    end
+        run
 
-    it "should report multiple winners when players have identical hands" do
-      set_hole_cards_for(0, '4 of Clubs', 'Jack of Hearts')
-      set_hole_cards_for(1, '4 of Hearts', 'Jack of Diamonds')
+        game_state.players.first.stack.should == 1100
+        game_state.players.last.stack.should == 900
+        game_state.pot.should == 0
+      end
 
-      expect_winner_to_be_announced(game_state.players.first)
-      expect_winner_to_be_announced(game_state.players.last)
+      it "should split the pot when the winner is not unique" do
+        game_state.transfer_bet game_state.players.first, 100, :raise
+        game_state.transfer_bet game_state.players.last, 100, :call
 
-      run
-    end
+        set_hole_cards_for(0, '4 of Clubs', 'Jack of Hearts')
+        set_hole_cards_for(1, '4 of Hearts', 'Jack of Diamonds')
 
-    def expect_winner_to_be_announced(winner)
-      (game_state.players + game_state.spectators).each do |observer|
-        observer.should_receive(:winner).with(winner)
+        run
+
+        game_state.players.first.stack.should == 1000
+        game_state.players.last.stack.should == 1000
+        game_state.pot.should == 0
+      end
+
+      it "should give the remainder to the first few players when the pot is not divisible by number of players" do
+        game_state.transfer_bet game_state.players.first, 101, :raise
+        game_state.transfer_bet game_state.players.last, 100, :call
+
+        set_hole_cards_for(0, '4 of Clubs', 'Jack of Hearts')
+        set_hole_cards_for(1, '4 of Hearts', 'Jack of Diamonds')
+
+        run
+
+        game_state.players.first.stack.should == 1000
+        game_state.players.last.stack.should == 1000
+        game_state.pot.should == 0
       end
     end
   end
 
-  context "the pot is transferred to the winner" do
-
-    it "should transfer the entire pot when the winner is unique" do
-      game_state.transfer_bet game_state.players.first, 100, :raise
-      game_state.transfer_bet game_state.players.last, 100, :call
-
-      set_hole_cards_for(0, 'Jack of Diamonds', 'Jack of Hearts')
-      set_hole_cards_for(1, '4 of Clubs', 'Ace of Hearts')
-
-      run
-
-      game_state.players.first.stack.should == 1100
-      game_state.players.last.stack.should == 900
-      game_state.pot.should == 0
+  context "there are three players" do
+    let(:game_state) do
+      SpecHelper::MakeGameState.with(
+          players: [fake_player, fake_player, fake_player],
+          spectators: [SpecHelper::FakeSpectator.new]
+      ).tap do |game_state|
+        game_state.community_cards =
+            ['3 of Diamonds', 'Jack of Clubs', 'Jack of Spades', 'Queen of Spades', 'King of Spades']
+            .map { |name| Card.new name }
+      end
     end
 
-    it "should split the pot when the winner is not unique" do
-      game_state.transfer_bet game_state.players.first, 100, :raise
-      game_state.transfer_bet game_state.players.last, 100, :call
+    context "there is a side pot" do
+      pending "should only reward the main_pot when winner is not in any side pots" do
+        game_state.players[1].stack = 50
 
-      set_hole_cards_for(0, '4 of Clubs', 'Jack of Hearts')
-      set_hole_cards_for(1, '4 of Hearts', 'Jack of Diamonds')
+        game_state.transfer_bet game_state.players[0], 100, :raise
+        game_state.transfer_bet game_state.players[1], 50, :allin
+        game_state.transfer_bet game_state.players[2], 0, :fold
 
-      run
+        set_hole_cards_for(0, '4 of Clubs', '5 of Hearts')
+        set_hole_cards_for(1, '4 of Hearts', 'Jack of Diamonds')
+        set_hole_cards_for(1, '4 of Spades', 'King of Diamonds')
 
-      game_state.players.first.stack.should == 1000
-      game_state.players.last.stack.should == 1000
-      game_state.pot.should == 0
-    end
+        run
 
-    it "should give the remainder to the first few players when the pot is not divisible by number of players" do
-      game_state.transfer_bet game_state.players.first, 101, :raise
-      game_state.transfer_bet game_state.players.last, 100, :call
-
-      set_hole_cards_for(0, '4 of Clubs', 'Jack of Hearts')
-      set_hole_cards_for(1, '4 of Hearts', 'Jack of Diamonds')
-
-      run
-
-      game_state.players.first.stack.should == 1000
-      game_state.players.last.stack.should == 1000
-      game_state.pot.should == 0
+        game_state.players[1].stack.should == 100
+        game_state.players[0].stack.should == 950
+        game_state.players[2].stack.should == 1000
+      end
     end
   end
 
