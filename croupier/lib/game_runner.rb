@@ -3,6 +3,7 @@ class Croupier::GameRunner
 
   include Croupier::GameSteps
   GAME_STEPS = [
+      IntroducePlayers,
       ShuffleCards,
       DealHoleCards,
       RequestBlinds,
