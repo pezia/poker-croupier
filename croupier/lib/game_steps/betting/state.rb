@@ -14,7 +14,6 @@ class Croupier::GameSteps::Betting::State
   end
 
   def transfer_bet(player, bet, bet_type)
-    player.total_bet += bet
     @game_state.transfer_bet player, bet, bet_type
   end
 end

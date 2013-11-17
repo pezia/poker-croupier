@@ -11,6 +11,8 @@ class Croupier::Player
     @allin = false
     @forced_bet = nil
     @hole_cards = []
+
+    @total_bet = 0
   end
 
   def has_stack?
