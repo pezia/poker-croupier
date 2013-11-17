@@ -46,4 +46,20 @@ describe Croupier::Player do
       player.hole_cards.should == [card1, card2]
     end
   end
+
+  describe "#initialize_round" do
+    it "should reset values related to a single round of poker" do
+      player.fold
+      player.allin
+      player.total_bet = 100
+      player.hole_cards << "Ace of spades"
+
+      player.initialize_round
+
+      player.active?.should be_true
+      player.allin?.should be_false
+      player.total_bet.should == 0
+      player.hole_cards.should == []
+    end
+  end
 end

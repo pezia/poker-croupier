@@ -100,11 +100,9 @@ describe Croupier::GameState do
   end
 
   describe "#next_round" do
-    it "should double the blinds when the dealer button returns to the first player" do
-      game_state = SpecHelper::MakeGameState.with(
-          players: [fake_player, fake_player, fake_player]
-      )
+    let(:game_state) { game_state = SpecHelper::MakeGameState.with(players: [fake_player, fake_player, fake_player]) }
 
+    it "should double the blinds when the dealer button returns to the first player" do
       small_blind_at_start = game_state.small_blind
       big_blind_at_start = game_state.big_blind
 
@@ -119,6 +117,13 @@ describe Croupier::GameState do
       game_state.big_blind.should == big_blind_at_start * 2
 
     end
+
+    it "should reactivate folded players with non zero stacks" do
+      game_state.players[0].should_receive(:initialize_round)
+      game_state.players[2].should_receive(:initialize_round)
+
+      game_state.next_round!
+    end
   end
 
   describe "Calculate index of special players" do
@@ -126,7 +131,7 @@ describe Croupier::GameState do
       @game_state = Croupier::GameState.new
 
       5.times do |c|
-        @game_state.register_player double("Player#{c}")
+        @game_state.register_player fake_player
       end
     end
 

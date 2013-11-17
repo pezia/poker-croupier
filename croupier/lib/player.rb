@@ -7,12 +7,16 @@ class Croupier::Player
   def initialize(strategy)
     @strategy = strategy
     @stack = 1000
-    @active = true
-    @allin = false
     @forced_bet = nil
-    @hole_cards = []
 
+    initialize_round
+  end
+
+  def initialize_round
+    @active = true
     @total_bet = 0
+    @allin = false
+    @hole_cards = []
   end
 
   def has_stack?

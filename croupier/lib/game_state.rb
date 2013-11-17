@@ -78,6 +78,10 @@ class Croupier::GameState
   end
 
   def next_round!
+    @players.each do |player|
+      player.initialize_round
+    end
+
     move_deal_button_to_next_player
 
     if orbit_completed
