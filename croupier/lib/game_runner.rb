@@ -36,6 +36,7 @@ class Croupier::GameRunner
         step_type.new(@game_state).run
       end
       @game_state.next_round!
+      sleep 5
     end
   end
 
