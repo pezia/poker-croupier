@@ -16,19 +16,18 @@ player_names[0..number_of_players-1].each_with_index do |player_name, index|
   end
 end
 
-logger = fork do
-  exec "bundle exec ruby ../logging_spectator/logging_spectator_service.rb 9100"
-end
-
-croupier = fork do
-  exec "bundle exec ruby croupier_service.rb"
-end
-
 players.each do |player|
   Process.detach(player)
 end
 
+logger = fork do
+  exec "bundle exec ruby ../logging_spectator/logging_spectator_service.rb 9100"
+end
 Process.detach(logger)
+
+croupier = fork do
+  exec "bundle exec ruby croupier_service.rb"
+end
 Process.detach(croupier)
 
 sleep(2)
