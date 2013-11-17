@@ -77,6 +77,14 @@ describe Croupier::GameSteps::BettingStep do
       @player2.active?.should == false
     end
 
+    it "should keep track of the total_bet for each player" do
+      should_bet @player1, 20, :raise
+      should_bet @player2, 0, :fold
+      run
+      @player1.total_bet.should == 20
+      @player2.total_bet.should == 0
+    end
+
     it "should interpret a bet smaller then the previous raise as a fold" do
       should_bet @player1, 20, :raise
 
@@ -86,6 +94,8 @@ describe Croupier::GameSteps::BettingStep do
       run
       @game_state.pot.should == 20
       @player2.stack.should == 1000
+
+      @player2.total_bet.should == 0
     end
 
     it "should skip inactive players" do
@@ -106,12 +116,13 @@ describe Croupier::GameSteps::BettingStep do
         should_bet @player1, 100, :raise
       end
 
-      it "should let a player go all" do
+      it "should let a player go all in" do
         should_bet @player2, 20, :allin
 
         run
 
         @player2.stack.should == 0
+        @player2.total_bet.should == 20
 
         @game_state.pot.should == 120
       end
@@ -123,6 +134,7 @@ describe Croupier::GameSteps::BettingStep do
         run
 
         @player2.stack.should == 0
+        @player2.total_bet.should == 20
 
         @game_state.pot.should == 120
 

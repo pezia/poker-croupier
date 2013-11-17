@@ -14,14 +14,13 @@ class Croupier::GameSteps::Betting::Player
 
     bet = @player.bet_request
 
-    @player.total_bet += bet
 
-    if bet >= @player.stack
-      @betting_state.transfer_bet @player, @player.stack, :allin
-      @player.allin
-    elsif raise?
+
+    if allin_bet?(bet)
+      handle_allin
+    elsif raise_bet?(bet)
       handle_raise bet
-    elsif call?
+    elsif call_bet?(bet)
       handle_call bet
     else
       handle_fold
@@ -42,8 +41,18 @@ class Croupier::GameSteps::Betting::Player
 
   private
 
-  def call?
-    @player.total_bet == @betting_state.current_buy_in
+
+  def allin_bet?(bet)
+    bet >= @player.stack
+  end
+
+  def handle_allin
+    @betting_state.transfer_bet @player, @player.stack, :allin
+    @player.allin
+  end
+
+  def call_bet?(bet)
+    @player.total_bet + bet == @betting_state.current_buy_in
   end
 
   def handle_call(bet)
@@ -51,14 +60,14 @@ class Croupier::GameSteps::Betting::Player
     @betting_state.transfer_bet @player, bet, bet_type
   end
 
-  def raise?
-    @player.total_bet > @betting_state.current_buy_in
+  def raise_bet?(bet)
+    @player.total_bet + bet > @betting_state.current_buy_in
   end
 
   def handle_raise(bet)
+    @betting_state.transfer_bet @player, bet, :raise
     @betting_state.current_buy_in = @player.total_bet
     @betting_state.last_raise = @index
-    @betting_state.transfer_bet @player, bet, :raise
   end
 
   def handle_fold
