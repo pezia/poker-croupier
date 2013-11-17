@@ -2,8 +2,7 @@ module Croupier::GameSteps
 
   autoload :Base, 'lib/game_steps/base'
   autoload :Betting, 'lib/game_steps/betting'
-  autoload :BettingPlayer, 'lib/game_steps/betting_player'
-  autoload :BettingState, 'lib/game_steps/betting_state'
+  autoload :BettingStep, 'lib/game_steps/betting_step'
   autoload :DealCommunityCard, 'lib/game_steps/deal_community_card'
   autoload :DealHoleCards, 'lib/game_steps/deal_hole_cards'
   autoload :DealFlop, 'lib/game_steps/deal_flop'

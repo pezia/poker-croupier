@@ -1,4 +1,4 @@
-class Croupier::GameSteps::BettingState
+class Croupier::GameSteps::Betting::State
   attr_accessor :last_raise
   attr_accessor :current_buy_in
   attr_reader :game_state

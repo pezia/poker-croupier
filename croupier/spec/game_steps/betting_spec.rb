@@ -1,7 +1,7 @@
 require_relative '../spec_helper'
 
 
-describe Croupier::GameSteps::Betting do
+describe Croupier::GameSteps::BettingStep do
   before :each do
     @spectator = SpecHelper::FakeSpectator.new
     @player1 = Croupier::Player.new SpecHelper::FakeStrategy.new
@@ -21,7 +21,7 @@ describe Croupier::GameSteps::Betting do
   end
 
   def run()
-    Croupier::GameSteps::Betting.new(@game_state).run
+    Croupier::GameSteps::BettingStep.new(@game_state).run
   end
 
   it "should transfer a non zero bet to the pot" do
