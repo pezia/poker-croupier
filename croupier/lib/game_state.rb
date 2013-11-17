@@ -6,7 +6,6 @@ class Croupier::GameState
   attr_reader :pot
 
   attr_accessor :community_cards
-  attr_accessor :dealers_position
 
   def initialize
     @players = []
@@ -66,13 +65,11 @@ class Croupier::GameState
   end
 
   def first_player
-    first_player_index = (dealers_position + 1) % players.count;
-    @players[first_player_index]
+    @players[nthPlayer 1]
   end
 
   def second_player
-    second_player_index = (dealers_position + 2) % players.count;
-    @players[second_player_index]
+    @players[nthPlayer 2]
   end
 
   def players_in_game
@@ -99,7 +96,10 @@ class Croupier::GameState
   end
 
   def move_deal_button_to_next_player
-    @dealers_position = players.index(first_player)
+    @dealers_position = nthPlayer 1
   end
 
+  def nthPlayer(n)
+    (@dealers_position + n) % players.count
+  end
 end
