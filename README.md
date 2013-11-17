@@ -37,6 +37,11 @@ Our [story board](https://trello.com/b/IqfZyfzl) is on Trello. If you would like
 
 When implementing rules consult the [Texas Hold'em rules](http://www.pokerstars.com/poker/games/texas-holdem/) and [poker hand ranks](http://www.pokerstars.com/poker/games/rules/hand-rankings/) pages on PokerStars. We wish to play sit-n-go tournaments of No Limit Texas Hold'em.
 
+Helpful links
+- [Glossary of poker terms](http://en.wikipedia.org/wiki/Glossary_of_poker_terms)
+- [Poker gameplay and terminology](http://en.wikipedia.org/wiki/Category:Poker_gameplay_and_terminology)
+- [Poker tournament](http://en.wikipedia.org/wiki/Poker_tournament)
+
 ## Setting up your development environment
 
 - Clone the git repo
