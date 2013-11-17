@@ -14,14 +14,14 @@ describe Croupier::GameSteps::BettingStep do
     @spectator.should_receive(:bet).with(player, amount: amount, type: type)
   end
 
+  def run()
+    Croupier::GameSteps::BettingStep.new(@game_state).run
+  end
+
   it "should request a bet from the player in action, and the player should remain active" do
     should_bet(@player1, 0, :check)
     run
     @player1.active?.should == true
-  end
-
-  def run()
-    Croupier::GameSteps::BettingStep.new(@game_state).run
   end
 
   it "should transfer a non zero bet to the pot" do
