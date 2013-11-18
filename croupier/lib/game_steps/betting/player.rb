@@ -18,6 +18,8 @@ class Croupier::GameSteps::Betting::Player
       handle_allin
     elsif raise_bet?(bet)
       handle_raise bet
+    elsif check_bet?(bet)
+      handle_check
     elsif call_bet?(bet)
       handle_call
     else
@@ -45,7 +47,7 @@ class Croupier::GameSteps::Betting::Player
   end
 
   def handle_allin
-    @betting_state.transfer_bet @player, @player.stack, :allin
+    handle_bet @player.stack, :allin
     update_minimum_raise @player.stack
   end
 
@@ -54,8 +56,15 @@ class Croupier::GameSteps::Betting::Player
   end
 
   def handle_call
-    bet_type = (@betting_state.current_buy_in == 0) ? :check : :call
-    @betting_state.transfer_bet @player, to_call, bet_type
+    handle_bet to_call, :call
+  end
+
+  def check_bet?(bet)
+    bet == 0 && @betting_state.current_buy_in == 0
+  end
+
+  def handle_check
+    handle_bet to_call, :check
   end
 
   def to_call
@@ -71,7 +80,7 @@ class Croupier::GameSteps::Betting::Player
   end
 
   def handle_raise(bet)
-    @betting_state.transfer_bet @player, bet, :raise
+    handle_bet bet, :raise
     @betting_state.current_buy_in = @player.total_bet
     @betting_state.last_raise = @index
     update_minimum_raise bet
@@ -82,7 +91,11 @@ class Croupier::GameSteps::Betting::Player
   end
 
   def handle_fold
-    @betting_state.transfer_bet @player, 0, :fold
+    handle_bet 0, :fold
     @player.fold
+  end
+
+  def handle_bet(bet, type)
+    @betting_state.transfer_bet @player, bet, type
   end
 end
