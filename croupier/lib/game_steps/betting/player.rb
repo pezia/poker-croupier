@@ -14,8 +14,6 @@ class Croupier::GameSteps::Betting::Player
 
     bet = @player.bet_request
 
-
-
     if allin_bet?(bet)
       handle_allin
     elsif raise_bet?(bet)
