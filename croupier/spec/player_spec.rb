@@ -50,7 +50,6 @@ describe Croupier::Player do
   describe "#initialize_round" do
     it "should reset values related to a single round of poker" do
       player.fold
-      player.allin
       player.total_bet = 100
       player.hole_cards << "Ace of spades"
 

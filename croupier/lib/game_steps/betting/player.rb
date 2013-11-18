@@ -46,7 +46,6 @@ class Croupier::GameSteps::Betting::Player
 
   def handle_allin
     @betting_state.transfer_bet @player, @player.stack, :allin
-    @player.allin
     update_minimum_raise @player.stack
   end
 

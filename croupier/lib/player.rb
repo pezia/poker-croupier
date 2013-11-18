@@ -15,7 +15,6 @@ class Croupier::Player
   def initialize_round
     @active = true
     @total_bet = 0
-    @allin = false
     @hole_cards = []
   end
 
@@ -35,12 +34,8 @@ class Croupier::Player
     @active = false
   end
 
-  def allin
-    @allin = true
-  end
-
   def allin?
-    @allin
+    @stack == 0
   end
 
   def force_bet bet
