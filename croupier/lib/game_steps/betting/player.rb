@@ -16,10 +16,10 @@ class Croupier::GameSteps::Betting::Player
       handle_allin
     elsif raise_bet?(bet)
       handle_raise bet
-    elsif check_bet?(bet)
-      handle_check
     elsif call_bet?(bet)
       handle_call
+    elsif check_bet?(bet)
+      handle_check
     else
       handle_fold
     end
@@ -57,7 +57,7 @@ class Croupier::GameSteps::Betting::Player
   end
 
   def check_bet?(bet)
-    bet == 0 && to_call == 0
+    to_call == 0
   end
 
   def handle_check
