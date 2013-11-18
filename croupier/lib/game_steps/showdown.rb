@@ -54,12 +54,18 @@ class Croupier::GameSteps::Showdown < Croupier::GameSteps::Base
 
   def winners_side_pot
     pot = 0
-    side_pot_cap = @winners.first.total_bet
+    side_pot_cap = calculate_side_pot_size
     game_state.players.each do |player|
       bet_in_side_pot = [player.total_bet, side_pot_cap].min
       player.total_bet -= bet_in_side_pot
       pot += bet_in_side_pot
     end
     pot
+  end
+
+
+
+  def calculate_side_pot_size
+    @winners.map { |player| player.total_bet }.min
   end
 end

@@ -136,13 +136,32 @@ describe Croupier::GameSteps::Showdown do
 
         set_hole_cards_for(0, '4 of Clubs', '5 of Hearts')
         set_hole_cards_for(1, '4 of Hearts', 'Jack of Diamonds')
-        set_hole_cards_for(1, '4 of Spades', 'King of Diamonds')
+        set_hole_cards_for(2, '4 of Spades', 'King of Diamonds')
 
         run
 
         game_state.players[1].stack.should == 100
         game_state.players[0].stack.should == 950
         game_state.players[2].stack.should == 1000
+      end
+
+      it "should only reward the smaller side_pot first when two all-in players tie" do
+        game_state.players[1].stack = 150
+        game_state.players[2].stack = 50
+
+        game_state.transfer_bet game_state.players[0], 500, :raise
+        game_state.transfer_bet game_state.players[1], 150, :allin
+        game_state.transfer_bet game_state.players[2], 50, :allin
+
+        set_hole_cards_for(0, '4 of Spades', 'King of Diamonds')
+        set_hole_cards_for(1, '4 of Hearts', 'Jack of Diamonds')
+        set_hole_cards_for(2, '4 of Clubs', 'Jack of Hearts')
+
+        run
+
+        game_state.players[0].stack.should == 850
+        game_state.players[1].stack.should == 275
+        game_state.players[2].stack.should == 75
       end
     end
   end
