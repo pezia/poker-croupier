@@ -47,6 +47,7 @@ class Croupier::GameSteps::Betting::Player
   def handle_allin
     @betting_state.transfer_bet @player, @player.stack, :allin
     @player.allin
+    update_minimum_raise @player.stack
   end
 
   def call_bet?(bet)
@@ -63,14 +64,22 @@ class Croupier::GameSteps::Betting::Player
   end
 
   def raise_bet?(bet)
-    raise_by = @player.total_bet + bet - @betting_state.current_buy_in
-    raise_by >= @betting_state.minimum_raise
+    raise_by(bet) >= @betting_state.minimum_raise
+  end
+
+  def raise_by(bet)
+    @player.total_bet + bet - @betting_state.current_buy_in
   end
 
   def handle_raise(bet)
     @betting_state.transfer_bet @player, bet, :raise
     @betting_state.current_buy_in = @player.total_bet
     @betting_state.last_raise = @index
+    update_minimum_raise bet
+  end
+
+  def update_minimum_raise(bet)
+    @betting_state.minimum_raise = [@betting_state.minimum_raise, raise_by(bet)].max
   end
 
   def handle_fold

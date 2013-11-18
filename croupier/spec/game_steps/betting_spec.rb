@@ -111,6 +111,19 @@ describe Croupier::GameSteps::BettingStep do
       @player2.total_bet.should == 20
     end
 
+    it "should increase the minimum raise to the current raise if it is larger then the current minimum raise" do
+      should_bet @player1, 60, :raise
+
+      @player2.should_receive(:bet_request).and_return(119)
+      @spectator.should_receive(:bet).with(@player2, amount: 60, type: :call)
+
+      run
+
+      @game_state.pot.should == 120
+      @player2.stack.should == 940
+      @player2.total_bet.should == 60
+    end
+
     it "should skip inactive players" do
       @player3 = Croupier::Player.new SpecHelper::FakeStrategy.new
       @game_state.register_player @player3
