@@ -3,8 +3,6 @@ class Croupier::GameSteps::Betting::Player
   def initialize(betting_state, index)
     @betting_state, @index = betting_state, index
     @player = betting_state.players[index]
-
-    @player.total_bet = 0
   end
 
   def take_turn
