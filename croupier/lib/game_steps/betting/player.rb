@@ -73,7 +73,7 @@ class Croupier::GameSteps::Betting::Player
   end
 
   def to_call
-    p @betting_state.game_state.current_buy_in - @player.total_bet
+    @betting_state.game_state.current_buy_in - @player.total_bet
   end
 
   def handle_fold
