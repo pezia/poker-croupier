@@ -18,6 +18,10 @@ describe Croupier::GameSteps::Showdown do
     end
 
     context "the winner is announced" do
+      before :each do
+        game_state.players.each { |player| player.total_bet = 1 }
+      end
+
       it "should report the first player as a winner if it has a better hand" do
         set_hole_cards_for(0, 'Jack of Diamonds', 'Jack of Hearts')
         set_hole_cards_for(1, '4 of Clubs', 'Ace of Hearts')
@@ -123,7 +127,7 @@ describe Croupier::GameSteps::Showdown do
     end
 
     context "there is a side pot" do
-      pending "should only reward the main_pot when winner is not in any side pots" do
+      it "should only reward the main_pot when winner is not in any side pots" do
         game_state.players[1].stack = 50
 
         game_state.transfer_bet game_state.players[0], 100, :raise
