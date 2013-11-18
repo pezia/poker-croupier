@@ -2,11 +2,13 @@ class Croupier::GameSteps::Betting::State
   attr_accessor :last_raise
   attr_accessor :current_buy_in
   attr_reader :game_state
+  attr_accessor :minimum_raise
 
   def initialize(game_state)
     @game_state = game_state
     @current_buy_in = 0
     @last_raise = 0
+    @minimum_raise = @game_state.big_blind
   end
 
   def players

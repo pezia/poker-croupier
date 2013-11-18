@@ -85,17 +85,30 @@ describe Croupier::GameSteps::BettingStep do
       @player2.total_bet.should == 0
     end
 
-    it "should interpret a bet smaller then the previous raise as a fold" do
+    it "should interpret a bet smaller then necessary to call as a fold" do
       should_bet @player1, 20, :raise
 
       @player2.should_receive(:bet_request).and_return(19)
       @spectator.should_receive(:bet).with(@player2, amount: 0, type: :fold)
 
       run
+
       @game_state.pot.should == 20
       @player2.stack.should == 1000
-
       @player2.total_bet.should == 0
+    end
+
+    it "should interpret a bet smaller than the previous raise as a call" do
+      should_bet @player1, 20, :raise
+
+      @player2.should_receive(:bet_request).and_return(39)
+      @spectator.should_receive(:bet).with(@player2, amount: 20, type: :call)
+
+      run
+
+      @game_state.pot.should == 40
+      @player2.stack.should == 980
+      @player2.total_bet.should == 20
     end
 
     it "should skip inactive players" do

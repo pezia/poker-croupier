@@ -50,7 +50,7 @@ class Croupier::GameSteps::Betting::Player
   end
 
   def call_bet?(bet)
-    @player.total_bet + bet == @betting_state.current_buy_in
+    @player.total_bet + bet >= @betting_state.current_buy_in
   end
 
   def handle_call
@@ -63,7 +63,8 @@ class Croupier::GameSteps::Betting::Player
   end
 
   def raise_bet?(bet)
-    @player.total_bet + bet > @betting_state.current_buy_in
+    raise_by = @player.total_bet + bet - @betting_state.current_buy_in
+    raise_by >= @betting_state.minimum_raise
   end
 
   def handle_raise(bet)
