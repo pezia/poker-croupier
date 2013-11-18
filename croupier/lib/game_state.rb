@@ -3,7 +3,6 @@ class Croupier::GameState
   attr_reader :spectators
   attr_reader :small_blind
   attr_reader :big_blind
-  attr_reader :pot
 
   attr_accessor :community_cards
 
@@ -12,10 +11,13 @@ class Croupier::GameState
     @spectators = []
     @small_blind = 10
     @big_blind = 20
-    @pot = 0
     @current_player = 0
     @dealers_position = 0
     @community_cards = []
+  end
+
+  def pot
+    players.inject(0) { |sum, player| sum + player.total_bet }
   end
 
   def register_player(player)
@@ -58,7 +60,6 @@ class Croupier::GameState
 
   def transfer(player, amount)
     player.stack -= amount
-    @pot += amount
   end
 
   def dealer
