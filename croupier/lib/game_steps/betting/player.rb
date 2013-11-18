@@ -56,7 +56,6 @@ class Croupier::GameSteps::Betting::Player
 
   def handle_raise(bet)
     handle_bet bet, :raise
-    @betting_state.last_raise = @index
   end
 
   def check_bet?(bet)
@@ -87,7 +86,7 @@ class Croupier::GameSteps::Betting::Player
   def handle_bet(bet, type)
     update_minimum_raise bet
     @betting_state.transfer_bet @player, bet, type
-    update_current_buy_in
+    update_current_buy_in_and_mark_last_raise
   end
 
   def update_minimum_raise(bet)
@@ -98,7 +97,10 @@ class Croupier::GameSteps::Betting::Player
     @player.total_bet + bet - @betting_state.current_buy_in
   end
 
-  def update_current_buy_in
-    @betting_state.current_buy_in = [@betting_state.current_buy_in, @player.total_bet].max
+  def update_current_buy_in_and_mark_last_raise
+    if @betting_state.current_buy_in < @player.total_bet
+      @betting_state.current_buy_in = @player.total_bet
+      @betting_state.last_raise = @index
+    end
   end
 end
