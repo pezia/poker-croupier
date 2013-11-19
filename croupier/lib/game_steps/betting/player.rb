@@ -1,7 +1,7 @@
 class Croupier::GameSteps::Betting::Player
 
   def initialize(betting_state, index)
-    @betting_state, @index = betting_state, index
+    @betting_state = betting_state
     @player = betting_state.players[index]
   end
 
@@ -84,7 +84,6 @@ class Croupier::GameSteps::Betting::Player
   def handle_bet(bet, type)
     update_minimum_raise bet
     @betting_state.transfer_bet @player, bet, type
-    update_current_buy_in_and_mark_last_raise
   end
 
   def update_minimum_raise(bet)
@@ -93,12 +92,5 @@ class Croupier::GameSteps::Betting::Player
 
   def raise_by(bet)
     @player.total_bet + bet - @betting_state.game_state.current_buy_in
-  end
-
-  def update_current_buy_in_and_mark_last_raise
-    if @betting_state.game_state.current_buy_in < @player.total_bet
-      @betting_state.game_state.current_buy_in = @player.total_bet
-      @betting_state.last_raise = @index
-    end
   end
 end

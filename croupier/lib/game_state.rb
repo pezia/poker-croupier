@@ -3,7 +3,6 @@ class Croupier::GameState
   attr_reader :spectators
   attr_reader :small_blind
   attr_reader :big_blind
-  attr_accessor :current_buy_in
 
   attr_accessor :community_cards
 
@@ -15,7 +14,10 @@ class Croupier::GameState
     @current_player = 0
     @dealers_position = 0
     @community_cards = []
-    @current_buy_in = 0
+  end
+
+  def current_buy_in
+    players.inject(0) { |max_buy_in, player| max_buy_in = [max_buy_in, player.total_bet].max }
   end
 
   def pot
@@ -84,8 +86,6 @@ class Croupier::GameState
     @players.each do |player|
       player.initialize_round
     end
-
-    @current_buy_in = 0
 
     move_deal_button_to_next_player
 
