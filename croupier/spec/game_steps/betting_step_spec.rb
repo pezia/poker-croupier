@@ -98,6 +98,15 @@ describe Croupier::GameSteps::BettingStep do
       @player2.total_bet.should == 0
     end
 
+    it "should interpret a bet smaller than the big blind as a check when no other bet has been place before" do
+      should_bet @player1, 0, :check
+
+      @player2.should_receive(:bet_request).and_return(19)
+      @spectator.should_receive(:bet).with(@player2, amount: 0, type: :check)
+
+      run
+    end
+
     it "should interpret a bet smaller than the previous raise as a call" do
       should_bet @player1, 20, :raise
 

@@ -12,13 +12,13 @@ class Croupier::GameSteps::Betting::Player
 
     bet = @player.bet_request
 
-    if allin_bet?(bet)
+    if allin_bet? bet
       handle_allin
-    elsif raise_bet?(bet)
+    elsif raise_bet? bet
       handle_raise bet
-    elsif call_bet?(bet)
+    elsif call_bet? bet
       handle_call
-    elsif check_bet?(bet)
+    elsif check_bet?
       handle_check
     else
       handle_fold
@@ -56,7 +56,7 @@ class Croupier::GameSteps::Betting::Player
     handle_bet bet, :raise
   end
 
-  def check_bet?(bet)
+  def check_bet?
     to_call == 0
   end
 
@@ -65,7 +65,7 @@ class Croupier::GameSteps::Betting::Player
   end
 
   def call_bet?(bet)
-    @player.total_bet + bet >= @betting_state.game_state.current_buy_in && !(raise_bet?(bet) || allin_bet?(bet) || check_bet?(bet))
+    @player.total_bet + bet >= @betting_state.game_state.current_buy_in && !(raise_bet?(bet) || allin_bet?(bet) || check_bet?)
   end
 
   def handle_call
