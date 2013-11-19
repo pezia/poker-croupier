@@ -3,6 +3,7 @@ class Croupier::Player
   attr_reader :hole_cards
 
   attr_accessor :total_bet
+  attr_reader :strategy
 
   def initialize(strategy)
     @strategy = strategy

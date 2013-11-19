@@ -11,6 +11,6 @@ module SpecHelper
   autoload :MakeGameState, 'spec_helper/make_game_state'
 end
 
-def fake_player
-  Croupier::Player.new SpecHelper::FakeStrategy.new
+def fake_player(name = 'FakePlayer')
+  Croupier::Player.new SpecHelper::FakeStrategy.new(name)
 end

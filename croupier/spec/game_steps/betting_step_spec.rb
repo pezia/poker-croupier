@@ -45,8 +45,8 @@ describe Croupier::GameSteps::BettingStep do
     end
 
     it "should transfer non zero bets to the pot" do
-      should_bet @player1, 20, :raise
-      should_bet @player2, 20, :call
+      should_bet @player2, 20, :raise
+      should_bet @player1, 20, :call
       run
       @game_state.pot.should == 40
       @player1.stack.should == 980
@@ -54,9 +54,9 @@ describe Croupier::GameSteps::BettingStep do
     end
 
     it "should ask the first player again if the second raises" do
-      should_bet @player1, 20, :raise
-      should_bet @player2, 40, :raise
-      should_bet @player1, 20, :call
+      should_bet @player2, 20, :raise
+      should_bet @player1, 40, :raise
+      should_bet @player2, 20, :call
       run
       @game_state.pot.should == 80
       @player1.stack.should == 960
@@ -64,38 +64,38 @@ describe Croupier::GameSteps::BettingStep do
     end
 
     it "should interpret a zero bet after a raise as a fold" do
-      should_bet @player1, 20, :raise
-      should_bet @player2, 0, :fold
+      should_bet @player2, 20, :raise
+      should_bet @player1, 0, :fold
       run
       @game_state.pot.should == 20
     end
 
     it "should mark a folded player inactive" do
-      should_bet @player1, 20, :raise
-      should_bet @player2, 0, :fold
+      should_bet @player2, 20, :raise
+      should_bet @player1, 0, :fold
       run
-      @player2.active?.should == false
+      @player1.active?.should == false
     end
 
     it "should keep track of the total_bet for each player" do
-      should_bet @player1, 20, :raise
-      should_bet @player2, 0, :fold
+      should_bet @player2, 20, :raise
+      should_bet @player1, 0, :fold
       run
-      @player1.total_bet.should == 20
-      @player2.total_bet.should == 0
+      @player2.total_bet.should == 20
+      @player1.total_bet.should == 0
     end
 
     it "should interpret a bet smaller then necessary to call as a fold" do
-      should_bet @player1, 20, :raise
+      should_bet @player2, 20, :raise
 
-      @player2.should_receive(:bet_request).and_return(19)
-      @spectator.should_receive(:bet).with(@player2, amount: 0, type: :fold)
+      @player1.should_receive(:bet_request).and_return(19)
+      @spectator.should_receive(:bet).with(@player1, amount: 0, type: :fold)
 
       run
 
       @game_state.pot.should == 20
-      @player2.stack.should == 1000
-      @player2.total_bet.should == 0
+      @player1.stack.should == 1000
+      @player1.total_bet.should == 0
     end
 
     it "should interpret a bet smaller than the big blind as a check when no other bet has been place before" do
@@ -108,53 +108,53 @@ describe Croupier::GameSteps::BettingStep do
     end
 
     it "should interpret a bet smaller than the previous raise as a call" do
-      should_bet @player1, 20, :raise
+      should_bet @player2, 20, :raise
 
-      @player2.should_receive(:bet_request).and_return(39)
-      @spectator.should_receive(:bet).with(@player2, amount: 20, type: :call)
+      @player1.should_receive(:bet_request).and_return(39)
+      @spectator.should_receive(:bet).with(@player1, amount: 20, type: :call)
 
       run
 
       @game_state.pot.should == 40
-      @player2.stack.should == 980
-      @player2.total_bet.should == 20
+      @player1.stack.should == 980
+      @player1.total_bet.should == 20
     end
 
     it "should increase the minimum raise to the current raise if it is larger then the current minimum raise" do
-      should_bet @player1, 60, :raise
+      should_bet @player2, 60, :raise
 
-      @player2.should_receive(:bet_request).and_return(119)
-      @spectator.should_receive(:bet).with(@player2, amount: 60, type: :call)
+      @player1.should_receive(:bet_request).and_return(119)
+      @spectator.should_receive(:bet).with(@player1, amount: 60, type: :call)
 
       run
 
       @game_state.pot.should == 120
-      @player2.stack.should == 940
-      @player2.total_bet.should == 60
+      @player1.stack.should == 940
+      @player1.total_bet.should == 60
     end
 
     it "should increase the minimum raise to the current raise by allin if it is larger then the current minimum raise" do
-      @player1.stack = 60
-      should_bet @player1, 60, :allin
+      @player2.stack = 60
+      should_bet @player2, 60, :allin
 
-      @player2.should_receive(:bet_request).and_return(119)
-      @spectator.should_receive(:bet).with(@player2, amount: 60, type: :call)
+      @player1.should_receive(:bet_request).and_return(119)
+      @spectator.should_receive(:bet).with(@player1, amount: 60, type: :call)
 
       run
 
       @game_state.pot.should == 120
-      @player2.stack.should == 940
-      @player2.total_bet.should == 60
+      @player1.stack.should == 940
+      @player1.total_bet.should == 60
     end
 
     it "should skip inactive players" do
       @player3 = Croupier::Player.new SpecHelper::FakeStrategy.new
       @game_state.register_player @player3
 
-      should_bet @player1, 20, :raise
-      should_bet @player2, 0, :fold
-      should_bet @player3, 40, :raise
-      should_bet @player1, 20, :call
+      should_bet @player2, 20, :raise
+      should_bet @player3, 0, :fold
+      should_bet @player1, 40, :raise
+      should_bet @player2, 20, :call
       run
     end
 
