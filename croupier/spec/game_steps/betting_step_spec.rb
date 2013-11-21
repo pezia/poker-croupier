@@ -10,8 +10,12 @@ describe Croupier::GameSteps::BettingStep do
   end
 
   def should_bet(player, amount, type)
-    player.should_receive(:bet_request).and_return(amount)
-    @spectator.should_receive(:bet).with(player, amount: amount, type: type)
+    should_try_bet player, amount, amount, type
+  end
+
+  def should_try_bet(player, requested_amount, actual_amount, type)
+    player.should_receive(:bet_request).and_return(requested_amount)
+    @spectator.should_receive(:bet).with(player, amount: actual_amount, type: type)
   end
 
   def run()
@@ -87,9 +91,7 @@ describe Croupier::GameSteps::BettingStep do
 
     it "should interpret a bet smaller then necessary to call as a fold" do
       should_bet @player2, 20, :raise
-
-      @player1.should_receive(:bet_request).and_return(19)
-      @spectator.should_receive(:bet).with(@player1, amount: 0, type: :fold)
+      should_try_bet @player1, 19, 0, :fold
 
       run
 
@@ -100,18 +102,14 @@ describe Croupier::GameSteps::BettingStep do
 
     it "should interpret a bet smaller than the big blind as a check when no other bet has been place before" do
       should_bet @player1, 0, :check
-
-      @player2.should_receive(:bet_request).and_return(19)
-      @spectator.should_receive(:bet).with(@player2, amount: 0, type: :check)
+      should_try_bet @player2, 19, 0, :check
 
       run
     end
 
     it "should interpret a bet smaller than the previous raise as a call" do
       should_bet @player2, 20, :raise
-
-      @player1.should_receive(:bet_request).and_return(39)
-      @spectator.should_receive(:bet).with(@player1, amount: 20, type: :call)
+      should_try_bet @player1, 39, 20, :call
 
       run
 
@@ -122,9 +120,7 @@ describe Croupier::GameSteps::BettingStep do
 
     it "should increase the minimum raise to the current raise if it is larger then the current minimum raise" do
       should_bet @player2, 60, :raise
-
-      @player1.should_receive(:bet_request).and_return(119)
-      @spectator.should_receive(:bet).with(@player1, amount: 60, type: :call)
+      should_try_bet @player1, 119, 60, :call
 
       run
 
@@ -136,9 +132,7 @@ describe Croupier::GameSteps::BettingStep do
     it "should increase the minimum raise to the current raise by allin if it is larger then the current minimum raise" do
       @player2.stack = 60
       should_bet @player2, 60, :allin
-
-      @player1.should_receive(:bet_request).and_return(119)
-      @spectator.should_receive(:bet).with(@player1, amount: 60, type: :call)
+      should_try_bet @player1, 119, 60, :call
 
       run
 
@@ -177,8 +171,7 @@ describe Croupier::GameSteps::BettingStep do
       end
 
       it "should treat larger bet as an all in" do
-        @player2.should_receive(:bet_request).and_return(40)
-        @spectator.should_receive(:bet).with(@player2, amount: 20, type: :allin)
+        should_try_bet @player2, 40, 20, :allin
 
         run
 
