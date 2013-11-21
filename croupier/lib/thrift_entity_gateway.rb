@@ -13,7 +13,6 @@ module Croupier::ThriftEntityGateway
     end
 
     def bet_limits(hash)
-      p hash
       API::BetLimits.new do |api_bet_limits|
         api_bet_limits.to_call = hash[:to_call]
         api_bet_limits.minimum_raise = hash[:minimum_raise]
