@@ -27,13 +27,13 @@ module API
         raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'name failed: unknown result')
       end
 
-      def bet_request()
-        send_bet_request()
+      def bet_request(pot, limits)
+        send_bet_request(pot, limits)
         return recv_bet_request()
       end
 
-      def send_bet_request()
-        send_message('bet_request', Bet_request_args)
+      def send_bet_request(pot, limits)
+        send_message('bet_request', Bet_request_args, :pot => pot, :limits => limits)
       end
 
       def recv_bet_request()
@@ -127,7 +127,7 @@ module API
       def process_bet_request(seqid, iprot, oprot)
         args = read_args(iprot, Bet_request_args)
         result = Bet_request_result.new()
-        result.success = @handler.bet_request()
+        result.success = @handler.bet_request(args.pot, args.limits)
         write_result(result, oprot, 'bet_request', seqid)
       end
 
@@ -203,9 +203,12 @@ module API
 
     class Bet_request_args
       include ::Thrift::Struct, ::Thrift::Struct_Union
+      POT = 1
+      LIMITS = 2
 
       FIELDS = {
-
+        POT => {:type => ::Thrift::Types::I64, :name => 'pot'},
+        LIMITS => {:type => ::Thrift::Types::STRUCT, :name => 'limits', :class => ::API::BetLimits}
       }
 
       def struct_fields; FIELDS; end

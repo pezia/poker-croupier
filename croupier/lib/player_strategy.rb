@@ -10,8 +10,8 @@ class Croupier::PlayerStrategy < Croupier::ThriftObserver
     strategy.hole_card(gateway[card])
   end
 
-  def bet_request
-    strategy.bet_request
+  def bet_request(pot, hash)
+    strategy.bet_request pot, gateway.bet_limits(hash)
   end
 
 end

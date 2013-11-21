@@ -18,7 +18,7 @@ use Thrift\Exception\TApplicationException;
 
 interface PlayerStrategyIf {
   public function name();
-  public function bet_request();
+  public function bet_request($pot, \BetLimits $limits);
   public function competitor_status(\Competitor $competitor);
   public function bet(\Competitor $competitor, \Bet $bet);
   public function hole_card(\Card $card);
@@ -87,15 +87,17 @@ class PlayerStrategyClient implements \PlayerStrategyIf {
     throw new \Exception("name failed: unknown result");
   }
 
-  public function bet_request()
+  public function bet_request($pot, \BetLimits $limits)
   {
-    $this->send_bet_request();
+    $this->send_bet_request($pot, $limits);
     return $this->recv_bet_request();
   }
 
-  public function send_bet_request()
+  public function send_bet_request($pot, \BetLimits $limits)
   {
     $args = new \PlayerStrategy_bet_request_args();
+    $args->pot = $pot;
+    $args->limits = $limits;
     $bin_accel = ($this->output_ instanceof TBinaryProtocolAccelerated) && function_exists('thrift_protocol_write_binary');
     if ($bin_accel)
     {
@@ -507,11 +509,30 @@ class PlayerStrategy_name_result {
 class PlayerStrategy_bet_request_args {
   static $_TSPEC;
 
+  public $pot = null;
+  public $limits = null;
 
-  public function __construct() {
+  public function __construct($vals=null) {
     if (!isset(self::$_TSPEC)) {
       self::$_TSPEC = array(
+        1 => array(
+          'var' => 'pot',
+          'type' => TType::I64,
+          ),
+        2 => array(
+          'var' => 'limits',
+          'type' => TType::STRUCT,
+          'class' => '\BetLimits',
+          ),
         );
+    }
+    if (is_array($vals)) {
+      if (isset($vals['pot'])) {
+        $this->pot = $vals['pot'];
+      }
+      if (isset($vals['limits'])) {
+        $this->limits = $vals['limits'];
+      }
     }
   }
 
@@ -534,6 +555,21 @@ class PlayerStrategy_bet_request_args {
       }
       switch ($fid)
       {
+        case 1:
+          if ($ftype == TType::I64) {
+            $xfer += $input->readI64($this->pot);
+          } else {
+            $xfer += $input->skip($ftype);
+          }
+          break;
+        case 2:
+          if ($ftype == TType::STRUCT) {
+            $this->limits = new \BetLimits();
+            $xfer += $this->limits->read($input);
+          } else {
+            $xfer += $input->skip($ftype);
+          }
+          break;
         default:
           $xfer += $input->skip($ftype);
           break;
@@ -547,6 +583,19 @@ class PlayerStrategy_bet_request_args {
   public function write($output) {
     $xfer = 0;
     $xfer += $output->writeStructBegin('PlayerStrategy_bet_request_args');
+    if ($this->pot !== null) {
+      $xfer += $output->writeFieldBegin('pot', TType::I64, 1);
+      $xfer += $output->writeI64($this->pot);
+      $xfer += $output->writeFieldEnd();
+    }
+    if ($this->limits !== null) {
+      if (!is_object($this->limits)) {
+        throw new TProtocolException('Bad type in structure.', TProtocolException::INVALID_DATA);
+      }
+      $xfer += $output->writeFieldBegin('limits', TType::STRUCT, 2);
+      $xfer += $this->limits->write($output);
+      $xfer += $output->writeFieldEnd();
+    }
     $xfer += $output->writeFieldStop();
     $xfer += $output->writeStructEnd();
     return $xfer;

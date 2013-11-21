@@ -89,4 +89,22 @@ module API
     ::Thrift::Struct.generate_accessors self
   end
 
+  class BetLimits
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    TO_CALL = 1
+    MINIMUM_RAISE = 2
+
+    FIELDS = {
+      TO_CALL => {:type => ::Thrift::Types::I64, :name => 'to_call'},
+      MINIMUM_RAISE => {:type => ::Thrift::Types::I64, :name => 'minimum_raise'}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
 end

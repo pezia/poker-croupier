@@ -16,7 +16,7 @@ class PlayerStrategy::Handler
   def bet(competitor, bet)
   end
 
-  def bet_request
+  def bet_request(pot, limits)
     10 * rand(0..2)
   end
 

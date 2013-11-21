@@ -10,7 +10,7 @@ class Croupier::GameSteps::Betting::Player
       return
     end
 
-    bet = @player.bet_request
+    bet = @player.bet_request 0, to_call: 0, minimum_raise: 0
 
     if allin_bet? bet
       handle_allin

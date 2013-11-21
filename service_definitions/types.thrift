@@ -36,3 +36,9 @@ struct Bet
     1:i64 amount
     2:BetType type
 }
+
+struct BetLimits
+{
+    1:i64 to_call
+    2:i64 minimum_raise
+}

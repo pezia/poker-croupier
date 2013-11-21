@@ -343,4 +343,96 @@ class Bet {
 
 }
 
+class BetLimits {
+  static $_TSPEC;
+
+  public $to_call = null;
+  public $minimum_raise = null;
+
+  public function __construct($vals=null) {
+    if (!isset(self::$_TSPEC)) {
+      self::$_TSPEC = array(
+        1 => array(
+          'var' => 'to_call',
+          'type' => TType::I64,
+          ),
+        2 => array(
+          'var' => 'minimum_raise',
+          'type' => TType::I64,
+          ),
+        );
+    }
+    if (is_array($vals)) {
+      if (isset($vals['to_call'])) {
+        $this->to_call = $vals['to_call'];
+      }
+      if (isset($vals['minimum_raise'])) {
+        $this->minimum_raise = $vals['minimum_raise'];
+      }
+    }
+  }
+
+  public function getName() {
+    return 'BetLimits';
+  }
+
+  public function read($input)
+  {
+    $xfer = 0;
+    $fname = null;
+    $ftype = 0;
+    $fid = 0;
+    $xfer += $input->readStructBegin($fname);
+    while (true)
+    {
+      $xfer += $input->readFieldBegin($fname, $ftype, $fid);
+      if ($ftype == TType::STOP) {
+        break;
+      }
+      switch ($fid)
+      {
+        case 1:
+          if ($ftype == TType::I64) {
+            $xfer += $input->readI64($this->to_call);
+          } else {
+            $xfer += $input->skip($ftype);
+          }
+          break;
+        case 2:
+          if ($ftype == TType::I64) {
+            $xfer += $input->readI64($this->minimum_raise);
+          } else {
+            $xfer += $input->skip($ftype);
+          }
+          break;
+        default:
+          $xfer += $input->skip($ftype);
+          break;
+      }
+      $xfer += $input->readFieldEnd();
+    }
+    $xfer += $input->readStructEnd();
+    return $xfer;
+  }
+
+  public function write($output) {
+    $xfer = 0;
+    $xfer += $output->writeStructBegin('BetLimits');
+    if ($this->to_call !== null) {
+      $xfer += $output->writeFieldBegin('to_call', TType::I64, 1);
+      $xfer += $output->writeI64($this->to_call);
+      $xfer += $output->writeFieldEnd();
+    }
+    if ($this->minimum_raise !== null) {
+      $xfer += $output->writeFieldBegin('minimum_raise', TType::I64, 2);
+      $xfer += $output->writeI64($this->minimum_raise);
+      $xfer += $output->writeFieldEnd();
+    }
+    $xfer += $output->writeFieldStop();
+    $xfer += $output->writeStructEnd();
+    return $xfer;
+  }
+
+}
+
 

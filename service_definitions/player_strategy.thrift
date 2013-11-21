@@ -5,7 +5,7 @@ service PlayerStrategy
 {
     string name()
 
-    i64 bet_request()
+    i64 bet_request(1:i64 pot, 2:types.BetLimits limits)
 
     void competitor_status(1:types.Competitor competitor)
     void bet(1:types.Competitor competitor, 2:types.Bet bet)
