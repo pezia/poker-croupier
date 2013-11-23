@@ -83,6 +83,8 @@ class Croupier::GameState
   end
 
   def next_round!
+    @community_cards = []
+
     @players.each do |player|
       player.initialize_round
     end

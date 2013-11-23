@@ -124,6 +124,14 @@ describe Croupier::GameState do
 
       game_state.next_round!
     end
+
+    it "should clear the community cards" do
+      game_state.community_cards = ["it's something"]
+
+      game_state.next_round!
+
+      game_state.community_cards.should == []
+    end
   end
 
   describe "Calculate index of special players" do
