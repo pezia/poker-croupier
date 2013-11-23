@@ -14,6 +14,10 @@ module Ranking
         straight_value
       end
 
+      def name
+        'straight'
+      end
+
       private
 
       def straight_value

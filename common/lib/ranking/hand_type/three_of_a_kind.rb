@@ -19,6 +19,10 @@ module Ranking
         highest_same_value 3
       end
 
+      def name
+        'three of a kind'
+      end
+
     end
   end
 end

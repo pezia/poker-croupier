@@ -53,6 +53,10 @@ module Ranking
       return false
     end
 
+    def name
+      hand_type.name
+    end
+
 
     private
 

@@ -19,6 +19,9 @@ module Ranking
         3
       end
 
+      def name
+        'pair'
+      end
     end
   end
 end

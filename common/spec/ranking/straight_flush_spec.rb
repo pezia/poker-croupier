@@ -21,5 +21,7 @@ describe "Straight Flush" do
     should_defeat hand('3 of Spades', '4 of Spades', '5 of Spades', '6 of Spades', '7 of Spades', 'King of Spades')
   end
 
-
+  it 'should be called a straight flush' do
+    hand('10 of Spades', 'Jack of Spades', 'Queen of Spades', 'King of Spades', 'Ace of Spades').name.should == 'straight flush'
+  end
 end

@@ -20,4 +20,8 @@ describe 'Three of a kind' do
     hand('Queen of Diamonds', 'Jack of Spades', 'Jack of Hearts', 'Jack of Clubs','Ace of Hearts','4 of Diamonds').
         should_tie_with hand('Queen of Diamonds', 'Jack of Spades', 'Jack of Hearts', 'Jack of Clubs','Ace of Hearts','2 of Hearts')
   end
+
+  it 'should be called three of a kind' do
+    hand('Queen of Diamonds', 'Jack of Spades', 'Jack of Hearts', 'Jack of Clubs','Ace of Hearts').name.should == 'three of a kind'
+  end
 end

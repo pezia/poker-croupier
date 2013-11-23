@@ -30,4 +30,8 @@ describe "Two Pair" do
     hand('Jack of Spades', 'Jack of Hearts', '8 of Diamonds', '8 of Clubs','7 of Diamonds','7 of Clubs').
         should_defeat hand('Jack of Spades', 'Jack of Hearts', '8 of Diamonds', '8 of Clubs','6 of Hearts', '5 of Hearts')
   end
+
+  it 'should be called two pairs' do
+    hand('Jack of Spades', 'Jack of Hearts', '8 of Diamonds', '8 of Clubs','Ace of Hearts').name.should == 'two pairs'
+  end
 end

@@ -20,6 +20,10 @@ module Ranking
         0
       end
 
+      def name
+        'straight flush'
+      end
+
       private
 
       def straight_value_for_suit(suit)

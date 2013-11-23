@@ -18,6 +18,10 @@ module Ranking
       def value
         highest_same_value 3
       end
+
+      def name
+        'full house'
+      end
     end
   end
 end

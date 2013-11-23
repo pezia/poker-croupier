@@ -38,6 +38,10 @@ module Ranking
       def rank
         5
       end
+
+      def name
+        'flush'
+      end
     end
   end
 end

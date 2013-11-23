@@ -24,5 +24,8 @@ describe "Full house" do
         should_defeat hand('10 of Diamonds', '10 of Hearts', '10 of Spades', '5 of Spades', '5 of Clubs')
   end
 
+  it "should be called a full house" do
+    hand('10 of Diamonds', '10 of Hearts', '10 of Spades', 'Jack of Spades', 'Jack of Clubs').name.should == 'full house'
+  end
 
 end

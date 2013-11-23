@@ -9,6 +9,10 @@ module Ranking
       def rank
         0
       end
+
+      def name
+        'high card'
+      end
     end
   end
 end

@@ -42,4 +42,8 @@ describe "Flush" do
         should_tie_with hand('6 of Clubs', '7 of Clubs', '8 of Clubs', '9 of Clubs', 'King of Clubs','3 of Diamonds')
   end
 
+  it "should be called a flush" do
+    hand('2 of Hearts', '4 of Hearts', '5 of Hearts', '9 of Hearts', 'Jack of Hearts').name.should == 'flush'
+  end
+
 end

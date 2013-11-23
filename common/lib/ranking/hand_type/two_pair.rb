@@ -27,6 +27,10 @@ module Ranking
         [[super,highest_same_value_except(2,[value,second_value])].flatten.max]
       end
 
+      def name
+        'two pairs'
+      end
+
       private
 
       def has_two_pair?

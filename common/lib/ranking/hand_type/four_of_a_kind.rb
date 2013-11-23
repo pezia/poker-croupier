@@ -24,6 +24,9 @@ module Ranking
         [[super,highest_same_value_except(2,value)].flatten.max]
       end
 
+      def name
+        'four of a kind'
+      end
     end
   end
 end

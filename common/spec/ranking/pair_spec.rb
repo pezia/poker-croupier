@@ -32,4 +32,7 @@ describe "pair" do
     should_defeat hand('3 of Spades', '6 of Hearts', '8 of Diamonds', 'Jack of Hearts', 'Jack of Spades')
   end
 
+  it 'should be called a pair' do
+    hand('4 of Spades', '6 of Hearts', '8 of Diamonds', 'Jack of Hearts', 'Jack of Spades').name.should == 'pair'
+  end
 end

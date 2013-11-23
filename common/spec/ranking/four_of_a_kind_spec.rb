@@ -22,8 +22,12 @@ describe "Four of a kind" do
   end
 
   it "should rank four of a kind kicker higher even if the kicker is a pair" do
-    hand('Jack of Diamonds', 'Jack of Hearts', 'Jack of Spades', 'Jack of Clubs', 'Queen of Hearts','Queen of Spades').
+    hand('Jack of Diamonds', 'Jack of Hearts', 'Jack of Spades', 'Jack of Clubs', 'Queen of Hearts', 'Queen of Spades').
         should_defeat hand('Jack of Diamonds', 'Jack of Hearts', 'Jack of Spades', 'Jack of Clubs', '5 of Hearts', '4 of Hearts')
 
+  end
+
+  it 'should be called four of a kind' do
+    hand('10 of Diamonds', '10 of Hearts', '10 of Spades', '10 of Clubs', 'Jack of Spades').name.should == 'four of a kind'
   end
 end

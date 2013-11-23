@@ -37,4 +37,7 @@ describe "Straight" do
         should_defeat hand('King of Spades', 'King of Hearts', 'King of Clubs')
   end
 
+  it 'should be called a straight' do
+    hand('8 of Clubs', '9 of Spades', '10 of Spades', 'Jack of Hearts', 'Queen of Diamonds').name.should == 'straight'
+  end
 end
