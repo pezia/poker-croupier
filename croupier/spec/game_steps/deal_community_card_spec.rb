@@ -20,6 +20,13 @@ describe Croupier::GameSteps::DealCommunityCard do
     )
   end
 
+  it "should skip dealing if there is only one active player" do
+    @game_state.players[0].fold
+    @game_state.players[1].should_not_receive(:community_card)
+
+    run
+  end
+
   it "should deal a community card and notify the players" do
     @game_state.players.each do |player|
       player.should_receive(:community_card).with(@cards.first)
