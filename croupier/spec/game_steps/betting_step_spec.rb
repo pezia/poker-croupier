@@ -22,24 +22,27 @@ describe Croupier::GameSteps::BettingStep do
     Croupier::GameSteps::BettingStep.new(@game_state).run
   end
 
-  it "should request a bet from the player in action, and the player should remain active" do
-    should_bet(@player1, 0, :check)
-    run
-    @player1.active?.should == true
-  end
-
-  it "should transfer a non zero bet to the pot" do
-    should_bet @player1, 20, :raise
-    run
-    @game_state.pot.should == 20
-    @player1.stack.should == 980
-  end
-
   context "at least two players" do
 
     before :each do
       @player2 = Croupier::Player.new SpecHelper::FakeStrategy.new
       @game_state.register_player @player2
+    end
+
+
+    it "should request a bet from the player in action, and the player should remain active" do
+      should_bet(@player1, 0, :check)
+      should_bet(@player2, 0, :check)
+      run
+      @player1.active?.should == true
+    end
+
+    it "should transfer a non zero bet to the pot" do
+      should_bet @player2, 20, :raise
+      should_bet @player1, 0, :fold
+      run
+      @game_state.pot.should == 20
+      @player2.stack.should == 980
     end
 
     it "should ask the second player after the first player" do
