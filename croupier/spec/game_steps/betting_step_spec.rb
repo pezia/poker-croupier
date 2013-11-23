@@ -45,6 +45,16 @@ describe Croupier::GameSteps::BettingStep do
       @player2.stack.should == 980
     end
 
+    it "should skip betting if one of the two players has already folded" do
+      @player1.fold
+      run
+    end
+
+    it "should skip betting if one of the two players is already all in" do
+      @player1.stack = 0
+      run
+    end
+
     it "should ask the second player after the first player" do
       should_bet @player1, 0, :check
       should_bet @player2, 0, :check

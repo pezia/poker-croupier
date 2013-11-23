@@ -1,9 +1,10 @@
 class Croupier::GameSteps::BettingStep < Croupier::GameSteps::Base
   def run
+    return unless should_do_betting
 
     @betting_state = build_betting_state
 
-    @betting_players = 0.upto(@game_state.players.length - 1).map do |player|
+    @betting_players = 0.upto(game_state.players.length - 1).map do |player|
       Croupier::GameSteps::Betting::Player.new @betting_state, player
     end
 
@@ -15,6 +16,10 @@ class Croupier::GameSteps::BettingStep < Croupier::GameSteps::Base
   end
 
   private
+
+  def should_do_betting
+    (game_state.players.count { |player| player.active? and not player.allin? }) > 1
+  end
 
   def build_betting_state
     Croupier::GameSteps::Betting::State.new game_state
