@@ -8,8 +8,8 @@ class Croupier::GameSteps::BettingStep < Croupier::GameSteps::Base
       Croupier::GameSteps::Betting::Player.new @betting_state, player
     end
 
-    in_action = 1
-    until betting_is_over? && in_action > @betting_players.length
+    in_action = game_state.first_player_index
+    until betting_is_over? && in_action >= @betting_players.length + game_state.first_player_index
       @betting_players[in_action % (@betting_players.length)].take_turn
       in_action = in_action + 1
     end

@@ -215,6 +215,16 @@ describe Croupier::GameSteps::BettingStep do
       run
     end
 
+    it "should start with the first_player even after the button has moved" do
+      @game_state.next_round!
+      first_player, player_on_button = @player_on_button, @first_player
+
+      first_player.should_receive(:bet_request).ordered.and_return(0)
+      player_on_button.should_receive(:bet_request).ordered.and_return(0)
+
+      run
+    end
+
   end
 
 end
