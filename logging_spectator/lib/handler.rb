@@ -21,6 +21,9 @@ class LoggingSpectator::Handler
     LoggingSpectator.logger.info "The pot now contains #{bet.new_pot_size} chips"
   end
 
+  def showdown(comptetior, cards, hand)
+  end
+
   def winner(competitor, amount)
     LoggingSpectator.logger.info "#{competitor.name} won #{amount}"
   end

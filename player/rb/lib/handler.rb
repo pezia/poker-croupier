@@ -27,6 +27,9 @@ class PlayerStrategy::Handler
     end
   end
 
+  def showdown(comptetior, cards, hand)
+  end
+
   def winner(competitor, amount)
   end
 end

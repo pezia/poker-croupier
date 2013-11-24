@@ -98,6 +98,20 @@ module API
         return
       end
 
+      def showdown(competitor, cards, hand)
+        send_showdown(competitor, cards, hand)
+        recv_showdown()
+      end
+
+      def send_showdown(competitor, cards, hand)
+        send_message('showdown', Showdown_args, :competitor => competitor, :cards => cards, :hand => hand)
+      end
+
+      def recv_showdown()
+        result = receive_message(Showdown_result)
+        return
+      end
+
       def winner(competitor, amount)
         send_winner(competitor, amount)
         recv_winner()
@@ -157,6 +171,13 @@ module API
         result = Community_card_result.new()
         @handler.community_card(args.card)
         write_result(result, oprot, 'community_card', seqid)
+      end
+
+      def process_showdown(seqid, iprot, oprot)
+        args = read_args(iprot, Showdown_args)
+        result = Showdown_result.new()
+        @handler.showdown(args.competitor, args.cards, args.hand)
+        write_result(result, oprot, 'showdown', seqid)
       end
 
       def process_winner(seqid, iprot, oprot)
@@ -347,6 +368,41 @@ module API
     end
 
     class Community_card_result
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+
+      FIELDS = {
+
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
+    end
+
+    class Showdown_args
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+      COMPETITOR = 1
+      CARDS = 2
+      HAND = 3
+
+      FIELDS = {
+        COMPETITOR => {:type => ::Thrift::Types::STRUCT, :name => 'competitor', :class => ::API::Competitor},
+        CARDS => {:type => ::Thrift::Types::LIST, :name => 'cards', :element => {:type => ::Thrift::Types::STRUCT, :class => ::API::Card}},
+        HAND => {:type => ::Thrift::Types::STRUCT, :name => 'hand', :class => ::API::HandDescriptor}
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
+    end
+
+    class Showdown_result
       include ::Thrift::Struct, ::Thrift::Struct_Union
 
       FIELDS = {
