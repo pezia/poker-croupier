@@ -43,3 +43,9 @@ struct BetLimits
     1:i64 to_call
     2:i64 minimum_raise
 }
+
+struct HandDescriptor
+{
+    1:string name
+    2:list<i16> ranks
+}

@@ -134,15 +134,15 @@ class Ranking_rank_hand_args {
         case 1:
           if ($ftype == TType::LST) {
             $this->cards = array();
-            $_size7 = 0;
-            $_etype10 = 0;
-            $xfer += $input->readListBegin($_etype10, $_size7);
-            for ($_i11 = 0; $_i11 < $_size7; ++$_i11)
+            $_size0 = 0;
+            $_etype3 = 0;
+            $xfer += $input->readListBegin($_etype3, $_size0);
+            for ($_i4 = 0; $_i4 < $_size0; ++$_i4)
             {
-              $elem12 = null;
-              $elem12 = new \Card();
-              $xfer += $elem12->read($input);
-              $this->cards []= $elem12;
+              $elem5 = null;
+              $elem5 = new \Card();
+              $xfer += $elem5->read($input);
+              $this->cards []= $elem5;
             }
             $xfer += $input->readListEnd();
           } else {
@@ -170,9 +170,9 @@ class Ranking_rank_hand_args {
       {
         $output->writeListBegin(TType::STRUCT, count($this->cards));
         {
-          foreach ($this->cards as $iter13)
+          foreach ($this->cards as $iter6)
           {
-            $xfer += $iter13->write($output);
+            $xfer += $iter6->write($output);
           }
         }
         $output->writeListEnd();

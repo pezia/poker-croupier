@@ -9,22 +9,4 @@ require 'types_types'
 
 
 module API
-  class HandDescriptor
-    include ::Thrift::Struct, ::Thrift::Struct_Union
-    NAME = 1
-    RANKS = 2
-
-    FIELDS = {
-      NAME => {:type => ::Thrift::Types::STRING, :name => 'name'},
-      RANKS => {:type => ::Thrift::Types::LIST, :name => 'ranks', :element => {:type => ::Thrift::Types::I16}}
-    }
-
-    def struct_fields; FIELDS; end
-
-    def validate
-    end
-
-    ::Thrift::Struct.generate_accessors self
-  end
-
 end
