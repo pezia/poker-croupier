@@ -26,7 +26,7 @@ class Croupier::GameSteps::Showdown < Croupier::GameSteps::Base
     return unless player.active?
     return if player.total_bet <= 0
 
-    hand = Ranking::Hand.new *game_state.community_cards, *player.hole_cards
+    hand = Ranking::Hand.new *player.hole_cards, *game_state.community_cards
     return if @best_hand.defeats? hand
 
     @winners = [] if hand.defeats? @best_hand
