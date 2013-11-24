@@ -74,10 +74,6 @@ class Croupier::GameState
     @players[nthPlayer 1]
   end
 
-  def first_player_index
-    nthPlayer 1
-  end
-
   def second_player
     @players[nthPlayer 2]
   end
