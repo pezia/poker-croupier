@@ -33,7 +33,7 @@ class Croupier::ThriftObserver
   end
 
   def showdown(competitor, hand)
-    @strategy.showdown @gateway[competitor], [@gateway[hand.cards[0]], @gateway[hand.cards[1]]], @gateway[hand]
+    @strategy.showdown @gateway[competitor], competitor.hole_cards.map { |card| @gateway[card] }, @gateway[hand]
   end
 
   def winner(competitor, amount)

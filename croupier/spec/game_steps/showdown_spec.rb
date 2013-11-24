@@ -68,6 +68,29 @@ describe Croupier::GameSteps::Showdown do
       end
     end
 
+    context "hands are revealed during showdown" do
+      before :each do
+        game_state.players.each { |player| player.total_bet = 1 }
+      end
+
+      it "should show the cards of the first player" do
+        set_hole_cards_for(0, 'Jack of Diamonds', 'Jack of Hearts')
+        set_hole_cards_for(1, '4 of Clubs', 'Ace of Hearts')
+
+        expect_hand_to_be_announced_for game_state.players.first
+
+        run
+      end
+
+      def expect_hand_to_be_announced_for(player)
+        hand = Ranking::Hand.new *player.hole_cards, *game_state.community_cards
+
+        (game_state.players + game_state.spectators).each do |observer|
+          observer.should_receive(:showdown).with(player, hand)
+        end
+      end
+    end
+
     context "the pot is transferred to the winner" do
 
       it "should transfer the entire pot when the winner is unique" do

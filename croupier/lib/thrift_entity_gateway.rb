@@ -29,7 +29,7 @@ module Croupier::ThriftEntityGateway
       end
     end
     
-    def get_Hand(source)
+    def get_Ranking__Hand(source)
       API::HandDescriptor.new.tap do |descriptor|
         descriptor.name = source.name
         descriptor.ranks = [source.rank, source.value, source.second_value, *source.kickers]

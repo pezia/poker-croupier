@@ -29,6 +29,10 @@ class Croupier::GameSteps::Showdown < Croupier::GameSteps::Base
     hand = Ranking::Hand.new *player.hole_cards, *game_state.community_cards
     return if @best_hand.defeats? hand
 
+    game_state.each_observer do |observer|
+      observer.showdown player, hand
+    end
+
     @winners = [] if hand.defeats? @best_hand
 
     @winners << player

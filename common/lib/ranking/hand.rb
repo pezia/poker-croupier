@@ -57,6 +57,10 @@ module Ranking
       hand_type.name
     end
 
+    def ==(other)
+      cards == other.cards
+    end
+
 
     private
 
