@@ -27,6 +27,6 @@ class PlayerStrategy::Handler
     end
   end
 
-  def winner(competitor)
+  def winner(competitor, amount)
   end
 end

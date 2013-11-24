@@ -32,7 +32,7 @@ class Croupier::ThriftObserver
     @strategy.community_card @gateway[card]
   end
 
-  def winner(competitor)
-    @strategy.winner @gateway[competitor]
+  def winner(competitor, amount)
+    @strategy.winner @gateway[competitor], amount
   end
 end

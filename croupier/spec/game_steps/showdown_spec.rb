@@ -26,7 +26,7 @@ describe Croupier::GameSteps::Showdown do
         set_hole_cards_for(0, 'Jack of Diamonds', 'Jack of Hearts')
         set_hole_cards_for(1, '4 of Clubs', 'Ace of Hearts')
 
-        expect_winner_to_be_announced(game_state.players.first)
+        expect_winner_to_be_announced(game_state.players.first, 2)
 
         run
       end
@@ -35,7 +35,7 @@ describe Croupier::GameSteps::Showdown do
         set_hole_cards_for(0, '4 of Clubs', 'Ace of Hearts')
         set_hole_cards_for(1, 'Jack of Diamonds', 'Jack of Hearts')
 
-        expect_winner_to_be_announced(game_state.players.last)
+        expect_winner_to_be_announced(game_state.players.last, 2)
 
         run
       end
@@ -46,7 +46,7 @@ describe Croupier::GameSteps::Showdown do
 
         game_state.players.first.fold
 
-        expect_winner_to_be_announced(game_state.players.last)
+        expect_winner_to_be_announced(game_state.players.last, 2)
 
         run
       end
@@ -55,15 +55,15 @@ describe Croupier::GameSteps::Showdown do
         set_hole_cards_for(0, '4 of Clubs', 'Jack of Hearts')
         set_hole_cards_for(1, '4 of Hearts', 'Jack of Diamonds')
 
-        expect_winner_to_be_announced(game_state.players.first)
-        expect_winner_to_be_announced(game_state.players.last)
+        expect_winner_to_be_announced(game_state.players.first, 1)
+        expect_winner_to_be_announced(game_state.players.last, 1)
 
         run
       end
 
-      def expect_winner_to_be_announced(winner)
+      def expect_winner_to_be_announced(winner, amount = 0)
         (game_state.players + game_state.spectators).each do |observer|
-          observer.should_receive(:winner).with(winner)
+          observer.should_receive(:winner).with(winner, amount)
         end
       end
     end

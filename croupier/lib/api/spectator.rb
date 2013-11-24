@@ -83,13 +83,13 @@ module API
         return
       end
 
-      def winner(competitor)
-        send_winner(competitor)
+      def winner(competitor, amount)
+        send_winner(competitor, amount)
         recv_winner()
       end
 
-      def send_winner(competitor)
-        send_message('winner', Winner_args, :competitor => competitor)
+      def send_winner(competitor, amount)
+        send_message('winner', Winner_args, :competitor => competitor, :amount => amount)
       end
 
       def recv_winner()
@@ -140,7 +140,7 @@ module API
       def process_winner(seqid, iprot, oprot)
         args = read_args(iprot, Winner_args)
         result = Winner_result.new()
-        @handler.winner(args.competitor)
+        @handler.winner(args.competitor, args.amount)
         write_result(result, oprot, 'winner', seqid)
       end
 
@@ -310,9 +310,11 @@ module API
     class Winner_args
       include ::Thrift::Struct, ::Thrift::Struct_Union
       COMPETITOR = 1
+      AMOUNT = 2
 
       FIELDS = {
-        COMPETITOR => {:type => ::Thrift::Types::STRUCT, :name => 'competitor', :class => ::API::Competitor}
+        COMPETITOR => {:type => ::Thrift::Types::STRUCT, :name => 'competitor', :class => ::API::Competitor},
+        AMOUNT => {:type => ::Thrift::Types::I64, :name => 'amount'}
       }
 
       def struct_fields; FIELDS; end

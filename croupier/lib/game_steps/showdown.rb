@@ -39,14 +39,15 @@ class Croupier::GameSteps::Showdown < Croupier::GameSteps::Base
     side_pot = winners_side_pot
     remainder = side_pot % @winners.length
     @winners.each_with_index do |winner, index|
-      game_state.transfer winner, -(side_pot / @winners.length).floor - (index < remainder ? 1 : 0)
-      announce winner
+      amount = (side_pot / @winners.length).floor - (index < remainder ? 1 : 0)
+      game_state.transfer winner, -amount
+      announce winner, amount
     end
   end
 
-  def announce(winner)
+  def announce(winner, amount)
     game_state.each_observer do |observer|
-      observer.winner winner
+      observer.winner winner, amount
     end
   end
 

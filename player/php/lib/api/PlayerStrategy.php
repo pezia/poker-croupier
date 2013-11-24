@@ -23,7 +23,7 @@ interface PlayerStrategyIf {
   public function bet(\Competitor $competitor, \Bet $bet);
   public function hole_card(\Card $card);
   public function community_card(\Card $card);
-  public function winner(\Competitor $competitor);
+  public function winner(\Competitor $competitor, $amount);
 }
 
 class PlayerStrategyClient implements \PlayerStrategyIf {
@@ -332,16 +332,17 @@ class PlayerStrategyClient implements \PlayerStrategyIf {
     return;
   }
 
-  public function winner(\Competitor $competitor)
+  public function winner(\Competitor $competitor, $amount)
   {
-    $this->send_winner($competitor);
+    $this->send_winner($competitor, $amount);
     $this->recv_winner();
   }
 
-  public function send_winner(\Competitor $competitor)
+  public function send_winner(\Competitor $competitor, $amount)
   {
     $args = new \PlayerStrategy_winner_args();
     $args->competitor = $competitor;
+    $args->amount = $amount;
     $bin_accel = ($this->output_ instanceof TBinaryProtocolAccelerated) && function_exists('thrift_protocol_write_binary');
     if ($bin_accel)
     {
@@ -1212,6 +1213,7 @@ class PlayerStrategy_winner_args {
   static $_TSPEC;
 
   public $competitor = null;
+  public $amount = null;
 
   public function __construct($vals=null) {
     if (!isset(self::$_TSPEC)) {
@@ -1221,11 +1223,18 @@ class PlayerStrategy_winner_args {
           'type' => TType::STRUCT,
           'class' => '\Competitor',
           ),
+        2 => array(
+          'var' => 'amount',
+          'type' => TType::I64,
+          ),
         );
     }
     if (is_array($vals)) {
       if (isset($vals['competitor'])) {
         $this->competitor = $vals['competitor'];
+      }
+      if (isset($vals['amount'])) {
+        $this->amount = $vals['amount'];
       }
     }
   }
@@ -1257,6 +1266,13 @@ class PlayerStrategy_winner_args {
             $xfer += $input->skip($ftype);
           }
           break;
+        case 2:
+          if ($ftype == TType::I64) {
+            $xfer += $input->readI64($this->amount);
+          } else {
+            $xfer += $input->skip($ftype);
+          }
+          break;
         default:
           $xfer += $input->skip($ftype);
           break;
@@ -1276,6 +1292,11 @@ class PlayerStrategy_winner_args {
       }
       $xfer += $output->writeFieldBegin('competitor', TType::STRUCT, 1);
       $xfer += $this->competitor->write($output);
+      $xfer += $output->writeFieldEnd();
+    }
+    if ($this->amount !== null) {
+      $xfer += $output->writeFieldBegin('amount', TType::I64, 2);
+      $xfer += $output->writeI64($this->amount);
       $xfer += $output->writeFieldEnd();
     }
     $xfer += $output->writeFieldStop();
