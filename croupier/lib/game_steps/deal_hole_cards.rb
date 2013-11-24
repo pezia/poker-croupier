@@ -7,7 +7,7 @@ class Croupier::GameSteps::DealHoleCards < Croupier::GameSteps::Base
   private
 
   def deal_one_card_to_each_player
-    game_state.players.each do |player|
+    game_state.each_player do |player|
       next_card = game_state.deck.next_card!
       player.hole_card(next_card)
       game_state.each_spectator do |observer|
