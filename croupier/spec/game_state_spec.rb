@@ -190,6 +190,26 @@ describe Croupier::GameState do
       end
     end
 
+    describe "#each_player_from" do
+      it "should yield each player, starting with the second_player" do
+        players = []
+        @game_state.each_player_from @game_state.second_player do |player|
+          players << player
+        end
+
+        players.should == @game_state.players
+      end
+
+      it "should yield each player, starting with the first_player" do
+        players = []
+        @game_state.each_player_from @game_state.first_player do |player|
+          players << player
+        end
+
+        players.should == [@game_state.players[1], @game_state.players[0]]
+      end
+    end
+
     describe "#each_spectator" do
       it "should yield each spectator" do
         spectators = []

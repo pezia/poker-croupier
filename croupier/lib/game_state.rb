@@ -54,6 +54,12 @@ class Croupier::GameState
     end
   end
 
+  def each_player_from(from_player)
+    @players.rotate(@players.index(from_player)).each do |observer|
+      yield observer
+    end
+  end
+
   def transfer_bet(player, amount, bet_type)
     player.total_bet += amount
     transfer player, amount
