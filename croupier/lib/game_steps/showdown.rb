@@ -37,9 +37,9 @@ class Croupier::GameSteps::Showdown < Croupier::GameSteps::Base
   end
 
   def announce
-    game_state.each_observer do |player|
-      @winners.each do |winner|
-        player.winner winner
+    game_state.each_observer do |observer|
+      @winners.each do |player|
+        observer.winner player
       end
     end
   end
