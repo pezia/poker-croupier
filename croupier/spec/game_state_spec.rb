@@ -78,19 +78,20 @@ describe Croupier::GameState do
 
   describe "#transfer_bet" do
     it "should transfer the amount requested from the player to the pot, and notify observers" do
-      strategy = double("player strategy")
-      game_state = SpecHelper::MakeGameState.with players: [Croupier::Player.new(Croupier::PlayerStrategy.new(strategy, nil))]
-      strategy.should_receive(:name).and_return("Joe")
+      api_player = double("player strategy")
+      game_state = SpecHelper::MakeGameState.with players: [Croupier::Player.new(Croupier::PlayerStrategy.new(api_player, nil))]
+      api_player.should_receive(:name).and_return("Joe")
 
       bet = API::Bet.new
       bet.amount = 40
       bet.type = API::BetType::Raise
+      bet.new_pot_size = 40
 
       competitor = API::Competitor.new
       competitor.name = "Joe"
       competitor.stack = 960
 
-      strategy.should_receive(:bet).with(competitor, bet)
+      api_player.should_receive(:bet).with(competitor, bet)
 
       game_state.transfer_bet game_state.players.first, 40, :raise
 

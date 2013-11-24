@@ -9,6 +9,7 @@ module Croupier::ThriftEntityGateway
       API::Bet.new.tap do |api_bet|
         api_bet.amount = hash[:amount]
         api_bet.type = API::BetType.const_get(hash[:type].capitalize)
+        api_bet.new_pot_size = hash[:pot]
       end
     end
 

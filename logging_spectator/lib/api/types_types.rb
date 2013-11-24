@@ -72,10 +72,12 @@ module API
     include ::Thrift::Struct, ::Thrift::Struct_Union
     AMOUNT = 1
     TYPE = 2
+    NEW_POT_SIZE = 3
 
     FIELDS = {
       AMOUNT => {:type => ::Thrift::Types::I64, :name => 'amount'},
-      TYPE => {:type => ::Thrift::Types::I32, :name => 'type', :enum_class => ::API::BetType}
+      TYPE => {:type => ::Thrift::Types::I32, :name => 'type', :enum_class => ::API::BetType},
+      NEW_POT_SIZE => {:type => ::Thrift::Types::I64, :name => 'new_pot_size'}
     }
 
     def struct_fields; FIELDS; end

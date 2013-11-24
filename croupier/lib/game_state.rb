@@ -58,7 +58,7 @@ class Croupier::GameState
     player.total_bet += amount
     transfer player, amount
     each_observer do |observer|
-      observer.bet player, amount: amount, type: bet_type
+      observer.bet player, amount: amount, type: bet_type, pot: pot
     end
   end
 

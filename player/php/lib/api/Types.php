@@ -256,6 +256,7 @@ class Bet {
 
   public $amount = null;
   public $type = null;
+  public $new_pot_size = null;
 
   public function __construct($vals=null) {
     if (!isset(self::$_TSPEC)) {
@@ -268,6 +269,10 @@ class Bet {
           'var' => 'type',
           'type' => TType::I32,
           ),
+        3 => array(
+          'var' => 'new_pot_size',
+          'type' => TType::I64,
+          ),
         );
     }
     if (is_array($vals)) {
@@ -276,6 +281,9 @@ class Bet {
       }
       if (isset($vals['type'])) {
         $this->type = $vals['type'];
+      }
+      if (isset($vals['new_pot_size'])) {
+        $this->new_pot_size = $vals['new_pot_size'];
       }
     }
   }
@@ -313,6 +321,13 @@ class Bet {
             $xfer += $input->skip($ftype);
           }
           break;
+        case 3:
+          if ($ftype == TType::I64) {
+            $xfer += $input->readI64($this->new_pot_size);
+          } else {
+            $xfer += $input->skip($ftype);
+          }
+          break;
         default:
           $xfer += $input->skip($ftype);
           break;
@@ -334,6 +349,11 @@ class Bet {
     if ($this->type !== null) {
       $xfer += $output->writeFieldBegin('type', TType::I32, 2);
       $xfer += $output->writeI32($this->type);
+      $xfer += $output->writeFieldEnd();
+    }
+    if ($this->new_pot_size !== null) {
+      $xfer += $output->writeFieldBegin('new_pot_size', TType::I64, 3);
+      $xfer += $output->writeI64($this->new_pot_size);
       $xfer += $output->writeFieldEnd();
     }
     $xfer += $output->writeFieldStop();

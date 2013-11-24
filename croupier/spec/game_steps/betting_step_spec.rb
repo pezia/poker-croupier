@@ -7,6 +7,8 @@ describe Croupier::GameSteps::BettingStep do
     @player1 = Croupier::Player.new SpecHelper::FakeStrategy.new
 
     @game_state = SpecHelper::MakeGameState.with players: [@player1], spectators: [@spectator]
+
+    @mocked_pot = 0
   end
 
   def should_bet(player, amount, type)
@@ -14,8 +16,9 @@ describe Croupier::GameSteps::BettingStep do
   end
 
   def should_try_bet(player, requested_amount, actual_amount, type)
+    @mocked_pot += actual_amount
     player.should_receive(:bet_request).and_return(requested_amount)
-    @spectator.should_receive(:bet).with(player, amount: actual_amount, type: type)
+    @spectator.should_receive(:bet).with(player, amount: actual_amount, type: type, pot: @mocked_pot)
   end
 
   def run()
@@ -168,28 +171,28 @@ describe Croupier::GameSteps::BettingStep do
 
     context "player has less money then needed to call" do
       before :each do
-        @player2.stack = 20
-        should_bet @player1, 100, :raise
+        @player1.stack = 20
+        should_bet @player2, 100, :raise
       end
 
       it "should let a player go all in" do
-        should_bet @player2, 20, :allin
+        should_bet @player1, 20, :allin
 
         run
 
-        @player2.stack.should == 0
-        @player2.total_bet.should == 20
+        @player1.stack.should == 0
+        @player1.total_bet.should == 20
 
         @game_state.pot.should == 120
       end
 
       it "should treat larger bet as an all in" do
-        should_try_bet @player2, 40, 20, :allin
+        should_try_bet @player1, 40, 20, :allin
 
         run
 
-        @player2.stack.should == 0
-        @player2.total_bet.should == 20
+        @player1.stack.should == 0
+        @player1.total_bet.should == 20
 
         @game_state.pot.should == 120
 

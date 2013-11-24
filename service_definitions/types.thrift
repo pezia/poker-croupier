@@ -35,6 +35,7 @@ struct Bet
 {
     1:i64 amount
     2:BetType type
+    3:i64 new_pot_size
 }
 
 struct BetLimits
