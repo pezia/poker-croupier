@@ -7,7 +7,6 @@ class Croupier::GameSteps::Showdown < Croupier::GameSteps::Base
     while
       find_winner
       break if @winners == []
-      announce
       award
     end
   end
@@ -36,19 +35,18 @@ class Croupier::GameSteps::Showdown < Croupier::GameSteps::Base
     @best_hand = hand
   end
 
-  def announce
-    game_state.each_observer do |observer|
-      @winners.each do |player|
-        observer.winner player
-      end
-    end
-  end
-
   def award
     side_pot = winners_side_pot
     remainder = side_pot % @winners.length
     @winners.each_with_index do |winner, index|
       game_state.transfer winner, -(side_pot / @winners.length).floor - (index < remainder ? 1 : 0)
+      announce winner
+    end
+  end
+
+  def announce(winner)
+    game_state.each_observer do |observer|
+      observer.winner winner
     end
   end
 
