@@ -28,6 +28,13 @@ module Croupier::ThriftEntityGateway
         target.stack = source.stack
       end
     end
+    
+    def get_Hand(source)
+      API::HandDescriptor.new.tap do |descriptor|
+        descriptor.name = source.name
+        descriptor.ranks = [source.rank, source.value, source.second_value, *source.kickers]
+      end
+    end
 
     def get_Card(source)
       API::Card.new.tap do |target|
