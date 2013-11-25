@@ -32,6 +32,12 @@ describe Croupier::GameSteps::BettingStep do
       @game_state.register_player @first_player
     end
 
+    it "should reset last aggressor" do
+      @game_state.should_receive(:reset_last_aggressor)
+      should_bet(@player_on_button, 0, :check)
+      should_bet(@first_player, 0, :check)
+      run
+    end
 
     it "should request a bet from the player in action, and the player should remain active" do
       should_bet(@player_on_button, 0, :check)

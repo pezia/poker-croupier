@@ -100,6 +100,41 @@ describe Croupier::GameState do
     end
   end
 
+  describe "#last_aggressor" do
+    let(:game_state) { game_state = SpecHelper::MakeGameState.with(players: [fake_player, fake_player, fake_player]) }
+
+    it "should return the first_player if there was no aggression" do
+      game_state.last_aggressor.should == game_state.first_player
+    end
+
+    it "should return the second player if it raises" do
+      game_state.transfer_bet game_state.second_player, 100, :raise
+
+      game_state.last_aggressor.should == game_state.second_player
+    end
+
+    it "should return the dealer if it raises" do
+      game_state.transfer_bet game_state.dealer, 100, :raise
+
+      game_state.last_aggressor.should == game_state.dealer
+    end
+
+    it "should return the first_player if the second_player just calls" do
+      game_state.transfer_bet game_state.first_player, 100, :raise
+      game_state.transfer_bet game_state.second_player, 100, :call
+
+      game_state.last_aggressor.should == game_state.first_player
+    end
+
+    context "after an aggression when #reset_last_aggressor is called" do
+      it "should return the first_player again" do
+        game_state.transfer_bet game_state.second_player, 100, :raise
+        game_state.reset_last_aggressor
+        game_state.last_aggressor.should == game_state.first_player
+      end
+    end
+  end
+
   describe "#next_round" do
     let(:game_state) { game_state = SpecHelper::MakeGameState.with(players: [fake_player, fake_player, fake_player]) }
 

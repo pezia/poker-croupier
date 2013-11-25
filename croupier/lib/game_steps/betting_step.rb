@@ -2,6 +2,8 @@ class Croupier::GameSteps::BettingStep < Croupier::GameSteps::Base
   def run
     return unless should_do_betting
 
+    game_state.reset_last_aggressor
+
     @betting_state = build_betting_state
 
     @betting_players = 0.upto(game_state.players.length - 1).map do |player|

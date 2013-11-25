@@ -14,6 +14,11 @@ class Croupier::GameState
     @current_player = 0
     @dealers_position = 0
     @community_cards = []
+    reset_last_aggressor
+  end
+
+  def reset_last_aggressor
+    @last_aggressor = nil
   end
 
   def current_buy_in
@@ -61,11 +66,20 @@ class Croupier::GameState
   end
 
   def transfer_bet(player, amount, bet_type)
+    original_buy_in = current_buy_in
     player.total_bet += amount
+    @last_aggressor = player if current_buy_in > original_buy_in
+
     transfer player, amount
     each_observer do |observer|
       observer.bet player, amount: amount, type: bet_type, pot: pot
     end
+  end
+
+  def last_aggressor
+    return first_player if @last_aggressor.nil?
+
+    @last_aggressor
   end
 
   def transfer(player, amount)
@@ -73,7 +87,7 @@ class Croupier::GameState
   end
 
   def dealer
-    @players[dealers_position]
+    @players[@dealers_position]
   end
 
   def first_player
