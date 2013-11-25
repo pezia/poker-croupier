@@ -17,7 +17,7 @@ class Croupier::GameSteps::Showdown < Croupier::GameSteps::Base
     @winners = []
     @best_hand = Ranking::Hand.new
 
-    game_state.each_player do |player|
+    game_state.each_player_from game_state.last_aggressor do |player|
       examine_cards_of player
     end
   end

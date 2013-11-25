@@ -74,10 +74,10 @@ describe Croupier::GameSteps::Showdown do
       end
 
       it "should show the cards of the first player" do
-        set_hole_cards_for(0, 'Jack of Diamonds', 'Jack of Hearts')
-        set_hole_cards_for(1, '4 of Clubs', 'Ace of Hearts')
+        set_hole_cards_for(0, '4 of Clubs', 'Ace of Hearts')
+        set_hole_cards_for(1, 'Jack of Diamonds', 'Jack of Hearts')
 
-        expect_hand_to_be_announced_for game_state.players.first
+        expect_hand_to_be_announced_for game_state.first_player
 
         run
       end
