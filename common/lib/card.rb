@@ -42,10 +42,6 @@ class Card
     "#@rank of #@suit"
   end
 
-  def name
-    to_s
-  end
-
   def ==(other_card)
     @value == other_card.value && @rank == other_card.rank
   end

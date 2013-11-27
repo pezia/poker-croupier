@@ -5,11 +5,11 @@ class Croupier::LogHandler::HumanReadable
   end
 
   def hole_card(competitor, card)
-    Croupier.logger.info "#{competitor.name} got hole card #{card.name} (#{card.value}, #{card.suit})"
+    Croupier.logger.info "#{competitor.name} got hole card #{card} (#{card.value}, #{card.suit})"
   end
 
   def community_card(card)
-    Croupier.logger.info "community card #{card.name}"
+    Croupier.logger.info "community card #{card}"
   end
 
   def bet(competitor, bet)
@@ -18,7 +18,7 @@ class Croupier::LogHandler::HumanReadable
   end
 
   def showdown(competitor, hand)
-    Croupier.logger.info "#{competitor.name} showed #{hand.cards.map{|card| card.name}.join(',')} making a #{hand.name}"
+    Croupier.logger.info "#{competitor.name} showed #{hand.cards.map{|card| card}.join(',')} making a #{hand.name}"
   end
 
   def winner(competitor, amount)
