@@ -11,6 +11,7 @@ describe Croupier::Handler do
       Croupier::PlayerBuilder.stub(:new).and_return(player_builder)
       Croupier::GameRunner.stub(:new).and_return(croupier)
       Croupier.stub(:logger).and_return(logger_mock)
+      croupier.stub(:register_spectator)
     end
 
     context "connection successful" do
@@ -19,6 +20,7 @@ describe Croupier::Handler do
       end
 
       it "should register player when connection is successful and log an info message" do
+
         croupier.should_receive(:register_player).with(player)
         player.should_receive(:open)
         player.should_receive(:name).and_return('Joe')

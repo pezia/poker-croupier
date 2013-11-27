@@ -20,11 +20,6 @@ players.each do |player|
   Process.detach(player)
 end
 
-logger = fork do
-  exec "bundle exec ruby ../logging_spectator/logging_spectator_service.rb 9100"
-end
-Process.detach(logger)
-
 croupier = fork do
   exec "bundle exec ruby croupier_service.rb"
 end
@@ -45,7 +40,6 @@ players.each_index do |index|
   client.register_player('localhost',9200+index)
 end
 
-client.register_spectator('localhost',9100)
 client.start_sit_and_go()
 
 transport.close()
