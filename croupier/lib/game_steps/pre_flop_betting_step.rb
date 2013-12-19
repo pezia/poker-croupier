@@ -1,5 +1,5 @@
 
-class Croupier::GameSteps::PreFlopBettingStep < Croupier::GameSteps::BettingStep
+class Croupier::GameSteps::PreFlopBettingStep < Croupier::GameSteps::Betting::Step
 
   private
 

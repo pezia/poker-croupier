@@ -8,11 +8,11 @@ class Croupier::GameRunner
       DealHoleCards,
       PreFlopBettingStep,
       DealFlop,
-      BettingStep,
+      Betting::Step,
       DealTurnCard,
-      BettingStep,
+      Betting::Step,
       DealRiverCard,
-      BettingStep,
+      Betting::Step,
       Showdown
   ]
 

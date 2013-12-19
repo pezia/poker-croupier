@@ -1,4 +1,4 @@
-class Croupier::GameSteps::BettingStep < Croupier::GameSteps::Base
+class Croupier::GameSteps::Betting::Step < Croupier::GameSteps::Base
   def run
     return unless should_do_betting
 
