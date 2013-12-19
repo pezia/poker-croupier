@@ -1,7 +1,7 @@
 
 class Croupier::Handler
   def initialize
-    @croupier = Croupier::GameRunner.new
+    @croupier = Croupier::Game::Runner.new
     @croupier.register_spectator Croupier::LogHandler::HumanReadable.new
   end
 
