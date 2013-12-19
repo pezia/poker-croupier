@@ -1,4 +1,4 @@
-class Croupier::GameState
+class Croupier::Game::State
   attr_reader :players
   attr_reader :spectators
   attr_reader :small_blind

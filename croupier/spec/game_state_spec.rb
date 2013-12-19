@@ -1,12 +1,12 @@
 require_relative 'spec_helper'
 
-describe Croupier::GameState do
+describe Croupier::Game::State do
   describe "#register_player" do
     it "should add the player to the list of players" do
       first_player = double("First player")
       second_player = double("Second player")
 
-      game_state = Croupier::GameState.new
+      game_state = Croupier::Game::State.new
       game_state.register_player(first_player)
       game_state.register_player(second_player)
 
@@ -18,7 +18,7 @@ describe Croupier::GameState do
     it "should add tge spectator to the list of spectators" do
       spectator = double("Spectator")
 
-      game_state = Croupier::GameState.new
+      game_state = Croupier::Game::State.new
       game_state.register_spectator(spectator)
 
       game_state.spectators.should == [spectator]
@@ -172,7 +172,7 @@ describe Croupier::GameState do
 
   describe "Calculate index of special players" do
     before :each do
-      @game_state = Croupier::GameState.new
+      @game_state = Croupier::Game::State.new
 
       5.times do |c|
         @game_state.register_player fake_player
