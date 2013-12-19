@@ -1,7 +1,7 @@
 require_relative '../spec_helper/'
 
 
-describe Croupier::GameSteps::PreFlopBettingStep do
+describe Croupier::GameSteps::Betting::PreFlop do
 
   let(:spectator) { SpecHelper::FakeSpectator.new }
   let(:game_state) do
@@ -16,7 +16,7 @@ describe Croupier::GameSteps::PreFlopBettingStep do
   end
 
   def run()
-    Croupier::GameSteps::PreFlopBettingStep.new(game_state).run
+    Croupier::GameSteps::Betting::PreFlop.new(game_state).run
   end
 
   it "should report the blinds than ask other players for their bets" do
