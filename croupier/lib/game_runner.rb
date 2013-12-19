@@ -1,7 +1,7 @@
 
 class Croupier::GameRunner
 
-  include Croupier::GameSteps
+  include Croupier::Game::Steps
   GAME_STEPS = [
       IntroducePlayers,
       ShuffleCards,

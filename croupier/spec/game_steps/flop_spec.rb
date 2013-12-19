@@ -2,9 +2,9 @@ require_relative '../spec_helper.rb'
 
 
 
-describe Croupier::GameSteps::DealFlop do
+describe Croupier::Game::Steps::DealFlop do
   def run
-    Croupier::GameSteps::DealFlop.new(@game_state).run
+    Croupier::Game::Steps::DealFlop.new(@game_state).run
   end
 
   before(:each) do

@@ -1,4 +1,4 @@
-class Croupier::GameSteps::Betting::State
+class Croupier::Game::Steps::Betting::State
   attr_reader :game_state
   attr_accessor :minimum_raise
 

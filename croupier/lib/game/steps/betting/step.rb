@@ -1,4 +1,4 @@
-class Croupier::GameSteps::Betting::Step < Croupier::GameSteps::Base
+class Croupier::Game::Steps::Betting::Step < Croupier::Game::Steps::Base
   def run
     return unless should_do_betting
 
@@ -7,7 +7,7 @@ class Croupier::GameSteps::Betting::Step < Croupier::GameSteps::Base
     @betting_state = build_betting_state
 
     @betting_players = 0.upto(game_state.players.length - 1).map do |player|
-      Croupier::GameSteps::Betting::Player.new @betting_state, player
+      Croupier::Game::Steps::Betting::Player.new @betting_state, player
     end
 
     in_action = first_player_index = game_state.players.index(game_state.first_player)
@@ -24,7 +24,7 @@ class Croupier::GameSteps::Betting::Step < Croupier::GameSteps::Base
   end
 
   def build_betting_state
-    Croupier::GameSteps::Betting::State.new game_state
+    Croupier::Game::Steps::Betting::State.new game_state
   end
 
   def betting_is_over?

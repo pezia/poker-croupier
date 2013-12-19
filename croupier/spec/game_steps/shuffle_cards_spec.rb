@@ -1,6 +1,6 @@
 require_relative '../spec_helper'
 
-describe Croupier::GameSteps::ShuffleCards do
+describe Croupier::Game::Steps::ShuffleCards do
   it "should shuffle the cards in the deck" do
     game_state = double("Game state")
     deck = double("Deck")
@@ -8,6 +8,6 @@ describe Croupier::GameSteps::ShuffleCards do
     game_state.stub(:deck).and_return(deck)
     deck.should_receive(:shuffle)
 
-    Croupier::GameSteps::ShuffleCards.new(game_state).run
+    Croupier::Game::Steps::ShuffleCards.new(game_state).run
   end
 end

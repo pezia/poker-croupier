@@ -1,4 +1,4 @@
-class Croupier::GameSteps::DealHoleCards < Croupier::GameSteps::Base
+class Croupier::Game::Steps::DealHoleCards < Croupier::Game::Steps::Base
   def run
     deal_one_card_to_each_player
     deal_one_card_to_each_player

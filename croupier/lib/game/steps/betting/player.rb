@@ -1,4 +1,4 @@
-class Croupier::GameSteps::Betting::Player
+class Croupier::Game::Steps::Betting::Player
 
   def initialize(betting_state, index)
     @betting_state = betting_state

@@ -2,7 +2,7 @@
 require 'card'
 require 'ranking/hand'
 
-class Croupier::GameSteps::Showdown < Croupier::GameSteps::Base
+class Croupier::Game::Steps::Showdown < Croupier::Game::Steps::Base
   def run
     while
       find_winner

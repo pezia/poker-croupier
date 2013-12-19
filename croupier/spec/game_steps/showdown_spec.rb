@@ -3,7 +3,7 @@ require 'card'
 require 'ranking/hand'
 
 
-describe Croupier::GameSteps::Showdown do
+describe Croupier::Game::Steps::Showdown do
   context "there are two players" do
 
     let(:game_state) do
@@ -190,7 +190,7 @@ describe Croupier::GameSteps::Showdown do
   end
 
   def run
-    Croupier::GameSteps::Showdown.new(game_state).run
+    Croupier::Game::Steps::Showdown.new(game_state).run
   end
 
   def set_hole_cards_for(player_id, first_card, second_card)

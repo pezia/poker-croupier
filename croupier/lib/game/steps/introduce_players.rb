@@ -1,4 +1,4 @@
-class Croupier::GameSteps::IntroducePlayers < Croupier::GameSteps::Base
+class Croupier::Game::Steps::IntroducePlayers < Croupier::Game::Steps::Base
   def run
     game_state.each_observer do |player|
       game_state.players.each do |competitor|

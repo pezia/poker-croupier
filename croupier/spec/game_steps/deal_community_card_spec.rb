@@ -1,9 +1,9 @@
 require_relative '../spec_helper'
 require 'card'
 
-describe Croupier::GameSteps::DealCommunityCard do
+describe Croupier::Game::Steps::DealCommunityCard do
   def run
-    Croupier::GameSteps::DealCommunityCard.new(@game_state).run
+    Croupier::Game::Steps::DealCommunityCard.new(@game_state).run
   end
 
   before(:each) do

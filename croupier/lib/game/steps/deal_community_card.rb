@@ -1,5 +1,5 @@
 
-class Croupier::GameSteps::DealCommunityCard < Croupier::GameSteps::Base
+class Croupier::Game::Steps::DealCommunityCard < Croupier::Game::Steps::Base
   def run
     return unless should_deal_card()
 
