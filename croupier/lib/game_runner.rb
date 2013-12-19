@@ -29,8 +29,6 @@ class Croupier::GameRunner
   end
 
   def start_sit_and_go
-    IntroducePlayers.new(@game_state)
-
     while @game_state.players_in_game.length >= 2 do
       GAME_STEPS.each do |step_type|
         step_type.new(@game_state).run
