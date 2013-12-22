@@ -2,8 +2,8 @@ require_relative '../spec_helper'
 
 describe Croupier::Game::Runner do
   before :each do
-    @game_state = Croupier::Game::State.new
-    Croupier::Game::State.stub(:new).and_return(@game_state)
+    @game_state = Croupier::Tournament::State.new
+    Croupier::Tournament::State.stub(:new).and_return(@game_state)
 
     @runner = Croupier::Game::Runner.new
   end

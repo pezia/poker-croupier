@@ -16,7 +16,7 @@ class Croupier::Game::Runner
   ]
 
   def initialize
-    @game_state = Croupier::Game::State.new
+    @game_state = Croupier::Tournament::State.new
   end
 
   def register_player(player)

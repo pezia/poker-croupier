@@ -1,6 +1,6 @@
 class SpecHelper::MakeGameState
   def self.with(options)
-    game_state = Croupier::Game::State.new
+    game_state = Croupier::Tournament::State.new
     players = options[:players] || []
     spectators = options[:spectators] || []
 
