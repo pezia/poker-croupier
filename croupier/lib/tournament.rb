@@ -1,3 +1,3 @@
 class Croupier::Tournament
-  autoload :State, 'lib/game/state'
+  autoload :State, 'lib/tournament/state'
 end

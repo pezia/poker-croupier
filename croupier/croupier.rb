@@ -17,6 +17,7 @@ module Croupier
   autoload :SpectatorBuilder, 'lib/spectator_builder'
   autoload :ThriftEntityGateway, 'lib/thrift_entity_gateway'
   autoload :ThriftObserver, 'lib/thrift_observer'
+  autoload :Tournament, 'lib/tournament'
 
   class << self
     def logger
