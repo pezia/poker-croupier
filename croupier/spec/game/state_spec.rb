@@ -14,6 +14,15 @@ describe Croupier::Game::State do
     end
   end
 
+  describe "#number_of_players_in_game" do
+    it "should return the number of players who have stacks" do
+      game_state = SpecHelper::MakeGameState.with players: [fake_player, fake_player]
+      game_state.players[0].stack = 0
+
+      game_state.number_of_players_in_game.should == 1
+    end
+  end
+
   describe "#register_spectator" do
     it "should add tge spectator to the list of spectators" do
       spectator = double("Spectator")

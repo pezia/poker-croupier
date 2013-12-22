@@ -27,7 +27,8 @@ describe Croupier::Game::Runner do
   end
 
   describe "#start_sit_and_go" do
-    pending "should run steps until there are more than two players in game" do
+    it "should run steps until there are more than two players in game" do
+      @game_state.stub(:number_of_players_in_game).and_return(2, 1)
       Croupier::Game::Runner::GAME_STEPS.each do |step|
         instance = double("Game step")
         step.should_receive(:new).with(@game_state).and_return(instance)

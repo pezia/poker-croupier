@@ -98,8 +98,8 @@ class Croupier::Game::State
     @players[nthPlayer 2]
   end
 
-  def players_in_game
-    @players.select { |player| player.has_stack? }
+  def number_of_players_in_game
+    @players.count { |player| player.has_stack? }
   end
 
   def next_round!
