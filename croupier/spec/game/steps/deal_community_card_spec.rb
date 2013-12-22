@@ -1,4 +1,4 @@
-require_relative '../spec_helper'
+require_relative '../../spec_helper'
 require 'card'
 
 describe Croupier::Game::Steps::DealCommunityCard do

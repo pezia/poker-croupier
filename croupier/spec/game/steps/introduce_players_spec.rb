@@ -1,4 +1,4 @@
-require_relative '../spec_helper.rb'
+require_relative '../../spec_helper.rb'
 
 describe Croupier::Game::Steps::IntroducePlayers do
   it "should introduce each player to all other players" do

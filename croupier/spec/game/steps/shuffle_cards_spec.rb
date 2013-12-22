@@ -1,4 +1,4 @@
-require_relative '../spec_helper'
+require_relative '../../spec_helper'
 
 describe Croupier::Game::Steps::ShuffleCards do
   it "should shuffle the cards in the deck" do
