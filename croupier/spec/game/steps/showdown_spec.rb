@@ -144,13 +144,13 @@ describe Croupier::Game::Steps::Showdown do
       tournament_state = SpecHelper::MakeTournamentState.with(
           players: [fake_player, fake_player, fake_player],
           spectators: [SpecHelper::FakeSpectator.new]
-      ).tap do |game_state|
+      )
+
+      Croupier::Game::State.new(tournament_state).tap do |game_state|
         game_state.community_cards =
             ['3 of Diamonds', 'Jack of Clubs', 'Jack of Spades', 'Queen of Spades', 'King of Spades']
             .map { |name| Card.new name }
       end
-
-      Croupier::Game::State.new tournament_state
     end
 
     context "there is a side pot" do
@@ -172,7 +172,7 @@ describe Croupier::Game::Steps::Showdown do
         game_state.players[2].stack.should == 1000
       end
 
-      pending "should only reward the smaller side_pot first when two all-in players tie" do
+      it "should only reward the smaller side_pot first when two all-in players tie" do
         game_state.players[1].stack = 150
         game_state.players[2].stack = 50
 
