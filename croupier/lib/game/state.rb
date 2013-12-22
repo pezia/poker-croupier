@@ -10,6 +10,10 @@ class Croupier::Game::State
     @tournament_state.each_observer &block
   end
 
+  def each_spectator &block
+    @tournament_state.each_spectator &block
+  end
+
   def each_player_from from_player, &block
     @tournament_state.each_player_from from_player, &block
   end
