@@ -37,11 +37,4 @@ class Croupier::Game::Runner
     end
   end
 
-  def small_blind
-    @game_state.small_blind
-  end
-
-  def big_blind
-    @game_state.big_blind
-  end
 end
