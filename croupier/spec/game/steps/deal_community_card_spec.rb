@@ -14,10 +14,12 @@ describe Croupier::Game::Steps::DealCommunityCard do
 
     Croupier::Deck.stub(:new).and_return(@deck)
 
-    @game_state = SpecHelper::MakeGameState.with(
+    tournament_state = SpecHelper::MakeTournamentState.with(
         players: [fake_player, fake_player],
         spectators: [SpecHelper::FakeSpectator.new, SpecHelper::FakeSpectator.new]
     )
+
+    @game_state = Croupier::Game::State.new tournament_state
   end
 
   it "should skip dealing if there is only one active player" do

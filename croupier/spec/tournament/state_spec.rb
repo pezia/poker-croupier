@@ -16,7 +16,7 @@ describe Croupier::Tournament::State do
 
   describe "#number_of_players_in_game" do
     it "should return the number of players who have stacks" do
-      game_state = SpecHelper::MakeGameState.with players: [fake_player, fake_player]
+      game_state = SpecHelper::MakeTournamentState.with players: [fake_player, fake_player]
       game_state.players[0].stack = 0
 
       game_state.number_of_players_in_game.should == 1
@@ -36,7 +36,7 @@ describe Croupier::Tournament::State do
 
   describe "#send_message_to_everyone" do
     it "should send the messages to each player" do
-      game_state = SpecHelper::MakeGameState.with players: [double("First player"), double("Second player")]
+      game_state = SpecHelper::MakeTournamentState.with players: [double("First player"), double("Second player")]
 
       game_state.players.each do |player|
         player.should_receive(:the_message)
@@ -48,7 +48,7 @@ describe Croupier::Tournament::State do
     end
 
     it "should send the messages to all spectators" do
-      game_state = SpecHelper::MakeGameState.with spectators: [double("First spectator"), double("Second spectator")]
+      game_state = SpecHelper::MakeTournamentState.with spectators: [double("First spectator"), double("Second spectator")]
 
       game_state.spectators.each do |spectator|
         spectator.should_receive(:the_message)
@@ -62,7 +62,7 @@ describe Croupier::Tournament::State do
 
   describe "#send_message_to_spectators" do
     it "should not send the messages to the players" do
-      game_state = SpecHelper::MakeGameState.with players: [double("First player"), double("Second player")]
+      game_state = SpecHelper::MakeTournamentState.with players: [double("First player"), double("Second player")]
 
       game_state.each_spectator do |observer|
         observer.the_message
@@ -70,7 +70,7 @@ describe Croupier::Tournament::State do
     end
 
     it "should send the messages to all spectators" do
-      game_state = SpecHelper::MakeGameState.with(
+      game_state = SpecHelper::MakeTournamentState.with(
           players: [double("First player"), double("Second player")],
           spectators: [double("First spectator"), double("Second spectator")]
       )
@@ -88,7 +88,7 @@ describe Croupier::Tournament::State do
   describe "#transfer_bet" do
     it "should transfer the amount requested from the player to the pot, and notify observers" do
       api_player = double("player strategy")
-      game_state = SpecHelper::MakeGameState.with players: [Croupier::Player.new(Croupier::PlayerStrategy.new(api_player, nil))]
+      game_state = SpecHelper::MakeTournamentState.with players: [Croupier::Player.new(Croupier::PlayerStrategy.new(api_player, nil))]
       api_player.should_receive(:name).and_return("Joe")
 
       bet = API::Bet.new
@@ -110,7 +110,7 @@ describe Croupier::Tournament::State do
   end
 
   describe "#last_aggressor" do
-    let(:game_state) { game_state = SpecHelper::MakeGameState.with(players: [fake_player, fake_player, fake_player]) }
+    let(:game_state) { game_state = SpecHelper::MakeTournamentState.with(players: [fake_player, fake_player, fake_player]) }
 
     it "should return the first_player if there was no aggression" do
       game_state.last_aggressor.should == game_state.first_player
@@ -145,7 +145,11 @@ describe Croupier::Tournament::State do
   end
 
   describe "#next_round" do
-    let(:game_state) { game_state = SpecHelper::MakeGameState.with(players: [fake_player, fake_player, fake_player]) }
+    let(:game_state) {
+      tournament_state = SpecHelper::MakeTournamentState.with(players: [fake_player, fake_player, fake_player])
+
+      Croupier::Game::State.new tournament_state
+    }
 
     it "should double the blinds when the dealer button returns to the first player" do
       small_blind_at_start = game_state.small_blind
@@ -168,14 +172,6 @@ describe Croupier::Tournament::State do
       game_state.players[2].should_receive(:initialize_round)
 
       game_state.next_round!
-    end
-
-    it "should clear the community cards" do
-      game_state.community_cards = ["it's something"]
-
-      game_state.next_round!
-
-      game_state.community_cards.should == []
     end
   end
 
@@ -217,7 +213,7 @@ describe Croupier::Tournament::State do
 
   context "iterators" do
     before :each do
-      @game_state = SpecHelper::MakeGameState.with(
+      @game_state = SpecHelper::MakeTournamentState.with(
           players: [fake_player, fake_player],
           spectators: [SpecHelper::FakeSpectator.new, SpecHelper::FakeSpectator.new]
       )

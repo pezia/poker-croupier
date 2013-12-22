@@ -2,8 +2,8 @@ require_relative '../spec_helper'
 
 describe Croupier::Game::Runner do
   before :each do
-    @game_state = Croupier::Tournament::State.new
-    Croupier::Tournament::State.stub(:new).and_return(@game_state)
+    @tournament_state = Croupier::Tournament::State.new
+    Croupier::Tournament::State.stub(:new).and_return(@tournament_state)
 
     @runner = Croupier::Game::Runner.new
   end
@@ -13,7 +13,7 @@ describe Croupier::Game::Runner do
       player = double("Player")
       @runner.register_player(player)
 
-      @game_state.players.should == [player]
+      @tournament_state.players.should == [player]
     end
   end
 
@@ -22,20 +22,22 @@ describe Croupier::Game::Runner do
       spectator = double("Spectator")
       @runner.register_spectator(spectator)
 
-      @game_state.spectators.should == [spectator]
+      @tournament_state.spectators.should == [spectator]
     end
   end
 
   describe "#start_sit_and_go" do
     it "should run steps until there are more than two players in game" do
-      @game_state.stub(:number_of_players_in_game).and_return(2, 1)
+      @tournament_state.stub(:number_of_players_in_game).and_return(2, 1)
+      game_state = Croupier::Game::State.new(@tournament_state)
+      Croupier::Game::State.stub(:new).and_return(game_state)
       Croupier::Game::Runner::GAME_STEPS.each do |step|
         instance = double("Game step")
-        step.should_receive(:new).with(@game_state).and_return(instance)
+        step.should_receive(:new).with(game_state).and_return(instance)
         instance.should_receive(:run)
       end
 
-      @game_state.should_receive(:next_round!)
+      @tournament_state.should_receive(:next_round!)
 
       @runner.start_sit_and_go
     end

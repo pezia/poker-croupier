@@ -6,7 +6,7 @@ describe Croupier::Game::Steps::Betting::Step do
     @spectator = SpecHelper::FakeSpectator.new
     @player_on_button = Croupier::Player.new SpecHelper::FakeStrategy.new
 
-    @game_state = SpecHelper::MakeGameState.with players: [@player_on_button], spectators: [@spectator]
+    @game_state = SpecHelper::MakeTournamentState.with players: [@player_on_button], spectators: [@spectator]
 
     @mocked_pot = 0
   end

@@ -4,16 +4,20 @@ class Croupier::Tournament::State
   attr_reader :small_blind
   attr_reader :big_blind
 
-  attr_accessor :community_cards
+  def community_cards=(cards)
+    @game_state.community_cards = cards
+  end
+
 
   def initialize
+    @game_state = Croupier::Game::State.new(self)
+
     @players = []
     @spectators = []
     @small_blind = 10
     @big_blind = 20
     @current_player = 0
     @dealers_position = 0
-    @community_cards = []
     reset_last_aggressor
   end
 
@@ -103,7 +107,7 @@ class Croupier::Tournament::State
   end
 
   def next_round!
-    @community_cards = []
+    @game_state = Croupier::Game::State.new(self)
 
     @players.each do |player|
       player.initialize_round
