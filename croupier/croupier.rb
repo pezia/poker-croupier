@@ -3,6 +3,7 @@ $:.push(File.join(File.dirname(__FILE__)))
 
 require 'thrift'
 require_relative 'lib/api/croupier'
+require_relative '../common/delegate_to'
 
 module Croupier
 

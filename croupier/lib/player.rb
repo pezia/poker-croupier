@@ -1,4 +1,6 @@
 class Croupier::Player
+  delegate_to :strategy
+
   attr_accessor :stack
   attr_reader :hole_cards
 
@@ -52,9 +54,5 @@ class Croupier::Player
   def hole_card card
     @strategy.hole_card card
     @hole_cards << card
-  end
-
-  def method_missing(method, *args)
-    @strategy.send(method, *args)
   end
 end
