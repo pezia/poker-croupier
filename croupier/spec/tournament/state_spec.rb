@@ -272,5 +272,4 @@ describe Croupier::Tournament::State do
       end
     end
   end
-
 end
