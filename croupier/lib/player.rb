@@ -1,4 +1,5 @@
-class Croupier::Player < SimpleDelegator
+class Croupier::Player
+  delegate :strategy
 
   attr_accessor :stack
   attr_reader :hole_cards
@@ -7,7 +8,6 @@ class Croupier::Player < SimpleDelegator
   attr_reader :strategy
 
   def initialize(strategy)
-    super strategy
     @strategy = strategy
     @stack = 1000
     @forced_bet = nil
