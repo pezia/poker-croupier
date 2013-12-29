@@ -10,13 +10,13 @@ describe Croupier::Game::Steps::Showdown do
       tournament_state = SpecHelper::MakeTournamentState.with(
           players: [fake_player, fake_player],
           spectators: [SpecHelper::FakeSpectator.new, SpecHelper::FakeSpectator.new]
-      ).tap do |game_state|
+      )
+
+      Croupier::Game::State.new(tournament_state).tap do |game_state|
         game_state.community_cards =
             ['3 of Diamonds', 'Jack of Clubs', 'Jack of Spades', 'Queen of Spades', 'King of Spades']
             .map { |name| Card.new name }
       end
-
-      Croupier::Game::State.new tournament_state
     end
 
     context "the winner is announced" do

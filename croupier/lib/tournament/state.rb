@@ -4,11 +4,6 @@ class Croupier::Tournament::State
   attr_reader :small_blind
   attr_reader :big_blind
 
-  def community_cards=(cards)
-    @game_state.community_cards = cards
-  end
-
-
   def initialize
     @game_state = Croupier::Game::State.new(self)
 
