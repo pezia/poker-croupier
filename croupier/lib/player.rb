@@ -1,5 +1,5 @@
 class Croupier::Player
-  delegate :strategy
+  delegate_all :strategy
 
   attr_accessor :stack
   attr_reader :hole_cards

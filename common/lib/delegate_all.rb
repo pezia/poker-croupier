@@ -1,4 +1,4 @@
-def delegate(member)
+def delegate_all(member)
   define_method :method_missing do |method, *args, &block|
     begin
       (instance_variable_get "@#{member}").send(method, *args, &block)

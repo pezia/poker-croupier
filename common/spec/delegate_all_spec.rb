@@ -1,15 +1,15 @@
-require_relative '../lib/delegate'
+require_relative '../lib/delegate_all'
 
 
 class DelegatorClass
-  delegate :delegate_object
+  delegate_all :delegate_object
 
   def initialize(delegate_object)
     @delegate_object = delegate_object
   end
 end
 
-describe :delegate do
+describe :delegate_all do
   context "on method calls" do
     it "should delegate all calls to the delegate class" do
       delegate = double("Delegate")

@@ -1,5 +1,5 @@
 class Croupier::Game::State
-  delegate :tournament_state
+  delegate_all :tournament_state
 
   attr_accessor :community_cards
 
