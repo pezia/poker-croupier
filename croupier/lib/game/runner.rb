@@ -13,4 +13,11 @@ class Croupier::Game::Runner
       Betting::Step,
       Showdown
   ]
+
+  def run(tournament_state)
+    game_state = Croupier::Game::State.new(tournament_state)
+    GAME_STEPS.each do |step_type|
+      step_type.new(game_state).run
+    end
+  end
 end
