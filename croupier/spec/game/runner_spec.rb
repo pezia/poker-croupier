@@ -1,11 +1,11 @@
 require_relative '../spec_helper'
 
-describe Croupier::Game::Runner do
+describe Croupier::Tournament::Runner do
   before :each do
     @tournament_state = Croupier::Tournament::State.new
     Croupier::Tournament::State.stub(:new).and_return(@tournament_state)
 
-    @runner = Croupier::Game::Runner.new
+    @runner = Croupier::Tournament::Runner.new
   end
 
   describe "#register_player" do
@@ -31,7 +31,7 @@ describe Croupier::Game::Runner do
       @tournament_state.stub(:number_of_players_in_game).and_return(2, 1)
       game_state = Croupier::Game::State.new(@tournament_state)
       Croupier::Game::State.stub(:new).and_return(game_state)
-      Croupier::Game::Runner::GAME_STEPS.each do |step|
+      Croupier::Tournament::Runner::GAME_STEPS.each do |step|
         instance = double("Game step")
         step.should_receive(:new).with(game_state).and_return(instance)
         instance.should_receive(:run)

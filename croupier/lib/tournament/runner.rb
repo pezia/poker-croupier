@@ -1,4 +1,4 @@
-class Croupier::Game::Runner
+class Croupier::Tournament::Runner
 
   include Croupier::Game::Steps
   GAME_STEPS = [
