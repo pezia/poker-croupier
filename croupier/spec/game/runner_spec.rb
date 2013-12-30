@@ -31,7 +31,7 @@ describe Croupier::Tournament::Runner do
       @tournament_state.stub(:number_of_players_in_game).and_return(2, 1)
       game_state = Croupier::Game::State.new(@tournament_state)
       Croupier::Game::State.stub(:new).and_return(game_state)
-      Croupier::Tournament::Runner::GAME_STEPS.each do |step|
+      Croupier::Game::Runner::GAME_STEPS.each do |step|
         instance = double("Game step")
         step.should_receive(:new).with(game_state).and_return(instance)
         instance.should_receive(:run)
