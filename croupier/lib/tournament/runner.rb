@@ -13,7 +13,7 @@ class Croupier::Tournament::Runner
   end
 
   def start_sit_and_go
-    while @tournament_state.number_of_players_in_game >= 2 do
+    while @tournament_state.number_of_active_players_in_tournament >= 2 do
       Croupier::Game::Runner.new.run(@tournament_state)
       @tournament_state.next_round!
     end

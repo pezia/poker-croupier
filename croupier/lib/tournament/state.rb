@@ -97,7 +97,7 @@ class Croupier::Tournament::State
     @players[nthPlayer 2]
   end
 
-  def number_of_players_in_game
+  def number_of_active_players_in_tournament
     @players.count { |player| player.has_stack? }
   end
 

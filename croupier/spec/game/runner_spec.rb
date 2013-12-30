@@ -28,7 +28,7 @@ describe Croupier::Tournament::Runner do
 
   describe "#start_sit_and_go" do
     it "should run steps until there are more than two players in game" do
-      @tournament_state.stub(:number_of_players_in_game).and_return(2, 1)
+      @tournament_state.stub(:number_of_active_players_in_tournament).and_return(2, 1)
       game_state = Croupier::Game::State.new(@tournament_state)
       Croupier::Game::State.stub(:new).and_return(game_state)
       Croupier::Game::Runner::GAME_STEPS.each do |step|

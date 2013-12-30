@@ -19,7 +19,7 @@ describe Croupier::Tournament::State do
       game_state = SpecHelper::MakeTournamentState.with players: [fake_player, fake_player]
       game_state.players[0].stack = 0
 
-      game_state.number_of_players_in_game.should == 1
+      game_state.number_of_active_players_in_tournament.should == 1
     end
   end
 
