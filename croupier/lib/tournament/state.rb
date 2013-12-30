@@ -102,8 +102,6 @@ class Croupier::Tournament::State
   end
 
   def next_round!
-    #@game_state = Croupier::Game::State.new(self)
-
     @players.each do |player|
       player.initialize_round
     end
