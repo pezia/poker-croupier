@@ -155,7 +155,7 @@ describe Croupier::Tournament::State do
       small_blind_at_start = game_state.small_blind
       big_blind_at_start = game_state.big_blind
 
-      2.times do |c|
+      2.times do |_|
         game_state.next_round!
         game_state.small_blind.should == small_blind_at_start
         game_state.big_blind.should == big_blind_at_start
@@ -172,6 +172,13 @@ describe Croupier::Tournament::State do
       game_state.players[2].should_receive(:initialize_round)
 
       game_state.next_round!
+    end
+
+    it "should skip in-active players when moving the dealer button" do
+      game_state.players[1].stack = 0
+      game_state.next_round!
+      game_state.dealer.should == game_state.players[2]
+
     end
   end
 

@@ -124,6 +124,9 @@ class Croupier::Tournament::State
 
   def move_deal_button_to_next_player
     @dealers_position = nthPlayer 1
+    until @players[@dealers_position].stack > 0
+      @dealers_position = nthPlayer 1
+    end
   end
 
   def nthPlayer(n)
