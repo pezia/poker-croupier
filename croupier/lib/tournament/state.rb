@@ -5,8 +5,6 @@ class Croupier::Tournament::State
   attr_reader :big_blind
 
   def initialize
-    #@game_state = Croupier::Game::State.new(self)
-
     @players = []
     @spectators = []
     @small_blind = 10
