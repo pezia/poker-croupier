@@ -164,13 +164,26 @@ describe Croupier::Game::Steps::Betting::Step do
     end
 
     it "should skip inactive players" do
-      @player3 = Croupier::Player.new SpecHelper::FakeStrategy.new
-      @game_state.register_player @player3
+      @second_player = Croupier::Player.new SpecHelper::FakeStrategy.new
+      @game_state.register_player @second_player
 
       should_bet @first_player, 20, :raise
-      should_bet @player3, 0, :fold
+      should_bet @second_player, 0, :fold
       should_bet @player_on_button, 40, :raise
       should_bet @first_player, 20, :call
+      run
+    end
+
+    it "should skip all-in players" do
+      @second_player = Croupier::Player.new SpecHelper::FakeStrategy.new
+      @second_player.stack = 10
+      @game_state.register_player @second_player
+
+      should_bet @first_player, 20, :raise
+      should_bet @second_player, 10, :allin
+      should_bet @player_on_button, 40, :raise
+      should_bet @first_player, 40, :raise
+      should_bet @player_on_button, 20, :call
       run
     end
 

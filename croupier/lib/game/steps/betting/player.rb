@@ -6,7 +6,7 @@ class Croupier::Game::Steps::Betting::Player
   end
 
   def take_turn
-    unless @player.active?
+    if @player.allin? or not @player.active?
       return
     end
 
