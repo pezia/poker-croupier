@@ -5,10 +5,10 @@ describe Croupier::Game::Steps::Betting::PreFlop do
 
   let(:spectator) { SpecHelper::FakeSpectator.new }
   let(:game_state) do
-    SpecHelper::MakeTournamentState.with(
+    Croupier::Game::State.new(SpecHelper::MakeTournamentState.with(
         players: [fake_player("Albert"), fake_player("Bob")],
         spectators: [spectator]
-    )
+    ))
   end
 
   def expect_bet_announced(amount, player, type, pot)
