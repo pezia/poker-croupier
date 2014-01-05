@@ -49,10 +49,6 @@ class Croupier::Tournament::State
     end
   end
 
-  def transfer(player, amount)
-    player.stack -= amount
-  end
-
   def dealer
     @players[@dealers_position]
   end

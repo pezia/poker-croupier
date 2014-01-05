@@ -38,4 +38,8 @@ class Croupier::Game::State
   def reset_last_aggressor
     @last_aggressor = nil
   end
+
+  def transfer(player, amount)
+    player.stack -= amount
+  end
 end
