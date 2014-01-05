@@ -11,13 +11,18 @@ class Croupier::Game::Steps::Betting::Step < Croupier::Game::Steps::Base
     end
 
     in_action = first_player_index = game_state.players.index(game_state.first_player)
-    until betting_is_over? && in_action >= @betting_players.length + first_player_index
+    until betting_is_over? && in_action >= minimum_number_of_bets + first_player_index
       @betting_players[in_action % (@betting_players.length)].take_turn
       in_action = in_action + 1
     end
   end
 
   private
+
+  def minimum_number_of_bets
+    @betting_players.length
+  end
+
 
   def should_do_betting
     (game_state.players.count { |player| player.active? and not player.allin? }) > 1

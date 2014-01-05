@@ -23,8 +23,11 @@ describe Croupier::Game::Steps::Betting::PreFlop do
     expect_bet_announced 10, game_state.first_player, :raise, 10
     expect_bet_announced 20, game_state.second_player, :raise, 30
 
-    game_state.first_player.strategy.should_receive(:bet_request).and_return(0)
-    expect_bet_announced 0, game_state.first_player, :fold, 30
+    game_state.first_player.strategy.should_receive(:bet_request).and_return(10)
+    expect_bet_announced 10, game_state.first_player, :call, 40
+
+    game_state.second_player.strategy.should_receive(:bet_request).and_return(0)
+    expect_bet_announced 0, game_state.second_player, :check, 40
 
     run
   end

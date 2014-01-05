@@ -11,4 +11,8 @@ class Croupier::Game::Steps::Betting::PreFlop < Croupier::Game::Steps::Betting::
     end
   end
 
+  def minimum_number_of_bets
+    @betting_players.length + 2
+  end
+
 end
