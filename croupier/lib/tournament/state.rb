@@ -78,11 +78,7 @@ class Croupier::Tournament::State
       player.initialize_round
     end
 
-    move_deal_button_to_next_player
-
-    if orbit_completed
-      double_the_blinds
-    end
+    move_deal_button
   end
 
   private
@@ -96,10 +92,17 @@ class Croupier::Tournament::State
     @big_blind *= 2
   end
 
+  def move_deal_button
+    move_deal_button_to_next_player
+    until @players[@dealers_position].stack > 0
+      move_deal_button_to_next_player
+    end
+  end
+
   def move_deal_button_to_next_player
     @dealers_position = nthPlayer 1
-    until @players[@dealers_position].stack > 0
-      @dealers_position = nthPlayer 1
+    if orbit_completed
+      double_the_blinds
     end
   end
 
