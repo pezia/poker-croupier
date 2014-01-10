@@ -39,4 +39,13 @@ describe Croupier::Tournament::Ranking do
 
     ranking.get.should == [state.players[0], state.players[1]]
   end
+
+  it "should return the winner at the end" do
+    state.players[0].stack = 0
+    state.players[1].stack = 0
+
+    ranking.eliminate
+    ranking.add_winner
+    ranking.get.should == [state.players[1], state.players[0], state.players[2]]
+  end
 end

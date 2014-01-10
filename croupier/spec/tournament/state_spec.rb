@@ -40,6 +40,15 @@ describe Croupier::Tournament::State do
     end
   end
 
+  describe "#active_players" do
+    it "should return active players" do
+      game_state = SpecHelper::MakeTournamentState.with players: [fake_player, fake_player]
+      game_state.players[0].stack = 0
+
+      game_state.active_players.should == [game_state.players[1]]
+    end
+  end
+
   describe "#register_spectator" do
     it "should add tge spectator to the list of spectators" do
       spectator = double("Spectator")

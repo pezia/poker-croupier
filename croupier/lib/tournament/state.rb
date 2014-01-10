@@ -69,6 +69,10 @@ class Croupier::Tournament::State
     @players.rotate(@players.index(first_player)).select { |player| not player.has_stack? }
   end
 
+  def active_players
+    @players.select { |player| player.has_stack? }
+  end
+
   def next_round!
     @players.each do |player|
       player.initialize_round

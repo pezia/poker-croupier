@@ -44,7 +44,7 @@ describe Croupier::Tournament::Runner do
       @runner.start_sit_and_go
     end
 
-    it "should eliminate players after each round" do
+    it "should eliminate players after each round and return ranking" do
 
       Croupier::Game::Runner.stub(:new).and_return(SpecHelper::DummyClass.new)
 
@@ -54,6 +54,7 @@ describe Croupier::Tournament::Runner do
       ranking = double("Ranking mock")
       Croupier::Tournament::Ranking.stub(:new).and_return(ranking)
       ranking.should_receive(:eliminate).twice
+      ranking.should_receive(:add_winner).once
 
       @runner.start_sit_and_go.should == ranking
     end

@@ -15,4 +15,8 @@ class Croupier::Tournament::Ranking
       end
     end
   end
+
+  def add_winner
+    @ranking.concat(@state.active_players)
+  end
 end

@@ -19,7 +19,8 @@ class Croupier::Tournament::Runner
       ranking.eliminate
       @tournament_state.next_round!
     end
-
+    ranking.add_winner
+    ranking
   end
 
 end
