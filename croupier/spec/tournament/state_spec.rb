@@ -23,6 +23,23 @@ describe Croupier::Tournament::State do
     end
   end
 
+  describe "#players_eliminated" do
+    it "should return all players without chips" do
+      game_state = SpecHelper::MakeTournamentState.with players: [fake_player, fake_player]
+      game_state.players[0].stack = 0
+
+      game_state.players_eliminated.should == [game_state.players[0]]
+    end
+
+    it "should return the current first player first" do
+      game_state = SpecHelper::MakeTournamentState.with players: [fake_player, fake_player]
+      game_state.players[0].stack = 0
+      game_state.players[1].stack = 0
+
+      game_state.players_eliminated.should == [game_state.players[1], game_state.players[0]]
+    end
+  end
+
   describe "#register_spectator" do
     it "should add tge spectator to the list of spectators" do
       spectator = double("Spectator")
