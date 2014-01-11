@@ -113,7 +113,7 @@ describe Croupier::Tournament::State do
 
   describe "#next_round" do
     let(:game_state) {
-      tournament_state = SpecHelper::MakeTournamentState.with(players: [fake_player, fake_player, fake_player])
+      tournament_state = SpecHelper::MakeTournamentState.with(players: [fake_player('a'), fake_player('b'), fake_player('c')])
 
       Croupier::Game::State.new tournament_state
     }
@@ -132,6 +132,19 @@ describe Croupier::Tournament::State do
       game_state.small_blind.should == small_blind_at_start * 2
       game_state.big_blind.should == big_blind_at_start * 2
 
+    end
+
+    it "should double blinds even if player[0] is inactive" do
+      small_blind_at_start = game_state.small_blind
+      big_blind_at_start = game_state.big_blind
+
+      game_state.next_round!
+      game_state.players[0].stack = 0
+      game_state.next_round!
+      game_state.next_round!
+
+      game_state.small_blind.should == small_blind_at_start * 2
+      game_state.big_blind.should == big_blind_at_start * 2
     end
 
     it "should reactivate folded players with non zero stacks" do

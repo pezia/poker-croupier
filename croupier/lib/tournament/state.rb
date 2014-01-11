@@ -1,16 +1,22 @@
 class Croupier::Tournament::State
   attr_reader :players
   attr_reader :spectators
-  attr_reader :small_blind
-  attr_reader :big_blind
 
   def initialize
     @players = []
     @spectators = []
     @small_blind = 10
-    @big_blind = 20
+    @number_of_times_button_moved = 0
     @current_player = 0
     @dealers_position = 0
+  end
+
+  def small_blind
+    @small_blind * (2**(@number_of_times_button_moved/@players.length).floor)
+  end
+
+  def big_blind
+    small_blind * 2
   end
 
   def register_player(player)
@@ -78,21 +84,12 @@ class Croupier::Tournament::State
       player.initialize_round
     end
 
-    move_deal_button
+    move_deal_button_to_next_active_player
   end
 
   private
 
-  def orbit_completed
-    @dealers_position == 0
-  end
-
-  def double_the_blinds
-    @small_blind *= 2
-    @big_blind *= 2
-  end
-
-  def move_deal_button
+  def move_deal_button_to_next_active_player
     move_deal_button_to_next_player
     until @players[@dealers_position].stack > 0
       move_deal_button_to_next_player
@@ -101,9 +98,7 @@ class Croupier::Tournament::State
 
   def move_deal_button_to_next_player
     @dealers_position = nthPlayer 1
-    if orbit_completed
-      double_the_blinds
-    end
+    @number_of_times_button_moved += 1
   end
 
   def nthPlayer(n)
