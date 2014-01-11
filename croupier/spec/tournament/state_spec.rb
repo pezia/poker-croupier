@@ -32,11 +32,11 @@ describe Croupier::Tournament::State do
     end
 
     it "should return the current first player first" do
-      game_state = SpecHelper::MakeTournamentState.with players: [fake_player, fake_player]
+      game_state = SpecHelper::MakeTournamentState.with players: [fake_player, fake_player, fake_player]
       game_state.players[0].stack = 0
       game_state.players[1].stack = 0
 
-      game_state.players_eliminated.should == [game_state.players[1], game_state.players[0]]
+      game_state.players_eliminated.should == [game_state.players[0], game_state.players[1]]
     end
   end
 
@@ -171,7 +171,7 @@ describe Croupier::Tournament::State do
       end
     end
 
-    it "should calculate the second player depends from the first" do
+    it "should calculate the first player" do
       @game_state.first_player == @game_state.players[1]
 
       @game_state.next_round!
@@ -185,7 +185,7 @@ describe Croupier::Tournament::State do
       @game_state.first_player.should == @game_state.players[0]
     end
 
-    it "should calculate the third player depends from the first" do
+    it "should calculate the second player" do
       @game_state.second_player == @game_state.players[2]
 
       @game_state.next_round!
@@ -195,6 +195,14 @@ describe Croupier::Tournament::State do
 
       @game_state.next_round!
       @game_state.second_player.should == @game_state.players[1]
+    end
+
+    it "should skip inactive players" do
+      @game_state.players[1].stack = 0
+      @game_state.players[3].stack = 0
+
+      @game_state.first_player.should == @game_state.players[2]
+      #@game_state.second_player.should == @game_state.players[2]
     end
   end
 

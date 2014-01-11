@@ -60,11 +60,11 @@ class Croupier::Tournament::State
   end
 
   def first_player
-    @players[nthPlayer 1]
+    @players[nth_player_index 1]
   end
 
   def second_player
-    @players[nthPlayer 2]
+    @players[nth_player_index 2]
   end
 
   def number_of_active_players_in_tournament
@@ -92,17 +92,20 @@ class Croupier::Tournament::State
   def move_deal_button_to_next_active_player
     previous_dealer = @dealers_position
 
-    @dealers_position = nthPlayer 1
-    until @players[@dealers_position].stack > 0
-      @dealers_position = nthPlayer 1
-    end
+    @dealers_position = nth_player_index 1
 
     if previous_dealer > @dealers_position
-      @orbits =+ 1
+      @orbits += 1
     end
+    Croupier.logger.info "Previous dealer was #{previous_dealer} and the new dealer is #{@dealers_position}. It's the #{@orbits}th orbit"
   end
 
-  def nthPlayer(n)
-    (@dealers_position + n) % players.count
+  def nth_player_index(n)
+    player_index = @dealers_position
+    while n > 0
+      player_index = (player_index + 1) % players.count
+      n -= 1 if @players[player_index].has_stack?
+    end
+    player_index
   end
 end
