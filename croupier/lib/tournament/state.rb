@@ -6,13 +6,13 @@ class Croupier::Tournament::State
     @players = []
     @spectators = []
     @small_blind = 10
-    @number_of_times_button_moved = 0
+    @orbits = 0
     @current_player = 0
     @dealers_position = 0
   end
 
   def small_blind
-    @small_blind * (2**(@number_of_times_button_moved/@players.length).floor)
+    @small_blind * (2**@orbits)
   end
 
   def big_blind
@@ -90,15 +90,16 @@ class Croupier::Tournament::State
   private
 
   def move_deal_button_to_next_active_player
-    move_deal_button_to_next_player
-    until @players[@dealers_position].stack > 0
-      move_deal_button_to_next_player
-    end
-  end
+    previous_dealer = @dealers_position
 
-  def move_deal_button_to_next_player
     @dealers_position = nthPlayer 1
-    @number_of_times_button_moved += 1
+    until @players[@dealers_position].stack > 0
+      @dealers_position = nthPlayer 1
+    end
+
+    if previous_dealer > @dealers_position
+      @orbits =+ 1
+    end
   end
 
   def nthPlayer(n)
