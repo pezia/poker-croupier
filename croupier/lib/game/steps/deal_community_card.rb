@@ -1,7 +1,7 @@
 
 class Croupier::Game::Steps::DealCommunityCard < Croupier::Game::Steps::Base
   def run
-    return unless should_deal_card()
+    return unless should_deal_card
 
     card = game_state.deck.next_card!
     game_state.community_cards << card
