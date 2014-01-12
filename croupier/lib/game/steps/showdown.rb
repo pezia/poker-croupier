@@ -17,8 +17,13 @@ class Croupier::Game::Steps::Showdown < Croupier::Game::Steps::Base
     @winners = []
     @best_hand = Ranking::Hand.new
 
-    game_state.each_player_from game_state.last_aggressor do |player|
-      examine_cards_of player
+    if game_state.players.count { |player| player.active? and player.total_bet > 0 } == 1
+      @winners = game_state.players.select { |player| player.active? and player.total_bet > 0 }
+      @best_hand = Ranking::Hand.new *@winners[0].hole_cards, *game_state.community_cards
+    else
+      game_state.each_player_from game_state.last_aggressor do |player|
+        examine_cards_of player
+      end
     end
   end
 

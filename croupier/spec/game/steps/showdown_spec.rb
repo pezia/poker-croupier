@@ -73,13 +73,24 @@ describe Croupier::Game::Steps::Showdown do
     context "hands are revealed during showdown" do
       before :each do
         game_state.players.each { |player| player.total_bet = 1 }
+
+        set_hole_cards_for(0, '4 of Clubs', 'Ace of Hearts')
+        set_hole_cards_for(1, 'Jack of Diamonds', 'Jack of Hearts')
       end
 
       it "should show the cards of the first player" do
-        set_hole_cards_for(0, '4 of Clubs', 'Ace of Hearts')
-        set_hole_cards_for(1, 'Jack of Diamonds', 'Jack of Hearts')
-
         expect_hand_to_be_announced_for game_state.first_player
+
+        run
+      end
+
+      it "should not show cards if all but one player folded" do
+        game_state.first_player.fold
+
+        spectator_mock = double
+        spectator_mock.stub(:winner)
+
+        game_state.register_spectator spectator_mock
 
         run
       end
