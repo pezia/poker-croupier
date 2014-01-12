@@ -97,7 +97,6 @@ class Croupier::Tournament::State
     if previous_dealer > @dealers_position
       @orbits += 1
     end
-    Croupier.logger.info "Previous dealer was #{previous_dealer} and the new dealer is #{@dealers_position}. It's the #{@orbits}th orbit"
   end
 
   def nth_player_index(n)

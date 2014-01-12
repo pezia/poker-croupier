@@ -31,4 +31,17 @@ describe Croupier::Game::Steps::DealHoleCards do
 
     Croupier::Game::Steps::DealHoleCards.new(game_state).run
   end
+
+  it "should skip players with no chips left" do
+    game_state.register_player fake_player
+
+    game_state.players[1].stack = 0
+
+    game_state.players[2].should_receive(:hole_card).once.with(cards[0])
+    game_state.players[0].should_receive(:hole_card).once.with(cards[1])
+    game_state.players[2].should_receive(:hole_card).once.with(cards[2])
+    game_state.players[0].should_receive(:hole_card).once.with(cards[3])
+
+    Croupier::Game::Steps::DealHoleCards.new(game_state).run
+  end
 end
