@@ -16,7 +16,7 @@ class Croupier::Player
   end
 
   def initialize_round
-    @active = true unless @stack == 0
+    @active = has_stack?
     @total_bet = 0
     @hole_cards = []
   end

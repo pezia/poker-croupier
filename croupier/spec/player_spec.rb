@@ -69,5 +69,13 @@ describe Croupier::Player do
 
       player.active?.should be_false
     end
+
+    it "should deactivate player if it has no chips left" do
+      player.stack = 0
+
+      player.initialize_round
+
+      player.active?.should be_false
+    end
   end
 end
