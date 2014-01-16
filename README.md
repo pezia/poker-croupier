@@ -45,7 +45,7 @@ Helpful links
 ## Setting up your development environment
 
 - Clone the git repo
-- Install [rvm](http://rvm.io/) and ruby 1.9.3: `\curl -L https://get.rvm.io | bash -s stable --ruby=1.9.3`
+- Install [rvm](http://rvm.io/) and ruby 2.1.0: `\curl -L https://get.rvm.io | bash -s stable --ruby=2.1.0`
 - Install bundler: `gem install bundler`
 - Install necessary gems with bundler: `bundle`
 - Test your environment by running the unit tests: `rake test`
