@@ -34,13 +34,13 @@ public class Ranking {
 
   public interface Iface {
 
-    public HandDescriptor rank_hand(List<Card> cards) throws org.apache.thrift.TException;
+    public com.devillsroom.poker.client.HandDescriptor rank_hand(List<com.devillsroom.poker.client.Card> cards) throws org.apache.thrift.TException;
 
   }
 
   public interface AsyncIface {
 
-    public void rank_hand(List<Card> cards, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
+    public void rank_hand(List<com.devillsroom.poker.client.Card> cards, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
 
   }
 
@@ -64,20 +64,20 @@ public class Ranking {
       super(iprot, oprot);
     }
 
-    public HandDescriptor rank_hand(List<Card> cards) throws org.apache.thrift.TException
+    public com.devillsroom.poker.client.HandDescriptor rank_hand(List<com.devillsroom.poker.client.Card> cards) throws org.apache.thrift.TException
     {
       send_rank_hand(cards);
       return recv_rank_hand();
     }
 
-    public void send_rank_hand(List<Card> cards) throws org.apache.thrift.TException
+    public void send_rank_hand(List<com.devillsroom.poker.client.Card> cards) throws org.apache.thrift.TException
     {
       rank_hand_args args = new rank_hand_args();
       args.setCards(cards);
       sendBase("rank_hand", args);
     }
 
-    public HandDescriptor recv_rank_hand() throws org.apache.thrift.TException
+    public com.devillsroom.poker.client.HandDescriptor recv_rank_hand() throws org.apache.thrift.TException
     {
       rank_hand_result result = new rank_hand_result();
       receiveBase(result, "rank_hand");
@@ -105,7 +105,7 @@ public class Ranking {
       super(protocolFactory, clientManager, transport);
     }
 
-    public void rank_hand(List<Card> cards, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
+    public void rank_hand(List<com.devillsroom.poker.client.Card> cards, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
       checkReady();
       rank_hand_call method_call = new rank_hand_call(cards, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -113,8 +113,8 @@ public class Ranking {
     }
 
     public static class rank_hand_call extends org.apache.thrift.async.TAsyncMethodCall {
-      private List<Card> cards;
-      public rank_hand_call(List<Card> cards, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      private List<com.devillsroom.poker.client.Card> cards;
+      public rank_hand_call(List<com.devillsroom.poker.client.Card> cards, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.cards = cards;
       }
@@ -127,7 +127,7 @@ public class Ranking {
         prot.writeMessageEnd();
       }
 
-      public HandDescriptor getResult() throws org.apache.thrift.TException {
+      public com.devillsroom.poker.client.HandDescriptor getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new IllegalStateException("Method call not finished!");
         }
@@ -191,7 +191,7 @@ public class Ranking {
       return processMap;
     }
 
-    public static class rank_hand<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, rank_hand_args, HandDescriptor> {
+    public static class rank_hand<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, rank_hand_args, com.devillsroom.poker.client.HandDescriptor> {
       public rank_hand() {
         super("rank_hand");
       }
@@ -200,10 +200,10 @@ public class Ranking {
         return new rank_hand_args();
       }
 
-      public AsyncMethodCallback<HandDescriptor> getResultHandler(final AsyncFrameBuffer fb, final int seqid) {
+      public AsyncMethodCallback<com.devillsroom.poker.client.HandDescriptor> getResultHandler(final AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new AsyncMethodCallback<HandDescriptor>() { 
-          public void onComplete(HandDescriptor o) {
+        return new AsyncMethodCallback<com.devillsroom.poker.client.HandDescriptor>() { 
+          public void onComplete(com.devillsroom.poker.client.HandDescriptor o) {
             rank_hand_result result = new rank_hand_result();
             result.success = o;
             try {
@@ -237,7 +237,7 @@ public class Ranking {
         return false;
       }
 
-      public void start(I iface, rank_hand_args args, org.apache.thrift.async.AsyncMethodCallback<HandDescriptor> resultHandler) throws TException {
+      public void start(I iface, rank_hand_args args, org.apache.thrift.async.AsyncMethodCallback<com.devillsroom.poker.client.HandDescriptor> resultHandler) throws TException {
         iface.rank_hand(args.cards,resultHandler);
       }
     }
@@ -255,7 +255,7 @@ public class Ranking {
       schemes.put(TupleScheme.class, new rank_hand_argsTupleSchemeFactory());
     }
 
-    public List<Card> cards; // required
+    public List<com.devillsroom.poker.client.Card> cards; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -321,7 +321,7 @@ public class Ranking {
       Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.CARDS, new org.apache.thrift.meta_data.FieldMetaData("cards", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
-              new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, Card.class))));
+              new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.devillsroom.poker.client.Card.class))));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(rank_hand_args.class, metaDataMap);
     }
@@ -330,7 +330,7 @@ public class Ranking {
     }
 
     public rank_hand_args(
-      List<Card> cards)
+      List<com.devillsroom.poker.client.Card> cards)
     {
       this();
       this.cards = cards;
@@ -341,9 +341,9 @@ public class Ranking {
      */
     public rank_hand_args(rank_hand_args other) {
       if (other.isSetCards()) {
-        List<Card> __this__cards = new ArrayList<Card>(other.cards.size());
-        for (Card other_element : other.cards) {
-          __this__cards.add(new Card(other_element));
+        List<com.devillsroom.poker.client.Card> __this__cards = new ArrayList<com.devillsroom.poker.client.Card>(other.cards.size());
+        for (com.devillsroom.poker.client.Card other_element : other.cards) {
+          __this__cards.add(new com.devillsroom.poker.client.Card(other_element));
         }
         this.cards = __this__cards;
       }
@@ -362,22 +362,22 @@ public class Ranking {
       return (this.cards == null) ? 0 : this.cards.size();
     }
 
-    public java.util.Iterator<Card> getCardsIterator() {
+    public java.util.Iterator<com.devillsroom.poker.client.Card> getCardsIterator() {
       return (this.cards == null) ? null : this.cards.iterator();
     }
 
-    public void addToCards(Card elem) {
+    public void addToCards(com.devillsroom.poker.client.Card elem) {
       if (this.cards == null) {
-        this.cards = new ArrayList<Card>();
+        this.cards = new ArrayList<com.devillsroom.poker.client.Card>();
       }
       this.cards.add(elem);
     }
 
-    public List<Card> getCards() {
+    public List<com.devillsroom.poker.client.Card> getCards() {
       return this.cards;
     }
 
-    public rank_hand_args setCards(List<Card> cards) {
+    public rank_hand_args setCards(List<com.devillsroom.poker.client.Card> cards) {
       this.cards = cards;
       return this;
     }
@@ -403,7 +403,7 @@ public class Ranking {
         if (value == null) {
           unsetCards();
         } else {
-          setCards((List<Card>)value);
+          setCards((List<com.devillsroom.poker.client.Card>)value);
         }
         break;
 
@@ -554,11 +554,11 @@ public class Ranking {
               if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
                 {
                   org.apache.thrift.protocol.TList _list0 = iprot.readListBegin();
-                  struct.cards = new ArrayList<Card>(_list0.size);
+                  struct.cards = new ArrayList<com.devillsroom.poker.client.Card>(_list0.size);
                   for (int _i1 = 0; _i1 < _list0.size; ++_i1)
                   {
-                    Card _elem2;
-                    _elem2 = new Card();
+                    com.devillsroom.poker.client.Card _elem2;
+                    _elem2 = new com.devillsroom.poker.client.Card();
                     _elem2.read(iprot);
                     struct.cards.add(_elem2);
                   }
@@ -588,7 +588,7 @@ public class Ranking {
           oprot.writeFieldBegin(CARDS_FIELD_DESC);
           {
             oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.STRUCT, struct.cards.size()));
-            for (Card _iter3 : struct.cards)
+            for (com.devillsroom.poker.client.Card _iter3 : struct.cards)
             {
               _iter3.write(oprot);
             }
@@ -621,7 +621,7 @@ public class Ranking {
         if (struct.isSetCards()) {
           {
             oprot.writeI32(struct.cards.size());
-            for (Card _iter4 : struct.cards)
+            for (com.devillsroom.poker.client.Card _iter4 : struct.cards)
             {
               _iter4.write(oprot);
             }
@@ -636,11 +636,11 @@ public class Ranking {
         if (incoming.get(0)) {
           {
             org.apache.thrift.protocol.TList _list5 = new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.STRUCT, iprot.readI32());
-            struct.cards = new ArrayList<Card>(_list5.size);
+            struct.cards = new ArrayList<com.devillsroom.poker.client.Card>(_list5.size);
             for (int _i6 = 0; _i6 < _list5.size; ++_i6)
             {
-              Card _elem7;
-              _elem7 = new Card();
+              com.devillsroom.poker.client.Card _elem7;
+              _elem7 = new com.devillsroom.poker.client.Card();
               _elem7.read(iprot);
               struct.cards.add(_elem7);
             }
@@ -663,7 +663,7 @@ public class Ranking {
       schemes.put(TupleScheme.class, new rank_hand_resultTupleSchemeFactory());
     }
 
-    public HandDescriptor success; // required
+    public com.devillsroom.poker.client.HandDescriptor success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -728,7 +728,7 @@ public class Ranking {
     static {
       Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, HandDescriptor.class)));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.devillsroom.poker.client.HandDescriptor.class)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(rank_hand_result.class, metaDataMap);
     }
@@ -737,7 +737,7 @@ public class Ranking {
     }
 
     public rank_hand_result(
-      HandDescriptor success)
+      com.devillsroom.poker.client.HandDescriptor success)
     {
       this();
       this.success = success;
@@ -748,7 +748,7 @@ public class Ranking {
      */
     public rank_hand_result(rank_hand_result other) {
       if (other.isSetSuccess()) {
-        this.success = new HandDescriptor(other.success);
+        this.success = new com.devillsroom.poker.client.HandDescriptor(other.success);
       }
     }
 
@@ -761,11 +761,11 @@ public class Ranking {
       this.success = null;
     }
 
-    public HandDescriptor getSuccess() {
+    public com.devillsroom.poker.client.HandDescriptor getSuccess() {
       return this.success;
     }
 
-    public rank_hand_result setSuccess(HandDescriptor success) {
+    public rank_hand_result setSuccess(com.devillsroom.poker.client.HandDescriptor success) {
       this.success = success;
       return this;
     }
@@ -791,7 +791,7 @@ public class Ranking {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((HandDescriptor)value);
+          setSuccess((com.devillsroom.poker.client.HandDescriptor)value);
         }
         break;
 
@@ -943,7 +943,7 @@ public class Ranking {
           switch (schemeField.id) {
             case 0: // SUCCESS
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.success = new HandDescriptor();
+                struct.success = new com.devillsroom.poker.client.HandDescriptor();
                 struct.success.read(iprot);
                 struct.setSuccessIsSet(true);
               } else { 
@@ -1002,7 +1002,7 @@ public class Ranking {
         TTupleProtocol iprot = (TTupleProtocol) prot;
         BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = new HandDescriptor();
+          struct.success = new com.devillsroom.poker.client.HandDescriptor();
           struct.success.read(iprot);
           struct.setSuccessIsSet(true);
         }

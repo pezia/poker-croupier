@@ -1,4 +1,5 @@
 namespace rb API
+namespace java com.devillsroom.poker.client
 
 struct Competitor
 {

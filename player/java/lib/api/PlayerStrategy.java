@@ -36,19 +36,19 @@ public class PlayerStrategy {
 
     public String name() throws org.apache.thrift.TException;
 
-    public long bet_request(long pot, BetLimits limits) throws org.apache.thrift.TException;
+    public long bet_request(long pot, com.devillsroom.poker.client.BetLimits limits) throws org.apache.thrift.TException;
 
-    public void competitor_status(Competitor competitor) throws org.apache.thrift.TException;
+    public void competitor_status(com.devillsroom.poker.client.Competitor competitor) throws org.apache.thrift.TException;
 
-    public void bet(Competitor competitor, Bet bet) throws org.apache.thrift.TException;
+    public void bet(com.devillsroom.poker.client.Competitor competitor, com.devillsroom.poker.client.Bet bet) throws org.apache.thrift.TException;
 
-    public void hole_card(Card card) throws org.apache.thrift.TException;
+    public void hole_card(com.devillsroom.poker.client.Card card) throws org.apache.thrift.TException;
 
-    public void community_card(Card card) throws org.apache.thrift.TException;
+    public void community_card(com.devillsroom.poker.client.Card card) throws org.apache.thrift.TException;
 
-    public void showdown(Competitor competitor, List<Card> cards, HandDescriptor hand) throws org.apache.thrift.TException;
+    public void showdown(com.devillsroom.poker.client.Competitor competitor, List<com.devillsroom.poker.client.Card> cards, com.devillsroom.poker.client.HandDescriptor hand) throws org.apache.thrift.TException;
 
-    public void winner(Competitor competitor, long amount) throws org.apache.thrift.TException;
+    public void winner(com.devillsroom.poker.client.Competitor competitor, long amount) throws org.apache.thrift.TException;
 
   }
 
@@ -56,19 +56,19 @@ public class PlayerStrategy {
 
     public void name(org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
 
-    public void bet_request(long pot, BetLimits limits, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
+    public void bet_request(long pot, com.devillsroom.poker.client.BetLimits limits, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
 
-    public void competitor_status(Competitor competitor, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
+    public void competitor_status(com.devillsroom.poker.client.Competitor competitor, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
 
-    public void bet(Competitor competitor, Bet bet, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
+    public void bet(com.devillsroom.poker.client.Competitor competitor, com.devillsroom.poker.client.Bet bet, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
 
-    public void hole_card(Card card, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
+    public void hole_card(com.devillsroom.poker.client.Card card, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
 
-    public void community_card(Card card, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
+    public void community_card(com.devillsroom.poker.client.Card card, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
 
-    public void showdown(Competitor competitor, List<Card> cards, HandDescriptor hand, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
+    public void showdown(com.devillsroom.poker.client.Competitor competitor, List<com.devillsroom.poker.client.Card> cards, com.devillsroom.poker.client.HandDescriptor hand, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
 
-    public void winner(Competitor competitor, long amount, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
+    public void winner(com.devillsroom.poker.client.Competitor competitor, long amount, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
 
   }
 
@@ -114,13 +114,13 @@ public class PlayerStrategy {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "name failed: unknown result");
     }
 
-    public long bet_request(long pot, BetLimits limits) throws org.apache.thrift.TException
+    public long bet_request(long pot, com.devillsroom.poker.client.BetLimits limits) throws org.apache.thrift.TException
     {
       send_bet_request(pot, limits);
       return recv_bet_request();
     }
 
-    public void send_bet_request(long pot, BetLimits limits) throws org.apache.thrift.TException
+    public void send_bet_request(long pot, com.devillsroom.poker.client.BetLimits limits) throws org.apache.thrift.TException
     {
       bet_request_args args = new bet_request_args();
       args.setPot(pot);
@@ -138,13 +138,13 @@ public class PlayerStrategy {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "bet_request failed: unknown result");
     }
 
-    public void competitor_status(Competitor competitor) throws org.apache.thrift.TException
+    public void competitor_status(com.devillsroom.poker.client.Competitor competitor) throws org.apache.thrift.TException
     {
       send_competitor_status(competitor);
       recv_competitor_status();
     }
 
-    public void send_competitor_status(Competitor competitor) throws org.apache.thrift.TException
+    public void send_competitor_status(com.devillsroom.poker.client.Competitor competitor) throws org.apache.thrift.TException
     {
       competitor_status_args args = new competitor_status_args();
       args.setCompetitor(competitor);
@@ -158,13 +158,13 @@ public class PlayerStrategy {
       return;
     }
 
-    public void bet(Competitor competitor, Bet bet) throws org.apache.thrift.TException
+    public void bet(com.devillsroom.poker.client.Competitor competitor, com.devillsroom.poker.client.Bet bet) throws org.apache.thrift.TException
     {
       send_bet(competitor, bet);
       recv_bet();
     }
 
-    public void send_bet(Competitor competitor, Bet bet) throws org.apache.thrift.TException
+    public void send_bet(com.devillsroom.poker.client.Competitor competitor, com.devillsroom.poker.client.Bet bet) throws org.apache.thrift.TException
     {
       bet_args args = new bet_args();
       args.setCompetitor(competitor);
@@ -179,13 +179,13 @@ public class PlayerStrategy {
       return;
     }
 
-    public void hole_card(Card card) throws org.apache.thrift.TException
+    public void hole_card(com.devillsroom.poker.client.Card card) throws org.apache.thrift.TException
     {
       send_hole_card(card);
       recv_hole_card();
     }
 
-    public void send_hole_card(Card card) throws org.apache.thrift.TException
+    public void send_hole_card(com.devillsroom.poker.client.Card card) throws org.apache.thrift.TException
     {
       hole_card_args args = new hole_card_args();
       args.setCard(card);
@@ -199,13 +199,13 @@ public class PlayerStrategy {
       return;
     }
 
-    public void community_card(Card card) throws org.apache.thrift.TException
+    public void community_card(com.devillsroom.poker.client.Card card) throws org.apache.thrift.TException
     {
       send_community_card(card);
       recv_community_card();
     }
 
-    public void send_community_card(Card card) throws org.apache.thrift.TException
+    public void send_community_card(com.devillsroom.poker.client.Card card) throws org.apache.thrift.TException
     {
       community_card_args args = new community_card_args();
       args.setCard(card);
@@ -219,13 +219,13 @@ public class PlayerStrategy {
       return;
     }
 
-    public void showdown(Competitor competitor, List<Card> cards, HandDescriptor hand) throws org.apache.thrift.TException
+    public void showdown(com.devillsroom.poker.client.Competitor competitor, List<com.devillsroom.poker.client.Card> cards, com.devillsroom.poker.client.HandDescriptor hand) throws org.apache.thrift.TException
     {
       send_showdown(competitor, cards, hand);
       recv_showdown();
     }
 
-    public void send_showdown(Competitor competitor, List<Card> cards, HandDescriptor hand) throws org.apache.thrift.TException
+    public void send_showdown(com.devillsroom.poker.client.Competitor competitor, List<com.devillsroom.poker.client.Card> cards, com.devillsroom.poker.client.HandDescriptor hand) throws org.apache.thrift.TException
     {
       showdown_args args = new showdown_args();
       args.setCompetitor(competitor);
@@ -241,13 +241,13 @@ public class PlayerStrategy {
       return;
     }
 
-    public void winner(Competitor competitor, long amount) throws org.apache.thrift.TException
+    public void winner(com.devillsroom.poker.client.Competitor competitor, long amount) throws org.apache.thrift.TException
     {
       send_winner(competitor, amount);
       recv_winner();
     }
 
-    public void send_winner(Competitor competitor, long amount) throws org.apache.thrift.TException
+    public void send_winner(com.devillsroom.poker.client.Competitor competitor, long amount) throws org.apache.thrift.TException
     {
       winner_args args = new winner_args();
       args.setCompetitor(competitor);
@@ -309,7 +309,7 @@ public class PlayerStrategy {
       }
     }
 
-    public void bet_request(long pot, BetLimits limits, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
+    public void bet_request(long pot, com.devillsroom.poker.client.BetLimits limits, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
       checkReady();
       bet_request_call method_call = new bet_request_call(pot, limits, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -318,8 +318,8 @@ public class PlayerStrategy {
 
     public static class bet_request_call extends org.apache.thrift.async.TAsyncMethodCall {
       private long pot;
-      private BetLimits limits;
-      public bet_request_call(long pot, BetLimits limits, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      private com.devillsroom.poker.client.BetLimits limits;
+      public bet_request_call(long pot, com.devillsroom.poker.client.BetLimits limits, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.pot = pot;
         this.limits = limits;
@@ -344,7 +344,7 @@ public class PlayerStrategy {
       }
     }
 
-    public void competitor_status(Competitor competitor, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
+    public void competitor_status(com.devillsroom.poker.client.Competitor competitor, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
       checkReady();
       competitor_status_call method_call = new competitor_status_call(competitor, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -352,8 +352,8 @@ public class PlayerStrategy {
     }
 
     public static class competitor_status_call extends org.apache.thrift.async.TAsyncMethodCall {
-      private Competitor competitor;
-      public competitor_status_call(Competitor competitor, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      private com.devillsroom.poker.client.Competitor competitor;
+      public competitor_status_call(com.devillsroom.poker.client.Competitor competitor, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.competitor = competitor;
       }
@@ -376,7 +376,7 @@ public class PlayerStrategy {
       }
     }
 
-    public void bet(Competitor competitor, Bet bet, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
+    public void bet(com.devillsroom.poker.client.Competitor competitor, com.devillsroom.poker.client.Bet bet, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
       checkReady();
       bet_call method_call = new bet_call(competitor, bet, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -384,9 +384,9 @@ public class PlayerStrategy {
     }
 
     public static class bet_call extends org.apache.thrift.async.TAsyncMethodCall {
-      private Competitor competitor;
-      private Bet bet;
-      public bet_call(Competitor competitor, Bet bet, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      private com.devillsroom.poker.client.Competitor competitor;
+      private com.devillsroom.poker.client.Bet bet;
+      public bet_call(com.devillsroom.poker.client.Competitor competitor, com.devillsroom.poker.client.Bet bet, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.competitor = competitor;
         this.bet = bet;
@@ -411,7 +411,7 @@ public class PlayerStrategy {
       }
     }
 
-    public void hole_card(Card card, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
+    public void hole_card(com.devillsroom.poker.client.Card card, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
       checkReady();
       hole_card_call method_call = new hole_card_call(card, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -419,8 +419,8 @@ public class PlayerStrategy {
     }
 
     public static class hole_card_call extends org.apache.thrift.async.TAsyncMethodCall {
-      private Card card;
-      public hole_card_call(Card card, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      private com.devillsroom.poker.client.Card card;
+      public hole_card_call(com.devillsroom.poker.client.Card card, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.card = card;
       }
@@ -443,7 +443,7 @@ public class PlayerStrategy {
       }
     }
 
-    public void community_card(Card card, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
+    public void community_card(com.devillsroom.poker.client.Card card, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
       checkReady();
       community_card_call method_call = new community_card_call(card, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -451,8 +451,8 @@ public class PlayerStrategy {
     }
 
     public static class community_card_call extends org.apache.thrift.async.TAsyncMethodCall {
-      private Card card;
-      public community_card_call(Card card, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      private com.devillsroom.poker.client.Card card;
+      public community_card_call(com.devillsroom.poker.client.Card card, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.card = card;
       }
@@ -475,7 +475,7 @@ public class PlayerStrategy {
       }
     }
 
-    public void showdown(Competitor competitor, List<Card> cards, HandDescriptor hand, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
+    public void showdown(com.devillsroom.poker.client.Competitor competitor, List<com.devillsroom.poker.client.Card> cards, com.devillsroom.poker.client.HandDescriptor hand, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
       checkReady();
       showdown_call method_call = new showdown_call(competitor, cards, hand, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -483,10 +483,10 @@ public class PlayerStrategy {
     }
 
     public static class showdown_call extends org.apache.thrift.async.TAsyncMethodCall {
-      private Competitor competitor;
-      private List<Card> cards;
-      private HandDescriptor hand;
-      public showdown_call(Competitor competitor, List<Card> cards, HandDescriptor hand, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      private com.devillsroom.poker.client.Competitor competitor;
+      private List<com.devillsroom.poker.client.Card> cards;
+      private com.devillsroom.poker.client.HandDescriptor hand;
+      public showdown_call(com.devillsroom.poker.client.Competitor competitor, List<com.devillsroom.poker.client.Card> cards, com.devillsroom.poker.client.HandDescriptor hand, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.competitor = competitor;
         this.cards = cards;
@@ -513,7 +513,7 @@ public class PlayerStrategy {
       }
     }
 
-    public void winner(Competitor competitor, long amount, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
+    public void winner(com.devillsroom.poker.client.Competitor competitor, long amount, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
       checkReady();
       winner_call method_call = new winner_call(competitor, amount, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -521,9 +521,9 @@ public class PlayerStrategy {
     }
 
     public static class winner_call extends org.apache.thrift.async.TAsyncMethodCall {
-      private Competitor competitor;
+      private com.devillsroom.poker.client.Competitor competitor;
       private long amount;
-      public winner_call(Competitor competitor, long amount, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public winner_call(com.devillsroom.poker.client.Competitor competitor, long amount, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.competitor = competitor;
         this.amount = amount;
@@ -1775,7 +1775,7 @@ public class PlayerStrategy {
     }
 
     public long pot; // required
-    public BetLimits limits; // required
+    public com.devillsroom.poker.client.BetLimits limits; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -1847,7 +1847,7 @@ public class PlayerStrategy {
       tmpMap.put(_Fields.POT, new org.apache.thrift.meta_data.FieldMetaData("pot", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       tmpMap.put(_Fields.LIMITS, new org.apache.thrift.meta_data.FieldMetaData("limits", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, BetLimits.class)));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.devillsroom.poker.client.BetLimits.class)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(bet_request_args.class, metaDataMap);
     }
@@ -1857,7 +1857,7 @@ public class PlayerStrategy {
 
     public bet_request_args(
       long pot,
-      BetLimits limits)
+      com.devillsroom.poker.client.BetLimits limits)
     {
       this();
       this.pot = pot;
@@ -1872,7 +1872,7 @@ public class PlayerStrategy {
       __isset_bitfield = other.__isset_bitfield;
       this.pot = other.pot;
       if (other.isSetLimits()) {
-        this.limits = new BetLimits(other.limits);
+        this.limits = new com.devillsroom.poker.client.BetLimits(other.limits);
       }
     }
 
@@ -1910,11 +1910,11 @@ public class PlayerStrategy {
       __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __POT_ISSET_ID, value);
     }
 
-    public BetLimits getLimits() {
+    public com.devillsroom.poker.client.BetLimits getLimits() {
       return this.limits;
     }
 
-    public bet_request_args setLimits(BetLimits limits) {
+    public bet_request_args setLimits(com.devillsroom.poker.client.BetLimits limits) {
       this.limits = limits;
       return this;
     }
@@ -1948,7 +1948,7 @@ public class PlayerStrategy {
         if (value == null) {
           unsetLimits();
         } else {
-          setLimits((BetLimits)value);
+          setLimits((com.devillsroom.poker.client.BetLimits)value);
         }
         break;
 
@@ -2138,7 +2138,7 @@ public class PlayerStrategy {
               break;
             case 2: // LIMITS
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.limits = new BetLimits();
+                struct.limits = new com.devillsroom.poker.client.BetLimits();
                 struct.limits.read(iprot);
                 struct.setLimitsIsSet(true);
               } else { 
@@ -2210,7 +2210,7 @@ public class PlayerStrategy {
           struct.setPotIsSet(true);
         }
         if (incoming.get(1)) {
-          struct.limits = new BetLimits();
+          struct.limits = new com.devillsroom.poker.client.BetLimits();
           struct.limits.read(iprot);
           struct.setLimitsIsSet(true);
         }
@@ -2584,7 +2584,7 @@ public class PlayerStrategy {
       schemes.put(TupleScheme.class, new competitor_status_argsTupleSchemeFactory());
     }
 
-    public Competitor competitor; // required
+    public com.devillsroom.poker.client.Competitor competitor; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -2649,7 +2649,7 @@ public class PlayerStrategy {
     static {
       Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.COMPETITOR, new org.apache.thrift.meta_data.FieldMetaData("competitor", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, Competitor.class)));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.devillsroom.poker.client.Competitor.class)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(competitor_status_args.class, metaDataMap);
     }
@@ -2658,7 +2658,7 @@ public class PlayerStrategy {
     }
 
     public competitor_status_args(
-      Competitor competitor)
+      com.devillsroom.poker.client.Competitor competitor)
     {
       this();
       this.competitor = competitor;
@@ -2669,7 +2669,7 @@ public class PlayerStrategy {
      */
     public competitor_status_args(competitor_status_args other) {
       if (other.isSetCompetitor()) {
-        this.competitor = new Competitor(other.competitor);
+        this.competitor = new com.devillsroom.poker.client.Competitor(other.competitor);
       }
     }
 
@@ -2682,11 +2682,11 @@ public class PlayerStrategy {
       this.competitor = null;
     }
 
-    public Competitor getCompetitor() {
+    public com.devillsroom.poker.client.Competitor getCompetitor() {
       return this.competitor;
     }
 
-    public competitor_status_args setCompetitor(Competitor competitor) {
+    public competitor_status_args setCompetitor(com.devillsroom.poker.client.Competitor competitor) {
       this.competitor = competitor;
       return this;
     }
@@ -2712,7 +2712,7 @@ public class PlayerStrategy {
         if (value == null) {
           unsetCompetitor();
         } else {
-          setCompetitor((Competitor)value);
+          setCompetitor((com.devillsroom.poker.client.Competitor)value);
         }
         break;
 
@@ -2864,7 +2864,7 @@ public class PlayerStrategy {
           switch (schemeField.id) {
             case 1: // COMPETITOR
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.competitor = new Competitor();
+                struct.competitor = new com.devillsroom.poker.client.Competitor();
                 struct.competitor.read(iprot);
                 struct.setCompetitorIsSet(true);
               } else { 
@@ -2923,7 +2923,7 @@ public class PlayerStrategy {
         TTupleProtocol iprot = (TTupleProtocol) prot;
         BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.competitor = new Competitor();
+          struct.competitor = new com.devillsroom.poker.client.Competitor();
           struct.competitor.read(iprot);
           struct.setCompetitorIsSet(true);
         }
@@ -3190,8 +3190,8 @@ public class PlayerStrategy {
       schemes.put(TupleScheme.class, new bet_argsTupleSchemeFactory());
     }
 
-    public Competitor competitor; // required
-    public Bet bet; // required
+    public com.devillsroom.poker.client.Competitor competitor; // required
+    public com.devillsroom.poker.client.Bet bet; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -3259,9 +3259,9 @@ public class PlayerStrategy {
     static {
       Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.COMPETITOR, new org.apache.thrift.meta_data.FieldMetaData("competitor", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, Competitor.class)));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.devillsroom.poker.client.Competitor.class)));
       tmpMap.put(_Fields.BET, new org.apache.thrift.meta_data.FieldMetaData("bet", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, Bet.class)));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.devillsroom.poker.client.Bet.class)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(bet_args.class, metaDataMap);
     }
@@ -3270,8 +3270,8 @@ public class PlayerStrategy {
     }
 
     public bet_args(
-      Competitor competitor,
-      Bet bet)
+      com.devillsroom.poker.client.Competitor competitor,
+      com.devillsroom.poker.client.Bet bet)
     {
       this();
       this.competitor = competitor;
@@ -3283,10 +3283,10 @@ public class PlayerStrategy {
      */
     public bet_args(bet_args other) {
       if (other.isSetCompetitor()) {
-        this.competitor = new Competitor(other.competitor);
+        this.competitor = new com.devillsroom.poker.client.Competitor(other.competitor);
       }
       if (other.isSetBet()) {
-        this.bet = new Bet(other.bet);
+        this.bet = new com.devillsroom.poker.client.Bet(other.bet);
       }
     }
 
@@ -3300,11 +3300,11 @@ public class PlayerStrategy {
       this.bet = null;
     }
 
-    public Competitor getCompetitor() {
+    public com.devillsroom.poker.client.Competitor getCompetitor() {
       return this.competitor;
     }
 
-    public bet_args setCompetitor(Competitor competitor) {
+    public bet_args setCompetitor(com.devillsroom.poker.client.Competitor competitor) {
       this.competitor = competitor;
       return this;
     }
@@ -3324,11 +3324,11 @@ public class PlayerStrategy {
       }
     }
 
-    public Bet getBet() {
+    public com.devillsroom.poker.client.Bet getBet() {
       return this.bet;
     }
 
-    public bet_args setBet(Bet bet) {
+    public bet_args setBet(com.devillsroom.poker.client.Bet bet) {
       this.bet = bet;
       return this;
     }
@@ -3354,7 +3354,7 @@ public class PlayerStrategy {
         if (value == null) {
           unsetCompetitor();
         } else {
-          setCompetitor((Competitor)value);
+          setCompetitor((com.devillsroom.poker.client.Competitor)value);
         }
         break;
 
@@ -3362,7 +3362,7 @@ public class PlayerStrategy {
         if (value == null) {
           unsetBet();
         } else {
-          setBet((Bet)value);
+          setBet((com.devillsroom.poker.client.Bet)value);
         }
         break;
 
@@ -3549,7 +3549,7 @@ public class PlayerStrategy {
           switch (schemeField.id) {
             case 1: // COMPETITOR
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.competitor = new Competitor();
+                struct.competitor = new com.devillsroom.poker.client.Competitor();
                 struct.competitor.read(iprot);
                 struct.setCompetitorIsSet(true);
               } else { 
@@ -3558,7 +3558,7 @@ public class PlayerStrategy {
               break;
             case 2: // BET
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.bet = new Bet();
+                struct.bet = new com.devillsroom.poker.client.Bet();
                 struct.bet.read(iprot);
                 struct.setBetIsSet(true);
               } else { 
@@ -3628,12 +3628,12 @@ public class PlayerStrategy {
         TTupleProtocol iprot = (TTupleProtocol) prot;
         BitSet incoming = iprot.readBitSet(2);
         if (incoming.get(0)) {
-          struct.competitor = new Competitor();
+          struct.competitor = new com.devillsroom.poker.client.Competitor();
           struct.competitor.read(iprot);
           struct.setCompetitorIsSet(true);
         }
         if (incoming.get(1)) {
-          struct.bet = new Bet();
+          struct.bet = new com.devillsroom.poker.client.Bet();
           struct.bet.read(iprot);
           struct.setBetIsSet(true);
         }
@@ -3899,7 +3899,7 @@ public class PlayerStrategy {
       schemes.put(TupleScheme.class, new hole_card_argsTupleSchemeFactory());
     }
 
-    public Card card; // required
+    public com.devillsroom.poker.client.Card card; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -3964,7 +3964,7 @@ public class PlayerStrategy {
     static {
       Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.CARD, new org.apache.thrift.meta_data.FieldMetaData("card", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, Card.class)));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.devillsroom.poker.client.Card.class)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(hole_card_args.class, metaDataMap);
     }
@@ -3973,7 +3973,7 @@ public class PlayerStrategy {
     }
 
     public hole_card_args(
-      Card card)
+      com.devillsroom.poker.client.Card card)
     {
       this();
       this.card = card;
@@ -3984,7 +3984,7 @@ public class PlayerStrategy {
      */
     public hole_card_args(hole_card_args other) {
       if (other.isSetCard()) {
-        this.card = new Card(other.card);
+        this.card = new com.devillsroom.poker.client.Card(other.card);
       }
     }
 
@@ -3997,11 +3997,11 @@ public class PlayerStrategy {
       this.card = null;
     }
 
-    public Card getCard() {
+    public com.devillsroom.poker.client.Card getCard() {
       return this.card;
     }
 
-    public hole_card_args setCard(Card card) {
+    public hole_card_args setCard(com.devillsroom.poker.client.Card card) {
       this.card = card;
       return this;
     }
@@ -4027,7 +4027,7 @@ public class PlayerStrategy {
         if (value == null) {
           unsetCard();
         } else {
-          setCard((Card)value);
+          setCard((com.devillsroom.poker.client.Card)value);
         }
         break;
 
@@ -4179,7 +4179,7 @@ public class PlayerStrategy {
           switch (schemeField.id) {
             case 1: // CARD
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.card = new Card();
+                struct.card = new com.devillsroom.poker.client.Card();
                 struct.card.read(iprot);
                 struct.setCardIsSet(true);
               } else { 
@@ -4238,7 +4238,7 @@ public class PlayerStrategy {
         TTupleProtocol iprot = (TTupleProtocol) prot;
         BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.card = new Card();
+          struct.card = new com.devillsroom.poker.client.Card();
           struct.card.read(iprot);
           struct.setCardIsSet(true);
         }
@@ -4504,7 +4504,7 @@ public class PlayerStrategy {
       schemes.put(TupleScheme.class, new community_card_argsTupleSchemeFactory());
     }
 
-    public Card card; // required
+    public com.devillsroom.poker.client.Card card; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -4569,7 +4569,7 @@ public class PlayerStrategy {
     static {
       Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.CARD, new org.apache.thrift.meta_data.FieldMetaData("card", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, Card.class)));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.devillsroom.poker.client.Card.class)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(community_card_args.class, metaDataMap);
     }
@@ -4578,7 +4578,7 @@ public class PlayerStrategy {
     }
 
     public community_card_args(
-      Card card)
+      com.devillsroom.poker.client.Card card)
     {
       this();
       this.card = card;
@@ -4589,7 +4589,7 @@ public class PlayerStrategy {
      */
     public community_card_args(community_card_args other) {
       if (other.isSetCard()) {
-        this.card = new Card(other.card);
+        this.card = new com.devillsroom.poker.client.Card(other.card);
       }
     }
 
@@ -4602,11 +4602,11 @@ public class PlayerStrategy {
       this.card = null;
     }
 
-    public Card getCard() {
+    public com.devillsroom.poker.client.Card getCard() {
       return this.card;
     }
 
-    public community_card_args setCard(Card card) {
+    public community_card_args setCard(com.devillsroom.poker.client.Card card) {
       this.card = card;
       return this;
     }
@@ -4632,7 +4632,7 @@ public class PlayerStrategy {
         if (value == null) {
           unsetCard();
         } else {
-          setCard((Card)value);
+          setCard((com.devillsroom.poker.client.Card)value);
         }
         break;
 
@@ -4784,7 +4784,7 @@ public class PlayerStrategy {
           switch (schemeField.id) {
             case 1: // CARD
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.card = new Card();
+                struct.card = new com.devillsroom.poker.client.Card();
                 struct.card.read(iprot);
                 struct.setCardIsSet(true);
               } else { 
@@ -4843,7 +4843,7 @@ public class PlayerStrategy {
         TTupleProtocol iprot = (TTupleProtocol) prot;
         BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.card = new Card();
+          struct.card = new com.devillsroom.poker.client.Card();
           struct.card.read(iprot);
           struct.setCardIsSet(true);
         }
@@ -5111,9 +5111,9 @@ public class PlayerStrategy {
       schemes.put(TupleScheme.class, new showdown_argsTupleSchemeFactory());
     }
 
-    public Competitor competitor; // required
-    public List<Card> cards; // required
-    public HandDescriptor hand; // required
+    public com.devillsroom.poker.client.Competitor competitor; // required
+    public List<com.devillsroom.poker.client.Card> cards; // required
+    public com.devillsroom.poker.client.HandDescriptor hand; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -5184,12 +5184,12 @@ public class PlayerStrategy {
     static {
       Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.COMPETITOR, new org.apache.thrift.meta_data.FieldMetaData("competitor", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, Competitor.class)));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.devillsroom.poker.client.Competitor.class)));
       tmpMap.put(_Fields.CARDS, new org.apache.thrift.meta_data.FieldMetaData("cards", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
-              new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, Card.class))));
+              new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.devillsroom.poker.client.Card.class))));
       tmpMap.put(_Fields.HAND, new org.apache.thrift.meta_data.FieldMetaData("hand", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, HandDescriptor.class)));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.devillsroom.poker.client.HandDescriptor.class)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(showdown_args.class, metaDataMap);
     }
@@ -5198,9 +5198,9 @@ public class PlayerStrategy {
     }
 
     public showdown_args(
-      Competitor competitor,
-      List<Card> cards,
-      HandDescriptor hand)
+      com.devillsroom.poker.client.Competitor competitor,
+      List<com.devillsroom.poker.client.Card> cards,
+      com.devillsroom.poker.client.HandDescriptor hand)
     {
       this();
       this.competitor = competitor;
@@ -5213,17 +5213,17 @@ public class PlayerStrategy {
      */
     public showdown_args(showdown_args other) {
       if (other.isSetCompetitor()) {
-        this.competitor = new Competitor(other.competitor);
+        this.competitor = new com.devillsroom.poker.client.Competitor(other.competitor);
       }
       if (other.isSetCards()) {
-        List<Card> __this__cards = new ArrayList<Card>(other.cards.size());
-        for (Card other_element : other.cards) {
-          __this__cards.add(new Card(other_element));
+        List<com.devillsroom.poker.client.Card> __this__cards = new ArrayList<com.devillsroom.poker.client.Card>(other.cards.size());
+        for (com.devillsroom.poker.client.Card other_element : other.cards) {
+          __this__cards.add(new com.devillsroom.poker.client.Card(other_element));
         }
         this.cards = __this__cards;
       }
       if (other.isSetHand()) {
-        this.hand = new HandDescriptor(other.hand);
+        this.hand = new com.devillsroom.poker.client.HandDescriptor(other.hand);
       }
     }
 
@@ -5238,11 +5238,11 @@ public class PlayerStrategy {
       this.hand = null;
     }
 
-    public Competitor getCompetitor() {
+    public com.devillsroom.poker.client.Competitor getCompetitor() {
       return this.competitor;
     }
 
-    public showdown_args setCompetitor(Competitor competitor) {
+    public showdown_args setCompetitor(com.devillsroom.poker.client.Competitor competitor) {
       this.competitor = competitor;
       return this;
     }
@@ -5266,22 +5266,22 @@ public class PlayerStrategy {
       return (this.cards == null) ? 0 : this.cards.size();
     }
 
-    public java.util.Iterator<Card> getCardsIterator() {
+    public java.util.Iterator<com.devillsroom.poker.client.Card> getCardsIterator() {
       return (this.cards == null) ? null : this.cards.iterator();
     }
 
-    public void addToCards(Card elem) {
+    public void addToCards(com.devillsroom.poker.client.Card elem) {
       if (this.cards == null) {
-        this.cards = new ArrayList<Card>();
+        this.cards = new ArrayList<com.devillsroom.poker.client.Card>();
       }
       this.cards.add(elem);
     }
 
-    public List<Card> getCards() {
+    public List<com.devillsroom.poker.client.Card> getCards() {
       return this.cards;
     }
 
-    public showdown_args setCards(List<Card> cards) {
+    public showdown_args setCards(List<com.devillsroom.poker.client.Card> cards) {
       this.cards = cards;
       return this;
     }
@@ -5301,11 +5301,11 @@ public class PlayerStrategy {
       }
     }
 
-    public HandDescriptor getHand() {
+    public com.devillsroom.poker.client.HandDescriptor getHand() {
       return this.hand;
     }
 
-    public showdown_args setHand(HandDescriptor hand) {
+    public showdown_args setHand(com.devillsroom.poker.client.HandDescriptor hand) {
       this.hand = hand;
       return this;
     }
@@ -5331,7 +5331,7 @@ public class PlayerStrategy {
         if (value == null) {
           unsetCompetitor();
         } else {
-          setCompetitor((Competitor)value);
+          setCompetitor((com.devillsroom.poker.client.Competitor)value);
         }
         break;
 
@@ -5339,7 +5339,7 @@ public class PlayerStrategy {
         if (value == null) {
           unsetCards();
         } else {
-          setCards((List<Card>)value);
+          setCards((List<com.devillsroom.poker.client.Card>)value);
         }
         break;
 
@@ -5347,7 +5347,7 @@ public class PlayerStrategy {
         if (value == null) {
           unsetHand();
         } else {
-          setHand((HandDescriptor)value);
+          setHand((com.devillsroom.poker.client.HandDescriptor)value);
         }
         break;
 
@@ -5566,7 +5566,7 @@ public class PlayerStrategy {
           switch (schemeField.id) {
             case 1: // COMPETITOR
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.competitor = new Competitor();
+                struct.competitor = new com.devillsroom.poker.client.Competitor();
                 struct.competitor.read(iprot);
                 struct.setCompetitorIsSet(true);
               } else { 
@@ -5577,11 +5577,11 @@ public class PlayerStrategy {
               if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
                 {
                   org.apache.thrift.protocol.TList _list0 = iprot.readListBegin();
-                  struct.cards = new ArrayList<Card>(_list0.size);
+                  struct.cards = new ArrayList<com.devillsroom.poker.client.Card>(_list0.size);
                   for (int _i1 = 0; _i1 < _list0.size; ++_i1)
                   {
-                    Card _elem2;
-                    _elem2 = new Card();
+                    com.devillsroom.poker.client.Card _elem2;
+                    _elem2 = new com.devillsroom.poker.client.Card();
                     _elem2.read(iprot);
                     struct.cards.add(_elem2);
                   }
@@ -5594,7 +5594,7 @@ public class PlayerStrategy {
               break;
             case 3: // HAND
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.hand = new HandDescriptor();
+                struct.hand = new com.devillsroom.poker.client.HandDescriptor();
                 struct.hand.read(iprot);
                 struct.setHandIsSet(true);
               } else { 
@@ -5625,7 +5625,7 @@ public class PlayerStrategy {
           oprot.writeFieldBegin(CARDS_FIELD_DESC);
           {
             oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.STRUCT, struct.cards.size()));
-            for (Card _iter3 : struct.cards)
+            for (com.devillsroom.poker.client.Card _iter3 : struct.cards)
             {
               _iter3.write(oprot);
             }
@@ -5672,7 +5672,7 @@ public class PlayerStrategy {
         if (struct.isSetCards()) {
           {
             oprot.writeI32(struct.cards.size());
-            for (Card _iter4 : struct.cards)
+            for (com.devillsroom.poker.client.Card _iter4 : struct.cards)
             {
               _iter4.write(oprot);
             }
@@ -5688,18 +5688,18 @@ public class PlayerStrategy {
         TTupleProtocol iprot = (TTupleProtocol) prot;
         BitSet incoming = iprot.readBitSet(3);
         if (incoming.get(0)) {
-          struct.competitor = new Competitor();
+          struct.competitor = new com.devillsroom.poker.client.Competitor();
           struct.competitor.read(iprot);
           struct.setCompetitorIsSet(true);
         }
         if (incoming.get(1)) {
           {
             org.apache.thrift.protocol.TList _list5 = new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.STRUCT, iprot.readI32());
-            struct.cards = new ArrayList<Card>(_list5.size);
+            struct.cards = new ArrayList<com.devillsroom.poker.client.Card>(_list5.size);
             for (int _i6 = 0; _i6 < _list5.size; ++_i6)
             {
-              Card _elem7;
-              _elem7 = new Card();
+              com.devillsroom.poker.client.Card _elem7;
+              _elem7 = new com.devillsroom.poker.client.Card();
               _elem7.read(iprot);
               struct.cards.add(_elem7);
             }
@@ -5707,7 +5707,7 @@ public class PlayerStrategy {
           struct.setCardsIsSet(true);
         }
         if (incoming.get(2)) {
-          struct.hand = new HandDescriptor();
+          struct.hand = new com.devillsroom.poker.client.HandDescriptor();
           struct.hand.read(iprot);
           struct.setHandIsSet(true);
         }
@@ -5974,7 +5974,7 @@ public class PlayerStrategy {
       schemes.put(TupleScheme.class, new winner_argsTupleSchemeFactory());
     }
 
-    public Competitor competitor; // required
+    public com.devillsroom.poker.client.Competitor competitor; // required
     public long amount; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
@@ -6045,7 +6045,7 @@ public class PlayerStrategy {
     static {
       Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.COMPETITOR, new org.apache.thrift.meta_data.FieldMetaData("competitor", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, Competitor.class)));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, com.devillsroom.poker.client.Competitor.class)));
       tmpMap.put(_Fields.AMOUNT, new org.apache.thrift.meta_data.FieldMetaData("amount", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
@@ -6056,7 +6056,7 @@ public class PlayerStrategy {
     }
 
     public winner_args(
-      Competitor competitor,
+      com.devillsroom.poker.client.Competitor competitor,
       long amount)
     {
       this();
@@ -6071,7 +6071,7 @@ public class PlayerStrategy {
     public winner_args(winner_args other) {
       __isset_bitfield = other.__isset_bitfield;
       if (other.isSetCompetitor()) {
-        this.competitor = new Competitor(other.competitor);
+        this.competitor = new com.devillsroom.poker.client.Competitor(other.competitor);
       }
       this.amount = other.amount;
     }
@@ -6087,11 +6087,11 @@ public class PlayerStrategy {
       this.amount = 0;
     }
 
-    public Competitor getCompetitor() {
+    public com.devillsroom.poker.client.Competitor getCompetitor() {
       return this.competitor;
     }
 
-    public winner_args setCompetitor(Competitor competitor) {
+    public winner_args setCompetitor(com.devillsroom.poker.client.Competitor competitor) {
       this.competitor = competitor;
       return this;
     }
@@ -6140,7 +6140,7 @@ public class PlayerStrategy {
         if (value == null) {
           unsetCompetitor();
         } else {
-          setCompetitor((Competitor)value);
+          setCompetitor((com.devillsroom.poker.client.Competitor)value);
         }
         break;
 
@@ -6330,7 +6330,7 @@ public class PlayerStrategy {
           switch (schemeField.id) {
             case 1: // COMPETITOR
               if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
-                struct.competitor = new Competitor();
+                struct.competitor = new com.devillsroom.poker.client.Competitor();
                 struct.competitor.read(iprot);
                 struct.setCompetitorIsSet(true);
               } else { 
@@ -6406,7 +6406,7 @@ public class PlayerStrategy {
         TTupleProtocol iprot = (TTupleProtocol) prot;
         BitSet incoming = iprot.readBitSet(2);
         if (incoming.get(0)) {
-          struct.competitor = new Competitor();
+          struct.competitor = new com.devillsroom.poker.client.Competitor();
           struct.competitor.read(iprot);
           struct.setCompetitorIsSet(true);
         }
