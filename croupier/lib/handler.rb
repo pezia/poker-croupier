@@ -34,6 +34,8 @@ class Croupier::Handler
     @croupier.start_sit_and_go.get.reverse.each_with_index do |player, index|
       Croupier.logger.info "Place #{index+1}: #{player.name}"
     end
+    Croupier.logger.close
+    abort('The game is over')
   end
 
 end
