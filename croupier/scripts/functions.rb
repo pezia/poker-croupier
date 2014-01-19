@@ -16,11 +16,11 @@ end
 
 def start_server(log_file)
   croupier = fork do
-    exec "bundle exec ruby ../croupier_service.rb | tee #{log_file}"
+    exec "bundle exec ruby ../croupier_service.rb #{log_file}"
   end
   Process.detach(croupier)
 
-  sleep(2)
+  sleep(1)
 end
 
 def sit_and_go(log_file, &block)

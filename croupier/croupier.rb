@@ -3,7 +3,6 @@ $:.push(File.join(File.dirname(__FILE__)))
 
 require 'thrift'
 require_relative 'lib/api/croupier'
-#require 'delegate'
 require_relative '../common/lib/delegate_all'
 
 module Croupier
@@ -23,7 +22,10 @@ module Croupier
 
   class << self
     def logger
-      @logger ||= Logger.new(STDOUT)
+      @logger ||= Croupier::LogHandler::MultiLogger.new(
+          Logger.new(ARGV[0]),
+          Logger.new(STDOUT)
+      )
     end
   end
 end
