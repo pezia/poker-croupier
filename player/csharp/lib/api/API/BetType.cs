@@ -5,12 +5,15 @@
  *  @generated
  */
 
-public enum BetType
+namespace API
 {
-  Fold = 0,
-  Check = 1,
-  Call = 2,
-  Blind = 3,
-  Raise = 4,
-  Allin = 5,
+  public enum BetType
+  {
+    Fold = 0,
+    Check = 1,
+    Call = 2,
+    Blind = 3,
+    Raise = 4,
+    Allin = 5,
+  }
 }

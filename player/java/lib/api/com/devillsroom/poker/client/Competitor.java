@@ -4,6 +4,8 @@
  * DO NOT EDIT UNLESS YOU ARE SURE THAT YOU KNOW WHAT YOU ARE DOING
  *  @generated
  */
+package com.devillsroom.poker.client;
+
 import org.apache.thrift.scheme.IScheme;
 import org.apache.thrift.scheme.SchemeFactory;
 import org.apache.thrift.scheme.StandardScheme;
@@ -30,25 +32,25 @@ import java.util.Arrays;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class BetLimits implements org.apache.thrift.TBase<BetLimits, BetLimits._Fields>, java.io.Serializable, Cloneable, Comparable<BetLimits> {
-  private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("BetLimits");
+public class Competitor implements org.apache.thrift.TBase<Competitor, Competitor._Fields>, java.io.Serializable, Cloneable, Comparable<Competitor> {
+  private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("Competitor");
 
-  private static final org.apache.thrift.protocol.TField TO_CALL_FIELD_DESC = new org.apache.thrift.protocol.TField("to_call", org.apache.thrift.protocol.TType.I64, (short)1);
-  private static final org.apache.thrift.protocol.TField MINIMUM_RAISE_FIELD_DESC = new org.apache.thrift.protocol.TField("minimum_raise", org.apache.thrift.protocol.TType.I64, (short)2);
+  private static final org.apache.thrift.protocol.TField NAME_FIELD_DESC = new org.apache.thrift.protocol.TField("name", org.apache.thrift.protocol.TType.STRING, (short)1);
+  private static final org.apache.thrift.protocol.TField STACK_FIELD_DESC = new org.apache.thrift.protocol.TField("stack", org.apache.thrift.protocol.TType.I64, (short)2);
 
   private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
   static {
-    schemes.put(StandardScheme.class, new BetLimitsStandardSchemeFactory());
-    schemes.put(TupleScheme.class, new BetLimitsTupleSchemeFactory());
+    schemes.put(StandardScheme.class, new CompetitorStandardSchemeFactory());
+    schemes.put(TupleScheme.class, new CompetitorTupleSchemeFactory());
   }
 
-  public long to_call; // required
-  public long minimum_raise; // required
+  public String name; // required
+  public long stack; // required
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-    TO_CALL((short)1, "to_call"),
-    MINIMUM_RAISE((short)2, "minimum_raise");
+    NAME((short)1, "name"),
+    STACK((short)2, "stack");
 
     private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
 
@@ -63,10 +65,10 @@ public class BetLimits implements org.apache.thrift.TBase<BetLimits, BetLimits._
      */
     public static _Fields findByThriftId(int fieldId) {
       switch(fieldId) {
-        case 1: // TO_CALL
-          return TO_CALL;
-        case 2: // MINIMUM_RAISE
-          return MINIMUM_RAISE;
+        case 1: // NAME
+          return NAME;
+        case 2: // STACK
+          return STACK;
         default:
           return null;
       }
@@ -107,116 +109,116 @@ public class BetLimits implements org.apache.thrift.TBase<BetLimits, BetLimits._
   }
 
   // isset id assignments
-  private static final int __TO_CALL_ISSET_ID = 0;
-  private static final int __MINIMUM_RAISE_ISSET_ID = 1;
+  private static final int __STACK_ISSET_ID = 0;
   private byte __isset_bitfield = 0;
   public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
   static {
     Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-    tmpMap.put(_Fields.TO_CALL, new org.apache.thrift.meta_data.FieldMetaData("to_call", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
-    tmpMap.put(_Fields.MINIMUM_RAISE, new org.apache.thrift.meta_data.FieldMetaData("minimum_raise", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.NAME, new org.apache.thrift.meta_data.FieldMetaData("name", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+    tmpMap.put(_Fields.STACK, new org.apache.thrift.meta_data.FieldMetaData("stack", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
     metaDataMap = Collections.unmodifiableMap(tmpMap);
-    org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(BetLimits.class, metaDataMap);
+    org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(Competitor.class, metaDataMap);
   }
 
-  public BetLimits() {
+  public Competitor() {
   }
 
-  public BetLimits(
-    long to_call,
-    long minimum_raise)
+  public Competitor(
+    String name,
+    long stack)
   {
     this();
-    this.to_call = to_call;
-    setTo_callIsSet(true);
-    this.minimum_raise = minimum_raise;
-    setMinimum_raiseIsSet(true);
+    this.name = name;
+    this.stack = stack;
+    setStackIsSet(true);
   }
 
   /**
    * Performs a deep copy on <i>other</i>.
    */
-  public BetLimits(BetLimits other) {
+  public Competitor(Competitor other) {
     __isset_bitfield = other.__isset_bitfield;
-    this.to_call = other.to_call;
-    this.minimum_raise = other.minimum_raise;
+    if (other.isSetName()) {
+      this.name = other.name;
+    }
+    this.stack = other.stack;
   }
 
-  public BetLimits deepCopy() {
-    return new BetLimits(this);
+  public Competitor deepCopy() {
+    return new Competitor(this);
   }
 
   @Override
   public void clear() {
-    setTo_callIsSet(false);
-    this.to_call = 0;
-    setMinimum_raiseIsSet(false);
-    this.minimum_raise = 0;
+    this.name = null;
+    setStackIsSet(false);
+    this.stack = 0;
   }
 
-  public long getTo_call() {
-    return this.to_call;
+  public String getName() {
+    return this.name;
   }
 
-  public BetLimits setTo_call(long to_call) {
-    this.to_call = to_call;
-    setTo_callIsSet(true);
+  public Competitor setName(String name) {
+    this.name = name;
     return this;
   }
 
-  public void unsetTo_call() {
-    __isset_bitfield = EncodingUtils.clearBit(__isset_bitfield, __TO_CALL_ISSET_ID);
+  public void unsetName() {
+    this.name = null;
   }
 
-  /** Returns true if field to_call is set (has been assigned a value) and false otherwise */
-  public boolean isSetTo_call() {
-    return EncodingUtils.testBit(__isset_bitfield, __TO_CALL_ISSET_ID);
+  /** Returns true if field name is set (has been assigned a value) and false otherwise */
+  public boolean isSetName() {
+    return this.name != null;
   }
 
-  public void setTo_callIsSet(boolean value) {
-    __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __TO_CALL_ISSET_ID, value);
+  public void setNameIsSet(boolean value) {
+    if (!value) {
+      this.name = null;
+    }
   }
 
-  public long getMinimum_raise() {
-    return this.minimum_raise;
+  public long getStack() {
+    return this.stack;
   }
 
-  public BetLimits setMinimum_raise(long minimum_raise) {
-    this.minimum_raise = minimum_raise;
-    setMinimum_raiseIsSet(true);
+  public Competitor setStack(long stack) {
+    this.stack = stack;
+    setStackIsSet(true);
     return this;
   }
 
-  public void unsetMinimum_raise() {
-    __isset_bitfield = EncodingUtils.clearBit(__isset_bitfield, __MINIMUM_RAISE_ISSET_ID);
+  public void unsetStack() {
+    __isset_bitfield = EncodingUtils.clearBit(__isset_bitfield, __STACK_ISSET_ID);
   }
 
-  /** Returns true if field minimum_raise is set (has been assigned a value) and false otherwise */
-  public boolean isSetMinimum_raise() {
-    return EncodingUtils.testBit(__isset_bitfield, __MINIMUM_RAISE_ISSET_ID);
+  /** Returns true if field stack is set (has been assigned a value) and false otherwise */
+  public boolean isSetStack() {
+    return EncodingUtils.testBit(__isset_bitfield, __STACK_ISSET_ID);
   }
 
-  public void setMinimum_raiseIsSet(boolean value) {
-    __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __MINIMUM_RAISE_ISSET_ID, value);
+  public void setStackIsSet(boolean value) {
+    __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __STACK_ISSET_ID, value);
   }
 
   public void setFieldValue(_Fields field, Object value) {
     switch (field) {
-    case TO_CALL:
+    case NAME:
       if (value == null) {
-        unsetTo_call();
+        unsetName();
       } else {
-        setTo_call((Long)value);
+        setName((String)value);
       }
       break;
 
-    case MINIMUM_RAISE:
+    case STACK:
       if (value == null) {
-        unsetMinimum_raise();
+        unsetStack();
       } else {
-        setMinimum_raise((Long)value);
+        setStack((Long)value);
       }
       break;
 
@@ -225,11 +227,11 @@ public class BetLimits implements org.apache.thrift.TBase<BetLimits, BetLimits._
 
   public Object getFieldValue(_Fields field) {
     switch (field) {
-    case TO_CALL:
-      return Long.valueOf(getTo_call());
+    case NAME:
+      return getName();
 
-    case MINIMUM_RAISE:
-      return Long.valueOf(getMinimum_raise());
+    case STACK:
+      return Long.valueOf(getStack());
 
     }
     throw new IllegalStateException();
@@ -242,10 +244,10 @@ public class BetLimits implements org.apache.thrift.TBase<BetLimits, BetLimits._
     }
 
     switch (field) {
-    case TO_CALL:
-      return isSetTo_call();
-    case MINIMUM_RAISE:
-      return isSetMinimum_raise();
+    case NAME:
+      return isSetName();
+    case STACK:
+      return isSetStack();
     }
     throw new IllegalStateException();
   }
@@ -254,30 +256,30 @@ public class BetLimits implements org.apache.thrift.TBase<BetLimits, BetLimits._
   public boolean equals(Object that) {
     if (that == null)
       return false;
-    if (that instanceof BetLimits)
-      return this.equals((BetLimits)that);
+    if (that instanceof Competitor)
+      return this.equals((Competitor)that);
     return false;
   }
 
-  public boolean equals(BetLimits that) {
+  public boolean equals(Competitor that) {
     if (that == null)
       return false;
 
-    boolean this_present_to_call = true;
-    boolean that_present_to_call = true;
-    if (this_present_to_call || that_present_to_call) {
-      if (!(this_present_to_call && that_present_to_call))
+    boolean this_present_name = true && this.isSetName();
+    boolean that_present_name = true && that.isSetName();
+    if (this_present_name || that_present_name) {
+      if (!(this_present_name && that_present_name))
         return false;
-      if (this.to_call != that.to_call)
+      if (!this.name.equals(that.name))
         return false;
     }
 
-    boolean this_present_minimum_raise = true;
-    boolean that_present_minimum_raise = true;
-    if (this_present_minimum_raise || that_present_minimum_raise) {
-      if (!(this_present_minimum_raise && that_present_minimum_raise))
+    boolean this_present_stack = true;
+    boolean that_present_stack = true;
+    if (this_present_stack || that_present_stack) {
+      if (!(this_present_stack && that_present_stack))
         return false;
-      if (this.minimum_raise != that.minimum_raise)
+      if (this.stack != that.stack)
         return false;
     }
 
@@ -290,29 +292,29 @@ public class BetLimits implements org.apache.thrift.TBase<BetLimits, BetLimits._
   }
 
   @Override
-  public int compareTo(BetLimits other) {
+  public int compareTo(Competitor other) {
     if (!getClass().equals(other.getClass())) {
       return getClass().getName().compareTo(other.getClass().getName());
     }
 
     int lastComparison = 0;
 
-    lastComparison = Boolean.valueOf(isSetTo_call()).compareTo(other.isSetTo_call());
+    lastComparison = Boolean.valueOf(isSetName()).compareTo(other.isSetName());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetTo_call()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.to_call, other.to_call);
+    if (isSetName()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.name, other.name);
       if (lastComparison != 0) {
         return lastComparison;
       }
     }
-    lastComparison = Boolean.valueOf(isSetMinimum_raise()).compareTo(other.isSetMinimum_raise());
+    lastComparison = Boolean.valueOf(isSetStack()).compareTo(other.isSetStack());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetMinimum_raise()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.minimum_raise, other.minimum_raise);
+    if (isSetStack()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.stack, other.stack);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -334,15 +336,19 @@ public class BetLimits implements org.apache.thrift.TBase<BetLimits, BetLimits._
 
   @Override
   public String toString() {
-    StringBuilder sb = new StringBuilder("BetLimits(");
+    StringBuilder sb = new StringBuilder("Competitor(");
     boolean first = true;
 
-    sb.append("to_call:");
-    sb.append(this.to_call);
+    sb.append("name:");
+    if (this.name == null) {
+      sb.append("null");
+    } else {
+      sb.append(this.name);
+    }
     first = false;
     if (!first) sb.append(", ");
-    sb.append("minimum_raise:");
-    sb.append(this.minimum_raise);
+    sb.append("stack:");
+    sb.append(this.stack);
     first = false;
     sb.append(")");
     return sb.toString();
@@ -371,15 +377,15 @@ public class BetLimits implements org.apache.thrift.TBase<BetLimits, BetLimits._
     }
   }
 
-  private static class BetLimitsStandardSchemeFactory implements SchemeFactory {
-    public BetLimitsStandardScheme getScheme() {
-      return new BetLimitsStandardScheme();
+  private static class CompetitorStandardSchemeFactory implements SchemeFactory {
+    public CompetitorStandardScheme getScheme() {
+      return new CompetitorStandardScheme();
     }
   }
 
-  private static class BetLimitsStandardScheme extends StandardScheme<BetLimits> {
+  private static class CompetitorStandardScheme extends StandardScheme<Competitor> {
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot, BetLimits struct) throws org.apache.thrift.TException {
+    public void read(org.apache.thrift.protocol.TProtocol iprot, Competitor struct) throws org.apache.thrift.TException {
       org.apache.thrift.protocol.TField schemeField;
       iprot.readStructBegin();
       while (true)
@@ -389,18 +395,18 @@ public class BetLimits implements org.apache.thrift.TBase<BetLimits, BetLimits._
           break;
         }
         switch (schemeField.id) {
-          case 1: // TO_CALL
-            if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
-              struct.to_call = iprot.readI64();
-              struct.setTo_callIsSet(true);
+          case 1: // NAME
+            if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+              struct.name = iprot.readString();
+              struct.setNameIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
-          case 2: // MINIMUM_RAISE
+          case 2: // STACK
             if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
-              struct.minimum_raise = iprot.readI64();
-              struct.setMinimum_raiseIsSet(true);
+              struct.stack = iprot.readI64();
+              struct.setStackIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
@@ -416,15 +422,17 @@ public class BetLimits implements org.apache.thrift.TBase<BetLimits, BetLimits._
       struct.validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot, BetLimits struct) throws org.apache.thrift.TException {
+    public void write(org.apache.thrift.protocol.TProtocol oprot, Competitor struct) throws org.apache.thrift.TException {
       struct.validate();
 
       oprot.writeStructBegin(STRUCT_DESC);
-      oprot.writeFieldBegin(TO_CALL_FIELD_DESC);
-      oprot.writeI64(struct.to_call);
-      oprot.writeFieldEnd();
-      oprot.writeFieldBegin(MINIMUM_RAISE_FIELD_DESC);
-      oprot.writeI64(struct.minimum_raise);
+      if (struct.name != null) {
+        oprot.writeFieldBegin(NAME_FIELD_DESC);
+        oprot.writeString(struct.name);
+        oprot.writeFieldEnd();
+      }
+      oprot.writeFieldBegin(STACK_FIELD_DESC);
+      oprot.writeI64(struct.stack);
       oprot.writeFieldEnd();
       oprot.writeFieldStop();
       oprot.writeStructEnd();
@@ -432,44 +440,44 @@ public class BetLimits implements org.apache.thrift.TBase<BetLimits, BetLimits._
 
   }
 
-  private static class BetLimitsTupleSchemeFactory implements SchemeFactory {
-    public BetLimitsTupleScheme getScheme() {
-      return new BetLimitsTupleScheme();
+  private static class CompetitorTupleSchemeFactory implements SchemeFactory {
+    public CompetitorTupleScheme getScheme() {
+      return new CompetitorTupleScheme();
     }
   }
 
-  private static class BetLimitsTupleScheme extends TupleScheme<BetLimits> {
+  private static class CompetitorTupleScheme extends TupleScheme<Competitor> {
 
     @Override
-    public void write(org.apache.thrift.protocol.TProtocol prot, BetLimits struct) throws org.apache.thrift.TException {
+    public void write(org.apache.thrift.protocol.TProtocol prot, Competitor struct) throws org.apache.thrift.TException {
       TTupleProtocol oprot = (TTupleProtocol) prot;
       BitSet optionals = new BitSet();
-      if (struct.isSetTo_call()) {
+      if (struct.isSetName()) {
         optionals.set(0);
       }
-      if (struct.isSetMinimum_raise()) {
+      if (struct.isSetStack()) {
         optionals.set(1);
       }
       oprot.writeBitSet(optionals, 2);
-      if (struct.isSetTo_call()) {
-        oprot.writeI64(struct.to_call);
+      if (struct.isSetName()) {
+        oprot.writeString(struct.name);
       }
-      if (struct.isSetMinimum_raise()) {
-        oprot.writeI64(struct.minimum_raise);
+      if (struct.isSetStack()) {
+        oprot.writeI64(struct.stack);
       }
     }
 
     @Override
-    public void read(org.apache.thrift.protocol.TProtocol prot, BetLimits struct) throws org.apache.thrift.TException {
+    public void read(org.apache.thrift.protocol.TProtocol prot, Competitor struct) throws org.apache.thrift.TException {
       TTupleProtocol iprot = (TTupleProtocol) prot;
       BitSet incoming = iprot.readBitSet(2);
       if (incoming.get(0)) {
-        struct.to_call = iprot.readI64();
-        struct.setTo_callIsSet(true);
+        struct.name = iprot.readString();
+        struct.setNameIsSet(true);
       }
       if (incoming.get(1)) {
-        struct.minimum_raise = iprot.readI64();
-        struct.setMinimum_raiseIsSet(true);
+        struct.stack = iprot.readI64();
+        struct.setStackIsSet(true);
       }
     }
   }

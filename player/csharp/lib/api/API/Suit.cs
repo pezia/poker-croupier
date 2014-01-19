@@ -5,10 +5,13 @@
  *  @generated
  */
 
-public enum Suit
+namespace API
 {
-  Hearts = 0,
-  Diamonds = 1,
-  Spades = 2,
-  Clubs = 3,
+  public enum Suit
+  {
+    Hearts = 0,
+    Diamonds = 1,
+    Spades = 2,
+    Clubs = 3,
+  }
 }

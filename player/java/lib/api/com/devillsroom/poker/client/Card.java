@@ -4,6 +4,8 @@
  * DO NOT EDIT UNLESS YOU ARE SURE THAT YOU KNOW WHAT YOU ARE DOING
  *  @generated
  */
+package com.devillsroom.poker.client;
+
 import org.apache.thrift.scheme.IScheme;
 import org.apache.thrift.scheme.SchemeFactory;
 import org.apache.thrift.scheme.StandardScheme;
@@ -30,25 +32,36 @@ import java.util.Arrays;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Competitor implements org.apache.thrift.TBase<Competitor, Competitor._Fields>, java.io.Serializable, Cloneable, Comparable<Competitor> {
-  private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("Competitor");
+public class Card implements org.apache.thrift.TBase<Card, Card._Fields>, java.io.Serializable, Cloneable, Comparable<Card> {
+  private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("Card");
 
-  private static final org.apache.thrift.protocol.TField NAME_FIELD_DESC = new org.apache.thrift.protocol.TField("name", org.apache.thrift.protocol.TType.STRING, (short)1);
-  private static final org.apache.thrift.protocol.TField STACK_FIELD_DESC = new org.apache.thrift.protocol.TField("stack", org.apache.thrift.protocol.TType.I64, (short)2);
+  private static final org.apache.thrift.protocol.TField VALUE_FIELD_DESC = new org.apache.thrift.protocol.TField("value", org.apache.thrift.protocol.TType.I16, (short)1);
+  private static final org.apache.thrift.protocol.TField SUIT_FIELD_DESC = new org.apache.thrift.protocol.TField("suit", org.apache.thrift.protocol.TType.I32, (short)2);
+  private static final org.apache.thrift.protocol.TField NAME_FIELD_DESC = new org.apache.thrift.protocol.TField("name", org.apache.thrift.protocol.TType.STRING, (short)3);
 
   private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
   static {
-    schemes.put(StandardScheme.class, new CompetitorStandardSchemeFactory());
-    schemes.put(TupleScheme.class, new CompetitorTupleSchemeFactory());
+    schemes.put(StandardScheme.class, new CardStandardSchemeFactory());
+    schemes.put(TupleScheme.class, new CardTupleSchemeFactory());
   }
 
+  public short value; // required
+  /**
+   * 
+   * @see Suit
+   */
+  public Suit suit; // required
   public String name; // required
-  public long stack; // required
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-    NAME((short)1, "name"),
-    STACK((short)2, "stack");
+    VALUE((short)1, "value"),
+    /**
+     * 
+     * @see Suit
+     */
+    SUIT((short)2, "suit"),
+    NAME((short)3, "name");
 
     private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
 
@@ -63,10 +76,12 @@ public class Competitor implements org.apache.thrift.TBase<Competitor, Competito
      */
     public static _Fields findByThriftId(int fieldId) {
       switch(fieldId) {
-        case 1: // NAME
+        case 1: // VALUE
+          return VALUE;
+        case 2: // SUIT
+          return SUIT;
+        case 3: // NAME
           return NAME;
-        case 2: // STACK
-          return STACK;
         default:
           return null;
       }
@@ -107,59 +122,122 @@ public class Competitor implements org.apache.thrift.TBase<Competitor, Competito
   }
 
   // isset id assignments
-  private static final int __STACK_ISSET_ID = 0;
+  private static final int __VALUE_ISSET_ID = 0;
   private byte __isset_bitfield = 0;
   public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
   static {
     Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+    tmpMap.put(_Fields.VALUE, new org.apache.thrift.meta_data.FieldMetaData("value", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I16)));
+    tmpMap.put(_Fields.SUIT, new org.apache.thrift.meta_data.FieldMetaData("suit", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+        new org.apache.thrift.meta_data.EnumMetaData(org.apache.thrift.protocol.TType.ENUM, Suit.class)));
     tmpMap.put(_Fields.NAME, new org.apache.thrift.meta_data.FieldMetaData("name", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-    tmpMap.put(_Fields.STACK, new org.apache.thrift.meta_data.FieldMetaData("stack", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
     metaDataMap = Collections.unmodifiableMap(tmpMap);
-    org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(Competitor.class, metaDataMap);
+    org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(Card.class, metaDataMap);
   }
 
-  public Competitor() {
+  public Card() {
   }
 
-  public Competitor(
-    String name,
-    long stack)
+  public Card(
+    short value,
+    Suit suit,
+    String name)
   {
     this();
+    this.value = value;
+    setValueIsSet(true);
+    this.suit = suit;
     this.name = name;
-    this.stack = stack;
-    setStackIsSet(true);
   }
 
   /**
    * Performs a deep copy on <i>other</i>.
    */
-  public Competitor(Competitor other) {
+  public Card(Card other) {
     __isset_bitfield = other.__isset_bitfield;
+    this.value = other.value;
+    if (other.isSetSuit()) {
+      this.suit = other.suit;
+    }
     if (other.isSetName()) {
       this.name = other.name;
     }
-    this.stack = other.stack;
   }
 
-  public Competitor deepCopy() {
-    return new Competitor(this);
+  public Card deepCopy() {
+    return new Card(this);
   }
 
   @Override
   public void clear() {
+    setValueIsSet(false);
+    this.value = 0;
+    this.suit = null;
     this.name = null;
-    setStackIsSet(false);
-    this.stack = 0;
+  }
+
+  public short getValue() {
+    return this.value;
+  }
+
+  public Card setValue(short value) {
+    this.value = value;
+    setValueIsSet(true);
+    return this;
+  }
+
+  public void unsetValue() {
+    __isset_bitfield = EncodingUtils.clearBit(__isset_bitfield, __VALUE_ISSET_ID);
+  }
+
+  /** Returns true if field value is set (has been assigned a value) and false otherwise */
+  public boolean isSetValue() {
+    return EncodingUtils.testBit(__isset_bitfield, __VALUE_ISSET_ID);
+  }
+
+  public void setValueIsSet(boolean value) {
+    __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __VALUE_ISSET_ID, value);
+  }
+
+  /**
+   * 
+   * @see Suit
+   */
+  public Suit getSuit() {
+    return this.suit;
+  }
+
+  /**
+   * 
+   * @see Suit
+   */
+  public Card setSuit(Suit suit) {
+    this.suit = suit;
+    return this;
+  }
+
+  public void unsetSuit() {
+    this.suit = null;
+  }
+
+  /** Returns true if field suit is set (has been assigned a value) and false otherwise */
+  public boolean isSetSuit() {
+    return this.suit != null;
+  }
+
+  public void setSuitIsSet(boolean value) {
+    if (!value) {
+      this.suit = null;
+    }
   }
 
   public String getName() {
     return this.name;
   }
 
-  public Competitor setName(String name) {
+  public Card setName(String name) {
     this.name = name;
     return this;
   }
@@ -179,31 +257,24 @@ public class Competitor implements org.apache.thrift.TBase<Competitor, Competito
     }
   }
 
-  public long getStack() {
-    return this.stack;
-  }
-
-  public Competitor setStack(long stack) {
-    this.stack = stack;
-    setStackIsSet(true);
-    return this;
-  }
-
-  public void unsetStack() {
-    __isset_bitfield = EncodingUtils.clearBit(__isset_bitfield, __STACK_ISSET_ID);
-  }
-
-  /** Returns true if field stack is set (has been assigned a value) and false otherwise */
-  public boolean isSetStack() {
-    return EncodingUtils.testBit(__isset_bitfield, __STACK_ISSET_ID);
-  }
-
-  public void setStackIsSet(boolean value) {
-    __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __STACK_ISSET_ID, value);
-  }
-
   public void setFieldValue(_Fields field, Object value) {
     switch (field) {
+    case VALUE:
+      if (value == null) {
+        unsetValue();
+      } else {
+        setValue((Short)value);
+      }
+      break;
+
+    case SUIT:
+      if (value == null) {
+        unsetSuit();
+      } else {
+        setSuit((Suit)value);
+      }
+      break;
+
     case NAME:
       if (value == null) {
         unsetName();
@@ -212,24 +283,19 @@ public class Competitor implements org.apache.thrift.TBase<Competitor, Competito
       }
       break;
 
-    case STACK:
-      if (value == null) {
-        unsetStack();
-      } else {
-        setStack((Long)value);
-      }
-      break;
-
     }
   }
 
   public Object getFieldValue(_Fields field) {
     switch (field) {
+    case VALUE:
+      return Short.valueOf(getValue());
+
+    case SUIT:
+      return getSuit();
+
     case NAME:
       return getName();
-
-    case STACK:
-      return Long.valueOf(getStack());
 
     }
     throw new IllegalStateException();
@@ -242,10 +308,12 @@ public class Competitor implements org.apache.thrift.TBase<Competitor, Competito
     }
 
     switch (field) {
+    case VALUE:
+      return isSetValue();
+    case SUIT:
+      return isSetSuit();
     case NAME:
       return isSetName();
-    case STACK:
-      return isSetStack();
     }
     throw new IllegalStateException();
   }
@@ -254,14 +322,32 @@ public class Competitor implements org.apache.thrift.TBase<Competitor, Competito
   public boolean equals(Object that) {
     if (that == null)
       return false;
-    if (that instanceof Competitor)
-      return this.equals((Competitor)that);
+    if (that instanceof Card)
+      return this.equals((Card)that);
     return false;
   }
 
-  public boolean equals(Competitor that) {
+  public boolean equals(Card that) {
     if (that == null)
       return false;
+
+    boolean this_present_value = true;
+    boolean that_present_value = true;
+    if (this_present_value || that_present_value) {
+      if (!(this_present_value && that_present_value))
+        return false;
+      if (this.value != that.value)
+        return false;
+    }
+
+    boolean this_present_suit = true && this.isSetSuit();
+    boolean that_present_suit = true && that.isSetSuit();
+    if (this_present_suit || that_present_suit) {
+      if (!(this_present_suit && that_present_suit))
+        return false;
+      if (!this.suit.equals(that.suit))
+        return false;
+    }
 
     boolean this_present_name = true && this.isSetName();
     boolean that_present_name = true && that.isSetName();
@@ -269,15 +355,6 @@ public class Competitor implements org.apache.thrift.TBase<Competitor, Competito
       if (!(this_present_name && that_present_name))
         return false;
       if (!this.name.equals(that.name))
-        return false;
-    }
-
-    boolean this_present_stack = true;
-    boolean that_present_stack = true;
-    if (this_present_stack || that_present_stack) {
-      if (!(this_present_stack && that_present_stack))
-        return false;
-      if (this.stack != that.stack)
         return false;
     }
 
@@ -290,29 +367,39 @@ public class Competitor implements org.apache.thrift.TBase<Competitor, Competito
   }
 
   @Override
-  public int compareTo(Competitor other) {
+  public int compareTo(Card other) {
     if (!getClass().equals(other.getClass())) {
       return getClass().getName().compareTo(other.getClass().getName());
     }
 
     int lastComparison = 0;
 
+    lastComparison = Boolean.valueOf(isSetValue()).compareTo(other.isSetValue());
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+    if (isSetValue()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.value, other.value);
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+    }
+    lastComparison = Boolean.valueOf(isSetSuit()).compareTo(other.isSetSuit());
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+    if (isSetSuit()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.suit, other.suit);
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+    }
     lastComparison = Boolean.valueOf(isSetName()).compareTo(other.isSetName());
     if (lastComparison != 0) {
       return lastComparison;
     }
     if (isSetName()) {
       lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.name, other.name);
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-    }
-    lastComparison = Boolean.valueOf(isSetStack()).compareTo(other.isSetStack());
-    if (lastComparison != 0) {
-      return lastComparison;
-    }
-    if (isSetStack()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.stack, other.stack);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -334,19 +421,27 @@ public class Competitor implements org.apache.thrift.TBase<Competitor, Competito
 
   @Override
   public String toString() {
-    StringBuilder sb = new StringBuilder("Competitor(");
+    StringBuilder sb = new StringBuilder("Card(");
     boolean first = true;
 
+    sb.append("value:");
+    sb.append(this.value);
+    first = false;
+    if (!first) sb.append(", ");
+    sb.append("suit:");
+    if (this.suit == null) {
+      sb.append("null");
+    } else {
+      sb.append(this.suit);
+    }
+    first = false;
+    if (!first) sb.append(", ");
     sb.append("name:");
     if (this.name == null) {
       sb.append("null");
     } else {
       sb.append(this.name);
     }
-    first = false;
-    if (!first) sb.append(", ");
-    sb.append("stack:");
-    sb.append(this.stack);
     first = false;
     sb.append(")");
     return sb.toString();
@@ -375,15 +470,15 @@ public class Competitor implements org.apache.thrift.TBase<Competitor, Competito
     }
   }
 
-  private static class CompetitorStandardSchemeFactory implements SchemeFactory {
-    public CompetitorStandardScheme getScheme() {
-      return new CompetitorStandardScheme();
+  private static class CardStandardSchemeFactory implements SchemeFactory {
+    public CardStandardScheme getScheme() {
+      return new CardStandardScheme();
     }
   }
 
-  private static class CompetitorStandardScheme extends StandardScheme<Competitor> {
+  private static class CardStandardScheme extends StandardScheme<Card> {
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot, Competitor struct) throws org.apache.thrift.TException {
+    public void read(org.apache.thrift.protocol.TProtocol iprot, Card struct) throws org.apache.thrift.TException {
       org.apache.thrift.protocol.TField schemeField;
       iprot.readStructBegin();
       while (true)
@@ -393,18 +488,26 @@ public class Competitor implements org.apache.thrift.TBase<Competitor, Competito
           break;
         }
         switch (schemeField.id) {
-          case 1: // NAME
-            if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
-              struct.name = iprot.readString();
-              struct.setNameIsSet(true);
+          case 1: // VALUE
+            if (schemeField.type == org.apache.thrift.protocol.TType.I16) {
+              struct.value = iprot.readI16();
+              struct.setValueIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
-          case 2: // STACK
-            if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
-              struct.stack = iprot.readI64();
-              struct.setStackIsSet(true);
+          case 2: // SUIT
+            if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
+              struct.suit = Suit.findByValue(iprot.readI32());
+              struct.setSuitIsSet(true);
+            } else { 
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+            }
+            break;
+          case 3: // NAME
+            if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+              struct.name = iprot.readString();
+              struct.setNameIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
@@ -420,62 +523,77 @@ public class Competitor implements org.apache.thrift.TBase<Competitor, Competito
       struct.validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot, Competitor struct) throws org.apache.thrift.TException {
+    public void write(org.apache.thrift.protocol.TProtocol oprot, Card struct) throws org.apache.thrift.TException {
       struct.validate();
 
       oprot.writeStructBegin(STRUCT_DESC);
+      oprot.writeFieldBegin(VALUE_FIELD_DESC);
+      oprot.writeI16(struct.value);
+      oprot.writeFieldEnd();
+      if (struct.suit != null) {
+        oprot.writeFieldBegin(SUIT_FIELD_DESC);
+        oprot.writeI32(struct.suit.getValue());
+        oprot.writeFieldEnd();
+      }
       if (struct.name != null) {
         oprot.writeFieldBegin(NAME_FIELD_DESC);
         oprot.writeString(struct.name);
         oprot.writeFieldEnd();
       }
-      oprot.writeFieldBegin(STACK_FIELD_DESC);
-      oprot.writeI64(struct.stack);
-      oprot.writeFieldEnd();
       oprot.writeFieldStop();
       oprot.writeStructEnd();
     }
 
   }
 
-  private static class CompetitorTupleSchemeFactory implements SchemeFactory {
-    public CompetitorTupleScheme getScheme() {
-      return new CompetitorTupleScheme();
+  private static class CardTupleSchemeFactory implements SchemeFactory {
+    public CardTupleScheme getScheme() {
+      return new CardTupleScheme();
     }
   }
 
-  private static class CompetitorTupleScheme extends TupleScheme<Competitor> {
+  private static class CardTupleScheme extends TupleScheme<Card> {
 
     @Override
-    public void write(org.apache.thrift.protocol.TProtocol prot, Competitor struct) throws org.apache.thrift.TException {
+    public void write(org.apache.thrift.protocol.TProtocol prot, Card struct) throws org.apache.thrift.TException {
       TTupleProtocol oprot = (TTupleProtocol) prot;
       BitSet optionals = new BitSet();
-      if (struct.isSetName()) {
+      if (struct.isSetValue()) {
         optionals.set(0);
       }
-      if (struct.isSetStack()) {
+      if (struct.isSetSuit()) {
         optionals.set(1);
       }
-      oprot.writeBitSet(optionals, 2);
+      if (struct.isSetName()) {
+        optionals.set(2);
+      }
+      oprot.writeBitSet(optionals, 3);
+      if (struct.isSetValue()) {
+        oprot.writeI16(struct.value);
+      }
+      if (struct.isSetSuit()) {
+        oprot.writeI32(struct.suit.getValue());
+      }
       if (struct.isSetName()) {
         oprot.writeString(struct.name);
-      }
-      if (struct.isSetStack()) {
-        oprot.writeI64(struct.stack);
       }
     }
 
     @Override
-    public void read(org.apache.thrift.protocol.TProtocol prot, Competitor struct) throws org.apache.thrift.TException {
+    public void read(org.apache.thrift.protocol.TProtocol prot, Card struct) throws org.apache.thrift.TException {
       TTupleProtocol iprot = (TTupleProtocol) prot;
-      BitSet incoming = iprot.readBitSet(2);
+      BitSet incoming = iprot.readBitSet(3);
       if (incoming.get(0)) {
-        struct.name = iprot.readString();
-        struct.setNameIsSet(true);
+        struct.value = iprot.readI16();
+        struct.setValueIsSet(true);
       }
       if (incoming.get(1)) {
-        struct.stack = iprot.readI64();
-        struct.setStackIsSet(true);
+        struct.suit = Suit.findByValue(iprot.readI32());
+        struct.setSuitIsSet(true);
+      }
+      if (incoming.get(2)) {
+        struct.name = iprot.readString();
+        struct.setNameIsSet(true);
       }
     }
   }
