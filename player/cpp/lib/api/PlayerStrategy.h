@@ -23,6 +23,7 @@ class PlayerStrategyIf {
   virtual void community_card(const  ::Card& card) = 0;
   virtual void showdown(const  ::Competitor& competitor, const std::vector< ::Card> & cards, const  ::HandDescriptor& hand) = 0;
   virtual void winner(const  ::Competitor& competitor, const int64_t amount) = 0;
+  virtual void shutdown() = 0;
 };
 
 class PlayerStrategyIfFactory {
@@ -75,6 +76,9 @@ class PlayerStrategyNull : virtual public PlayerStrategyIf {
     return;
   }
   void winner(const  ::Competitor& /* competitor */, const int64_t /* amount */) {
+    return;
+  }
+  void shutdown() {
     return;
   }
 };
@@ -854,6 +858,43 @@ class PlayerStrategy_winner_presult {
 
 };
 
+
+class PlayerStrategy_shutdown_args {
+ public:
+
+  PlayerStrategy_shutdown_args() {
+  }
+
+  virtual ~PlayerStrategy_shutdown_args() throw() {}
+
+
+  bool operator == (const PlayerStrategy_shutdown_args & /* rhs */) const
+  {
+    return true;
+  }
+  bool operator != (const PlayerStrategy_shutdown_args &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const PlayerStrategy_shutdown_args & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+
+class PlayerStrategy_shutdown_pargs {
+ public:
+
+
+  virtual ~PlayerStrategy_shutdown_pargs() throw() {}
+
+
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
 class PlayerStrategyClient : virtual public PlayerStrategyIf {
  public:
   PlayerStrategyClient(boost::shared_ptr< ::apache::thrift::protocol::TProtocol> prot) :
@@ -898,6 +939,8 @@ class PlayerStrategyClient : virtual public PlayerStrategyIf {
   void winner(const  ::Competitor& competitor, const int64_t amount);
   void send_winner(const  ::Competitor& competitor, const int64_t amount);
   void recv_winner();
+  void shutdown();
+  void send_shutdown();
  protected:
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> piprot_;
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> poprot_;
@@ -921,6 +964,7 @@ class PlayerStrategyProcessor : public ::apache::thrift::TDispatchProcessor {
   void process_community_card(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_showdown(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_winner(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
+  void process_shutdown(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
  public:
   PlayerStrategyProcessor(boost::shared_ptr<PlayerStrategyIf> iface) :
     iface_(iface) {
@@ -932,6 +976,7 @@ class PlayerStrategyProcessor : public ::apache::thrift::TDispatchProcessor {
     processMap_["community_card"] = &PlayerStrategyProcessor::process_community_card;
     processMap_["showdown"] = &PlayerStrategyProcessor::process_showdown;
     processMap_["winner"] = &PlayerStrategyProcessor::process_winner;
+    processMap_["shutdown"] = &PlayerStrategyProcessor::process_shutdown;
   }
 
   virtual ~PlayerStrategyProcessor() {}
@@ -1031,6 +1076,15 @@ class PlayerStrategyMultiface : virtual public PlayerStrategyIf {
       ifaces_[i]->winner(competitor, amount);
     }
     ifaces_[i]->winner(competitor, amount);
+  }
+
+  void shutdown() {
+    size_t sz = ifaces_.size();
+    size_t i = 0;
+    for (; i < (sz - 1); ++i) {
+      ifaces_[i]->shutdown();
+    }
+    ifaces_[i]->shutdown();
   }
 
 };

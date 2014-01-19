@@ -75,6 +75,9 @@ class Iface:
     """
     pass
 
+  def shutdown(self):
+    pass
+
 
 class Client(Iface):
   def __init__(self, iprot, oprot=None):
@@ -316,6 +319,15 @@ class Client(Iface):
     self._iprot.readMessageEnd()
     return
 
+  def shutdown(self):
+    self.send_shutdown()
+
+  def send_shutdown(self):
+    self._oprot.writeMessageBegin('shutdown', TMessageType.CALL, self._seqid)
+    args = shutdown_args()
+    args.write(self._oprot)
+    self._oprot.writeMessageEnd()
+    self._oprot.trans.flush()
 
 class Processor(Iface, TProcessor):
   def __init__(self, handler):
@@ -329,6 +341,7 @@ class Processor(Iface, TProcessor):
     self._processMap["community_card"] = Processor.process_community_card
     self._processMap["showdown"] = Processor.process_showdown
     self._processMap["winner"] = Processor.process_winner
+    self._processMap["shutdown"] = Processor.process_shutdown
 
   def process(self, iprot, oprot):
     (name, type, seqid) = iprot.readMessageBegin()
@@ -432,6 +445,13 @@ class Processor(Iface, TProcessor):
     result.write(oprot)
     oprot.writeMessageEnd()
     oprot.trans.flush()
+
+  def process_shutdown(self, seqid, iprot, oprot):
+    args = shutdown_args()
+    args.read(iprot)
+    iprot.readMessageEnd()
+    self._handler.shutdown()
+    return
 
 
 # HELPER FUNCTIONS AND STRUCTURES
@@ -1328,6 +1348,48 @@ class winner_result:
       oprot.trans.write(fastbinary.encode_binary(self, (self.__class__, self.thrift_spec)))
       return
     oprot.writeStructBegin('winner_result')
+    oprot.writeFieldStop()
+    oprot.writeStructEnd()
+
+  def validate(self):
+    return
+
+
+  def __repr__(self):
+    L = ['%s=%r' % (key, value)
+      for key, value in self.__dict__.iteritems()]
+    return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
+  def __eq__(self, other):
+    return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
+  def __ne__(self, other):
+    return not (self == other)
+
+class shutdown_args:
+
+  thrift_spec = (
+  )
+
+  def read(self, iprot):
+    if iprot.__class__ == TBinaryProtocol.TBinaryProtocolAccelerated and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None and fastbinary is not None:
+      fastbinary.decode_binary(self, iprot.trans, (self.__class__, self.thrift_spec))
+      return
+    iprot.readStructBegin()
+    while True:
+      (fname, ftype, fid) = iprot.readFieldBegin()
+      if ftype == TType.STOP:
+        break
+      else:
+        iprot.skip(ftype)
+      iprot.readFieldEnd()
+    iprot.readStructEnd()
+
+  def write(self, oprot):
+    if oprot.__class__ == TBinaryProtocol.TBinaryProtocolAccelerated and self.thrift_spec is not None and fastbinary is not None:
+      oprot.trans.write(fastbinary.encode_binary(self, (self.__class__, self.thrift_spec)))
+      return
+    oprot.writeStructBegin('shutdown_args')
     oprot.writeFieldStop()
     oprot.writeStructEnd()
 

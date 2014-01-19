@@ -111,6 +111,13 @@ module API
         return
       end
 
+      def shutdown()
+        send_shutdown()
+      end
+
+      def send_shutdown()
+        send_message('shutdown', Shutdown_args)
+      end
     end
 
     class Processor
@@ -163,6 +170,12 @@ module API
         result = Winner_result.new()
         @handler.winner(args.competitor, args.amount)
         write_result(result, oprot, 'winner', seqid)
+      end
+
+      def process_shutdown(seqid, iprot, oprot)
+        args = read_args(iprot, Shutdown_args)
+        @handler.shutdown()
+        return
       end
 
     end
@@ -382,6 +395,36 @@ module API
     end
 
     class Winner_result
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+
+      FIELDS = {
+
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
+    end
+
+    class Shutdown_args
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+
+      FIELDS = {
+
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
+    end
+
+    class Shutdown_result
       include ::Thrift::Struct, ::Thrift::Struct_Union
 
       FIELDS = {

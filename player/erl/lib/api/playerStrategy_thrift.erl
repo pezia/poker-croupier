@@ -91,5 +91,14 @@ function_info('winner', reply_type) ->
 function_info('winner', exceptions) ->
   {struct, []}
 ;
+% shutdown(This)
+function_info('shutdown', params_type) ->
+  {struct, []}
+;
+function_info('shutdown', reply_type) ->
+  oneway_void;
+function_info('shutdown', exceptions) ->
+  {struct, []}
+;
 function_info(_Func, _Info) -> no_function.
 

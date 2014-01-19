@@ -39,4 +39,8 @@ class Croupier::ThriftObserver
   def winner(competitor, amount)
     @strategy.winner @gateway[competitor], amount
   end
+
+  def shutdown
+    @strategy.shutdown
+  end
 end

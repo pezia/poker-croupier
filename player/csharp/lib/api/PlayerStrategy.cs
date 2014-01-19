@@ -57,6 +57,11 @@ public partial class PlayerStrategy {
     IAsyncResult Begin_winner(AsyncCallback callback, object state, Competitor competitor, long amount);
     void End_winner(IAsyncResult asyncResult);
     #endif
+    void shutdown();
+    #if SILVERLIGHT
+    IAsyncResult Begin_shutdown(AsyncCallback callback, object state);
+    void End_shutdown(IAsyncResult asyncResult);
+    #endif
   }
 
   public class Client : IDisposable, Iface {
@@ -597,6 +602,47 @@ public partial class PlayerStrategy {
       return;
     }
 
+    
+    #if SILVERLIGHT
+    public IAsyncResult Begin_shutdown(AsyncCallback callback, object state)
+    {
+      return send_shutdown(callback, state);
+    }
+
+    public void End_shutdown(IAsyncResult asyncResult)
+    {
+      oprot_.Transport.EndFlush(asyncResult);
+    }
+
+    #endif
+
+    public void shutdown()
+    {
+      #if !SILVERLIGHT
+      send_shutdown();
+
+      #else
+      var asyncResult = Begin_shutdown(null, null);
+
+      #endif
+    }
+    #if SILVERLIGHT
+    public IAsyncResult send_shutdown(AsyncCallback callback, object state)
+    #else
+    public void send_shutdown()
+    #endif
+    {
+      oprot_.WriteMessageBegin(new TMessage("shutdown", TMessageType.Call, seqid_));
+      shutdown_args args = new shutdown_args();
+      args.Write(oprot_);
+      oprot_.WriteMessageEnd();
+      #if SILVERLIGHT
+      return oprot_.Transport.BeginFlush(callback, state);
+      #else
+      oprot_.Transport.Flush();
+      #endif
+    }
+
   }
   public class Processor : TProcessor {
     public Processor(Iface iface)
@@ -610,6 +656,7 @@ public partial class PlayerStrategy {
       processMap_["community_card"] = community_card_Process;
       processMap_["showdown"] = showdown_Process;
       processMap_["winner"] = winner_Process;
+      processMap_["shutdown"] = shutdown_Process;
     }
 
     protected delegate void ProcessFunction(int seqid, TProtocol iprot, TProtocol oprot);
@@ -746,6 +793,14 @@ public partial class PlayerStrategy {
       oprot.Transport.Flush();
     }
 
+    public void shutdown_Process(int seqid, TProtocol iprot, TProtocol oprot)
+    {
+      shutdown_args args = new shutdown_args();
+      args.Read(iprot);
+      iprot.ReadMessageEnd();
+      iface_.shutdown();
+      return;
+    }
   }
 
 
@@ -2044,6 +2099,52 @@ public partial class PlayerStrategy {
 
     public override string ToString() {
       StringBuilder sb = new StringBuilder("winner_result(");
+      sb.Append(")");
+      return sb.ToString();
+    }
+
+  }
+
+
+  #if !SILVERLIGHT
+  [Serializable]
+  #endif
+  public partial class shutdown_args : TBase
+  {
+
+    public shutdown_args() {
+    }
+
+    public void Read (TProtocol iprot)
+    {
+      TField field;
+      iprot.ReadStructBegin();
+      while (true)
+      {
+        field = iprot.ReadFieldBegin();
+        if (field.Type == TType.Stop) { 
+          break;
+        }
+        switch (field.ID)
+        {
+          default: 
+            TProtocolUtil.Skip(iprot, field.Type);
+            break;
+        }
+        iprot.ReadFieldEnd();
+      }
+      iprot.ReadStructEnd();
+    }
+
+    public void Write(TProtocol oprot) {
+      TStruct struc = new TStruct("shutdown_args");
+      oprot.WriteStructBegin(struc);
+      oprot.WriteFieldStop();
+      oprot.WriteStructEnd();
+    }
+
+    public override string ToString() {
+      StringBuilder sb = new StringBuilder("shutdown_args(");
       sb.Append(")");
       return sb.ToString();
     }

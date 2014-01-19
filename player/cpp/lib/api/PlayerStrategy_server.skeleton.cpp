@@ -60,6 +60,11 @@ class PlayerStrategyHandler : virtual public PlayerStrategyIf {
     printf("winner\n");
   }
 
+  void shutdown() {
+    // Your implementation goes here
+    printf("shutdown\n");
+  }
+
 };
 
 int main(int argc, char **argv) {

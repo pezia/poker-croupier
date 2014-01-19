@@ -25,6 +25,7 @@ interface PlayerStrategyIf {
   public function community_card(\Card $card);
   public function showdown(\Competitor $competitor, $cards, \HandDescriptor $hand);
   public function winner(\Competitor $competitor, $amount);
+  public function shutdown();
 }
 
 class PlayerStrategyClient implements \PlayerStrategyIf {
@@ -432,6 +433,27 @@ class PlayerStrategyClient implements \PlayerStrategyIf {
     return;
   }
 
+  public function shutdown()
+  {
+    $this->send_shutdown();
+  }
+
+  public function send_shutdown()
+  {
+    $args = new \PlayerStrategy_shutdown_args();
+    $bin_accel = ($this->output_ instanceof TBinaryProtocolAccelerated) && function_exists('thrift_protocol_write_binary');
+    if ($bin_accel)
+    {
+      thrift_protocol_write_binary($this->output_, 'shutdown', TMessageType::CALL, $args, $this->seqid_, $this->output_->isStrictWrite());
+    }
+    else
+    {
+      $this->output_->writeMessageBegin('shutdown', TMessageType::CALL, $this->seqid_);
+      $args->write($this->output_);
+      $this->output_->writeMessageEnd();
+      $this->output_->getTransport()->flush();
+    }
+  }
 }
 
 // HELPER FUNCTIONS AND STRUCTURES
@@ -1600,6 +1622,56 @@ class PlayerStrategy_winner_result {
   public function write($output) {
     $xfer = 0;
     $xfer += $output->writeStructBegin('PlayerStrategy_winner_result');
+    $xfer += $output->writeFieldStop();
+    $xfer += $output->writeStructEnd();
+    return $xfer;
+  }
+
+}
+
+class PlayerStrategy_shutdown_args {
+  static $_TSPEC;
+
+
+  public function __construct() {
+    if (!isset(self::$_TSPEC)) {
+      self::$_TSPEC = array(
+        );
+    }
+  }
+
+  public function getName() {
+    return 'PlayerStrategy_shutdown_args';
+  }
+
+  public function read($input)
+  {
+    $xfer = 0;
+    $fname = null;
+    $ftype = 0;
+    $fid = 0;
+    $xfer += $input->readStructBegin($fname);
+    while (true)
+    {
+      $xfer += $input->readFieldBegin($fname, $ftype, $fid);
+      if ($ftype == TType::STOP) {
+        break;
+      }
+      switch ($fid)
+      {
+        default:
+          $xfer += $input->skip($ftype);
+          break;
+      }
+      $xfer += $input->readFieldEnd();
+    }
+    $xfer += $input->readStructEnd();
+    return $xfer;
+  }
+
+  public function write($output) {
+    $xfer = 0;
+    $xfer += $output->writeStructBegin('PlayerStrategy_shutdown_args');
     $xfer += $output->writeFieldStop();
     $xfer += $output->writeStructEnd();
     return $xfer;

@@ -1205,6 +1205,51 @@ uint32_t PlayerStrategy_winner_presult::read(::apache::thrift::protocol::TProtoc
   return xfer;
 }
 
+uint32_t PlayerStrategy_shutdown_args::read(::apache::thrift::protocol::TProtocol* iprot) {
+
+  uint32_t xfer = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TType ftype;
+  int16_t fid;
+
+  xfer += iprot->readStructBegin(fname);
+
+  using ::apache::thrift::protocol::TProtocolException;
+
+
+  while (true)
+  {
+    xfer += iprot->readFieldBegin(fname, ftype, fid);
+    if (ftype == ::apache::thrift::protocol::T_STOP) {
+      break;
+    }
+    xfer += iprot->skip(ftype);
+    xfer += iprot->readFieldEnd();
+  }
+
+  xfer += iprot->readStructEnd();
+
+  return xfer;
+}
+
+uint32_t PlayerStrategy_shutdown_args::write(::apache::thrift::protocol::TProtocol* oprot) const {
+  uint32_t xfer = 0;
+  xfer += oprot->writeStructBegin("PlayerStrategy_shutdown_args");
+
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
+uint32_t PlayerStrategy_shutdown_pargs::write(::apache::thrift::protocol::TProtocol* oprot) const {
+  uint32_t xfer = 0;
+  xfer += oprot->writeStructBegin("PlayerStrategy_shutdown_pargs");
+
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
 void PlayerStrategyClient::name(std::string& _return)
 {
   send_name();
@@ -1641,6 +1686,24 @@ void PlayerStrategyClient::recv_winner()
   iprot_->getTransport()->readEnd();
 
   return;
+}
+
+void PlayerStrategyClient::shutdown()
+{
+  send_shutdown();
+}
+
+void PlayerStrategyClient::send_shutdown()
+{
+  int32_t cseqid = 0;
+  oprot_->writeMessageBegin("shutdown", ::apache::thrift::protocol::T_CALL, cseqid);
+
+  PlayerStrategy_shutdown_pargs args;
+  args.write(oprot_);
+
+  oprot_->writeMessageEnd();
+  oprot_->getTransport()->writeEnd();
+  oprot_->getTransport()->flush();
 }
 
 bool PlayerStrategyProcessor::dispatchCall(::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, const std::string& fname, int32_t seqid, void* callContext) {
@@ -2086,6 +2149,43 @@ void PlayerStrategyProcessor::process_winner(int32_t seqid, ::apache::thrift::pr
   if (this->eventHandler_.get() != NULL) {
     this->eventHandler_->postWrite(ctx, "PlayerStrategy.winner", bytes);
   }
+}
+
+void PlayerStrategyProcessor::process_shutdown(int32_t, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol*, void* callContext)
+{
+  void* ctx = NULL;
+  if (this->eventHandler_.get() != NULL) {
+    ctx = this->eventHandler_->getContext("PlayerStrategy.shutdown", callContext);
+  }
+  ::apache::thrift::TProcessorContextFreer freer(this->eventHandler_.get(), ctx, "PlayerStrategy.shutdown");
+
+  if (this->eventHandler_.get() != NULL) {
+    this->eventHandler_->preRead(ctx, "PlayerStrategy.shutdown");
+  }
+
+  PlayerStrategy_shutdown_args args;
+  args.read(iprot);
+  iprot->readMessageEnd();
+  uint32_t bytes = iprot->getTransport()->readEnd();
+
+  if (this->eventHandler_.get() != NULL) {
+    this->eventHandler_->postRead(ctx, "PlayerStrategy.shutdown", bytes);
+  }
+
+  try {
+    iface_->shutdown();
+  } catch (const std::exception& e) {
+    if (this->eventHandler_.get() != NULL) {
+      this->eventHandler_->handlerError(ctx, "PlayerStrategy.shutdown");
+    }
+    return;
+  }
+
+  if (this->eventHandler_.get() != NULL) {
+    this->eventHandler_->asyncComplete(ctx, "PlayerStrategy.shutdown");
+  }
+
+  return;
 }
 
 ::boost::shared_ptr< ::apache::thrift::TProcessor > PlayerStrategyProcessorFactory::getProcessor(const ::apache::thrift::TConnectionInfo& connInfo) {

@@ -32,4 +32,8 @@ class PlayerStrategy::Handler
 
   def winner(competitor, amount)
   end
+
+  def shutdown
+    abort('Shutting down server')
+  end
 end

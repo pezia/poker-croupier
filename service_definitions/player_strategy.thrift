@@ -13,4 +13,6 @@ service PlayerStrategy
     void community_card(1:types.Card card)
     void showdown(1:types.Competitor competitor, 2:list<types.Card> cards, 3:types.HandDescriptor hand)
     void winner(1:types.Competitor competitor, 2:i64 amount)
+
+    oneway void shutdown()
 }

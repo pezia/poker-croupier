@@ -20,6 +20,9 @@ class Croupier::Tournament::Runner
       @tournament_state.next_round!
     end
     ranking.add_winner
+    @tournament_state.each_observer do |observer|
+      observer.shutdown
+    end
     ranking
   end
 

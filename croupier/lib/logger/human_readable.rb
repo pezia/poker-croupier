@@ -24,4 +24,8 @@ class Croupier::LogHandler::HumanReadable
   def winner(competitor, amount)
     Croupier.logger.info "#{competitor.name} won #{amount}"
   end
+
+  def shutdown
+
+  end
 end
