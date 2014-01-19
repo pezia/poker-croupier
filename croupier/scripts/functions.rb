@@ -1,5 +1,7 @@
 $:.push('../lib/api')
 
+Dir.chdir File.dirname(__FILE__)
+
 require 'thrift'
 require 'croupier'
 
