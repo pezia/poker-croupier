@@ -1,7 +1,7 @@
 
 class PlayerStrategy::Handler
   def name
-    ARGV.first
+    ARGV[1] || "Rudy Ruby"
   end
 
   def competitor_status(competitor)

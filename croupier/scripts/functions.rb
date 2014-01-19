@@ -42,7 +42,7 @@ def start_players(number_of_players)
 
   player_names[0..number_of_players-1].each_with_index do |player_name, index|
     players[index] = fork do
-      exec "bundle exec ruby ../../player/rb/player_service.rb '#{player_name}' #{9200+index}"
+      exec "bundle exec ruby ../../player/rb/player_service.rb #{9200+index} '#{player_name}'"
     end
   end
 
