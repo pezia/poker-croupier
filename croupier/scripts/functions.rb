@@ -53,5 +53,5 @@ def start_players(number_of_players)
 end
 
 def run_timestamp
-  Time.now.strftime("%Y%m%d%H%M%S")
+  Time.now.strftime("%Y_%m_%d_%H_%M_%S")
 end
