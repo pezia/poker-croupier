@@ -9,7 +9,13 @@ class Croupier::PlayerBuilder
   private
 
   def build_strategy(host, port)
-    transport = Thrift::BufferedTransport.new(Thrift::Socket.new(host, port))
+    if port != 8080
+      socket = Thrift::Socket.new(host, port)
+    else
+      socket = Thrift::HTTPClientTransport.new('http://localhost:8080/php/player_service.php')
+    end
+
+    transport = Thrift::BufferedTransport.new(socket)
     protocol = Thrift::BinaryProtocol.new(transport)
     strategy = API::PlayerStrategy::Client.new(protocol)
     [strategy, transport]
