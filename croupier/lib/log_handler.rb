@@ -1,4 +1,4 @@
 
 module Croupier::LogHandler
-  autoload :HumanReadable, 'lib/logger/human_readable'
+  autoload :HumanReadable, 'lib/log_handler/human_readable'
 end
