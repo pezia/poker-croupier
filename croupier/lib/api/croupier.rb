@@ -54,6 +54,13 @@ module API
         return
       end
 
+      def shutdown()
+        send_shutdown()
+      end
+
+      def send_shutdown()
+        send_message('shutdown', Shutdown_args)
+      end
     end
 
     class Processor
@@ -78,6 +85,12 @@ module API
         result = Start_sit_and_go_result.new()
         @handler.start_sit_and_go()
         write_result(result, oprot, 'start_sit_and_go', seqid)
+      end
+
+      def process_shutdown(seqid, iprot, oprot)
+        args = read_args(iprot, Shutdown_args)
+        @handler.shutdown()
+        return
       end
 
     end
@@ -166,6 +179,36 @@ module API
     end
 
     class Start_sit_and_go_result
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+
+      FIELDS = {
+
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
+    end
+
+    class Shutdown_args
+      include ::Thrift::Struct, ::Thrift::Struct_Union
+
+      FIELDS = {
+
+      }
+
+      def struct_fields; FIELDS; end
+
+      def validate
+      end
+
+      ::Thrift::Struct.generate_accessors self
+    end
+
+    class Shutdown_result
       include ::Thrift::Struct, ::Thrift::Struct_Union
 
       FIELDS = {

@@ -1,3 +1,4 @@
+$:.push('../lib/api')
 
 require 'thrift'
 require 'croupier'
@@ -8,7 +9,7 @@ def connect_server
   client = API::Croupier::Client.new(protocol)
 
   transport.open()
-  client
+  [client, transport]
 end
 
 def start_server(log_file)
@@ -18,4 +19,16 @@ def start_server(log_file)
   Process.detach(croupier)
 
   sleep(2)
+end
+
+def sit_and_go(log_file, &block)
+  start_server log_file
+
+  client, transport = connect_server
+
+  client.instance_eval &block
+
+  client.start_sit_and_go
+  client.shutdown
+  transport.close
 end
