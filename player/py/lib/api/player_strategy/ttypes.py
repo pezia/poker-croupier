@@ -7,7 +7,7 @@
 #
 
 from thrift.Thrift import TType, TMessageType, TException, TApplicationException
-import types.ttypes
+import API.ttypes
 
 
 from thrift.transport import TTransport

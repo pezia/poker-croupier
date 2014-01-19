@@ -15,7 +15,7 @@
 #include <thrift/cxxfunctional.h>
 
 
-
+namespace API {
 
 struct Suit {
   enum type {
@@ -312,6 +312,6 @@ class HandDescriptor {
 
 void swap(HandDescriptor &a, HandDescriptor &b);
 
-
+} // namespace
 
 #endif

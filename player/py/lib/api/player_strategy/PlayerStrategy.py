@@ -567,7 +567,7 @@ class bet_request_args:
   thrift_spec = (
     None, # 0
     (1, TType.I64, 'pot', None, None, ), # 1
-    (2, TType.STRUCT, 'limits', (types.ttypes.BetLimits, types.ttypes.BetLimits.thrift_spec), None, ), # 2
+    (2, TType.STRUCT, 'limits', (API.ttypes.BetLimits, API.ttypes.BetLimits.thrift_spec), None, ), # 2
   )
 
   def __init__(self, pot=None, limits=None,):
@@ -590,7 +590,7 @@ class bet_request_args:
           iprot.skip(ftype)
       elif fid == 2:
         if ftype == TType.STRUCT:
-          self.limits = types.ttypes.BetLimits()
+          self.limits = API.ttypes.BetLimits()
           self.limits.read(iprot)
         else:
           iprot.skip(ftype)
@@ -697,7 +697,7 @@ class competitor_status_args:
 
   thrift_spec = (
     None, # 0
-    (1, TType.STRUCT, 'competitor', (types.ttypes.Competitor, types.ttypes.Competitor.thrift_spec), None, ), # 1
+    (1, TType.STRUCT, 'competitor', (API.ttypes.Competitor, API.ttypes.Competitor.thrift_spec), None, ), # 1
   )
 
   def __init__(self, competitor=None,):
@@ -714,7 +714,7 @@ class competitor_status_args:
         break
       if fid == 1:
         if ftype == TType.STRUCT:
-          self.competitor = types.ttypes.Competitor()
+          self.competitor = API.ttypes.Competitor()
           self.competitor.read(iprot)
         else:
           iprot.skip(ftype)
@@ -801,8 +801,8 @@ class bet_args:
 
   thrift_spec = (
     None, # 0
-    (1, TType.STRUCT, 'competitor', (types.ttypes.Competitor, types.ttypes.Competitor.thrift_spec), None, ), # 1
-    (2, TType.STRUCT, 'bet', (types.ttypes.Bet, types.ttypes.Bet.thrift_spec), None, ), # 2
+    (1, TType.STRUCT, 'competitor', (API.ttypes.Competitor, API.ttypes.Competitor.thrift_spec), None, ), # 1
+    (2, TType.STRUCT, 'bet', (API.ttypes.Bet, API.ttypes.Bet.thrift_spec), None, ), # 2
   )
 
   def __init__(self, competitor=None, bet=None,):
@@ -820,13 +820,13 @@ class bet_args:
         break
       if fid == 1:
         if ftype == TType.STRUCT:
-          self.competitor = types.ttypes.Competitor()
+          self.competitor = API.ttypes.Competitor()
           self.competitor.read(iprot)
         else:
           iprot.skip(ftype)
       elif fid == 2:
         if ftype == TType.STRUCT:
-          self.bet = types.ttypes.Bet()
+          self.bet = API.ttypes.Bet()
           self.bet.read(iprot)
         else:
           iprot.skip(ftype)
@@ -916,7 +916,7 @@ class hole_card_args:
 
   thrift_spec = (
     None, # 0
-    (1, TType.STRUCT, 'card', (types.ttypes.Card, types.ttypes.Card.thrift_spec), None, ), # 1
+    (1, TType.STRUCT, 'card', (API.ttypes.Card, API.ttypes.Card.thrift_spec), None, ), # 1
   )
 
   def __init__(self, card=None,):
@@ -933,7 +933,7 @@ class hole_card_args:
         break
       if fid == 1:
         if ftype == TType.STRUCT:
-          self.card = types.ttypes.Card()
+          self.card = API.ttypes.Card()
           self.card.read(iprot)
         else:
           iprot.skip(ftype)
@@ -1019,7 +1019,7 @@ class community_card_args:
 
   thrift_spec = (
     None, # 0
-    (1, TType.STRUCT, 'card', (types.ttypes.Card, types.ttypes.Card.thrift_spec), None, ), # 1
+    (1, TType.STRUCT, 'card', (API.ttypes.Card, API.ttypes.Card.thrift_spec), None, ), # 1
   )
 
   def __init__(self, card=None,):
@@ -1036,7 +1036,7 @@ class community_card_args:
         break
       if fid == 1:
         if ftype == TType.STRUCT:
-          self.card = types.ttypes.Card()
+          self.card = API.ttypes.Card()
           self.card.read(iprot)
         else:
           iprot.skip(ftype)
@@ -1124,9 +1124,9 @@ class showdown_args:
 
   thrift_spec = (
     None, # 0
-    (1, TType.STRUCT, 'competitor', (types.ttypes.Competitor, types.ttypes.Competitor.thrift_spec), None, ), # 1
-    (2, TType.LIST, 'cards', (TType.STRUCT,(types.ttypes.Card, types.ttypes.Card.thrift_spec)), None, ), # 2
-    (3, TType.STRUCT, 'hand', (types.ttypes.HandDescriptor, types.ttypes.HandDescriptor.thrift_spec), None, ), # 3
+    (1, TType.STRUCT, 'competitor', (API.ttypes.Competitor, API.ttypes.Competitor.thrift_spec), None, ), # 1
+    (2, TType.LIST, 'cards', (TType.STRUCT,(API.ttypes.Card, API.ttypes.Card.thrift_spec)), None, ), # 2
+    (3, TType.STRUCT, 'hand', (API.ttypes.HandDescriptor, API.ttypes.HandDescriptor.thrift_spec), None, ), # 3
   )
 
   def __init__(self, competitor=None, cards=None, hand=None,):
@@ -1145,7 +1145,7 @@ class showdown_args:
         break
       if fid == 1:
         if ftype == TType.STRUCT:
-          self.competitor = types.ttypes.Competitor()
+          self.competitor = API.ttypes.Competitor()
           self.competitor.read(iprot)
         else:
           iprot.skip(ftype)
@@ -1154,7 +1154,7 @@ class showdown_args:
           self.cards = []
           (_etype3, _size0) = iprot.readListBegin()
           for _i4 in xrange(_size0):
-            _elem5 = types.ttypes.Card()
+            _elem5 = API.ttypes.Card()
             _elem5.read(iprot)
             self.cards.append(_elem5)
           iprot.readListEnd()
@@ -1162,7 +1162,7 @@ class showdown_args:
           iprot.skip(ftype)
       elif fid == 3:
         if ftype == TType.STRUCT:
-          self.hand = types.ttypes.HandDescriptor()
+          self.hand = API.ttypes.HandDescriptor()
           self.hand.read(iprot)
         else:
           iprot.skip(ftype)
@@ -1260,7 +1260,7 @@ class winner_args:
 
   thrift_spec = (
     None, # 0
-    (1, TType.STRUCT, 'competitor', (types.ttypes.Competitor, types.ttypes.Competitor.thrift_spec), None, ), # 1
+    (1, TType.STRUCT, 'competitor', (API.ttypes.Competitor, API.ttypes.Competitor.thrift_spec), None, ), # 1
     (2, TType.I64, 'amount', None, None, ), # 2
   )
 
@@ -1279,7 +1279,7 @@ class winner_args:
         break
       if fid == 1:
         if ftype == TType.STRUCT:
-          self.competitor = types.ttypes.Competitor()
+          self.competitor = API.ttypes.Competitor()
           self.competitor.read(iprot)
         else:
           iprot.skip(ftype)

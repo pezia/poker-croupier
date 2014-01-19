@@ -67,7 +67,7 @@ uint32_t Ranking_rank_hand_args::write(::apache::thrift::protocol::TProtocol* op
   xfer += oprot->writeFieldBegin("cards", ::apache::thrift::protocol::T_LIST, 1);
   {
     xfer += oprot->writeListBegin(::apache::thrift::protocol::T_STRUCT, static_cast<uint32_t>(this->cards.size()));
-    std::vector< ::Card> ::const_iterator _iter5;
+    std::vector< ::API::Card> ::const_iterator _iter5;
     for (_iter5 = this->cards.begin(); _iter5 != this->cards.end(); ++_iter5)
     {
       xfer += (*_iter5).write(oprot);
@@ -88,7 +88,7 @@ uint32_t Ranking_rank_hand_pargs::write(::apache::thrift::protocol::TProtocol* o
   xfer += oprot->writeFieldBegin("cards", ::apache::thrift::protocol::T_LIST, 1);
   {
     xfer += oprot->writeListBegin(::apache::thrift::protocol::T_STRUCT, static_cast<uint32_t>((*(this->cards)).size()));
-    std::vector< ::Card> ::const_iterator _iter6;
+    std::vector< ::API::Card> ::const_iterator _iter6;
     for (_iter6 = (*(this->cards)).begin(); _iter6 != (*(this->cards)).end(); ++_iter6)
     {
       xfer += (*_iter6).write(oprot);
@@ -198,13 +198,13 @@ uint32_t Ranking_rank_hand_presult::read(::apache::thrift::protocol::TProtocol* 
   return xfer;
 }
 
-void RankingClient::rank_hand( ::HandDescriptor& _return, const std::vector< ::Card> & cards)
+void RankingClient::rank_hand( ::API::HandDescriptor& _return, const std::vector< ::API::Card> & cards)
 {
   send_rank_hand(cards);
   recv_rank_hand(_return);
 }
 
-void RankingClient::send_rank_hand(const std::vector< ::Card> & cards)
+void RankingClient::send_rank_hand(const std::vector< ::API::Card> & cards)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("rank_hand", ::apache::thrift::protocol::T_CALL, cseqid);
@@ -218,7 +218,7 @@ void RankingClient::send_rank_hand(const std::vector< ::Card> & cards)
   oprot_->getTransport()->flush();
 }
 
-void RankingClient::recv_rank_hand( ::HandDescriptor& _return)
+void RankingClient::recv_rank_hand( ::API::HandDescriptor& _return)
 {
 
   int32_t rseqid = 0;

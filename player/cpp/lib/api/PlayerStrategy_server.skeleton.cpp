@@ -25,37 +25,37 @@ class PlayerStrategyHandler : virtual public PlayerStrategyIf {
     printf("name\n");
   }
 
-  int64_t bet_request(const int64_t pot, const  ::BetLimits& limits) {
+  int64_t bet_request(const int64_t pot, const  ::API::BetLimits& limits) {
     // Your implementation goes here
     printf("bet_request\n");
   }
 
-  void competitor_status(const  ::Competitor& competitor) {
+  void competitor_status(const  ::API::Competitor& competitor) {
     // Your implementation goes here
     printf("competitor_status\n");
   }
 
-  void bet(const  ::Competitor& competitor, const  ::Bet& bet) {
+  void bet(const  ::API::Competitor& competitor, const  ::API::Bet& bet) {
     // Your implementation goes here
     printf("bet\n");
   }
 
-  void hole_card(const  ::Card& card) {
+  void hole_card(const  ::API::Card& card) {
     // Your implementation goes here
     printf("hole_card\n");
   }
 
-  void community_card(const  ::Card& card) {
+  void community_card(const  ::API::Card& card) {
     // Your implementation goes here
     printf("community_card\n");
   }
 
-  void showdown(const  ::Competitor& competitor, const std::vector< ::Card> & cards, const  ::HandDescriptor& hand) {
+  void showdown(const  ::API::Competitor& competitor, const std::vector< ::API::Card> & cards, const  ::API::HandDescriptor& hand) {
     // Your implementation goes here
     printf("showdown\n");
   }
 
-  void winner(const  ::Competitor& competitor, const int64_t amount) {
+  void winner(const  ::API::Competitor& competitor, const int64_t amount) {
     // Your implementation goes here
     printf("winner\n");
   }

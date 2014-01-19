@@ -6,12 +6,12 @@
  */
 #include "types_constants.h"
 
-
+namespace API {
 
 const typesConstants g_types_constants;
 
 typesConstants::typesConstants() {
 }
 
-
+} // namespace
 

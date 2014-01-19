@@ -15,7 +15,7 @@
 class RankingIf {
  public:
   virtual ~RankingIf() {}
-  virtual void rank_hand( ::HandDescriptor& _return, const std::vector< ::Card> & cards) = 0;
+  virtual void rank_hand( ::API::HandDescriptor& _return, const std::vector< ::API::Card> & cards) = 0;
 };
 
 class RankingIfFactory {
@@ -45,7 +45,7 @@ class RankingIfSingletonFactory : virtual public RankingIfFactory {
 class RankingNull : virtual public RankingIf {
  public:
   virtual ~RankingNull() {}
-  void rank_hand( ::HandDescriptor& /* _return */, const std::vector< ::Card> & /* cards */) {
+  void rank_hand( ::API::HandDescriptor& /* _return */, const std::vector< ::API::Card> & /* cards */) {
     return;
   }
 };
@@ -63,11 +63,11 @@ class Ranking_rank_hand_args {
 
   virtual ~Ranking_rank_hand_args() throw() {}
 
-  std::vector< ::Card>  cards;
+  std::vector< ::API::Card>  cards;
 
   _Ranking_rank_hand_args__isset __isset;
 
-  void __set_cards(const std::vector< ::Card> & val) {
+  void __set_cards(const std::vector< ::API::Card> & val) {
     cards = val;
   }
 
@@ -95,7 +95,7 @@ class Ranking_rank_hand_pargs {
 
   virtual ~Ranking_rank_hand_pargs() throw() {}
 
-  const std::vector< ::Card> * cards;
+  const std::vector< ::API::Card> * cards;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
 
@@ -114,11 +114,11 @@ class Ranking_rank_hand_result {
 
   virtual ~Ranking_rank_hand_result() throw() {}
 
-   ::HandDescriptor success;
+   ::API::HandDescriptor success;
 
   _Ranking_rank_hand_result__isset __isset;
 
-  void __set_success(const  ::HandDescriptor& val) {
+  void __set_success(const  ::API::HandDescriptor& val) {
     success = val;
   }
 
@@ -150,7 +150,7 @@ class Ranking_rank_hand_presult {
 
   virtual ~Ranking_rank_hand_presult() throw() {}
 
-   ::HandDescriptor* success;
+   ::API::HandDescriptor* success;
 
   _Ranking_rank_hand_presult__isset __isset;
 
@@ -178,9 +178,9 @@ class RankingClient : virtual public RankingIf {
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> getOutputProtocol() {
     return poprot_;
   }
-  void rank_hand( ::HandDescriptor& _return, const std::vector< ::Card> & cards);
-  void send_rank_hand(const std::vector< ::Card> & cards);
-  void recv_rank_hand( ::HandDescriptor& _return);
+  void rank_hand( ::API::HandDescriptor& _return, const std::vector< ::API::Card> & cards);
+  void send_rank_hand(const std::vector< ::API::Card> & cards);
+  void recv_rank_hand( ::API::HandDescriptor& _return);
  protected:
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> piprot_;
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> poprot_;
@@ -229,7 +229,7 @@ class RankingMultiface : virtual public RankingIf {
     ifaces_.push_back(iface);
   }
  public:
-  void rank_hand( ::HandDescriptor& _return, const std::vector< ::Card> & cards) {
+  void rank_hand( ::API::HandDescriptor& _return, const std::vector< ::API::Card> & cards) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {

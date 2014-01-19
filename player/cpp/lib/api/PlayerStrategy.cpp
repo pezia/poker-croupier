@@ -946,7 +946,7 @@ uint32_t PlayerStrategy_showdown_args::write(::apache::thrift::protocol::TProtoc
   xfer += oprot->writeFieldBegin("cards", ::apache::thrift::protocol::T_LIST, 2);
   {
     xfer += oprot->writeListBegin(::apache::thrift::protocol::T_STRUCT, static_cast<uint32_t>(this->cards.size()));
-    std::vector< ::Card> ::const_iterator _iter5;
+    std::vector< ::API::Card> ::const_iterator _iter5;
     for (_iter5 = this->cards.begin(); _iter5 != this->cards.end(); ++_iter5)
     {
       xfer += (*_iter5).write(oprot);
@@ -975,7 +975,7 @@ uint32_t PlayerStrategy_showdown_pargs::write(::apache::thrift::protocol::TProto
   xfer += oprot->writeFieldBegin("cards", ::apache::thrift::protocol::T_LIST, 2);
   {
     xfer += oprot->writeListBegin(::apache::thrift::protocol::T_STRUCT, static_cast<uint32_t>((*(this->cards)).size()));
-    std::vector< ::Card> ::const_iterator _iter6;
+    std::vector< ::API::Card> ::const_iterator _iter6;
     for (_iter6 = (*(this->cards)).begin(); _iter6 != (*(this->cards)).end(); ++_iter6)
     {
       xfer += (*_iter6).write(oprot);
@@ -1307,13 +1307,13 @@ void PlayerStrategyClient::recv_name(std::string& _return)
   throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "name failed: unknown result");
 }
 
-int64_t PlayerStrategyClient::bet_request(const int64_t pot, const  ::BetLimits& limits)
+int64_t PlayerStrategyClient::bet_request(const int64_t pot, const  ::API::BetLimits& limits)
 {
   send_bet_request(pot, limits);
   return recv_bet_request();
 }
 
-void PlayerStrategyClient::send_bet_request(const int64_t pot, const  ::BetLimits& limits)
+void PlayerStrategyClient::send_bet_request(const int64_t pot, const  ::API::BetLimits& limits)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("bet_request", ::apache::thrift::protocol::T_CALL, cseqid);
@@ -1366,13 +1366,13 @@ int64_t PlayerStrategyClient::recv_bet_request()
   throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "bet_request failed: unknown result");
 }
 
-void PlayerStrategyClient::competitor_status(const  ::Competitor& competitor)
+void PlayerStrategyClient::competitor_status(const  ::API::Competitor& competitor)
 {
   send_competitor_status(competitor);
   recv_competitor_status();
 }
 
-void PlayerStrategyClient::send_competitor_status(const  ::Competitor& competitor)
+void PlayerStrategyClient::send_competitor_status(const  ::API::Competitor& competitor)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("competitor_status", ::apache::thrift::protocol::T_CALL, cseqid);
@@ -1419,13 +1419,13 @@ void PlayerStrategyClient::recv_competitor_status()
   return;
 }
 
-void PlayerStrategyClient::bet(const  ::Competitor& competitor, const  ::Bet& bet)
+void PlayerStrategyClient::bet(const  ::API::Competitor& competitor, const  ::API::Bet& bet)
 {
   send_bet(competitor, bet);
   recv_bet();
 }
 
-void PlayerStrategyClient::send_bet(const  ::Competitor& competitor, const  ::Bet& bet)
+void PlayerStrategyClient::send_bet(const  ::API::Competitor& competitor, const  ::API::Bet& bet)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("bet", ::apache::thrift::protocol::T_CALL, cseqid);
@@ -1473,13 +1473,13 @@ void PlayerStrategyClient::recv_bet()
   return;
 }
 
-void PlayerStrategyClient::hole_card(const  ::Card& card)
+void PlayerStrategyClient::hole_card(const  ::API::Card& card)
 {
   send_hole_card(card);
   recv_hole_card();
 }
 
-void PlayerStrategyClient::send_hole_card(const  ::Card& card)
+void PlayerStrategyClient::send_hole_card(const  ::API::Card& card)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("hole_card", ::apache::thrift::protocol::T_CALL, cseqid);
@@ -1526,13 +1526,13 @@ void PlayerStrategyClient::recv_hole_card()
   return;
 }
 
-void PlayerStrategyClient::community_card(const  ::Card& card)
+void PlayerStrategyClient::community_card(const  ::API::Card& card)
 {
   send_community_card(card);
   recv_community_card();
 }
 
-void PlayerStrategyClient::send_community_card(const  ::Card& card)
+void PlayerStrategyClient::send_community_card(const  ::API::Card& card)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("community_card", ::apache::thrift::protocol::T_CALL, cseqid);
@@ -1579,13 +1579,13 @@ void PlayerStrategyClient::recv_community_card()
   return;
 }
 
-void PlayerStrategyClient::showdown(const  ::Competitor& competitor, const std::vector< ::Card> & cards, const  ::HandDescriptor& hand)
+void PlayerStrategyClient::showdown(const  ::API::Competitor& competitor, const std::vector< ::API::Card> & cards, const  ::API::HandDescriptor& hand)
 {
   send_showdown(competitor, cards, hand);
   recv_showdown();
 }
 
-void PlayerStrategyClient::send_showdown(const  ::Competitor& competitor, const std::vector< ::Card> & cards, const  ::HandDescriptor& hand)
+void PlayerStrategyClient::send_showdown(const  ::API::Competitor& competitor, const std::vector< ::API::Card> & cards, const  ::API::HandDescriptor& hand)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("showdown", ::apache::thrift::protocol::T_CALL, cseqid);
@@ -1634,13 +1634,13 @@ void PlayerStrategyClient::recv_showdown()
   return;
 }
 
-void PlayerStrategyClient::winner(const  ::Competitor& competitor, const int64_t amount)
+void PlayerStrategyClient::winner(const  ::API::Competitor& competitor, const int64_t amount)
 {
   send_winner(competitor, amount);
   recv_winner();
 }
 
-void PlayerStrategyClient::send_winner(const  ::Competitor& competitor, const int64_t amount)
+void PlayerStrategyClient::send_winner(const  ::API::Competitor& competitor, const int64_t amount)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("winner", ::apache::thrift::protocol::T_CALL, cseqid);

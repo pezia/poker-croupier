@@ -8,7 +8,7 @@
 
 #include <algorithm>
 
-
+namespace API {
 
 int _kSuitValues[] = {
   Suit::Hearts,
@@ -467,4 +467,4 @@ void swap(HandDescriptor &a, HandDescriptor &b) {
   swap(a.__isset, b.__isset);
 }
 
-
+} // namespace

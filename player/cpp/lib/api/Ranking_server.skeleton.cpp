@@ -20,7 +20,7 @@ class RankingHandler : virtual public RankingIf {
     // Your initialization goes here
   }
 
-  void rank_hand( ::HandDescriptor& _return, const std::vector< ::Card> & cards) {
+  void rank_hand( ::API::HandDescriptor& _return, const std::vector< ::API::Card> & cards) {
     // Your implementation goes here
     printf("rank_hand\n");
   }

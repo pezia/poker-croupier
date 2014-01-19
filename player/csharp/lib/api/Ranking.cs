@@ -17,10 +17,10 @@ using Thrift.Transport;
 
 public partial class Ranking {
   public interface Iface {
-    HandDescriptor rank_hand(List<Card> cards);
+    API.HandDescriptor rank_hand(List<API.Card> cards);
     #if SILVERLIGHT
-    IAsyncResult Begin_rank_hand(AsyncCallback callback, object state, List<Card> cards);
-    HandDescriptor End_rank_hand(IAsyncResult asyncResult);
+    IAsyncResult Begin_rank_hand(AsyncCallback callback, object state, List<API.Card> cards);
+    API.HandDescriptor End_rank_hand(IAsyncResult asyncResult);
     #endif
   }
 
@@ -82,12 +82,12 @@ public partial class Ranking {
 
     
     #if SILVERLIGHT
-    public IAsyncResult Begin_rank_hand(AsyncCallback callback, object state, List<Card> cards)
+    public IAsyncResult Begin_rank_hand(AsyncCallback callback, object state, List<API.Card> cards)
     {
       return send_rank_hand(callback, state, cards);
     }
 
-    public HandDescriptor End_rank_hand(IAsyncResult asyncResult)
+    public API.HandDescriptor End_rank_hand(IAsyncResult asyncResult)
     {
       oprot_.Transport.EndFlush(asyncResult);
       return recv_rank_hand();
@@ -95,7 +95,7 @@ public partial class Ranking {
 
     #endif
 
-    public HandDescriptor rank_hand(List<Card> cards)
+    public API.HandDescriptor rank_hand(List<API.Card> cards)
     {
       #if !SILVERLIGHT
       send_rank_hand(cards);
@@ -108,9 +108,9 @@ public partial class Ranking {
       #endif
     }
     #if SILVERLIGHT
-    public IAsyncResult send_rank_hand(AsyncCallback callback, object state, List<Card> cards)
+    public IAsyncResult send_rank_hand(AsyncCallback callback, object state, List<API.Card> cards)
     #else
-    public void send_rank_hand(List<Card> cards)
+    public void send_rank_hand(List<API.Card> cards)
     #endif
     {
       oprot_.WriteMessageBegin(new TMessage("rank_hand", TMessageType.Call, seqid_));
@@ -125,7 +125,7 @@ public partial class Ranking {
       #endif
     }
 
-    public HandDescriptor recv_rank_hand()
+    public API.HandDescriptor recv_rank_hand()
     {
       TMessage msg = iprot_.ReadMessageBegin();
       if (msg.Type == TMessageType.Exception) {
@@ -201,9 +201,9 @@ public partial class Ranking {
   #endif
   public partial class rank_hand_args : TBase
   {
-    private List<Card> _cards;
+    private List<API.Card> _cards;
 
-    public List<Card> Cards
+    public List<API.Card> Cards
     {
       get
       {
@@ -243,12 +243,12 @@ public partial class Ranking {
           case 1:
             if (field.Type == TType.List) {
               {
-                Cards = new List<Card>();
+                Cards = new List<API.Card>();
                 TList _list0 = iprot.ReadListBegin();
                 for( int _i1 = 0; _i1 < _list0.Count; ++_i1)
                 {
-                  Card _elem2 = new Card();
-                  _elem2 = new Card();
+                  API.Card _elem2 = new API.Card();
+                  _elem2 = new API.Card();
                   _elem2.Read(iprot);
                   Cards.Add(_elem2);
                 }
@@ -278,7 +278,7 @@ public partial class Ranking {
         oprot.WriteFieldBegin(field);
         {
           oprot.WriteListBegin(new TList(TType.Struct, Cards.Count));
-          foreach (Card _iter3 in Cards)
+          foreach (API.Card _iter3 in Cards)
           {
             _iter3.Write(oprot);
           }
@@ -306,9 +306,9 @@ public partial class Ranking {
   #endif
   public partial class rank_hand_result : TBase
   {
-    private HandDescriptor _success;
+    private API.HandDescriptor _success;
 
-    public HandDescriptor Success
+    public API.HandDescriptor Success
     {
       get
       {
@@ -347,7 +347,7 @@ public partial class Ranking {
         {
           case 0:
             if (field.Type == TType.Struct) {
-              Success = new HandDescriptor();
+              Success = new API.HandDescriptor();
               Success.Read(iprot);
             } else { 
               TProtocolUtil.Skip(iprot, field.Type);

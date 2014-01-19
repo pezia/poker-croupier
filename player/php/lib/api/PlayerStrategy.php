@@ -18,13 +18,13 @@ use Thrift\Exception\TApplicationException;
 
 interface PlayerStrategyIf {
   public function name();
-  public function bet_request($pot, \BetLimits $limits);
-  public function competitor_status(\Competitor $competitor);
-  public function bet(\Competitor $competitor, \Bet $bet);
-  public function hole_card(\Card $card);
-  public function community_card(\Card $card);
-  public function showdown(\Competitor $competitor, $cards, \HandDescriptor $hand);
-  public function winner(\Competitor $competitor, $amount);
+  public function bet_request($pot, \API\BetLimits $limits);
+  public function competitor_status(\API\Competitor $competitor);
+  public function bet(\API\Competitor $competitor, \API\Bet $bet);
+  public function hole_card(\API\Card $card);
+  public function community_card(\API\Card $card);
+  public function showdown(\API\Competitor $competitor, $cards, \API\HandDescriptor $hand);
+  public function winner(\API\Competitor $competitor, $amount);
   public function shutdown();
 }
 
@@ -89,13 +89,13 @@ class PlayerStrategyClient implements \PlayerStrategyIf {
     throw new \Exception("name failed: unknown result");
   }
 
-  public function bet_request($pot, \BetLimits $limits)
+  public function bet_request($pot, \API\BetLimits $limits)
   {
     $this->send_bet_request($pot, $limits);
     return $this->recv_bet_request();
   }
 
-  public function send_bet_request($pot, \BetLimits $limits)
+  public function send_bet_request($pot, \API\BetLimits $limits)
   {
     $args = new \PlayerStrategy_bet_request_args();
     $args->pot = $pot;
@@ -141,13 +141,13 @@ class PlayerStrategyClient implements \PlayerStrategyIf {
     throw new \Exception("bet_request failed: unknown result");
   }
 
-  public function competitor_status(\Competitor $competitor)
+  public function competitor_status(\API\Competitor $competitor)
   {
     $this->send_competitor_status($competitor);
     $this->recv_competitor_status();
   }
 
-  public function send_competitor_status(\Competitor $competitor)
+  public function send_competitor_status(\API\Competitor $competitor)
   {
     $args = new \PlayerStrategy_competitor_status_args();
     $args->competitor = $competitor;
@@ -189,13 +189,13 @@ class PlayerStrategyClient implements \PlayerStrategyIf {
     return;
   }
 
-  public function bet(\Competitor $competitor, \Bet $bet)
+  public function bet(\API\Competitor $competitor, \API\Bet $bet)
   {
     $this->send_bet($competitor, $bet);
     $this->recv_bet();
   }
 
-  public function send_bet(\Competitor $competitor, \Bet $bet)
+  public function send_bet(\API\Competitor $competitor, \API\Bet $bet)
   {
     $args = new \PlayerStrategy_bet_args();
     $args->competitor = $competitor;
@@ -238,13 +238,13 @@ class PlayerStrategyClient implements \PlayerStrategyIf {
     return;
   }
 
-  public function hole_card(\Card $card)
+  public function hole_card(\API\Card $card)
   {
     $this->send_hole_card($card);
     $this->recv_hole_card();
   }
 
-  public function send_hole_card(\Card $card)
+  public function send_hole_card(\API\Card $card)
   {
     $args = new \PlayerStrategy_hole_card_args();
     $args->card = $card;
@@ -286,13 +286,13 @@ class PlayerStrategyClient implements \PlayerStrategyIf {
     return;
   }
 
-  public function community_card(\Card $card)
+  public function community_card(\API\Card $card)
   {
     $this->send_community_card($card);
     $this->recv_community_card();
   }
 
-  public function send_community_card(\Card $card)
+  public function send_community_card(\API\Card $card)
   {
     $args = new \PlayerStrategy_community_card_args();
     $args->card = $card;
@@ -334,13 +334,13 @@ class PlayerStrategyClient implements \PlayerStrategyIf {
     return;
   }
 
-  public function showdown(\Competitor $competitor, $cards, \HandDescriptor $hand)
+  public function showdown(\API\Competitor $competitor, $cards, \API\HandDescriptor $hand)
   {
     $this->send_showdown($competitor, $cards, $hand);
     $this->recv_showdown();
   }
 
-  public function send_showdown(\Competitor $competitor, $cards, \HandDescriptor $hand)
+  public function send_showdown(\API\Competitor $competitor, $cards, \API\HandDescriptor $hand)
   {
     $args = new \PlayerStrategy_showdown_args();
     $args->competitor = $competitor;
@@ -384,13 +384,13 @@ class PlayerStrategyClient implements \PlayerStrategyIf {
     return;
   }
 
-  public function winner(\Competitor $competitor, $amount)
+  public function winner(\API\Competitor $competitor, $amount)
   {
     $this->send_winner($competitor, $amount);
     $this->recv_winner();
   }
 
-  public function send_winner(\Competitor $competitor, $amount)
+  public function send_winner(\API\Competitor $competitor, $amount)
   {
     $args = new \PlayerStrategy_winner_args();
     $args->competitor = $competitor;
@@ -596,7 +596,7 @@ class PlayerStrategy_bet_request_args {
         2 => array(
           'var' => 'limits',
           'type' => TType::STRUCT,
-          'class' => '\BetLimits',
+          'class' => '\API\BetLimits',
           ),
         );
     }
@@ -638,7 +638,7 @@ class PlayerStrategy_bet_request_args {
           break;
         case 2:
           if ($ftype == TType::STRUCT) {
-            $this->limits = new \BetLimits();
+            $this->limits = new \API\BetLimits();
             $xfer += $this->limits->read($input);
           } else {
             $xfer += $input->skip($ftype);
@@ -760,7 +760,7 @@ class PlayerStrategy_competitor_status_args {
         1 => array(
           'var' => 'competitor',
           'type' => TType::STRUCT,
-          'class' => '\Competitor',
+          'class' => '\API\Competitor',
           ),
         );
     }
@@ -792,7 +792,7 @@ class PlayerStrategy_competitor_status_args {
       {
         case 1:
           if ($ftype == TType::STRUCT) {
-            $this->competitor = new \Competitor();
+            $this->competitor = new \API\Competitor();
             $xfer += $this->competitor->read($input);
           } else {
             $xfer += $input->skip($ftype);
@@ -888,12 +888,12 @@ class PlayerStrategy_bet_args {
         1 => array(
           'var' => 'competitor',
           'type' => TType::STRUCT,
-          'class' => '\Competitor',
+          'class' => '\API\Competitor',
           ),
         2 => array(
           'var' => 'bet',
           'type' => TType::STRUCT,
-          'class' => '\Bet',
+          'class' => '\API\Bet',
           ),
         );
     }
@@ -928,7 +928,7 @@ class PlayerStrategy_bet_args {
       {
         case 1:
           if ($ftype == TType::STRUCT) {
-            $this->competitor = new \Competitor();
+            $this->competitor = new \API\Competitor();
             $xfer += $this->competitor->read($input);
           } else {
             $xfer += $input->skip($ftype);
@@ -936,7 +936,7 @@ class PlayerStrategy_bet_args {
           break;
         case 2:
           if ($ftype == TType::STRUCT) {
-            $this->bet = new \Bet();
+            $this->bet = new \API\Bet();
             $xfer += $this->bet->read($input);
           } else {
             $xfer += $input->skip($ftype);
@@ -1039,7 +1039,7 @@ class PlayerStrategy_hole_card_args {
         1 => array(
           'var' => 'card',
           'type' => TType::STRUCT,
-          'class' => '\Card',
+          'class' => '\API\Card',
           ),
         );
     }
@@ -1071,7 +1071,7 @@ class PlayerStrategy_hole_card_args {
       {
         case 1:
           if ($ftype == TType::STRUCT) {
-            $this->card = new \Card();
+            $this->card = new \API\Card();
             $xfer += $this->card->read($input);
           } else {
             $xfer += $input->skip($ftype);
@@ -1166,7 +1166,7 @@ class PlayerStrategy_community_card_args {
         1 => array(
           'var' => 'card',
           'type' => TType::STRUCT,
-          'class' => '\Card',
+          'class' => '\API\Card',
           ),
         );
     }
@@ -1198,7 +1198,7 @@ class PlayerStrategy_community_card_args {
       {
         case 1:
           if ($ftype == TType::STRUCT) {
-            $this->card = new \Card();
+            $this->card = new \API\Card();
             $xfer += $this->card->read($input);
           } else {
             $xfer += $input->skip($ftype);
@@ -1295,7 +1295,7 @@ class PlayerStrategy_showdown_args {
         1 => array(
           'var' => 'competitor',
           'type' => TType::STRUCT,
-          'class' => '\Competitor',
+          'class' => '\API\Competitor',
           ),
         2 => array(
           'var' => 'cards',
@@ -1303,13 +1303,13 @@ class PlayerStrategy_showdown_args {
           'etype' => TType::STRUCT,
           'elem' => array(
             'type' => TType::STRUCT,
-            'class' => '\Card',
+            'class' => '\API\Card',
             ),
           ),
         3 => array(
           'var' => 'hand',
           'type' => TType::STRUCT,
-          'class' => '\HandDescriptor',
+          'class' => '\API\HandDescriptor',
           ),
         );
     }
@@ -1347,7 +1347,7 @@ class PlayerStrategy_showdown_args {
       {
         case 1:
           if ($ftype == TType::STRUCT) {
-            $this->competitor = new \Competitor();
+            $this->competitor = new \API\Competitor();
             $xfer += $this->competitor->read($input);
           } else {
             $xfer += $input->skip($ftype);
@@ -1362,7 +1362,7 @@ class PlayerStrategy_showdown_args {
             for ($_i4 = 0; $_i4 < $_size0; ++$_i4)
             {
               $elem5 = null;
-              $elem5 = new \Card();
+              $elem5 = new \API\Card();
               $xfer += $elem5->read($input);
               $this->cards []= $elem5;
             }
@@ -1373,7 +1373,7 @@ class PlayerStrategy_showdown_args {
           break;
         case 3:
           if ($ftype == TType::STRUCT) {
-            $this->hand = new \HandDescriptor();
+            $this->hand = new \API\HandDescriptor();
             $xfer += $this->hand->read($input);
           } else {
             $xfer += $input->skip($ftype);
@@ -1494,7 +1494,7 @@ class PlayerStrategy_winner_args {
         1 => array(
           'var' => 'competitor',
           'type' => TType::STRUCT,
-          'class' => '\Competitor',
+          'class' => '\API\Competitor',
           ),
         2 => array(
           'var' => 'amount',
@@ -1533,7 +1533,7 @@ class PlayerStrategy_winner_args {
       {
         case 1:
           if ($ftype == TType::STRUCT) {
-            $this->competitor = new \Competitor();
+            $this->competitor = new \API\Competitor();
             $xfer += $this->competitor->read($input);
           } else {
             $xfer += $input->skip($ftype);

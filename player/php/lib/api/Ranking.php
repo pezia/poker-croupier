@@ -100,7 +100,7 @@ class Ranking_rank_hand_args {
           'etype' => TType::STRUCT,
           'elem' => array(
             'type' => TType::STRUCT,
-            'class' => '\Card',
+            'class' => '\API\Card',
             ),
           ),
         );
@@ -140,7 +140,7 @@ class Ranking_rank_hand_args {
             for ($_i4 = 0; $_i4 < $_size0; ++$_i4)
             {
               $elem5 = null;
-              $elem5 = new \Card();
+              $elem5 = new \API\Card();
               $xfer += $elem5->read($input);
               $this->cards []= $elem5;
             }
@@ -197,7 +197,7 @@ class Ranking_rank_hand_result {
         0 => array(
           'var' => 'success',
           'type' => TType::STRUCT,
-          'class' => '\HandDescriptor',
+          'class' => '\API\HandDescriptor',
           ),
         );
     }
@@ -229,7 +229,7 @@ class Ranking_rank_hand_result {
       {
         case 0:
           if ($ftype == TType::STRUCT) {
-            $this->success = new \HandDescriptor();
+            $this->success = new \API\HandDescriptor();
             $xfer += $this->success->read($input);
           } else {
             $xfer += $input->skip($ftype);

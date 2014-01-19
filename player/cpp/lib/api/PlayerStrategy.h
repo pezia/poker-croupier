@@ -16,13 +16,13 @@ class PlayerStrategyIf {
  public:
   virtual ~PlayerStrategyIf() {}
   virtual void name(std::string& _return) = 0;
-  virtual int64_t bet_request(const int64_t pot, const  ::BetLimits& limits) = 0;
-  virtual void competitor_status(const  ::Competitor& competitor) = 0;
-  virtual void bet(const  ::Competitor& competitor, const  ::Bet& bet) = 0;
-  virtual void hole_card(const  ::Card& card) = 0;
-  virtual void community_card(const  ::Card& card) = 0;
-  virtual void showdown(const  ::Competitor& competitor, const std::vector< ::Card> & cards, const  ::HandDescriptor& hand) = 0;
-  virtual void winner(const  ::Competitor& competitor, const int64_t amount) = 0;
+  virtual int64_t bet_request(const int64_t pot, const  ::API::BetLimits& limits) = 0;
+  virtual void competitor_status(const  ::API::Competitor& competitor) = 0;
+  virtual void bet(const  ::API::Competitor& competitor, const  ::API::Bet& bet) = 0;
+  virtual void hole_card(const  ::API::Card& card) = 0;
+  virtual void community_card(const  ::API::Card& card) = 0;
+  virtual void showdown(const  ::API::Competitor& competitor, const std::vector< ::API::Card> & cards, const  ::API::HandDescriptor& hand) = 0;
+  virtual void winner(const  ::API::Competitor& competitor, const int64_t amount) = 0;
   virtual void shutdown() = 0;
 };
 
@@ -56,26 +56,26 @@ class PlayerStrategyNull : virtual public PlayerStrategyIf {
   void name(std::string& /* _return */) {
     return;
   }
-  int64_t bet_request(const int64_t /* pot */, const  ::BetLimits& /* limits */) {
+  int64_t bet_request(const int64_t /* pot */, const  ::API::BetLimits& /* limits */) {
     int64_t _return = 0;
     return _return;
   }
-  void competitor_status(const  ::Competitor& /* competitor */) {
+  void competitor_status(const  ::API::Competitor& /* competitor */) {
     return;
   }
-  void bet(const  ::Competitor& /* competitor */, const  ::Bet& /* bet */) {
+  void bet(const  ::API::Competitor& /* competitor */, const  ::API::Bet& /* bet */) {
     return;
   }
-  void hole_card(const  ::Card& /* card */) {
+  void hole_card(const  ::API::Card& /* card */) {
     return;
   }
-  void community_card(const  ::Card& /* card */) {
+  void community_card(const  ::API::Card& /* card */) {
     return;
   }
-  void showdown(const  ::Competitor& /* competitor */, const std::vector< ::Card> & /* cards */, const  ::HandDescriptor& /* hand */) {
+  void showdown(const  ::API::Competitor& /* competitor */, const std::vector< ::API::Card> & /* cards */, const  ::API::HandDescriptor& /* hand */) {
     return;
   }
-  void winner(const  ::Competitor& /* competitor */, const int64_t /* amount */) {
+  void winner(const  ::API::Competitor& /* competitor */, const int64_t /* amount */) {
     return;
   }
   void shutdown() {
@@ -192,7 +192,7 @@ class PlayerStrategy_bet_request_args {
   virtual ~PlayerStrategy_bet_request_args() throw() {}
 
   int64_t pot;
-   ::BetLimits limits;
+   ::API::BetLimits limits;
 
   _PlayerStrategy_bet_request_args__isset __isset;
 
@@ -200,7 +200,7 @@ class PlayerStrategy_bet_request_args {
     pot = val;
   }
 
-  void __set_limits(const  ::BetLimits& val) {
+  void __set_limits(const  ::API::BetLimits& val) {
     limits = val;
   }
 
@@ -231,7 +231,7 @@ class PlayerStrategy_bet_request_pargs {
   virtual ~PlayerStrategy_bet_request_pargs() throw() {}
 
   const int64_t* pot;
-  const  ::BetLimits* limits;
+  const  ::API::BetLimits* limits;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
 
@@ -307,11 +307,11 @@ class PlayerStrategy_competitor_status_args {
 
   virtual ~PlayerStrategy_competitor_status_args() throw() {}
 
-   ::Competitor competitor;
+   ::API::Competitor competitor;
 
   _PlayerStrategy_competitor_status_args__isset __isset;
 
-  void __set_competitor(const  ::Competitor& val) {
+  void __set_competitor(const  ::API::Competitor& val) {
     competitor = val;
   }
 
@@ -339,7 +339,7 @@ class PlayerStrategy_competitor_status_pargs {
 
   virtual ~PlayerStrategy_competitor_status_pargs() throw() {}
 
-  const  ::Competitor* competitor;
+  const  ::API::Competitor* competitor;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
 
@@ -396,16 +396,16 @@ class PlayerStrategy_bet_args {
 
   virtual ~PlayerStrategy_bet_args() throw() {}
 
-   ::Competitor competitor;
-   ::Bet bet;
+   ::API::Competitor competitor;
+   ::API::Bet bet;
 
   _PlayerStrategy_bet_args__isset __isset;
 
-  void __set_competitor(const  ::Competitor& val) {
+  void __set_competitor(const  ::API::Competitor& val) {
     competitor = val;
   }
 
-  void __set_bet(const  ::Bet& val) {
+  void __set_bet(const  ::API::Bet& val) {
     bet = val;
   }
 
@@ -435,8 +435,8 @@ class PlayerStrategy_bet_pargs {
 
   virtual ~PlayerStrategy_bet_pargs() throw() {}
 
-  const  ::Competitor* competitor;
-  const  ::Bet* bet;
+  const  ::API::Competitor* competitor;
+  const  ::API::Bet* bet;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
 
@@ -492,11 +492,11 @@ class PlayerStrategy_hole_card_args {
 
   virtual ~PlayerStrategy_hole_card_args() throw() {}
 
-   ::Card card;
+   ::API::Card card;
 
   _PlayerStrategy_hole_card_args__isset __isset;
 
-  void __set_card(const  ::Card& val) {
+  void __set_card(const  ::API::Card& val) {
     card = val;
   }
 
@@ -524,7 +524,7 @@ class PlayerStrategy_hole_card_pargs {
 
   virtual ~PlayerStrategy_hole_card_pargs() throw() {}
 
-  const  ::Card* card;
+  const  ::API::Card* card;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
 
@@ -580,11 +580,11 @@ class PlayerStrategy_community_card_args {
 
   virtual ~PlayerStrategy_community_card_args() throw() {}
 
-   ::Card card;
+   ::API::Card card;
 
   _PlayerStrategy_community_card_args__isset __isset;
 
-  void __set_card(const  ::Card& val) {
+  void __set_card(const  ::API::Card& val) {
     card = val;
   }
 
@@ -612,7 +612,7 @@ class PlayerStrategy_community_card_pargs {
 
   virtual ~PlayerStrategy_community_card_pargs() throw() {}
 
-  const  ::Card* card;
+  const  ::API::Card* card;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
 
@@ -670,21 +670,21 @@ class PlayerStrategy_showdown_args {
 
   virtual ~PlayerStrategy_showdown_args() throw() {}
 
-   ::Competitor competitor;
-  std::vector< ::Card>  cards;
-   ::HandDescriptor hand;
+   ::API::Competitor competitor;
+  std::vector< ::API::Card>  cards;
+   ::API::HandDescriptor hand;
 
   _PlayerStrategy_showdown_args__isset __isset;
 
-  void __set_competitor(const  ::Competitor& val) {
+  void __set_competitor(const  ::API::Competitor& val) {
     competitor = val;
   }
 
-  void __set_cards(const std::vector< ::Card> & val) {
+  void __set_cards(const std::vector< ::API::Card> & val) {
     cards = val;
   }
 
-  void __set_hand(const  ::HandDescriptor& val) {
+  void __set_hand(const  ::API::HandDescriptor& val) {
     hand = val;
   }
 
@@ -716,9 +716,9 @@ class PlayerStrategy_showdown_pargs {
 
   virtual ~PlayerStrategy_showdown_pargs() throw() {}
 
-  const  ::Competitor* competitor;
-  const std::vector< ::Card> * cards;
-  const  ::HandDescriptor* hand;
+  const  ::API::Competitor* competitor;
+  const std::vector< ::API::Card> * cards;
+  const  ::API::HandDescriptor* hand;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
 
@@ -775,12 +775,12 @@ class PlayerStrategy_winner_args {
 
   virtual ~PlayerStrategy_winner_args() throw() {}
 
-   ::Competitor competitor;
+   ::API::Competitor competitor;
   int64_t amount;
 
   _PlayerStrategy_winner_args__isset __isset;
 
-  void __set_competitor(const  ::Competitor& val) {
+  void __set_competitor(const  ::API::Competitor& val) {
     competitor = val;
   }
 
@@ -814,7 +814,7 @@ class PlayerStrategy_winner_pargs {
 
   virtual ~PlayerStrategy_winner_pargs() throw() {}
 
-  const  ::Competitor* competitor;
+  const  ::API::Competitor* competitor;
   const int64_t* amount;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
@@ -918,26 +918,26 @@ class PlayerStrategyClient : virtual public PlayerStrategyIf {
   void name(std::string& _return);
   void send_name();
   void recv_name(std::string& _return);
-  int64_t bet_request(const int64_t pot, const  ::BetLimits& limits);
-  void send_bet_request(const int64_t pot, const  ::BetLimits& limits);
+  int64_t bet_request(const int64_t pot, const  ::API::BetLimits& limits);
+  void send_bet_request(const int64_t pot, const  ::API::BetLimits& limits);
   int64_t recv_bet_request();
-  void competitor_status(const  ::Competitor& competitor);
-  void send_competitor_status(const  ::Competitor& competitor);
+  void competitor_status(const  ::API::Competitor& competitor);
+  void send_competitor_status(const  ::API::Competitor& competitor);
   void recv_competitor_status();
-  void bet(const  ::Competitor& competitor, const  ::Bet& bet);
-  void send_bet(const  ::Competitor& competitor, const  ::Bet& bet);
+  void bet(const  ::API::Competitor& competitor, const  ::API::Bet& bet);
+  void send_bet(const  ::API::Competitor& competitor, const  ::API::Bet& bet);
   void recv_bet();
-  void hole_card(const  ::Card& card);
-  void send_hole_card(const  ::Card& card);
+  void hole_card(const  ::API::Card& card);
+  void send_hole_card(const  ::API::Card& card);
   void recv_hole_card();
-  void community_card(const  ::Card& card);
-  void send_community_card(const  ::Card& card);
+  void community_card(const  ::API::Card& card);
+  void send_community_card(const  ::API::Card& card);
   void recv_community_card();
-  void showdown(const  ::Competitor& competitor, const std::vector< ::Card> & cards, const  ::HandDescriptor& hand);
-  void send_showdown(const  ::Competitor& competitor, const std::vector< ::Card> & cards, const  ::HandDescriptor& hand);
+  void showdown(const  ::API::Competitor& competitor, const std::vector< ::API::Card> & cards, const  ::API::HandDescriptor& hand);
+  void send_showdown(const  ::API::Competitor& competitor, const std::vector< ::API::Card> & cards, const  ::API::HandDescriptor& hand);
   void recv_showdown();
-  void winner(const  ::Competitor& competitor, const int64_t amount);
-  void send_winner(const  ::Competitor& competitor, const int64_t amount);
+  void winner(const  ::API::Competitor& competitor, const int64_t amount);
+  void send_winner(const  ::API::Competitor& competitor, const int64_t amount);
   void recv_winner();
   void shutdown();
   void send_shutdown();
@@ -1015,7 +1015,7 @@ class PlayerStrategyMultiface : virtual public PlayerStrategyIf {
     return;
   }
 
-  int64_t bet_request(const int64_t pot, const  ::BetLimits& limits) {
+  int64_t bet_request(const int64_t pot, const  ::API::BetLimits& limits) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
@@ -1024,7 +1024,7 @@ class PlayerStrategyMultiface : virtual public PlayerStrategyIf {
     return ifaces_[i]->bet_request(pot, limits);
   }
 
-  void competitor_status(const  ::Competitor& competitor) {
+  void competitor_status(const  ::API::Competitor& competitor) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
@@ -1033,7 +1033,7 @@ class PlayerStrategyMultiface : virtual public PlayerStrategyIf {
     ifaces_[i]->competitor_status(competitor);
   }
 
-  void bet(const  ::Competitor& competitor, const  ::Bet& bet) {
+  void bet(const  ::API::Competitor& competitor, const  ::API::Bet& bet) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
@@ -1042,7 +1042,7 @@ class PlayerStrategyMultiface : virtual public PlayerStrategyIf {
     ifaces_[i]->bet(competitor, bet);
   }
 
-  void hole_card(const  ::Card& card) {
+  void hole_card(const  ::API::Card& card) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
@@ -1051,7 +1051,7 @@ class PlayerStrategyMultiface : virtual public PlayerStrategyIf {
     ifaces_[i]->hole_card(card);
   }
 
-  void community_card(const  ::Card& card) {
+  void community_card(const  ::API::Card& card) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
@@ -1060,7 +1060,7 @@ class PlayerStrategyMultiface : virtual public PlayerStrategyIf {
     ifaces_[i]->community_card(card);
   }
 
-  void showdown(const  ::Competitor& competitor, const std::vector< ::Card> & cards, const  ::HandDescriptor& hand) {
+  void showdown(const  ::API::Competitor& competitor, const std::vector< ::API::Card> & cards, const  ::API::HandDescriptor& hand) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
@@ -1069,7 +1069,7 @@ class PlayerStrategyMultiface : virtual public PlayerStrategyIf {
     ifaces_[i]->showdown(competitor, cards, hand);
   }
 
-  void winner(const  ::Competitor& competitor, const int64_t amount) {
+  void winner(const  ::API::Competitor& competitor, const int64_t amount) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {

@@ -22,39 +22,39 @@ public partial class PlayerStrategy {
     IAsyncResult Begin_name(AsyncCallback callback, object state);
     string End_name(IAsyncResult asyncResult);
     #endif
-    long bet_request(long pot, BetLimits limits);
+    long bet_request(long pot, API.BetLimits limits);
     #if SILVERLIGHT
-    IAsyncResult Begin_bet_request(AsyncCallback callback, object state, long pot, BetLimits limits);
+    IAsyncResult Begin_bet_request(AsyncCallback callback, object state, long pot, API.BetLimits limits);
     long End_bet_request(IAsyncResult asyncResult);
     #endif
-    void competitor_status(Competitor competitor);
+    void competitor_status(API.Competitor competitor);
     #if SILVERLIGHT
-    IAsyncResult Begin_competitor_status(AsyncCallback callback, object state, Competitor competitor);
+    IAsyncResult Begin_competitor_status(AsyncCallback callback, object state, API.Competitor competitor);
     void End_competitor_status(IAsyncResult asyncResult);
     #endif
-    void bet(Competitor competitor, Bet bet);
+    void bet(API.Competitor competitor, API.Bet bet);
     #if SILVERLIGHT
-    IAsyncResult Begin_bet(AsyncCallback callback, object state, Competitor competitor, Bet bet);
+    IAsyncResult Begin_bet(AsyncCallback callback, object state, API.Competitor competitor, API.Bet bet);
     void End_bet(IAsyncResult asyncResult);
     #endif
-    void hole_card(Card card);
+    void hole_card(API.Card card);
     #if SILVERLIGHT
-    IAsyncResult Begin_hole_card(AsyncCallback callback, object state, Card card);
+    IAsyncResult Begin_hole_card(AsyncCallback callback, object state, API.Card card);
     void End_hole_card(IAsyncResult asyncResult);
     #endif
-    void community_card(Card card);
+    void community_card(API.Card card);
     #if SILVERLIGHT
-    IAsyncResult Begin_community_card(AsyncCallback callback, object state, Card card);
+    IAsyncResult Begin_community_card(AsyncCallback callback, object state, API.Card card);
     void End_community_card(IAsyncResult asyncResult);
     #endif
-    void showdown(Competitor competitor, List<Card> cards, HandDescriptor hand);
+    void showdown(API.Competitor competitor, List<API.Card> cards, API.HandDescriptor hand);
     #if SILVERLIGHT
-    IAsyncResult Begin_showdown(AsyncCallback callback, object state, Competitor competitor, List<Card> cards, HandDescriptor hand);
+    IAsyncResult Begin_showdown(AsyncCallback callback, object state, API.Competitor competitor, List<API.Card> cards, API.HandDescriptor hand);
     void End_showdown(IAsyncResult asyncResult);
     #endif
-    void winner(Competitor competitor, long amount);
+    void winner(API.Competitor competitor, long amount);
     #if SILVERLIGHT
-    IAsyncResult Begin_winner(AsyncCallback callback, object state, Competitor competitor, long amount);
+    IAsyncResult Begin_winner(AsyncCallback callback, object state, API.Competitor competitor, long amount);
     void End_winner(IAsyncResult asyncResult);
     #endif
     void shutdown();
@@ -183,7 +183,7 @@ public partial class PlayerStrategy {
 
     
     #if SILVERLIGHT
-    public IAsyncResult Begin_bet_request(AsyncCallback callback, object state, long pot, BetLimits limits)
+    public IAsyncResult Begin_bet_request(AsyncCallback callback, object state, long pot, API.BetLimits limits)
     {
       return send_bet_request(callback, state, pot, limits);
     }
@@ -196,7 +196,7 @@ public partial class PlayerStrategy {
 
     #endif
 
-    public long bet_request(long pot, BetLimits limits)
+    public long bet_request(long pot, API.BetLimits limits)
     {
       #if !SILVERLIGHT
       send_bet_request(pot, limits);
@@ -209,9 +209,9 @@ public partial class PlayerStrategy {
       #endif
     }
     #if SILVERLIGHT
-    public IAsyncResult send_bet_request(AsyncCallback callback, object state, long pot, BetLimits limits)
+    public IAsyncResult send_bet_request(AsyncCallback callback, object state, long pot, API.BetLimits limits)
     #else
-    public void send_bet_request(long pot, BetLimits limits)
+    public void send_bet_request(long pot, API.BetLimits limits)
     #endif
     {
       oprot_.WriteMessageBegin(new TMessage("bet_request", TMessageType.Call, seqid_));
@@ -246,7 +246,7 @@ public partial class PlayerStrategy {
 
     
     #if SILVERLIGHT
-    public IAsyncResult Begin_competitor_status(AsyncCallback callback, object state, Competitor competitor)
+    public IAsyncResult Begin_competitor_status(AsyncCallback callback, object state, API.Competitor competitor)
     {
       return send_competitor_status(callback, state, competitor);
     }
@@ -259,7 +259,7 @@ public partial class PlayerStrategy {
 
     #endif
 
-    public void competitor_status(Competitor competitor)
+    public void competitor_status(API.Competitor competitor)
     {
       #if !SILVERLIGHT
       send_competitor_status(competitor);
@@ -272,9 +272,9 @@ public partial class PlayerStrategy {
       #endif
     }
     #if SILVERLIGHT
-    public IAsyncResult send_competitor_status(AsyncCallback callback, object state, Competitor competitor)
+    public IAsyncResult send_competitor_status(AsyncCallback callback, object state, API.Competitor competitor)
     #else
-    public void send_competitor_status(Competitor competitor)
+    public void send_competitor_status(API.Competitor competitor)
     #endif
     {
       oprot_.WriteMessageBegin(new TMessage("competitor_status", TMessageType.Call, seqid_));
@@ -305,7 +305,7 @@ public partial class PlayerStrategy {
 
     
     #if SILVERLIGHT
-    public IAsyncResult Begin_bet(AsyncCallback callback, object state, Competitor competitor, Bet bet)
+    public IAsyncResult Begin_bet(AsyncCallback callback, object state, API.Competitor competitor, API.Bet bet)
     {
       return send_bet(callback, state, competitor, bet);
     }
@@ -318,7 +318,7 @@ public partial class PlayerStrategy {
 
     #endif
 
-    public void bet(Competitor competitor, Bet bet)
+    public void bet(API.Competitor competitor, API.Bet bet)
     {
       #if !SILVERLIGHT
       send_bet(competitor, bet);
@@ -331,9 +331,9 @@ public partial class PlayerStrategy {
       #endif
     }
     #if SILVERLIGHT
-    public IAsyncResult send_bet(AsyncCallback callback, object state, Competitor competitor, Bet bet)
+    public IAsyncResult send_bet(AsyncCallback callback, object state, API.Competitor competitor, API.Bet bet)
     #else
-    public void send_bet(Competitor competitor, Bet bet)
+    public void send_bet(API.Competitor competitor, API.Bet bet)
     #endif
     {
       oprot_.WriteMessageBegin(new TMessage("bet", TMessageType.Call, seqid_));
@@ -365,7 +365,7 @@ public partial class PlayerStrategy {
 
     
     #if SILVERLIGHT
-    public IAsyncResult Begin_hole_card(AsyncCallback callback, object state, Card card)
+    public IAsyncResult Begin_hole_card(AsyncCallback callback, object state, API.Card card)
     {
       return send_hole_card(callback, state, card);
     }
@@ -378,7 +378,7 @@ public partial class PlayerStrategy {
 
     #endif
 
-    public void hole_card(Card card)
+    public void hole_card(API.Card card)
     {
       #if !SILVERLIGHT
       send_hole_card(card);
@@ -391,9 +391,9 @@ public partial class PlayerStrategy {
       #endif
     }
     #if SILVERLIGHT
-    public IAsyncResult send_hole_card(AsyncCallback callback, object state, Card card)
+    public IAsyncResult send_hole_card(AsyncCallback callback, object state, API.Card card)
     #else
-    public void send_hole_card(Card card)
+    public void send_hole_card(API.Card card)
     #endif
     {
       oprot_.WriteMessageBegin(new TMessage("hole_card", TMessageType.Call, seqid_));
@@ -424,7 +424,7 @@ public partial class PlayerStrategy {
 
     
     #if SILVERLIGHT
-    public IAsyncResult Begin_community_card(AsyncCallback callback, object state, Card card)
+    public IAsyncResult Begin_community_card(AsyncCallback callback, object state, API.Card card)
     {
       return send_community_card(callback, state, card);
     }
@@ -437,7 +437,7 @@ public partial class PlayerStrategy {
 
     #endif
 
-    public void community_card(Card card)
+    public void community_card(API.Card card)
     {
       #if !SILVERLIGHT
       send_community_card(card);
@@ -450,9 +450,9 @@ public partial class PlayerStrategy {
       #endif
     }
     #if SILVERLIGHT
-    public IAsyncResult send_community_card(AsyncCallback callback, object state, Card card)
+    public IAsyncResult send_community_card(AsyncCallback callback, object state, API.Card card)
     #else
-    public void send_community_card(Card card)
+    public void send_community_card(API.Card card)
     #endif
     {
       oprot_.WriteMessageBegin(new TMessage("community_card", TMessageType.Call, seqid_));
@@ -483,7 +483,7 @@ public partial class PlayerStrategy {
 
     
     #if SILVERLIGHT
-    public IAsyncResult Begin_showdown(AsyncCallback callback, object state, Competitor competitor, List<Card> cards, HandDescriptor hand)
+    public IAsyncResult Begin_showdown(AsyncCallback callback, object state, API.Competitor competitor, List<API.Card> cards, API.HandDescriptor hand)
     {
       return send_showdown(callback, state, competitor, cards, hand);
     }
@@ -496,7 +496,7 @@ public partial class PlayerStrategy {
 
     #endif
 
-    public void showdown(Competitor competitor, List<Card> cards, HandDescriptor hand)
+    public void showdown(API.Competitor competitor, List<API.Card> cards, API.HandDescriptor hand)
     {
       #if !SILVERLIGHT
       send_showdown(competitor, cards, hand);
@@ -509,9 +509,9 @@ public partial class PlayerStrategy {
       #endif
     }
     #if SILVERLIGHT
-    public IAsyncResult send_showdown(AsyncCallback callback, object state, Competitor competitor, List<Card> cards, HandDescriptor hand)
+    public IAsyncResult send_showdown(AsyncCallback callback, object state, API.Competitor competitor, List<API.Card> cards, API.HandDescriptor hand)
     #else
-    public void send_showdown(Competitor competitor, List<Card> cards, HandDescriptor hand)
+    public void send_showdown(API.Competitor competitor, List<API.Card> cards, API.HandDescriptor hand)
     #endif
     {
       oprot_.WriteMessageBegin(new TMessage("showdown", TMessageType.Call, seqid_));
@@ -544,7 +544,7 @@ public partial class PlayerStrategy {
 
     
     #if SILVERLIGHT
-    public IAsyncResult Begin_winner(AsyncCallback callback, object state, Competitor competitor, long amount)
+    public IAsyncResult Begin_winner(AsyncCallback callback, object state, API.Competitor competitor, long amount)
     {
       return send_winner(callback, state, competitor, amount);
     }
@@ -557,7 +557,7 @@ public partial class PlayerStrategy {
 
     #endif
 
-    public void winner(Competitor competitor, long amount)
+    public void winner(API.Competitor competitor, long amount)
     {
       #if !SILVERLIGHT
       send_winner(competitor, amount);
@@ -570,9 +570,9 @@ public partial class PlayerStrategy {
       #endif
     }
     #if SILVERLIGHT
-    public IAsyncResult send_winner(AsyncCallback callback, object state, Competitor competitor, long amount)
+    public IAsyncResult send_winner(AsyncCallback callback, object state, API.Competitor competitor, long amount)
     #else
-    public void send_winner(Competitor competitor, long amount)
+    public void send_winner(API.Competitor competitor, long amount)
     #endif
     {
       oprot_.WriteMessageBegin(new TMessage("winner", TMessageType.Call, seqid_));
@@ -946,7 +946,7 @@ public partial class PlayerStrategy {
   public partial class bet_request_args : TBase
   {
     private long _pot;
-    private BetLimits _limits;
+    private API.BetLimits _limits;
 
     public long Pot
     {
@@ -961,7 +961,7 @@ public partial class PlayerStrategy {
       }
     }
 
-    public BetLimits Limits
+    public API.BetLimits Limits
     {
       get
       {
@@ -1008,7 +1008,7 @@ public partial class PlayerStrategy {
             break;
           case 2:
             if (field.Type == TType.Struct) {
-              Limits = new BetLimits();
+              Limits = new API.BetLimits();
               Limits.Read(iprot);
             } else { 
               TProtocolUtil.Skip(iprot, field.Type);
@@ -1153,9 +1153,9 @@ public partial class PlayerStrategy {
   #endif
   public partial class competitor_status_args : TBase
   {
-    private Competitor _competitor;
+    private API.Competitor _competitor;
 
-    public Competitor Competitor
+    public API.Competitor Competitor
     {
       get
       {
@@ -1194,7 +1194,7 @@ public partial class PlayerStrategy {
         {
           case 1:
             if (field.Type == TType.Struct) {
-              Competitor = new Competitor();
+              Competitor = new API.Competitor();
               Competitor.Read(iprot);
             } else { 
               TProtocolUtil.Skip(iprot, field.Type);
@@ -1288,10 +1288,10 @@ public partial class PlayerStrategy {
   #endif
   public partial class bet_args : TBase
   {
-    private Competitor _competitor;
-    private Bet _bet;
+    private API.Competitor _competitor;
+    private API.Bet _bet;
 
-    public Competitor Competitor
+    public API.Competitor Competitor
     {
       get
       {
@@ -1304,7 +1304,7 @@ public partial class PlayerStrategy {
       }
     }
 
-    public Bet Bet
+    public API.Bet Bet
     {
       get
       {
@@ -1344,7 +1344,7 @@ public partial class PlayerStrategy {
         {
           case 1:
             if (field.Type == TType.Struct) {
-              Competitor = new Competitor();
+              Competitor = new API.Competitor();
               Competitor.Read(iprot);
             } else { 
               TProtocolUtil.Skip(iprot, field.Type);
@@ -1352,7 +1352,7 @@ public partial class PlayerStrategy {
             break;
           case 2:
             if (field.Type == TType.Struct) {
-              Bet = new Bet();
+              Bet = new API.Bet();
               Bet.Read(iprot);
             } else { 
               TProtocolUtil.Skip(iprot, field.Type);
@@ -1456,9 +1456,9 @@ public partial class PlayerStrategy {
   #endif
   public partial class hole_card_args : TBase
   {
-    private Card _card;
+    private API.Card _card;
 
-    public Card Card
+    public API.Card Card
     {
       get
       {
@@ -1497,7 +1497,7 @@ public partial class PlayerStrategy {
         {
           case 1:
             if (field.Type == TType.Struct) {
-              Card = new Card();
+              Card = new API.Card();
               Card.Read(iprot);
             } else { 
               TProtocolUtil.Skip(iprot, field.Type);
@@ -1591,9 +1591,9 @@ public partial class PlayerStrategy {
   #endif
   public partial class community_card_args : TBase
   {
-    private Card _card;
+    private API.Card _card;
 
-    public Card Card
+    public API.Card Card
     {
       get
       {
@@ -1632,7 +1632,7 @@ public partial class PlayerStrategy {
         {
           case 1:
             if (field.Type == TType.Struct) {
-              Card = new Card();
+              Card = new API.Card();
               Card.Read(iprot);
             } else { 
               TProtocolUtil.Skip(iprot, field.Type);
@@ -1726,11 +1726,11 @@ public partial class PlayerStrategy {
   #endif
   public partial class showdown_args : TBase
   {
-    private Competitor _competitor;
-    private List<Card> _cards;
-    private HandDescriptor _hand;
+    private API.Competitor _competitor;
+    private List<API.Card> _cards;
+    private API.HandDescriptor _hand;
 
-    public Competitor Competitor
+    public API.Competitor Competitor
     {
       get
       {
@@ -1743,7 +1743,7 @@ public partial class PlayerStrategy {
       }
     }
 
-    public List<Card> Cards
+    public List<API.Card> Cards
     {
       get
       {
@@ -1756,7 +1756,7 @@ public partial class PlayerStrategy {
       }
     }
 
-    public HandDescriptor Hand
+    public API.HandDescriptor Hand
     {
       get
       {
@@ -1797,7 +1797,7 @@ public partial class PlayerStrategy {
         {
           case 1:
             if (field.Type == TType.Struct) {
-              Competitor = new Competitor();
+              Competitor = new API.Competitor();
               Competitor.Read(iprot);
             } else { 
               TProtocolUtil.Skip(iprot, field.Type);
@@ -1806,12 +1806,12 @@ public partial class PlayerStrategy {
           case 2:
             if (field.Type == TType.List) {
               {
-                Cards = new List<Card>();
+                Cards = new List<API.Card>();
                 TList _list0 = iprot.ReadListBegin();
                 for( int _i1 = 0; _i1 < _list0.Count; ++_i1)
                 {
-                  Card _elem2 = new Card();
-                  _elem2 = new Card();
+                  API.Card _elem2 = new API.Card();
+                  _elem2 = new API.Card();
                   _elem2.Read(iprot);
                   Cards.Add(_elem2);
                 }
@@ -1823,7 +1823,7 @@ public partial class PlayerStrategy {
             break;
           case 3:
             if (field.Type == TType.Struct) {
-              Hand = new HandDescriptor();
+              Hand = new API.HandDescriptor();
               Hand.Read(iprot);
             } else { 
               TProtocolUtil.Skip(iprot, field.Type);
@@ -1857,7 +1857,7 @@ public partial class PlayerStrategy {
         oprot.WriteFieldBegin(field);
         {
           oprot.WriteListBegin(new TList(TType.Struct, Cards.Count));
-          foreach (Card _iter3 in Cards)
+          foreach (API.Card _iter3 in Cards)
           {
             _iter3.Write(oprot);
           }
@@ -1944,10 +1944,10 @@ public partial class PlayerStrategy {
   #endif
   public partial class winner_args : TBase
   {
-    private Competitor _competitor;
+    private API.Competitor _competitor;
     private long _amount;
 
-    public Competitor Competitor
+    public API.Competitor Competitor
     {
       get
       {
@@ -2000,7 +2000,7 @@ public partial class PlayerStrategy {
         {
           case 1:
             if (field.Type == TType.Struct) {
-              Competitor = new Competitor();
+              Competitor = new API.Competitor();
               Competitor.Read(iprot);
             } else { 
               TProtocolUtil.Skip(iprot, field.Type);

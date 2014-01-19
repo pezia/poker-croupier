@@ -107,7 +107,7 @@ class rank_hand_args:
 
   thrift_spec = (
     None, # 0
-    (1, TType.LIST, 'cards', (TType.STRUCT,(types.ttypes.Card, types.ttypes.Card.thrift_spec)), None, ), # 1
+    (1, TType.LIST, 'cards', (TType.STRUCT,(API.ttypes.Card, API.ttypes.Card.thrift_spec)), None, ), # 1
   )
 
   def __init__(self, cards=None,):
@@ -127,7 +127,7 @@ class rank_hand_args:
           self.cards = []
           (_etype3, _size0) = iprot.readListBegin()
           for _i4 in xrange(_size0):
-            _elem5 = types.ttypes.Card()
+            _elem5 = API.ttypes.Card()
             _elem5.read(iprot)
             self.cards.append(_elem5)
           iprot.readListEnd()
@@ -175,7 +175,7 @@ class rank_hand_result:
   """
 
   thrift_spec = (
-    (0, TType.STRUCT, 'success', (types.ttypes.HandDescriptor, types.ttypes.HandDescriptor.thrift_spec), None, ), # 0
+    (0, TType.STRUCT, 'success', (API.ttypes.HandDescriptor, API.ttypes.HandDescriptor.thrift_spec), None, ), # 0
   )
 
   def __init__(self, success=None,):
@@ -192,7 +192,7 @@ class rank_hand_result:
         break
       if fid == 0:
         if ftype == TType.STRUCT:
-          self.success = types.ttypes.HandDescriptor()
+          self.success = API.ttypes.HandDescriptor()
           self.success.read(iprot)
         else:
           iprot.skip(ftype)
