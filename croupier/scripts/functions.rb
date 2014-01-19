@@ -10,7 +10,7 @@ def connect_server
   protocol = Thrift::BinaryProtocol.new(transport)
   client = API::Croupier::Client.new(protocol)
 
-  transport.open()
+  transport.open
   [client, transport]
 end
 
@@ -33,4 +33,25 @@ def sit_and_go(log_file, &block)
   client.start_sit_and_go
   client.shutdown
   transport.close
+end
+
+def start_players(number_of_players)
+  player_names = %w(Albert Bob Chuck Daniel Emily Franky George Huge Ivan Joe Kevin Leo Mike Nikki Oliver Peter Q Robert Steve Tom Ulric Victor Walt Xavier Yvette Zara)
+
+  players = []
+
+  player_names[0..number_of_players-1].each_with_index do |player_name, index|
+    players[index] = fork do
+      exec "bundle exec ruby ../../player/rb/player_service.rb '#{player_name}' #{9200+index}"
+    end
+  end
+
+  players.each do |player|
+    Process.detach(player)
+  end
+  players
+end
+
+def run_timestamp
+  Time.now.strftime("%Y%m%d%H%M%S")
 end
