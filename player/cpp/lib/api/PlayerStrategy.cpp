@@ -6,7 +6,7 @@
  */
 #include "PlayerStrategy.h"
 
-
+namespace API {
 
 uint32_t PlayerStrategy_name_args::read(::apache::thrift::protocol::TProtocol* iprot) {
 
@@ -2194,5 +2194,5 @@ void PlayerStrategyProcessor::process_shutdown(int32_t, ::apache::thrift::protoc
   ::boost::shared_ptr< ::apache::thrift::TProcessor > processor(new PlayerStrategyProcessor(handler));
   return processor;
 }
-
+} // namespace
 

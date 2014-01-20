@@ -6,12 +6,12 @@
  */
 #include "player_strategy_constants.h"
 
-
+namespace API {
 
 const player_strategyConstants g_player_strategy_constants;
 
 player_strategyConstants::player_strategyConstants() {
 }
 
-
+} // namespace
 

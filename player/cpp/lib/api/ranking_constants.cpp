@@ -6,12 +6,12 @@
  */
 #include "ranking_constants.h"
 
-
+namespace API {
 
 const rankingConstants g_ranking_constants;
 
 rankingConstants::rankingConstants() {
 }
 
-
+} // namespace
 

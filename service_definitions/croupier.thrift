@@ -1,4 +1,10 @@
 namespace rb API
+namespace py API
+namespace php API
+namespace cpp API
+namespace csharp API
+
+namespace java com.devillsroom.poker.client
 
 service Croupier
 {

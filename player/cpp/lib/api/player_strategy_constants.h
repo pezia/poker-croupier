@@ -9,7 +9,7 @@
 
 #include "player_strategy_types.h"
 
-
+namespace API {
 
 class player_strategyConstants {
  public:
@@ -19,6 +19,6 @@ class player_strategyConstants {
 
 extern const player_strategyConstants g_player_strategy_constants;
 
-
+} // namespace
 
 #endif

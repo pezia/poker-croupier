@@ -8,6 +8,6 @@
 
 #include <algorithm>
 
+namespace API {
 
-
-
+} // namespace

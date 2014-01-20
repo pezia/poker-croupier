@@ -10,7 +10,7 @@
 #include <thrift/TDispatchProcessor.h>
 #include "player_strategy_types.h"
 
-
+namespace API {
 
 class PlayerStrategyIf {
  public:
@@ -1089,6 +1089,6 @@ class PlayerStrategyMultiface : virtual public PlayerStrategyIf {
 
 };
 
-
+} // namespace
 
 #endif

@@ -15,8 +15,8 @@ from thrift.transport import TSocket
 from thrift.transport import THttpClient
 from thrift.protocol import TBinaryProtocol
 
-from player_strategy import PlayerStrategy
-from player_strategy.ttypes import *
+from API import PlayerStrategy
+from API.ttypes import *
 
 if len(sys.argv) <= 1 or sys.argv[1] == '--help':
   print ''

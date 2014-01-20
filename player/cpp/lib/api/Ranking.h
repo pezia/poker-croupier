@@ -10,7 +10,7 @@
 #include <thrift/TDispatchProcessor.h>
 #include "ranking_types.h"
 
-
+namespace API {
 
 class RankingIf {
  public:
@@ -241,6 +241,6 @@ class RankingMultiface : virtual public RankingIf {
 
 };
 
-
+} // namespace
 
 #endif

@@ -16,8 +16,8 @@
 #include "types_types.h"
 
 
+namespace API {
 
-
-
+} // namespace
 
 #endif

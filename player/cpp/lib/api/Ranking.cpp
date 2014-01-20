@@ -6,7 +6,7 @@
  */
 #include "Ranking.h"
 
-
+namespace API {
 
 uint32_t Ranking_rank_hand_args::read(::apache::thrift::protocol::TProtocol* iprot) {
 
@@ -335,5 +335,5 @@ void RankingProcessor::process_rank_hand(int32_t seqid, ::apache::thrift::protoc
   ::boost::shared_ptr< ::apache::thrift::TProcessor > processor(new RankingProcessor(handler));
   return processor;
 }
-
+} // namespace
 

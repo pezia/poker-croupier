@@ -9,7 +9,7 @@
 
 #include "ranking_types.h"
 
-
+namespace API {
 
 class rankingConstants {
  public:
@@ -19,6 +19,6 @@ class rankingConstants {
 
 extern const rankingConstants g_ranking_constants;
 
-
+} // namespace
 
 #endif
