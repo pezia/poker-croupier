@@ -27,9 +27,18 @@ There are not many rules, but please keep them in mind. All rules of no limit te
 
 One of the most important rules is that there is no explicit prize for the winner (the other teams however are free to invite them for a beer after the event). Poker retreats - although they have a competitive feel to them - are not competitions. The emphasis should be on practice.
 
-Another important rule is fair play: no one should try to exploit weaknesses of the framework, or deliberately inject back doors into its source code. Also no team should use any pre-written code. Only the language's standard library, and general purpose open source libraries are allowed.
+Another important rule is fair play: no one should try to exploit weaknesses of the framework, or deliberately inject back doors into its source code. Also - with some notable exceptions listed bellow - no team should use any pre-written code. 
 
 As with any code retreat like event: provide a free lunch but avoid pizza.
+
+### Notes on the usage of 3rd party code and fair play
+
+We would like to avoid a situation where one team has a huge advantage over the others due to a library that solves some part of the problem. For that reason the rule of thumb is that only the language's standard library, and general purpose open source libraries are allowed.
+
+#### Exceptions
+- The folding player provided as part of this repository in the `player/<language>` library can be used as a starting point. (That is to avoid people strugling to get Thrift to work.)
+- In the case of C++ the Boost library is allowed, since otherwise C++ would be handicaped against languages like Java and python that have more potent standard libraries. Similarly in other languages where the standard library is small - like JavaScript - public packages are allowed as long as they are resonably general purpose. 
+- If in doubt, than the team should ask the other teams if they allow them to use a particular library. In the name of fair play, other teams should allow the usage of the library if it does not give the other team an unfair advantage. 
 
 # How to get started as a contributor
 
