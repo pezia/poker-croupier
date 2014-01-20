@@ -1,8 +1,8 @@
 #!/usr/bin/env python
  
-import sys
-sys.path.append('./lib/api')
-  
+import sys, os
+sys.path.append(os.path.abspath('lib/api'))
+
 from player_strategy import PlayerStrategy
 from player_strategy.ttypes import *
    

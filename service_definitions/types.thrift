@@ -1,5 +1,5 @@
 namespace rb API
-namespace py API
+namespace py ThriftTypes
 namespace php API
 namespace cpp API
 namespace csharp API
