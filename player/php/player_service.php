@@ -1,8 +1,6 @@
 #!/usr/bin/env php
 <?php
 
-namespace API\php;
-
 error_reporting(E_ALL);
 
 require_once __DIR__.'/lib/api/Thrift/ClassLoader/ThriftClassLoader.php';
@@ -15,7 +13,7 @@ $GEN_DIR = realpath(dirname(__FILE__)).'/lib/api';
 $loader = new ThriftClassLoader();
 $loader->registerNamespace('Thrift', __DIR__ . '/lib/api');
 $loader->registerDefinition('shared', $GEN_DIR);
-$loader->registerDefinition('tutorial', $GEN_DIR);
+$loader->registerDefinition('API', $GEN_DIR);
 $loader->register();
 
 

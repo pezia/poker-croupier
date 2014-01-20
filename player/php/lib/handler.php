@@ -1,8 +1,8 @@
 <?php
 
-require_once 'api/PlayerStrategy.php';
+require_once 'api/API/PlayerStrategy.php';
 
-class PlayerHandler implements PlayerStrategyIf
+class PlayerHandler implements \API\PlayerStrategyIf
 {
   public function name()
   {
@@ -41,6 +41,5 @@ class PlayerHandler implements PlayerStrategyIf
 
   public function shutdown()
   {
-    exit_application('Shutting down server');
   }
 }

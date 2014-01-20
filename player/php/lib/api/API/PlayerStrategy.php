@@ -1679,4 +1679,191 @@ class PlayerStrategy_shutdown_args {
 
 }
 
+class PlayerStrategyProcessor {
+  protected $handler_ = null;
+  public function __construct($handler) {
+    $this->handler_ = $handler;
+  }
+
+  public function process($input, $output) {
+    $rseqid = 0;
+    $fname = null;
+    $mtype = 0;
+
+    $input->readMessageBegin($fname, $mtype, $rseqid);
+    $methodname = 'process_'.$fname;
+    if (!method_exists($this, $methodname)) {
+      $input->skip(TType::STRUCT);
+      $input->readMessageEnd();
+      $x = new TApplicationException('Function '.$fname.' not implemented.', TApplicationException::UNKNOWN_METHOD);
+      $output->writeMessageBegin($fname, TMessageType::EXCEPTION, $rseqid);
+      $x->write($output);
+      $output->writeMessageEnd();
+      $output->getTransport()->flush();
+      return;
+    }
+    $this->$methodname($rseqid, $input, $output);
+    return true;
+  }
+
+  protected function process_name($seqid, $input, $output) {
+    $args = new \API\PlayerStrategy_name_args();
+    $args->read($input);
+    $input->readMessageEnd();
+    $result = new \API\PlayerStrategy_name_result();
+    $result->success = $this->handler_->name();
+    $bin_accel = ($output instanceof TBinaryProtocolAccelerated) && function_exists('thrift_protocol_write_binary');
+    if ($bin_accel)
+    {
+      thrift_protocol_write_binary($output, 'name', TMessageType::REPLY, $result, $seqid, $output->isStrictWrite());
+    }
+    else
+    {
+      $output->writeMessageBegin('name', TMessageType::REPLY, $seqid);
+      $result->write($output);
+      $output->writeMessageEnd();
+      $output->getTransport()->flush();
+    }
+  }
+  protected function process_bet_request($seqid, $input, $output) {
+    $args = new \API\PlayerStrategy_bet_request_args();
+    $args->read($input);
+    $input->readMessageEnd();
+    $result = new \API\PlayerStrategy_bet_request_result();
+    $result->success = $this->handler_->bet_request($args->pot, $args->limits);
+    $bin_accel = ($output instanceof TBinaryProtocolAccelerated) && function_exists('thrift_protocol_write_binary');
+    if ($bin_accel)
+    {
+      thrift_protocol_write_binary($output, 'bet_request', TMessageType::REPLY, $result, $seqid, $output->isStrictWrite());
+    }
+    else
+    {
+      $output->writeMessageBegin('bet_request', TMessageType::REPLY, $seqid);
+      $result->write($output);
+      $output->writeMessageEnd();
+      $output->getTransport()->flush();
+    }
+  }
+  protected function process_competitor_status($seqid, $input, $output) {
+    $args = new \API\PlayerStrategy_competitor_status_args();
+    $args->read($input);
+    $input->readMessageEnd();
+    $result = new \API\PlayerStrategy_competitor_status_result();
+    $this->handler_->competitor_status($args->competitor);
+    $bin_accel = ($output instanceof TBinaryProtocolAccelerated) && function_exists('thrift_protocol_write_binary');
+    if ($bin_accel)
+    {
+      thrift_protocol_write_binary($output, 'competitor_status', TMessageType::REPLY, $result, $seqid, $output->isStrictWrite());
+    }
+    else
+    {
+      $output->writeMessageBegin('competitor_status', TMessageType::REPLY, $seqid);
+      $result->write($output);
+      $output->writeMessageEnd();
+      $output->getTransport()->flush();
+    }
+  }
+  protected function process_bet($seqid, $input, $output) {
+    $args = new \API\PlayerStrategy_bet_args();
+    $args->read($input);
+    $input->readMessageEnd();
+    $result = new \API\PlayerStrategy_bet_result();
+    $this->handler_->bet($args->competitor, $args->bet);
+    $bin_accel = ($output instanceof TBinaryProtocolAccelerated) && function_exists('thrift_protocol_write_binary');
+    if ($bin_accel)
+    {
+      thrift_protocol_write_binary($output, 'bet', TMessageType::REPLY, $result, $seqid, $output->isStrictWrite());
+    }
+    else
+    {
+      $output->writeMessageBegin('bet', TMessageType::REPLY, $seqid);
+      $result->write($output);
+      $output->writeMessageEnd();
+      $output->getTransport()->flush();
+    }
+  }
+  protected function process_hole_card($seqid, $input, $output) {
+    $args = new \API\PlayerStrategy_hole_card_args();
+    $args->read($input);
+    $input->readMessageEnd();
+    $result = new \API\PlayerStrategy_hole_card_result();
+    $this->handler_->hole_card($args->card);
+    $bin_accel = ($output instanceof TBinaryProtocolAccelerated) && function_exists('thrift_protocol_write_binary');
+    if ($bin_accel)
+    {
+      thrift_protocol_write_binary($output, 'hole_card', TMessageType::REPLY, $result, $seqid, $output->isStrictWrite());
+    }
+    else
+    {
+      $output->writeMessageBegin('hole_card', TMessageType::REPLY, $seqid);
+      $result->write($output);
+      $output->writeMessageEnd();
+      $output->getTransport()->flush();
+    }
+  }
+  protected function process_community_card($seqid, $input, $output) {
+    $args = new \API\PlayerStrategy_community_card_args();
+    $args->read($input);
+    $input->readMessageEnd();
+    $result = new \API\PlayerStrategy_community_card_result();
+    $this->handler_->community_card($args->card);
+    $bin_accel = ($output instanceof TBinaryProtocolAccelerated) && function_exists('thrift_protocol_write_binary');
+    if ($bin_accel)
+    {
+      thrift_protocol_write_binary($output, 'community_card', TMessageType::REPLY, $result, $seqid, $output->isStrictWrite());
+    }
+    else
+    {
+      $output->writeMessageBegin('community_card', TMessageType::REPLY, $seqid);
+      $result->write($output);
+      $output->writeMessageEnd();
+      $output->getTransport()->flush();
+    }
+  }
+  protected function process_showdown($seqid, $input, $output) {
+    $args = new \API\PlayerStrategy_showdown_args();
+    $args->read($input);
+    $input->readMessageEnd();
+    $result = new \API\PlayerStrategy_showdown_result();
+    $this->handler_->showdown($args->competitor, $args->cards, $args->hand);
+    $bin_accel = ($output instanceof TBinaryProtocolAccelerated) && function_exists('thrift_protocol_write_binary');
+    if ($bin_accel)
+    {
+      thrift_protocol_write_binary($output, 'showdown', TMessageType::REPLY, $result, $seqid, $output->isStrictWrite());
+    }
+    else
+    {
+      $output->writeMessageBegin('showdown', TMessageType::REPLY, $seqid);
+      $result->write($output);
+      $output->writeMessageEnd();
+      $output->getTransport()->flush();
+    }
+  }
+  protected function process_winner($seqid, $input, $output) {
+    $args = new \API\PlayerStrategy_winner_args();
+    $args->read($input);
+    $input->readMessageEnd();
+    $result = new \API\PlayerStrategy_winner_result();
+    $this->handler_->winner($args->competitor, $args->amount);
+    $bin_accel = ($output instanceof TBinaryProtocolAccelerated) && function_exists('thrift_protocol_write_binary');
+    if ($bin_accel)
+    {
+      thrift_protocol_write_binary($output, 'winner', TMessageType::REPLY, $result, $seqid, $output->isStrictWrite());
+    }
+    else
+    {
+      $output->writeMessageBegin('winner', TMessageType::REPLY, $seqid);
+      $result->write($output);
+      $output->writeMessageEnd();
+      $output->getTransport()->flush();
+    }
+  }
+  protected function process_shutdown($seqid, $input, $output) {
+    $args = new \API\PlayerStrategy_shutdown_args();
+    $args->read($input);
+    $input->readMessageEnd();
+    $this->handler_->shutdown();
+    return;
+  }
+}
 
