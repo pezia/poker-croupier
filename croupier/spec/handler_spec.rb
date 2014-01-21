@@ -16,7 +16,7 @@ describe Croupier::Handler do
 
     context "connection successful" do
       before(:each) do
-        player_builder.should_receive(:build_player).with('some.host', 10001).and_return(player)
+        player_builder.should_receive(:build_player).with('some.host:10001').and_return(player)
       end
 
       it "should register player when connection is successful and log an info message" do
@@ -26,20 +26,20 @@ describe Croupier::Handler do
         player.should_receive(:name).and_return('Joe')
         logger_mock.should_receive(:info).with('Connected Joe at some.host:10001')
 
-        Croupier::Handler.new.register_player('some.host', 10001)
+        Croupier::Handler.new.register_player('some.host:10001')
       end
     end
 
     context "connection was not successful" do
       before(:each) do
-        player_builder.should_receive(:build_player).with('some.host', 10001).and_raise(StandardError, 'Connection failed')
+        player_builder.should_receive(:build_player).with('some.host:10001').and_raise(StandardError, 'Connection failed')
       end
 
       it "should not register the player and log an error message" do
         croupier.should_not_receive(:register_player).with(player)
         logger_mock.should_receive(:error).with('Connection failed')
 
-        expect{ Croupier::Handler.new.register_player('some.host', 10001) }.to raise_error(StandardError, 'Connection failed')
+        expect{ Croupier::Handler.new.register_player('some.host:10001') }.to raise_error(StandardError, 'Connection failed')
       end
     end
 

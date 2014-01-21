@@ -8,7 +8,7 @@ players = start_players(number_of_players)
 
 sit_and_go "../../log/integration_test.log" do
   players.each_index do |index|
-    register_player('localhost',9200+index)
+    register_player("localhost:#{9200+index}")
   end
 end
 
