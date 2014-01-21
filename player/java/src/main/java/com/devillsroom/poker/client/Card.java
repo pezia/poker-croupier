@@ -411,11 +411,11 @@ public class Card implements org.apache.thrift.TBase<Card, Card._Fields>, java.i
     return _Fields.findByThriftId(fieldId);
   }
 
-  public void read(org.apache.thrift.protocol.TProtocol iprot) throws TException {
+  public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
     schemes.get(iprot.getScheme()).getScheme().read(iprot, this);
   }
 
-  public void write(org.apache.thrift.protocol.TProtocol oprot) throws TException {
+  public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
     schemes.get(oprot.getScheme()).getScheme().write(oprot, this);
   }
 
@@ -447,7 +447,7 @@ public class Card implements org.apache.thrift.TBase<Card, Card._Fields>, java.i
     return sb.toString();
   }
 
-  public void validate() throws TException {
+  public void validate() throws org.apache.thrift.TException {
     // check for required fields
     // check for sub-struct validity
   }
@@ -455,7 +455,7 @@ public class Card implements org.apache.thrift.TBase<Card, Card._Fields>, java.i
   private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
     try {
       write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-    } catch (TException te) {
+    } catch (org.apache.thrift.TException te) {
       throw new java.io.IOException(te);
     }
   }
@@ -465,7 +465,7 @@ public class Card implements org.apache.thrift.TBase<Card, Card._Fields>, java.i
       // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
       __isset_bitfield = 0;
       read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-    } catch (TException te) {
+    } catch (org.apache.thrift.TException te) {
       throw new java.io.IOException(te);
     }
   }
@@ -478,7 +478,7 @@ public class Card implements org.apache.thrift.TBase<Card, Card._Fields>, java.i
 
   private static class CardStandardScheme extends StandardScheme<Card> {
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot, Card struct) throws TException {
+    public void read(org.apache.thrift.protocol.TProtocol iprot, Card struct) throws org.apache.thrift.TException {
       org.apache.thrift.protocol.TField schemeField;
       iprot.readStructBegin();
       while (true)
@@ -523,7 +523,7 @@ public class Card implements org.apache.thrift.TBase<Card, Card._Fields>, java.i
       struct.validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot, Card struct) throws TException {
+    public void write(org.apache.thrift.protocol.TProtocol oprot, Card struct) throws org.apache.thrift.TException {
       struct.validate();
 
       oprot.writeStructBegin(STRUCT_DESC);
@@ -555,7 +555,7 @@ public class Card implements org.apache.thrift.TBase<Card, Card._Fields>, java.i
   private static class CardTupleScheme extends TupleScheme<Card> {
 
     @Override
-    public void write(org.apache.thrift.protocol.TProtocol prot, Card struct) throws TException {
+    public void write(org.apache.thrift.protocol.TProtocol prot, Card struct) throws org.apache.thrift.TException {
       TTupleProtocol oprot = (TTupleProtocol) prot;
       BitSet optionals = new BitSet();
       if (struct.isSetValue()) {
@@ -580,7 +580,7 @@ public class Card implements org.apache.thrift.TBase<Card, Card._Fields>, java.i
     }
 
     @Override
-    public void read(org.apache.thrift.protocol.TProtocol prot, Card struct) throws TException {
+    public void read(org.apache.thrift.protocol.TProtocol prot, Card struct) throws org.apache.thrift.TException {
       TTupleProtocol iprot = (TTupleProtocol) prot;
       BitSet incoming = iprot.readBitSet(3);
       if (incoming.get(0)) {

@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.HashMap;
 import org.apache.thrift.TEnum;
 
-public enum BetType implements TEnum {
+public enum BetType implements org.apache.thrift.TEnum {
   Fold(0),
   Check(1),
   Call(2),
