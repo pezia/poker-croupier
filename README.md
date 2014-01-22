@@ -47,7 +47,7 @@ For a library to qualify for the bellow exceptions, it should be publicly availa
 
 Check the [issues section](https://github.com/devill/poker-croupier/issues) for current tasks. We also have a [mailing list at google groups](https://groups.google.com/forum/?hl=en#!forum/poker-croupier-developers). To understand the project structure, read the [architectural guide](https://github.com/devill/poker-croupier/wiki/Architectural-guide).
 
-When implementing rules consult the Texas Hold'em rules [in English](http://www.pokerstars.com/poker/games/texas-holdem/) or  [in Hungarian](http://www.pokerstars.com/poker/games/texas-holdem/) and poker hand ranks [in English](http://www.pokerstars.com/poker/games/rules/hand-rankings/) or [in Hungarian](http://www.pokerstars.com/poker/games/rules/hand-rankings/)  pages on PokerStars. We wish to play sit-n-go tournaments of No Limit Texas Hold'em.
+When implementing rules consult the Texas Hold'em rules [in English](http://www.pokerstars.com/poker/games/texas-holdem/) or  [in Hungarian](http://www.pokerstars.hu/poker/games/texas-holdem/) and poker hand ranks [in English](http://www.pokerstars.hu/poker/games/rules/hand-rankings/) or [in Hungarian](http://www.pokerstars.com/poker/games/rules/hand-rankings/)  pages on PokerStars. We wish to play sit-n-go tournaments of No Limit Texas Hold'em.
 
 Helpful links
 - [Glossary of poker terms](http://en.wikipedia.org/wiki/Glossary_of_poker_terms)
