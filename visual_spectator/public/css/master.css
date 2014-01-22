@@ -2,8 +2,6 @@
     width: 150px;
     float: left;
     margin: 15px;
-    position: absolute;
-    z-index: 2;
     text-align: center;
 }
 
@@ -11,57 +9,9 @@
     margin-left: 15px;
 }
 
-#player1 {
-    left: 150px;
-    top: 50px;
+.container.game-container {
+    max-width: 930px;
 }
-
-#player2 {
-    left: 350px;
-}
-
-
-#player3 {
-    left: 550px;
-}
-
-
-#player4 {
-    left: 750px;
-}
-
-#player5 {
-    left: 950px;
-    top: 50px;
-}
-
-#player10 {
-    left: 150px;
-    top: 350px;
-}
-
-#player9 {
-    left: 350px;
-    top: 400px;
-}
-
-#player7 {
-    top: 400px;
-    left: 750px;
-}
-
-
-#player8 {
-    left: 550px;
-    top: 400px;
-}
-
-#player6 {
-    left: 950px;
-    top: 350px;
-}
-
-
 
 .spades{
     color: black;
@@ -110,23 +60,11 @@
     line-height: 20px;
 }
 
-
 .pokertable {
-    height: 400px;
-    width: 800px;
-    border: 2px darkgreen solid;
-    background-color: #efe;
-    border-radius: 200px;
-    margin: 50px auto;
-    position: relative;
-    top: 75px;
-    z-index: 1;
+    clear:both;
 }
 
 #cards {
-    position: absolute;
-    top: 150px;
-    left: 275px;
 }
 
 #cards>div {
@@ -156,8 +94,7 @@ html[xmlns] .clearfix {
     height: 1%;
 }
 #pot {
-    position: absolute;
-    top: 220px;
-    left: 325px;
     font-size: 25px;
+    display:block;
+    float:right;
 }
