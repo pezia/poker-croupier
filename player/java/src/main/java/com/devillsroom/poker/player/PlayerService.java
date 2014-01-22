@@ -9,12 +9,21 @@ import org.apache.thrift.transport.TTransportException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 public class PlayerService implements Runnable {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private String name;
     private int port;
+
+    public static void main(String[] args) {
+
+        new PlayerService("Java Player", 9200).run();
+
+    }
 
     public PlayerService(String name, int port) {
 
@@ -32,6 +41,13 @@ public class PlayerService implements Runnable {
         try {
             TServerTransport serverTransport = new TServerSocket(port);
             TServer server = new TSimpleServer(new TSimpleServer.Args(serverTransport).processor(processor));
+
+            InetAddress IP= null;
+            try {
+                IP = InetAddress.getLocalHost();
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
+            }
 
             logger.debug("Started player... " + name + " on port " + port);
             server.serve();
