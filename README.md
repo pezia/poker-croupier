@@ -69,3 +69,7 @@ And that's it! You are all set to go.
 At this point we do not yet have rake targets or integration tests that can help in taking the services for a spin. That means that although there are test for each service after changes it's worth running a manual sanity check. The way I do now:`bundle exec ruby croupier/scripts/integration_test.rb`
 
 If you wish to hold a poker tournament than there is another script - `croupier/script/start.rb` - that you can modify and run. It let's you specify the log file, and the hosts and ports for each player. 
+
+## For Java developers
+see the [player / java](https://github.com/devill/poker-croupier/tree/master/player/java) directory for further instructions
+

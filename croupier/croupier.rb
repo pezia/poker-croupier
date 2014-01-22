@@ -14,8 +14,6 @@ module Croupier
   autoload :Player, 'lib/player'
   autoload :PlayerStrategy, 'lib/player_strategy'
   autoload :PlayerBuilder, 'lib/player_builder'
-  autoload :Spectator, 'lib/spectator'
-  autoload :SpectatorBuilder, 'lib/spectator_builder'
   autoload :ThriftEntityGateway, 'lib/thrift_entity_gateway'
   autoload :ThriftObserver, 'lib/thrift_observer'
   autoload :Tournament, 'lib/tournament'

@@ -2,17 +2,19 @@ require 'player_strategy'
 
 class Croupier::PlayerBuilder
 
-  def build_player(host, port)
-    Croupier::Player.new(Croupier::PlayerStrategy.new(*build_strategy(host, port)))
+  def build_player(address)
+    Croupier::Player.new(Croupier::PlayerStrategy.new(*build_strategy(address)))
   end
 
   private
 
-  def build_strategy(host, port)
-    if port != 8080
+  def build_strategy(address)
+
+    if /^[\w\d\.]+:\d+$/ =~ address
+      host, port = address.split(':')
       socket = Thrift::Socket.new(host, port)
     else
-      socket = Thrift::HTTPClientTransport.new('http://localhost:8080/php/player_service.php')
+      socket = Thrift::HTTPClientTransport.new(address)
     end
 
     transport = Thrift::BufferedTransport.new(socket)
