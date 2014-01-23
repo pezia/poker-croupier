@@ -21,7 +21,7 @@ public class PlayerService implements Runnable {
 
     public static void main(String[] args) {
 
-        new PlayerService("Java Player", 9200).run();
+        new PlayerService("Jim Java", 9900).run();
 
     }
 
