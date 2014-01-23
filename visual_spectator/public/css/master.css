@@ -34,7 +34,7 @@
 }
 
 .diamonds:after{
-    content: '♥';
+    content: '♦';
     display: block;
 }
 .hearts{
@@ -42,7 +42,7 @@
 }
 
 .hearts:after{
-    content: '♦';
+    content: '♥';
     display: block;
 }
 
@@ -62,12 +62,13 @@
 
 .pokertable {
     clear:both;
+    background-color: #cdf5ca;
 }
 
-#cards {
+#community-cards {
 }
 
-#cards>div {
+#community-cards>div {
     margin-right: 10px;
     float:left;
 }
@@ -97,4 +98,18 @@ html[xmlns] .clearfix {
     font-size: 25px;
     display:block;
     float:right;
+}
+
+#templates {
+    display: none;
+}
+
+.dealer .panel-heading,
+.dealer .panel-footer {
+    background-color: #dde7fd;
+}
+
+.on_turn,
+.on_turn  {
+    border-color: indianred;
 }
