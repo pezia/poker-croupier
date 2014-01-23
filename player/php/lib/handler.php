@@ -6,7 +6,7 @@ class PlayerHandler implements \API\PlayerStrategyIf
 {
   public function name()
   {
-    return "Philip Harry Potts";
+    return "PHilip Potts";
   }
 
 
