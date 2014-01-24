@@ -119,3 +119,8 @@ html[xmlns] .clearfix {
 .on-turn  {
     border-color: indianred;
 }
+
+#message {
+    clear: both;
+    text-align:center;
+}

@@ -6,6 +6,7 @@ class Croupier::LogHandler::Json
     @history = []
     @file = file
     @dealer = -1
+    @message_generator = Croupier::LogHandler::Messages.new
   end
 
   def initialize_state
@@ -15,6 +16,7 @@ class Croupier::LogHandler::Json
         pot: 0,
         dealer: '',
         on_turn: '',
+        message: '',
         community_cards: [],
         players: [],
     }
@@ -40,6 +42,7 @@ class Croupier::LogHandler::Json
   end
 
   def hole_card(competitor, card)
+    @state[:message] = @message_generator.hole_card(competitor, card)
     @state[:dealer] = @dealer % @state[:players].length
     @state[:on_turn] = @player_index[competitor.name]
     json_player(competitor)[:hole_cards] << format_card(card)
@@ -48,12 +51,14 @@ class Croupier::LogHandler::Json
 
 
   def community_card(card)
+    @state[:message] = @message_generator.community_card(card)
     @state[:on_turn] = ''
     @state[:community_cards] << format_card(card)
     save_step
   end
 
   def bet(competitor, bet)
+    @state[:message] = @message_generator.bet(competitor, bet)
     @state[:on_turn] = @player_index[competitor.name]
     @state[:pot] = bet[:pot]
     json_player(competitor)[:stack] = competitor.stack
@@ -64,9 +69,12 @@ class Croupier::LogHandler::Json
 
 
   def showdown(competitor, hand)
+    @state[:message] = @message_generator.showdown(competitor, hand)
+    save_step
   end
 
   def winner(competitor, amount)
+    @state[:message] = @message_generator.winner(competitor, amount)
     @game_phase = :end
     @state[:pot] -= amount
     json_player(competitor)[:stack] += amount

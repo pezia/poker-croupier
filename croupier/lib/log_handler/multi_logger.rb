@@ -14,7 +14,7 @@ class Croupier::LogHandler::MultiLogger
   end
 
   def respond_to? (method, include_private = false)
-    return true if (instance_variable_get "@#{member}").respond_to? method, false
+    return true if @loggers[0].respond_to? method, false
     super method, include_private
   end
 end

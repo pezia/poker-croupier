@@ -1,31 +1,20 @@
 
 class Croupier::LogHandler::HumanReadable
-  def competitor_status(competitor)
-    Croupier.logger.info "#{competitor.name} has #{competitor.stack} chips"
+  def initialize
+    @message_generator = Croupier::LogHandler::Messages.new
   end
 
-  def hole_card(competitor, card)
-    Croupier.logger.info "#{competitor.name} got hole card #{card} (#{card.value}, #{card.suit})"
+  def method_missing(method, *args, &block)
+    begin
+      message = @message_generator.send(method, *args, &block)
+      Croupier.logger.info message unless message.nil?
+    rescue NoMethodError => error
+      super method, *args, &block
+    end
   end
 
-  def community_card(card)
-    Croupier.logger.info "community card #{card}"
-  end
-
-  def bet(competitor, bet)
-    Croupier.logger.info "#{competitor.name} made a bet of #{bet[:amount]} (#{bet[:type]}) and is left with #{competitor.stack} chips"
-    Croupier.logger.info "The pot now contains #{bet[:pot]} chips"
-  end
-
-  def showdown(competitor, hand)
-    Croupier.logger.info "#{competitor.name} showed #{hand.cards.map{|card| card}.join(',')} making a #{hand.name}"
-  end
-
-  def winner(competitor, amount)
-    Croupier.logger.info "#{competitor.name} won #{amount}"
-  end
-
-  def shutdown
-
+  def respond_to? (method, include_private = false)
+    return true if @message_generator.respond_to? method, false
+    super method, include_private
   end
 end
