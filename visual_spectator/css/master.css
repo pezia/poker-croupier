@@ -120,7 +120,8 @@ html[xmlns] .clearfix {
     border-color: indianred;
 }
 
-#message {
+.message-container, #message {
     clear: both;
     text-align:center;
+    width:100%;
 }
