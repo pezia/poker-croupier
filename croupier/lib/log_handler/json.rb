@@ -2,6 +2,10 @@ require 'json'
 
 class Croupier::LogHandler::Json
 
+  def initialize(file)
+    @file = file
+  end
+
   def initialize_state
     @game_phase = :start
     @state = {
@@ -31,12 +35,12 @@ class Croupier::LogHandler::Json
 
   def hole_card(competitor, card)
     @state[:players][@player_index[competitor.name]][:hole_cards] << { value: card.value, suit: card.suit }
-    p @state
+    @history << @state
   end
 
   def community_card(card)
     @state[:community_cards] << { value: card.value, suit: card.suit }
-    p @state
+    @history << @state
   end
 
   def bet(competitor, bet)
@@ -44,7 +48,7 @@ class Croupier::LogHandler::Json
     @state[:players][@player_index[competitor.name]][:stack] = competitor.stack
     @state[:players][@player_index[competitor.name]][:bet] = bet[:amount]
     @state[:players][@player_index[competitor.name]][:folded] = true if bet[:type] == :fold
-    p @state
+    @history << @state
   end
 
   def showdown(competitor, hand)
@@ -54,10 +58,12 @@ class Croupier::LogHandler::Json
     @game_phase = :end
     @state[:pot] -= amount
     @state[:players][@player_index[competitor.name]][:stack] += amount
-    p @state
+    @history << @state
   end
 
   def shutdown
-
+    File.open(@file, 'w') do |file|
+      file.puts JSON.generate(@history)
+    end
   end
 end
