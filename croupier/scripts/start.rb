@@ -1,6 +1,6 @@
 require_relative 'functions'
 
-sit_and_go "../../log/game_#{run_timestamp}.log" do
+sit_and_go "../../log/game_#{run_timestamp}" do
   register_player 'localhost:9200'
   register_player 'localhost:9900'
   register_player 'localhost:30303'

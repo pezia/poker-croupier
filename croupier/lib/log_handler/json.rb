@@ -69,11 +69,13 @@ class Croupier::LogHandler::Json
 
 
   def showdown(competitor, hand)
+    @state[:on_turn] = @player_index[competitor.name]
     @state[:message] = @message_generator.showdown(competitor, hand)
     save_step
   end
 
   def winner(competitor, amount)
+    @state[:on_turn] = @player_index[competitor.name]
     @state[:message] = @message_generator.winner(competitor, amount)
     @game_phase = :end
     @state[:pot] -= amount

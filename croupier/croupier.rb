@@ -21,7 +21,7 @@ module Croupier
   class << self
     def logger
       @logger ||= Croupier::LogHandler::MultiLogger.new(
-          Logger.new(ARGV[0]),
+          Logger.new("#{ARGV[0]}.log"),
           Logger.new(STDOUT)
       )
     end
