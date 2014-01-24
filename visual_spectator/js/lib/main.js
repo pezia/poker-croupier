@@ -74,7 +74,7 @@ $(document).ready(function() {
         var timerHandle = false;
 
         function startPlay() {
-            timerHandle = setInterval(next, 200);
+            timerHandle = setInterval(next, 2000);
             $('#play-button').text('Stop');
         }
 
