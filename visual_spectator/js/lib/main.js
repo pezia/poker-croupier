@@ -149,20 +149,29 @@ $(document).ready(function() {
     render(currentIndex);
 
     (function setUpListeners() {
-        function next() { if(currentIndex < history.length - 1) { render(++currentIndex); } }
+        function next() { if(currentIndex < history.length - 1) { render(++currentIndex); } else { stopPlay(); } }
         function back() { if(currentIndex > 0) { render(--currentIndex); } }
         function beginning() { render(currentIndex = 0); }
         function end() { render(currentIndex = history.length - 1); }
 
         var timerHandle = false;
+
+        function startPlay() {
+            timerHandle = setInterval(next, 200);
+            $('#play-button').text('Stop');
+        }
+
+        function stopPlay() {
+            clearInterval(timerHandle);
+            timerHandle = false;
+            $('#play-button').text('Play');
+        }
+
         function togglePlay() {
             if(!timerHandle) {
-                timerHandle = setInterval(next, 200);
-                $('#play-button').text('Stop');
+                startPlay();
             } else {
-                clearInterval(timerHandle);
-                timerHandle = false;
-                $('#play-button').text('Play');
+                stopPlay();
             }
         }
 
