@@ -1,19 +1,24 @@
 <?php
 
-use \Thrift\Transport\TPhpStream;
-
-require_once 'api/API/PlayerStrategy.php';
+require_once __DIR__ . '/api/API/PlayerStrategy.php';
+require_once __DIR__ . '/DefaultPokerStrategy.php';
+require_once __DIR__ . '/Ranker.php';
 
 class PlayerHandler implements \API\PlayerStrategyIf {
 
     const STATE_FILE = '/tmp/poker_status';
 
     public $status = array();
+    private $ranker;
+    private $strategy;
 
     public function __construct() {
         if (is_readable(self::STATE_FILE)) {
             $this->status = unserialize(file_get_contents(self::STATE_FILE));
         }
+
+        $this->ranker = new Ranker();
+        $this->strategy = new DefaultPokerStrategy();
     }
 
     public function name() {
@@ -34,48 +39,7 @@ class PlayerHandler implements \API\PlayerStrategyIf {
     public function bet_request($pot, \API\BetLimits $limits) {
         $this->shutdown();
 
-        $ranking = $this->getFullRanking();
-        $normalizedRanking = $this->getNormalizedRanking();
-
-        switch (true) {
-            case $ranking > 7:
-                return $limits->minimum_raise + 2000;
-            case $ranking == 7:
-            case $ranking == 6:
-                if ($normalizedRanking > 0) {
-                    return $limits->minimum_raise + 200;
-                } else {
-                    return $limits->to_call;
-                }
-                break;
-            case $ranking <= 5 && $ranking >= 1:
-                if ($normalizedRanking == 0) {
-                    if($this->hasRiver()) {
-                        return 0;
-                    }
-                    
-                    if (!$this->hasFlop() && $limits->to_call < $this->status['stack'] / 2) {
-                        return $limits->to_call;
-                    }
-                    
-                    if($limits->to_call < $this->status['stack'] / 2) {
-                        return $limits->to_call;
-                    }
-
-                    return 0;
-                } else {
-                    if($limits->minimum_raise < 200) {
-                        return $limits->minimum_raise + ($normalizedRanking * 10);
-                    } else {
-                        return $limits->to_call;
-                    }
-                }
-                break;
-            case $ranking == 0:
-                return 0;
-            default:
-                break;
-        }
+        return $this->strategy->calculateBet($pot, $limits, $this);
     }
 
     public function competitor_status(\API\Competitor $competitor) {
@@ -143,15 +107,7 @@ class PlayerHandler implements \API\PlayerStrategyIf {
             return $ret;
         }
 
-        $transport = new \Thrift\Transport\TSocket('127.0.0.1', 9080);
-        $protocol = new \Thrift\Protocol\TBinaryProtocol($transport);
-
-        $rankingClient = new \API\RankingClient($protocol);
-        $transport->open();
-        $ret = $rankingClient->rank_hand($this->status['cards']);
-        $transport->close();
-
-        return $ret;
+        return $this->ranker->getRankingForCards($this->status['cards']);
     }
 
     public function getCommunityRanking() {
@@ -161,15 +117,7 @@ class PlayerHandler implements \API\PlayerStrategyIf {
             return $ret;
         }
 
-        $transport = new \Thrift\Transport\TSocket('127.0.0.1', 9080);
-        $protocol = new \Thrift\Protocol\TBinaryProtocol($transport);
-
-        $rankingClient = new \API\RankingClient($protocol);
-        $transport->open();
-        $ret = $rankingClient->rank_hand($this->status['community_cards']);
-        $transport->close();
-
-        return $ret;
+        return $this->ranker->getRankingForCards($this->status['community_cards']);
     }
 
     public function getNormalizedRanking() {
@@ -180,12 +128,23 @@ class PlayerHandler implements \API\PlayerStrategyIf {
     }
 
     public function hasFlop() {
-        return isset($this->status['community_cards']) && count($this->status['community_cards']) >= 3;
+        return $this->getCommunityCardCount() == 3;
     }
-    
-    
-    public function hasRiver() {
-        return isset($this->status['community_cards']) && count($this->status['community_cards']) >= 5;
+
+    public function isTurn() {
+        return $this->getCommunityCardCount() == 4;
+    }
+
+    public function isRiver() {
+        return $this->getCommunityCardCount() == 5;
+    }
+
+    public function getCommunityCardCount() {
+        return isset($this->status['community_cards']) ? count($this->status['community_cards']) : 0;
+    }
+
+    public function getStack() {
+        return $this->status['stack'];
     }
 
 }
