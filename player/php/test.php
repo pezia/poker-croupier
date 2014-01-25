@@ -34,21 +34,29 @@ $handler->status = array();
 $handler->shutdown();
 
 $cards = array(
-    new API\Card(array('value' => 4, 'suite' => \API\Suit::Clubs)),
-    new API\Card(array('value' => 2, 'suite' => \API\Suit::Clubs)),
-    new API\Card(array('value' => 3, 'suite' => \API\Suit::Clubs)),
-    new API\Card(array('value' => 1, 'suite' => \API\Suit::Clubs)),
+    new API\Card(array('value' => 4, 'suite' => \API\Suit::Clubs, 'name' => '4 of Clubs')),
+    new API\Card(array('value' => 2, 'suite' => \API\Suit::Clubs, 'name' => '2 of Clubs')),
+    new API\Card(array('value' => 3, 'suite' => \API\Suit::Clubs, 'name' => '3 of Clubs')),
+    new API\Card(array('value' => 1, 'suite' => \API\Suit::Clubs, 'name' => '1 of Clubs')),
 );
 
 $handler->orderCards($cards);
 
 
-$handler->hole_card(new API\Card(array('value' => 1, 'suite' => \API\Suit::Clubs)));
-$handler->hole_card(new API\Card(array('value' => 2, 'suite' => \API\Suit::Clubs)));
+$handler->hole_card(new API\Card(array('value' => 2, 'suite' => \API\Suit::$__names[\API\Suit::Clubs], 'name' => '2 of Clubs')));
+$handler->hole_card(new API\Card(array('value' => 2, 'suite' => \API\Suit::$__names[\API\Suit::Spades], 'name' => '2 of Spades')));
 
-$handler->community_card(new API\Card(array('value' => 3, 'suite' => \API\Suit::Clubs)));
-$handler->community_card(new API\Card(array('value' => 4, 'suite' => \API\Suit::Clubs)));
+$handler->community_card(new API\Card(array('value' => 3, 'suite' => \API\Suit::$__names[\API\Suit::Clubs], 'name' => '3 of Clubs')));
+$handler->community_card(new API\Card(array('value' => 3, 'suite' => \API\Suit::$__names[\API\Suit::Spades], 'name' => '3 of Spades')));
+$handler->community_card(new API\Card(array('value' => 4, 'suite' => \API\Suit::$__names[\API\Suit::Clubs], 'name' => '4 of Clubs')));
 
-$out = $handler->getHighCard();
+$handler->getHighCard();
 
-print_r($handler->getRanking());
+$out = $handler->getCommunityRanking();
+print_r($out);
+
+$out = $handler->getFullRanking();
+print_r($out);
+
+$out = $handler->getNormalizedRanking();
+print_r($out);

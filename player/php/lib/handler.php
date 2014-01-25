@@ -6,6 +6,7 @@ require_once 'api/API/PlayerStrategy.php';
 
 class PlayerHandler implements \API\PlayerStrategyIf {
 
+    private $bestRank = 8;
     public $status = array();
 
     public function __construct() {
@@ -18,8 +19,47 @@ class PlayerHandler implements \API\PlayerStrategyIf {
         return "Korda György";
     }
 
+    /**
+     *  8: HandType::StraightFlush, 
+     *  7: HandType::FourOfAKind,
+     *  6: HandType::FullHouse,
+     *  5: HandType::Flush, 
+     *  4: HandType::Straight,
+     *  3: HandType::ThreeOfAKind,
+     *  2: HandType::TwoPair,
+     *  1: HandType::Pair,
+     *  0: HandType::HighCard
+     */
     public function bet_request($pot, \API\BetLimits $limits) {
         $this->shutdown();
+
+        $ranking = $this->getFullRanking();
+        $normalizedRanking = $this->getNormalizedRanking();
+
+        switch (true) {
+            case $ranking > 7:
+                return $limits->minimum_raise + 2000;
+            case $ranking == 7:
+            case $ranking == 6:
+                if ($normalizedRanking > 0) {
+                    return $limits->minimum_raise + 200;
+                } else {
+                    return $limits->to_call;
+                }
+                break;
+            case $ranking < 6 && $ranking > 0:
+                if ($normalizedRanking <= 0) {
+                    return 0;
+                } else {
+                    return $limits->minimum_raise + ($normalizedRanking * 10);
+                }
+                break;
+            case $ranking == 0:
+                return 0;
+            default:
+                break;
+        }
+/*
         $random = mt_rand(0, 100);
         if ($random < 50) {
             return $limits->to_call;
@@ -28,15 +68,16 @@ class PlayerHandler implements \API\PlayerStrategyIf {
         } else {
             return $limits->minimum_raise + mt_rand(1, 20);
         }
+ */
     }
 
     public function competitor_status(\API\Competitor $competitor) {
         $this->shutdown();
+        file_put_contents('/tmp/asdf', var_export($competitor->stack, true));
     }
 
     public function bet(\API\Competitor $competitor, \API\Bet $bet) {
         $this->shutdown();
-        return \API\BetType::Call;
     }
 
     public function hole_card(\API\Card $card) {
@@ -83,8 +124,12 @@ class PlayerHandler implements \API\PlayerStrategyIf {
         });
     }
 
-    public function getRanking() {
-        $transport = new \Thrift\Transport\TSocket('localhost', 9080);
+    public function getFullRanking() {
+        if (!isset($this->status['cards'])) {
+            return 0;
+        }
+
+        $transport = new \Thrift\Transport\TSocket('127.0.0.1', 9080);
         $protocol = new \Thrift\Protocol\TBinaryProtocol($transport);
 
         $rankingClient = new \API\RankingClient($protocol);
@@ -93,6 +138,29 @@ class PlayerHandler implements \API\PlayerStrategyIf {
         $transport->close();
 
         return $ret;
+    }
+
+    public function getCommunityRanking() {
+        if (!isset($this->status['community_cards'])) {
+            return 0;
+        }
+
+        $transport = new \Thrift\Transport\TSocket('127.0.0.1', 9080);
+        $protocol = new \Thrift\Protocol\TBinaryProtocol($transport);
+
+        $rankingClient = new \API\RankingClient($protocol);
+        $transport->open();
+        $ret = $rankingClient->rank_hand($this->status['community_cards']);
+        $transport->close();
+
+        return $ret;
+    }
+
+    public function getNormalizedRanking() {
+        $fullRanking = $this->getFullRanking();
+        $communityRanking = $this->getCommunityRanking();
+
+        return $fullRanking->ranks[0] - $communityRanking->ranks[0];
     }
 
 }
