@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 
 require_once __DIR__ . '/lib/api/Thrift/ClassLoader/ThriftClassLoader.php';
-require_once __DIR__ . '/lib/handler.php';
+require_once __DIR__ . '/lib/handler_baseline.php';
 
 use Thrift\ClassLoader\ThriftClassLoader;
 
@@ -29,7 +29,7 @@ if (php_sapi_name() == 'cli') {
     echo "\r\n";
 }
 
-$handler = new \PlayerHandler();
+$handler = new \PlayerHandlerBaseline();
 $processor = new \API\PlayerStrategyProcessor($handler);
 
 $transport = new TBufferedTransport(new TPhpStream(TPhpStream::MODE_R | TPhpStream::MODE_W));

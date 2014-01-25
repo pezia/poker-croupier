@@ -2,22 +2,20 @@
 
 use \Thrift\Transport\TPhpStream;
 
-require_once 'api/API/PlayerStrategy.php';
+require_once __DIR__ . '/api/API/PlayerStrategy.php';
 
-class PlayerHandler implements \API\PlayerStrategyIf {
-
-    const STATE_FILE = '/tmp/poker_status';
-
+class PlayerHandlerBaseline implements \API\PlayerStrategyIf {
+    const STATE_FILE = '/tmp/poker_status_baseline';
     public $status = array();
 
     public function __construct() {
         if (is_readable(self::STATE_FILE)) {
-            $this->status = unserialize(file_get_contents(self::STATE_FILE));
+            $this->status = unserialize(file_get_contents(self::STATE_filE));
         }
     }
 
     public function name() {
-        return "Korda György";
+        return "Balázs Klárika";
     }
 
     /**
@@ -49,26 +47,13 @@ class PlayerHandler implements \API\PlayerStrategyIf {
                 }
                 break;
             case $ranking <= 5 && $ranking >= 1:
-                if ($normalizedRanking == 0) {
-                    if($this->hasRiver()) {
-                        return 0;
-                    }
-                    
-                    if (!$this->hasFlop() && $limits->to_call < $this->status['stack'] / 2) {
+                if ($normalizedRanking <= 0) {
+                    if (!$this->hasFlop()) {
                         return $limits->to_call;
                     }
-                    
-                    if($limits->to_call < $this->status['stack'] / 2) {
-                        return $limits->to_call;
-                    }
-
                     return 0;
                 } else {
-                    if($limits->minimum_raise < 200) {
-                        return $limits->minimum_raise + ($normalizedRanking * 10);
-                    } else {
-                        return $limits->to_call;
-                    }
+                    return $limits->minimum_raise + ($normalizedRanking * 10);
                 }
                 break;
             case $ranking == 0:
@@ -79,16 +64,11 @@ class PlayerHandler implements \API\PlayerStrategyIf {
     }
 
     public function competitor_status(\API\Competitor $competitor) {
-        if ($this->name() === $competitor->name) {
-            $this->status['stack'] = $competitor->stack;
-        }
         $this->shutdown();
+        file_put_contents('/tmp/asdf', var_export($competitor->stack, true));
     }
 
     public function bet(\API\Competitor $competitor, \API\Bet $bet) {
-        if ($this->name() === $competitor->name) {
-            $this->status['stack'] = $competitor->stack;
-        }
         $this->shutdown();
     }
 
@@ -138,9 +118,7 @@ class PlayerHandler implements \API\PlayerStrategyIf {
 
     public function getFullRanking() {
         if (!isset($this->status['cards'])) {
-            $ret = new \API\HandDescriptor();
-            $ret->ranks = array(0);
-            return $ret;
+            return 0;
         }
 
         $transport = new \Thrift\Transport\TSocket('127.0.0.1', 9080);
@@ -156,9 +134,7 @@ class PlayerHandler implements \API\PlayerStrategyIf {
 
     public function getCommunityRanking() {
         if (!isset($this->status['community_cards'])) {
-            $ret = new \API\HandDescriptor();
-            $ret->ranks = array(0);
-            return $ret;
+            return 0;
         }
 
         $transport = new \Thrift\Transport\TSocket('127.0.0.1', 9080);
@@ -181,11 +157,6 @@ class PlayerHandler implements \API\PlayerStrategyIf {
 
     public function hasFlop() {
         return isset($this->status['community_cards']) && count($this->status['community_cards']) >= 3;
-    }
-    
-    
-    public function hasRiver() {
-        return isset($this->status['community_cards']) && count($this->status['community_cards']) >= 5;
     }
 
 }
