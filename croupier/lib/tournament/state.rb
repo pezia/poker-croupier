@@ -12,7 +12,7 @@ class Croupier::Tournament::State
   end
 
   def small_blind
-    @small_blind * (2**@orbits)
+    @small_blind * (2**((@orbits/3).floor))
   end
 
   def big_blind
