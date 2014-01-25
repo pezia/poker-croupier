@@ -52,13 +52,13 @@ $handler->community_card(new API\Card(array('value' => 4, 'suite' => \API\Suit::
 
  */
 
-$handler->hole_card(new API\Card(array('value' => 5, 'suite' => \API\Suit::$__names[\API\Suit::Diamonds], 'name' => '5 of Diamonds')));
-$handler->hole_card(new API\Card(array('value' => 10, 'suite' => \API\Suit::$__names[\API\Suit::Diamonds], 'name' => 'Jack of Diamonds')));
+$handler->hole_card(new API\Card(array('value' => 6, 'suite' => \API\Suit::$__names[\API\Suit::Diamonds], 'name' => '6 of Diamonds')));
+$handler->hole_card(new API\Card(array('value' => 10, 'suite' => \API\Suit::$__names[\API\Suit::Diamonds], 'name' => '10 of Diamonds')));
 
-$handler->community_card(new API\Card(array('value' => 10, 'suite' => \API\Suit::$__names[\API\Suit::Spades], 'name' => 'Jack of Spades')));
-$handler->community_card(new API\Card(array('value' => 3, 'suite' => \API\Suit::$__names[\API\Suit::Diamonds], 'name' => '3 of Diamonds')));
-$handler->community_card(new API\Card(array('value' => 4, 'suite' => \API\Suit::$__names[\API\Suit::Hearts], 'name' => '4 of Hearts')));
-$handler->community_card(new API\Card(array('value' => 10, 'suite' => \API\Suit::$__names[\API\Suit::Clubs], 'name' => 'Jack of Clubs')));
+//$handler->community_card(new API\Card(array('value' => 10, 'suite' => \API\Suit::$__names[\API\Suit::Spades], 'name' => 'Jack of Spades')));
+//$handler->community_card(new API\Card(array('value' => 3, 'suite' => \API\Suit::$__names[\API\Suit::Diamonds], 'name' => '3 of Diamonds')));
+//$handler->community_card(new API\Card(array('value' => 4, 'suite' => \API\Suit::$__names[\API\Suit::Hearts], 'name' => '4 of Hearts')));
+//$handler->community_card(new API\Card(array('value' => 10, 'suite' => \API\Suit::$__names[\API\Suit::Clubs], 'name' => 'Jack of Clubs')));
 
 //$handler->getHighCard();
 

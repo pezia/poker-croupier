@@ -128,7 +128,7 @@ class PlayerHandler implements \API\PlayerStrategyIf {
     }
 
     public function hasFlop() {
-        return $this->getCommunityCardCount() == 3;
+        return $this->getCommunityCardCount() >= 3;
     }
 
     public function isTurn() {

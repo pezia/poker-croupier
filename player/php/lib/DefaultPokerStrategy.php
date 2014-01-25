@@ -6,6 +6,10 @@ class DefaultPokerStrategy {
         $ranking = $handler->getFullRanking();
         $normalizedRanking = $handler->getNormalizedRanking();
 
+       /* if ((!$handler->hasFlop()) && $ranking === 1) {
+            return $handler->getStack() / 2;
+        }*/
+
         switch (true) {
             case $ranking > 7:
                 return $limits->minimum_raise + 2000;
