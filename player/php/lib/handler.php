@@ -49,6 +49,9 @@ class PlayerHandler implements \API\PlayerStrategyIf {
                 break;
             case $ranking < 6 && $ranking > 0:
                 if ($normalizedRanking <= 0) {
+                    if(!$this->hasFlop()) {
+                        return $limits->to_call;
+                    }
                     return 0;
                 } else {
                     return $limits->minimum_raise + ($normalizedRanking * 10);
@@ -59,16 +62,6 @@ class PlayerHandler implements \API\PlayerStrategyIf {
             default:
                 break;
         }
-/*
-        $random = mt_rand(0, 100);
-        if ($random < 50) {
-            return $limits->to_call;
-        } else if ($random < 5) {
-            return 0;
-        } else {
-            return $limits->minimum_raise + mt_rand(1, 20);
-        }
- */
     }
 
     public function competitor_status(\API\Competitor $competitor) {
@@ -163,4 +156,7 @@ class PlayerHandler implements \API\PlayerStrategyIf {
         return $fullRanking->ranks[0] - $communityRanking->ranks[0];
     }
 
+    public function hasFlop() {
+        return isset($this->status['community_cards']) && count($this->status['community_cards']) >= 3;
+    }
 }
