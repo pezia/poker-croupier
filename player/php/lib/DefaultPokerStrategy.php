@@ -3,10 +3,11 @@
 class DefaultPokerStrategy {
 
     public function calculateBet($pot, \API\BetLimits $limits, PlayerHandler $handler) {
-        $ranking = $handler->getFullRanking();
+        $fullRanking = $handler->getFullRanking();
+        $ranking = $fullRanking->ranks[0];
         $normalizedRanking = $handler->getNormalizedRanking();
 
-       /* if ((!$handler->hasFlop()) && $ranking === 1) {
+        /*if ((!$handler->hasFlop()) && $ranking === 1 && $handler->get) {
             return $handler->getStack() / 2;
         }*/
 
