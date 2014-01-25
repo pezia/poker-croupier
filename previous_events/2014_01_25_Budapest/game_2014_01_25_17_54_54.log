@@ -1,0 +1,898 @@
+# Logfile created on 2014-01-25 17:54:55 +0100 by logger.rb/44203
+I, [2014-01-25T17:54:55.946432 #13576]  INFO -- : Connected devill_4242 at localhost:4242
+I, [2014-01-25T17:54:55.969992 #13576]  INFO -- : Connected Jim Java at localhost:9900
+I, [2014-01-25T17:54:56.054605 #13576]  INFO -- : Connected Korda György at http://localhost:8080/php/player_service.php
+I, [2014-01-25T17:54:56.238951 #13576]  INFO -- : devill_4242 has 1000 chips
+I, [2014-01-25T17:54:56.239291 #13576]  INFO -- : Jim Java has 1000 chips
+I, [2014-01-25T17:54:56.239500 #13576]  INFO -- : Korda György has 1000 chips
+I, [2014-01-25T17:54:56.248417 #13576]  INFO -- : Jim Java got hole card Jack of Clubs (11, Clubs)
+I, [2014-01-25T17:54:56.280468 #13576]  INFO -- : Korda György got hole card Ace of Clubs (14, Clubs)
+I, [2014-01-25T17:54:56.281188 #13576]  INFO -- : devill_4242 got hole card 8 of Spades (8, Spades)
+I, [2014-01-25T17:54:56.282098 #13576]  INFO -- : Jim Java got hole card 10 of Clubs (10, Clubs)
+I, [2014-01-25T17:54:56.311644 #13576]  INFO -- : Korda György got hole card King of Spades (13, Spades)
+I, [2014-01-25T17:54:56.312435 #13576]  INFO -- : devill_4242 got hole card 5 of Clubs (5, Clubs)
+I, [2014-01-25T17:54:56.362961 #13576]  INFO -- : Jim Java made a bet of 10 (raise) and is left with 990 chips. The pot now contains 10 chips.
+I, [2014-01-25T17:54:56.400974 #13576]  INFO -- : Korda György made a bet of 20 (raise) and is left with 980 chips. The pot now contains 30 chips.
+I, [2014-01-25T17:54:56.429554 #13576]  INFO -- : devill_4242 made a bet of 0 (fold) and is left with 1000 chips. The pot now contains 30 chips.
+I, [2014-01-25T17:54:56.475100 #13576]  INFO -- : Jim Java made a bet of 30 (raise) and is left with 960 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:54:56.550962 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 980 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:54:56.593707 #13576]  INFO -- : Jim Java won 60
+I, [2014-01-25T17:54:56.676907 #13576]  INFO -- : devill_4242 has 1000 chips
+I, [2014-01-25T17:54:56.677020 #13576]  INFO -- : Jim Java has 1020 chips
+I, [2014-01-25T17:54:56.677072 #13576]  INFO -- : Korda György has 980 chips
+I, [2014-01-25T17:54:56.710605 #13576]  INFO -- : Korda György got hole card 5 of Hearts (5, Hearts)
+I, [2014-01-25T17:54:56.711753 #13576]  INFO -- : devill_4242 got hole card 9 of Clubs (9, Clubs)
+I, [2014-01-25T17:54:56.713132 #13576]  INFO -- : Jim Java got hole card Ace of Clubs (14, Clubs)
+I, [2014-01-25T17:54:56.744803 #13576]  INFO -- : Korda György got hole card 2 of Spades (2, Spades)
+I, [2014-01-25T17:54:56.746051 #13576]  INFO -- : devill_4242 got hole card Queen of Clubs (12, Clubs)
+I, [2014-01-25T17:54:56.747171 #13576]  INFO -- : Jim Java got hole card 4 of Spades (4, Spades)
+I, [2014-01-25T17:54:56.784853 #13576]  INFO -- : Korda György made a bet of 10 (raise) and is left with 970 chips. The pot now contains 10 chips.
+I, [2014-01-25T17:54:56.816913 #13576]  INFO -- : devill_4242 made a bet of 20 (raise) and is left with 980 chips. The pot now contains 30 chips.
+I, [2014-01-25T17:54:56.854034 #13576]  INFO -- : Jim Java made a bet of 20 (call) and is left with 1000 chips. The pot now contains 50 chips.
+I, [2014-01-25T17:54:56.928703 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 970 chips. The pot now contains 50 chips.
+I, [2014-01-25T17:54:56.967144 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 980 chips. The pot now contains 50 chips.
+I, [2014-01-25T17:54:57.002241 #13576]  INFO -- : community card 10 of Spades
+I, [2014-01-25T17:54:57.034727 #13576]  INFO -- : community card 4 of Hearts
+I, [2014-01-25T17:54:57.069457 #13576]  INFO -- : community card 10 of Clubs
+I, [2014-01-25T17:54:57.103653 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 980 chips. The pot now contains 50 chips.
+I, [2014-01-25T17:54:57.133694 #13576]  INFO -- : Jim Java made a bet of 20 (raise) and is left with 980 chips. The pot now contains 70 chips.
+I, [2014-01-25T17:54:57.168421 #13576]  INFO -- : devill_4242 made a bet of 20 (call) and is left with 960 chips. The pot now contains 90 chips.
+I, [2014-01-25T17:54:57.198233 #13576]  INFO -- : community card Queen of Spades
+I, [2014-01-25T17:54:57.226175 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 960 chips. The pot now contains 90 chips.
+I, [2014-01-25T17:54:57.262648 #13576]  INFO -- : Jim Java made a bet of 20 (raise) and is left with 960 chips. The pot now contains 110 chips.
+I, [2014-01-25T17:54:57.294425 #13576]  INFO -- : devill_4242 made a bet of 20 (call) and is left with 940 chips. The pot now contains 130 chips.
+I, [2014-01-25T17:54:57.325413 #13576]  INFO -- : community card Jack of Clubs
+I, [2014-01-25T17:54:57.362324 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 940 chips. The pot now contains 130 chips.
+I, [2014-01-25T17:54:57.399457 #13576]  INFO -- : Jim Java made a bet of 20 (raise) and is left with 940 chips. The pot now contains 150 chips.
+I, [2014-01-25T17:54:57.431942 #13576]  INFO -- : devill_4242 made a bet of 20 (call) and is left with 920 chips. The pot now contains 170 chips.
+I, [2014-01-25T17:54:57.491396 #13576]  INFO -- : Jim Java showed 4 of Hearts,4 of Spades,10 of Spades,10 of Clubs,Jack of Clubs,Queen of Spades,Ace of Clubs making a two pairs
+I, [2014-01-25T17:54:57.529796 #13576]  INFO -- : devill_4242 showed 4 of Hearts,9 of Clubs,10 of Spades,10 of Clubs,Jack of Clubs,Queen of Spades,Queen of Clubs making a two pairs
+I, [2014-01-25T17:54:57.563707 #13576]  INFO -- : devill_4242 won 170
+I, [2014-01-25T17:54:57.658004 #13576]  INFO -- : devill_4242 has 1090 chips
+I, [2014-01-25T17:54:57.658209 #13576]  INFO -- : Jim Java has 940 chips
+I, [2014-01-25T17:54:57.658343 #13576]  INFO -- : Korda György has 970 chips
+I, [2014-01-25T17:54:57.659120 #13576]  INFO -- : devill_4242 got hole card 6 of Spades (6, Spades)
+I, [2014-01-25T17:54:57.659899 #13576]  INFO -- : Jim Java got hole card 9 of Spades (9, Spades)
+I, [2014-01-25T17:54:57.684239 #13576]  INFO -- : Korda György got hole card Ace of Diamonds (14, Diamonds)
+I, [2014-01-25T17:54:57.685400 #13576]  INFO -- : devill_4242 got hole card 10 of Clubs (10, Clubs)
+I, [2014-01-25T17:54:57.686752 #13576]  INFO -- : Jim Java got hole card Jack of Diamonds (11, Diamonds)
+I, [2014-01-25T17:54:57.717218 #13576]  INFO -- : Korda György got hole card 9 of Hearts (9, Hearts)
+I, [2014-01-25T17:54:57.758349 #13576]  INFO -- : devill_4242 made a bet of 10 (raise) and is left with 1080 chips. The pot now contains 10 chips.
+I, [2014-01-25T17:54:57.794984 #13576]  INFO -- : Jim Java made a bet of 20 (raise) and is left with 920 chips. The pot now contains 30 chips.
+I, [2014-01-25T17:54:57.864151 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 970 chips. The pot now contains 30 chips.
+I, [2014-01-25T17:54:57.900295 #13576]  INFO -- : devill_4242 made a bet of 0 (fold) and is left with 1080 chips. The pot now contains 30 chips.
+I, [2014-01-25T17:54:57.938252 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 920 chips. The pot now contains 30 chips.
+I, [2014-01-25T17:54:57.971027 #13576]  INFO -- : Jim Java won 30
+I, [2014-01-25T17:54:58.069837 #13576]  INFO -- : devill_4242 has 1080 chips
+I, [2014-01-25T17:54:58.070186 #13576]  INFO -- : Jim Java has 950 chips
+I, [2014-01-25T17:54:58.070452 #13576]  INFO -- : Korda György has 970 chips
+I, [2014-01-25T17:54:58.071533 #13576]  INFO -- : Jim Java got hole card Jack of Diamonds (11, Diamonds)
+I, [2014-01-25T17:54:58.102340 #13576]  INFO -- : Korda György got hole card Jack of Clubs (11, Clubs)
+I, [2014-01-25T17:54:58.104298 #13576]  INFO -- : devill_4242 got hole card Ace of Hearts (14, Hearts)
+I, [2014-01-25T17:54:58.105258 #13576]  INFO -- : Jim Java got hole card 3 of Hearts (3, Hearts)
+I, [2014-01-25T17:54:58.136738 #13576]  INFO -- : Korda György got hole card 5 of Diamonds (5, Diamonds)
+I, [2014-01-25T17:54:58.137268 #13576]  INFO -- : devill_4242 got hole card 7 of Diamonds (7, Diamonds)
+I, [2014-01-25T17:54:58.170633 #13576]  INFO -- : Jim Java made a bet of 10 (raise) and is left with 940 chips. The pot now contains 10 chips.
+I, [2014-01-25T17:54:58.202617 #13576]  INFO -- : Korda György made a bet of 20 (raise) and is left with 950 chips. The pot now contains 30 chips.
+I, [2014-01-25T17:54:58.231666 #13576]  INFO -- : devill_4242 made a bet of 0 (fold) and is left with 1080 chips. The pot now contains 30 chips.
+I, [2014-01-25T17:54:58.266819 #13576]  INFO -- : Jim Java made a bet of 10 (call) and is left with 930 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:54:58.332245 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 950 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:54:58.358901 #13576]  INFO -- : community card 10 of Hearts
+I, [2014-01-25T17:54:58.388198 #13576]  INFO -- : community card 2 of Spades
+I, [2014-01-25T17:54:58.419782 #13576]  INFO -- : community card 3 of Diamonds
+I, [2014-01-25T17:54:58.450362 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 930 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:54:58.523498 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 950 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:54:58.561431 #13576]  INFO -- : community card 9 of Clubs
+I, [2014-01-25T17:54:58.594748 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 930 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:54:58.682719 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 950 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:54:58.722365 #13576]  INFO -- : community card 7 of Clubs
+I, [2014-01-25T17:54:58.761863 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 930 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:54:58.838491 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 950 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:54:58.869236 #13576]  INFO -- : Jim Java showed 2 of Spades,3 of Hearts,3 of Diamonds,7 of Clubs,9 of Clubs,10 of Hearts,Jack of Diamonds making a pair
+I, [2014-01-25T17:54:58.900440 #13576]  INFO -- : Jim Java won 40
+I, [2014-01-25T17:54:58.995436 #13576]  INFO -- : devill_4242 has 1080 chips
+I, [2014-01-25T17:54:58.995832 #13576]  INFO -- : Jim Java has 970 chips
+I, [2014-01-25T17:54:58.996032 #13576]  INFO -- : Korda György has 950 chips
+I, [2014-01-25T17:54:59.026071 #13576]  INFO -- : Korda György got hole card 7 of Hearts (7, Hearts)
+I, [2014-01-25T17:54:59.027370 #13576]  INFO -- : devill_4242 got hole card Jack of Clubs (11, Clubs)
+I, [2014-01-25T17:54:59.029306 #13576]  INFO -- : Jim Java got hole card 2 of Diamonds (2, Diamonds)
+I, [2014-01-25T17:54:59.068138 #13576]  INFO -- : Korda György got hole card 5 of Diamonds (5, Diamonds)
+I, [2014-01-25T17:54:59.069054 #13576]  INFO -- : devill_4242 got hole card 10 of Diamonds (10, Diamonds)
+I, [2014-01-25T17:54:59.070089 #13576]  INFO -- : Jim Java got hole card 5 of Clubs (5, Clubs)
+I, [2014-01-25T17:54:59.110559 #13576]  INFO -- : Korda György made a bet of 10 (raise) and is left with 940 chips. The pot now contains 10 chips.
+I, [2014-01-25T17:54:59.139804 #13576]  INFO -- : devill_4242 made a bet of 20 (raise) and is left with 1060 chips. The pot now contains 30 chips.
+I, [2014-01-25T17:54:59.173706 #13576]  INFO -- : Jim Java made a bet of 20 (call) and is left with 950 chips. The pot now contains 50 chips.
+I, [2014-01-25T17:54:59.232826 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 940 chips. The pot now contains 50 chips.
+I, [2014-01-25T17:54:59.267486 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1060 chips. The pot now contains 50 chips.
+I, [2014-01-25T17:54:59.299831 #13576]  INFO -- : community card 5 of Hearts
+I, [2014-01-25T17:54:59.337766 #13576]  INFO -- : community card 3 of Spades
+I, [2014-01-25T17:54:59.371255 #13576]  INFO -- : community card 8 of Spades
+I, [2014-01-25T17:54:59.403019 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1060 chips. The pot now contains 50 chips.
+I, [2014-01-25T17:54:59.429281 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 950 chips. The pot now contains 50 chips.
+I, [2014-01-25T17:54:59.461088 #13576]  INFO -- : community card Queen of Spades
+I, [2014-01-25T17:54:59.494641 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1060 chips. The pot now contains 50 chips.
+I, [2014-01-25T17:54:59.531476 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 950 chips. The pot now contains 50 chips.
+I, [2014-01-25T17:54:59.564938 #13576]  INFO -- : community card 6 of Clubs
+I, [2014-01-25T17:54:59.594251 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1060 chips. The pot now contains 50 chips.
+I, [2014-01-25T17:54:59.623204 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 950 chips. The pot now contains 50 chips.
+I, [2014-01-25T17:54:59.655657 #13576]  INFO -- : devill_4242 showed 3 of Spades,5 of Hearts,6 of Clubs,8 of Spades,10 of Diamonds,Jack of Clubs,Queen of Spades making a high card
+I, [2014-01-25T17:54:59.690088 #13576]  INFO -- : Jim Java showed 2 of Diamonds,3 of Spades,5 of Hearts,5 of Clubs,6 of Clubs,8 of Spades,Queen of Spades making a pair
+I, [2014-01-25T17:54:59.727947 #13576]  INFO -- : Jim Java won 50
+I, [2014-01-25T17:54:59.820262 #13576]  INFO -- : devill_4242 has 1060 chips
+I, [2014-01-25T17:54:59.820378 #13576]  INFO -- : Jim Java has 1000 chips
+I, [2014-01-25T17:54:59.820433 #13576]  INFO -- : Korda György has 940 chips
+I, [2014-01-25T17:54:59.821245 #13576]  INFO -- : devill_4242 got hole card Ace of Spades (14, Spades)
+I, [2014-01-25T17:54:59.822116 #13576]  INFO -- : Jim Java got hole card 10 of Clubs (10, Clubs)
+I, [2014-01-25T17:54:59.857005 #13576]  INFO -- : Korda György got hole card 9 of Diamonds (9, Diamonds)
+I, [2014-01-25T17:54:59.858506 #13576]  INFO -- : devill_4242 got hole card 8 of Spades (8, Spades)
+I, [2014-01-25T17:54:59.859977 #13576]  INFO -- : Jim Java got hole card Ace of Diamonds (14, Diamonds)
+I, [2014-01-25T17:54:59.892637 #13576]  INFO -- : Korda György got hole card 10 of Hearts (10, Hearts)
+I, [2014-01-25T17:54:59.927265 #13576]  INFO -- : devill_4242 made a bet of 10 (raise) and is left with 1050 chips. The pot now contains 10 chips.
+I, [2014-01-25T17:54:59.961368 #13576]  INFO -- : Jim Java made a bet of 20 (raise) and is left with 980 chips. The pot now contains 30 chips.
+I, [2014-01-25T17:55:00.026730 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 940 chips. The pot now contains 30 chips.
+I, [2014-01-25T17:55:00.062954 #13576]  INFO -- : devill_4242 made a bet of 10 (call) and is left with 1040 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:55:00.097208 #13576]  INFO -- : Jim Java made a bet of 20 (raise) and is left with 960 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:00.134317 #13576]  INFO -- : devill_4242 made a bet of 20 (call) and is left with 1020 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:00.166532 #13576]  INFO -- : community card 9 of Clubs
+I, [2014-01-25T17:55:00.195819 #13576]  INFO -- : community card King of Hearts
+I, [2014-01-25T17:55:00.227103 #13576]  INFO -- : community card 3 of Hearts
+I, [2014-01-25T17:55:00.261132 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1020 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:00.289130 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 960 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:00.316377 #13576]  INFO -- : community card 3 of Clubs
+I, [2014-01-25T17:55:00.348980 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1020 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:00.383714 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 960 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:00.419406 #13576]  INFO -- : community card Jack of Clubs
+I, [2014-01-25T17:55:00.454898 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1020 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:00.493000 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 960 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:00.530992 #13576]  INFO -- : devill_4242 showed 3 of Hearts,3 of Clubs,8 of Spades,9 of Clubs,Jack of Clubs,King of Hearts,Ace of Spades making a pair
+I, [2014-01-25T17:55:00.564654 #13576]  INFO -- : Jim Java showed 3 of Hearts,3 of Clubs,9 of Clubs,10 of Clubs,Jack of Clubs,King of Hearts,Ace of Diamonds making a pair
+I, [2014-01-25T17:55:00.600603 #13576]  INFO -- : devill_4242 won 40
+I, [2014-01-25T17:55:00.635877 #13576]  INFO -- : Jim Java won 40
+I, [2014-01-25T17:55:00.740393 #13576]  INFO -- : devill_4242 has 1060 chips
+I, [2014-01-25T17:55:00.740707 #13576]  INFO -- : Jim Java has 1000 chips
+I, [2014-01-25T17:55:00.740886 #13576]  INFO -- : Korda György has 940 chips
+I, [2014-01-25T17:55:00.741988 #13576]  INFO -- : Jim Java got hole card 5 of Spades (5, Spades)
+I, [2014-01-25T17:55:00.779550 #13576]  INFO -- : Korda György got hole card 9 of Clubs (9, Clubs)
+I, [2014-01-25T17:55:00.780817 #13576]  INFO -- : devill_4242 got hole card 8 of Hearts (8, Hearts)
+I, [2014-01-25T17:55:00.782365 #13576]  INFO -- : Jim Java got hole card 7 of Diamonds (7, Diamonds)
+I, [2014-01-25T17:55:00.813341 #13576]  INFO -- : Korda György got hole card 10 of Clubs (10, Clubs)
+I, [2014-01-25T17:55:00.815084 #13576]  INFO -- : devill_4242 got hole card 6 of Hearts (6, Hearts)
+I, [2014-01-25T17:55:00.852643 #13576]  INFO -- : Jim Java made a bet of 10 (raise) and is left with 990 chips. The pot now contains 10 chips.
+I, [2014-01-25T17:55:00.882937 #13576]  INFO -- : Korda György made a bet of 20 (raise) and is left with 920 chips. The pot now contains 30 chips.
+I, [2014-01-25T17:55:00.916551 #13576]  INFO -- : devill_4242 made a bet of 20 (call) and is left with 1040 chips. The pot now contains 50 chips.
+I, [2014-01-25T17:55:00.945251 #13576]  INFO -- : Jim Java made a bet of 10 (call) and is left with 980 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:01.021182 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 920 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:01.063826 #13576]  INFO -- : community card Jack of Hearts
+I, [2014-01-25T17:55:01.095380 #13576]  INFO -- : community card Jack of Spades
+I, [2014-01-25T17:55:01.129055 #13576]  INFO -- : community card Jack of Diamonds
+I, [2014-01-25T17:55:01.161511 #13576]  INFO -- : Jim Java made a bet of 20 (raise) and is left with 960 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:01.236140 #13576]  INFO -- : Korda György made a bet of 20 (call) and is left with 900 chips. The pot now contains 100 chips.
+I, [2014-01-25T17:55:01.273126 #13576]  INFO -- : devill_4242 made a bet of 20 (call) and is left with 1020 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:01.313349 #13576]  INFO -- : community card King of Clubs
+I, [2014-01-25T17:55:01.346614 #13576]  INFO -- : Jim Java made a bet of 20 (raise) and is left with 940 chips. The pot now contains 140 chips.
+I, [2014-01-25T17:55:01.427680 #13576]  INFO -- : Korda György made a bet of 20 (call) and is left with 880 chips. The pot now contains 160 chips.
+I, [2014-01-25T17:55:01.466574 #13576]  INFO -- : devill_4242 made a bet of 20 (call) and is left with 1000 chips. The pot now contains 180 chips.
+I, [2014-01-25T17:55:01.501839 #13576]  INFO -- : community card 2 of Spades
+I, [2014-01-25T17:55:01.534904 #13576]  INFO -- : Jim Java made a bet of 20 (raise) and is left with 920 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:01.609271 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 880 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:01.647771 #13576]  INFO -- : devill_4242 made a bet of 20 (call) and is left with 980 chips. The pot now contains 220 chips.
+I, [2014-01-25T17:55:01.683033 #13576]  INFO -- : Jim Java showed 2 of Spades,5 of Spades,7 of Diamonds,Jack of Diamonds,Jack of Hearts,Jack of Spades,King of Clubs making a three of a kind
+I, [2014-01-25T17:55:01.721282 #13576]  INFO -- : devill_4242 showed 2 of Spades,6 of Hearts,8 of Hearts,Jack of Hearts,Jack of Diamonds,Jack of Spades,King of Clubs making a three of a kind
+I, [2014-01-25T17:55:01.752825 #13576]  INFO -- : devill_4242 won 220
+I, [2014-01-25T17:55:01.832848 #13576]  INFO -- : devill_4242 has 1200 chips
+I, [2014-01-25T17:55:01.833198 #13576]  INFO -- : Jim Java has 920 chips
+I, [2014-01-25T17:55:01.833432 #13576]  INFO -- : Korda György has 880 chips
+I, [2014-01-25T17:55:01.871255 #13576]  INFO -- : Korda György got hole card Queen of Hearts (12, Hearts)
+I, [2014-01-25T17:55:01.872914 #13576]  INFO -- : devill_4242 got hole card 5 of Spades (5, Spades)
+I, [2014-01-25T17:55:01.873966 #13576]  INFO -- : Jim Java got hole card 6 of Diamonds (6, Diamonds)
+I, [2014-01-25T17:55:01.908937 #13576]  INFO -- : Korda György got hole card Queen of Diamonds (12, Diamonds)
+I, [2014-01-25T17:55:01.910373 #13576]  INFO -- : devill_4242 got hole card 10 of Diamonds (10, Diamonds)
+I, [2014-01-25T17:55:01.911908 #13576]  INFO -- : Jim Java got hole card King of Hearts (13, Hearts)
+I, [2014-01-25T17:55:01.945680 #13576]  INFO -- : Korda György made a bet of 10 (raise) and is left with 870 chips. The pot now contains 10 chips.
+I, [2014-01-25T17:55:01.986178 #13576]  INFO -- : devill_4242 made a bet of 20 (raise) and is left with 1180 chips. The pot now contains 30 chips.
+I, [2014-01-25T17:55:02.028299 #13576]  INFO -- : Jim Java made a bet of 20 (call) and is left with 900 chips. The pot now contains 50 chips.
+I, [2014-01-25T17:55:02.089820 #13576]  INFO -- : Korda György made a bet of 10 (call) and is left with 860 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:02.124458 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1180 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:02.156468 #13576]  INFO -- : community card 3 of Diamonds
+I, [2014-01-25T17:55:02.184571 #13576]  INFO -- : community card 10 of Clubs
+I, [2014-01-25T17:55:02.211603 #13576]  INFO -- : community card Ace of Spades
+I, [2014-01-25T17:55:02.282647 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 860 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:02.319268 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1180 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:02.359587 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 900 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:02.391752 #13576]  INFO -- : community card 8 of Spades
+I, [2014-01-25T17:55:02.465885 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 860 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:02.503359 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1180 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:02.541591 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 900 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:02.575540 #13576]  INFO -- : community card 3 of Clubs
+I, [2014-01-25T17:55:02.649007 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 860 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:02.680102 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1180 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:02.708273 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 900 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:02.749009 #13576]  INFO -- : Korda György showed 3 of Clubs,3 of Diamonds,8 of Spades,10 of Clubs,Queen of Hearts,Queen of Diamonds,Ace of Spades making a two pairs
+I, [2014-01-25T17:55:02.786053 #13576]  INFO -- : Korda György won 60
+I, [2014-01-25T17:55:02.880292 #13576]  INFO -- : devill_4242 has 1180 chips
+I, [2014-01-25T17:55:02.880613 #13576]  INFO -- : Jim Java has 900 chips
+I, [2014-01-25T17:55:02.880834 #13576]  INFO -- : Korda György has 920 chips
+I, [2014-01-25T17:55:02.882381 #13576]  INFO -- : devill_4242 got hole card 8 of Clubs (8, Clubs)
+I, [2014-01-25T17:55:02.883728 #13576]  INFO -- : Jim Java got hole card 5 of Diamonds (5, Diamonds)
+I, [2014-01-25T17:55:02.917993 #13576]  INFO -- : Korda György got hole card 3 of Hearts (3, Hearts)
+I, [2014-01-25T17:55:02.919662 #13576]  INFO -- : devill_4242 got hole card 3 of Clubs (3, Clubs)
+I, [2014-01-25T17:55:02.921204 #13576]  INFO -- : Jim Java got hole card 5 of Clubs (5, Clubs)
+I, [2014-01-25T17:55:02.954544 #13576]  INFO -- : Korda György got hole card 7 of Clubs (7, Clubs)
+I, [2014-01-25T17:55:02.988123 #13576]  INFO -- : devill_4242 made a bet of 10 (raise) and is left with 1170 chips. The pot now contains 10 chips.
+I, [2014-01-25T17:55:03.021231 #13576]  INFO -- : Jim Java made a bet of 20 (raise) and is left with 880 chips. The pot now contains 30 chips.
+I, [2014-01-25T17:55:03.092401 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 920 chips. The pot now contains 30 chips.
+I, [2014-01-25T17:55:03.125772 #13576]  INFO -- : devill_4242 made a bet of 10 (call) and is left with 1160 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:55:03.158225 #13576]  INFO -- : Jim Java made a bet of 40 (raise) and is left with 840 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:03.195012 #13576]  INFO -- : devill_4242 made a bet of 40 (call) and is left with 1120 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:03.226523 #13576]  INFO -- : community card King of Hearts
+I, [2014-01-25T17:55:03.255150 #13576]  INFO -- : community card Ace of Diamonds
+I, [2014-01-25T17:55:03.287824 #13576]  INFO -- : community card 8 of Spades
+I, [2014-01-25T17:55:03.325036 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1120 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:03.361678 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 840 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:03.390369 #13576]  INFO -- : community card 6 of Spades
+I, [2014-01-25T17:55:03.421865 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1120 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:03.457200 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 840 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:03.492499 #13576]  INFO -- : community card 4 of Clubs
+I, [2014-01-25T17:55:03.530175 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1120 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:03.564520 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 840 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:03.601240 #13576]  INFO -- : devill_4242 showed 3 of Clubs,4 of Clubs,6 of Spades,8 of Spades,8 of Clubs,King of Hearts,Ace of Diamonds making a pair
+I, [2014-01-25T17:55:03.630105 #13576]  INFO -- : devill_4242 won 120
+I, [2014-01-25T17:55:03.718679 #13576]  INFO -- : devill_4242 has 1240 chips
+I, [2014-01-25T17:55:03.718818 #13576]  INFO -- : Jim Java has 840 chips
+I, [2014-01-25T17:55:03.718879 #13576]  INFO -- : Korda György has 920 chips
+I, [2014-01-25T17:55:03.719639 #13576]  INFO -- : Jim Java got hole card 5 of Spades (5, Spades)
+I, [2014-01-25T17:55:03.754873 #13576]  INFO -- : Korda György got hole card 3 of Spades (3, Spades)
+I, [2014-01-25T17:55:03.756397 #13576]  INFO -- : devill_4242 got hole card 8 of Diamonds (8, Diamonds)
+I, [2014-01-25T17:55:03.758476 #13576]  INFO -- : Jim Java got hole card 2 of Diamonds (2, Diamonds)
+I, [2014-01-25T17:55:03.798474 #13576]  INFO -- : Korda György got hole card 4 of Hearts (4, Hearts)
+I, [2014-01-25T17:55:03.799744 #13576]  INFO -- : devill_4242 got hole card Jack of Hearts (11, Hearts)
+I, [2014-01-25T17:55:03.834725 #13576]  INFO -- : Jim Java made a bet of 20 (raise) and is left with 820 chips. The pot now contains 20 chips.
+I, [2014-01-25T17:55:03.865141 #13576]  INFO -- : Korda György made a bet of 40 (raise) and is left with 880 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:03.898196 #13576]  INFO -- : devill_4242 made a bet of 0 (fold) and is left with 1240 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:03.926670 #13576]  INFO -- : Jim Java made a bet of 20 (call) and is left with 800 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:04.007683 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 880 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:04.046072 #13576]  INFO -- : community card 9 of Spades
+I, [2014-01-25T17:55:04.077262 #13576]  INFO -- : community card 4 of Clubs
+I, [2014-01-25T17:55:04.109309 #13576]  INFO -- : community card 2 of Clubs
+I, [2014-01-25T17:55:04.140293 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 800 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:04.219872 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 880 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:04.253391 #13576]  INFO -- : community card 5 of Hearts
+I, [2014-01-25T17:55:04.285858 #13576]  INFO -- : Jim Java made a bet of 40 (raise) and is left with 760 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:04.356461 #13576]  INFO -- : Korda György made a bet of 40 (call) and is left with 840 chips. The pot now contains 160 chips.
+I, [2014-01-25T17:55:04.393007 #13576]  INFO -- : community card Ace of Diamonds
+I, [2014-01-25T17:55:04.429015 #13576]  INFO -- : Jim Java made a bet of 40 (raise) and is left with 720 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:04.504863 #13576]  INFO -- : Korda György made a bet of 160 (raise) and is left with 680 chips. The pot now contains 360 chips.
+I, [2014-01-25T17:55:04.541453 #13576]  INFO -- : Jim Java made a bet of 240 (raise) and is left with 480 chips. The pot now contains 600 chips.
+I, [2014-01-25T17:55:04.619235 #13576]  INFO -- : Korda György made a bet of 240 (raise) and is left with 440 chips. The pot now contains 840 chips.
+I, [2014-01-25T17:55:04.657847 #13576]  INFO -- : Jim Java made a bet of 240 (raise) and is left with 240 chips. The pot now contains 1080 chips.
+I, [2014-01-25T17:55:04.740930 #13576]  INFO -- : Korda György made a bet of 120 (call) and is left with 320 chips. The pot now contains 1200 chips.
+I, [2014-01-25T17:55:04.779512 #13576]  INFO -- : Jim Java showed 2 of Clubs,2 of Diamonds,4 of Clubs,5 of Spades,5 of Hearts,9 of Spades,Ace of Diamonds making a two pairs
+I, [2014-01-25T17:55:04.813596 #13576]  INFO -- : Korda György showed 2 of Clubs,3 of Spades,4 of Hearts,4 of Clubs,5 of Hearts,9 of Spades,Ace of Diamonds making a straight
+I, [2014-01-25T17:55:04.849662 #13576]  INFO -- : Korda György won 1200
+I, [2014-01-25T17:55:04.928130 #13576]  INFO -- : devill_4242 has 1240 chips
+I, [2014-01-25T17:55:04.928518 #13576]  INFO -- : Jim Java has 240 chips
+I, [2014-01-25T17:55:04.928731 #13576]  INFO -- : Korda György has 1520 chips
+I, [2014-01-25T17:55:04.960884 #13576]  INFO -- : Korda György got hole card 10 of Diamonds (10, Diamonds)
+I, [2014-01-25T17:55:04.962095 #13576]  INFO -- : devill_4242 got hole card Queen of Diamonds (12, Diamonds)
+I, [2014-01-25T17:55:04.963414 #13576]  INFO -- : Jim Java got hole card 4 of Hearts (4, Hearts)
+I, [2014-01-25T17:55:04.992464 #13576]  INFO -- : Korda György got hole card 2 of Diamonds (2, Diamonds)
+I, [2014-01-25T17:55:04.993957 #13576]  INFO -- : devill_4242 got hole card Jack of Spades (11, Spades)
+I, [2014-01-25T17:55:04.995416 #13576]  INFO -- : Jim Java got hole card Jack of Diamonds (11, Diamonds)
+I, [2014-01-25T17:55:05.030992 #13576]  INFO -- : Korda György made a bet of 20 (raise) and is left with 1500 chips. The pot now contains 20 chips.
+I, [2014-01-25T17:55:05.063904 #13576]  INFO -- : devill_4242 made a bet of 40 (raise) and is left with 1200 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:05.095712 #13576]  INFO -- : Jim Java made a bet of 40 (call) and is left with 200 chips. The pot now contains 100 chips.
+I, [2014-01-25T17:55:05.170219 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 1500 chips. The pot now contains 100 chips.
+I, [2014-01-25T17:55:05.206203 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1200 chips. The pot now contains 100 chips.
+I, [2014-01-25T17:55:05.243738 #13576]  INFO -- : community card Jack of Hearts
+I, [2014-01-25T17:55:05.272099 #13576]  INFO -- : community card Jack of Clubs
+I, [2014-01-25T17:55:05.305204 #13576]  INFO -- : community card 9 of Clubs
+I, [2014-01-25T17:55:05.339543 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1200 chips. The pot now contains 100 chips.
+I, [2014-01-25T17:55:05.368686 #13576]  INFO -- : Jim Java made a bet of 40 (raise) and is left with 160 chips. The pot now contains 140 chips.
+I, [2014-01-25T17:55:05.402640 #13576]  INFO -- : devill_4242 made a bet of 40 (call) and is left with 1160 chips. The pot now contains 180 chips.
+I, [2014-01-25T17:55:05.427246 #13576]  INFO -- : community card 9 of Diamonds
+I, [2014-01-25T17:55:05.461634 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1160 chips. The pot now contains 180 chips.
+I, [2014-01-25T17:55:05.494471 #13576]  INFO -- : Jim Java made a bet of 40 (raise) and is left with 120 chips. The pot now contains 220 chips.
+I, [2014-01-25T17:55:05.532478 #13576]  INFO -- : devill_4242 made a bet of 40 (call) and is left with 1120 chips. The pot now contains 260 chips.
+I, [2014-01-25T17:55:05.569018 #13576]  INFO -- : community card Ace of Clubs
+I, [2014-01-25T17:55:05.606932 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1120 chips. The pot now contains 260 chips.
+I, [2014-01-25T17:55:05.638939 #13576]  INFO -- : Jim Java made a bet of 40 (raise) and is left with 80 chips. The pot now contains 300 chips.
+I, [2014-01-25T17:55:05.672988 #13576]  INFO -- : devill_4242 made a bet of 40 (call) and is left with 1080 chips. The pot now contains 340 chips.
+I, [2014-01-25T17:55:05.703608 #13576]  INFO -- : Jim Java showed 4 of Hearts,9 of Diamonds,9 of Clubs,Jack of Diamonds,Jack of Hearts,Jack of Clubs,Ace of Clubs making a full house
+I, [2014-01-25T17:55:05.737259 #13576]  INFO -- : devill_4242 showed 9 of Clubs,9 of Diamonds,Jack of Hearts,Jack of Spades,Jack of Clubs,Queen of Diamonds,Ace of Clubs making a full house
+I, [2014-01-25T17:55:05.767833 #13576]  INFO -- : devill_4242 won 340
+I, [2014-01-25T17:55:05.854613 #13576]  INFO -- : devill_4242 has 1420 chips
+I, [2014-01-25T17:55:05.854938 #13576]  INFO -- : Jim Java has 80 chips
+I, [2014-01-25T17:55:05.855120 #13576]  INFO -- : Korda György has 1500 chips
+I, [2014-01-25T17:55:05.856358 #13576]  INFO -- : devill_4242 got hole card 4 of Clubs (4, Clubs)
+I, [2014-01-25T17:55:05.857669 #13576]  INFO -- : Jim Java got hole card 3 of Hearts (3, Hearts)
+I, [2014-01-25T17:55:05.890562 #13576]  INFO -- : Korda György got hole card King of Diamonds (13, Diamonds)
+I, [2014-01-25T17:55:05.892079 #13576]  INFO -- : devill_4242 got hole card 8 of Spades (8, Spades)
+I, [2014-01-25T17:55:05.893111 #13576]  INFO -- : Jim Java got hole card 2 of Spades (2, Spades)
+I, [2014-01-25T17:55:05.928665 #13576]  INFO -- : Korda György got hole card 3 of Diamonds (3, Diamonds)
+I, [2014-01-25T17:55:05.962744 #13576]  INFO -- : devill_4242 made a bet of 20 (raise) and is left with 1400 chips. The pot now contains 20 chips.
+I, [2014-01-25T17:55:05.998603 #13576]  INFO -- : Jim Java made a bet of 40 (raise) and is left with 40 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:06.073359 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 1500 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:06.116879 #13576]  INFO -- : devill_4242 made a bet of 0 (fold) and is left with 1400 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:06.146718 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 40 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:06.180880 #13576]  INFO -- : Jim Java won 60
+I, [2014-01-25T17:55:06.273397 #13576]  INFO -- : devill_4242 has 1400 chips
+I, [2014-01-25T17:55:06.273812 #13576]  INFO -- : Jim Java has 100 chips
+I, [2014-01-25T17:55:06.274015 #13576]  INFO -- : Korda György has 1500 chips
+I, [2014-01-25T17:55:06.275484 #13576]  INFO -- : Jim Java got hole card 4 of Clubs (4, Clubs)
+I, [2014-01-25T17:55:06.302811 #13576]  INFO -- : Korda György got hole card 10 of Hearts (10, Hearts)
+I, [2014-01-25T17:55:06.304057 #13576]  INFO -- : devill_4242 got hole card 6 of Hearts (6, Hearts)
+I, [2014-01-25T17:55:06.305217 #13576]  INFO -- : Jim Java got hole card 9 of Diamonds (9, Diamonds)
+I, [2014-01-25T17:55:06.335956 #13576]  INFO -- : Korda György got hole card Queen of Hearts (12, Hearts)
+I, [2014-01-25T17:55:06.336807 #13576]  INFO -- : devill_4242 got hole card Queen of Clubs (12, Clubs)
+I, [2014-01-25T17:55:06.370363 #13576]  INFO -- : Jim Java made a bet of 20 (raise) and is left with 80 chips. The pot now contains 20 chips.
+I, [2014-01-25T17:55:06.406138 #13576]  INFO -- : Korda György made a bet of 40 (raise) and is left with 1460 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:06.440576 #13576]  INFO -- : devill_4242 made a bet of 0 (fold) and is left with 1400 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:06.479793 #13576]  INFO -- : Jim Java made a bet of 20 (call) and is left with 60 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:06.544131 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 1460 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:06.576997 #13576]  INFO -- : community card 3 of Spades
+I, [2014-01-25T17:55:06.611244 #13576]  INFO -- : community card King of Clubs
+I, [2014-01-25T17:55:06.641769 #13576]  INFO -- : community card Jack of Clubs
+I, [2014-01-25T17:55:06.676043 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 60 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:06.764810 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 1460 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:06.796071 #13576]  INFO -- : community card 2 of Spades
+I, [2014-01-25T17:55:06.830505 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 60 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:06.900417 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 1460 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:06.937695 #13576]  INFO -- : community card 6 of Clubs
+I, [2014-01-25T17:55:06.972190 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 60 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:07.034294 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 1460 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:07.065653 #13576]  INFO -- : Jim Java showed 2 of Spades,3 of Spades,4 of Clubs,6 of Clubs,9 of Diamonds,Jack of Clubs,King of Clubs making a high card
+I, [2014-01-25T17:55:07.106080 #13576]  INFO -- : Korda György showed 2 of Spades,3 of Spades,6 of Clubs,10 of Hearts,Jack of Clubs,Queen of Hearts,King of Clubs making a high card
+I, [2014-01-25T17:55:07.146262 #13576]  INFO -- : Korda György won 80
+I, [2014-01-25T17:55:07.238019 #13576]  INFO -- : devill_4242 has 1400 chips
+I, [2014-01-25T17:55:07.238451 #13576]  INFO -- : Jim Java has 60 chips
+I, [2014-01-25T17:55:07.238572 #13576]  INFO -- : Korda György has 1540 chips
+I, [2014-01-25T17:55:07.270245 #13576]  INFO -- : Korda György got hole card 7 of Diamonds (7, Diamonds)
+I, [2014-01-25T17:55:07.272486 #13576]  INFO -- : devill_4242 got hole card 8 of Hearts (8, Hearts)
+I, [2014-01-25T17:55:07.273809 #13576]  INFO -- : Jim Java got hole card Ace of Clubs (14, Clubs)
+I, [2014-01-25T17:55:07.307476 #13576]  INFO -- : Korda György got hole card 10 of Spades (10, Spades)
+I, [2014-01-25T17:55:07.308159 #13576]  INFO -- : devill_4242 got hole card Jack of Spades (11, Spades)
+I, [2014-01-25T17:55:07.308968 #13576]  INFO -- : Jim Java got hole card King of Diamonds (13, Diamonds)
+I, [2014-01-25T17:55:07.343522 #13576]  INFO -- : Korda György made a bet of 20 (raise) and is left with 1520 chips. The pot now contains 20 chips.
+I, [2014-01-25T17:55:07.377673 #13576]  INFO -- : devill_4242 made a bet of 40 (raise) and is left with 1360 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:07.415350 #13576]  INFO -- : Jim Java made a bet of 60 (allin) and is left with 0 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:07.478669 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 1520 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:07.514844 #13576]  INFO -- : devill_4242 made a bet of 0 (fold) and is left with 1360 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:07.548774 #13576]  INFO -- : Jim Java won 120
+I, [2014-01-25T17:55:07.642083 #13576]  INFO -- : devill_4242 has 1360 chips
+I, [2014-01-25T17:55:07.642207 #13576]  INFO -- : Jim Java has 120 chips
+I, [2014-01-25T17:55:07.642267 #13576]  INFO -- : Korda György has 1520 chips
+I, [2014-01-25T17:55:07.643170 #13576]  INFO -- : devill_4242 got hole card 3 of Clubs (3, Clubs)
+I, [2014-01-25T17:55:07.644147 #13576]  INFO -- : Jim Java got hole card Jack of Clubs (11, Clubs)
+I, [2014-01-25T17:55:07.670398 #13576]  INFO -- : Korda György got hole card Jack of Spades (11, Spades)
+I, [2014-01-25T17:55:07.671165 #13576]  INFO -- : devill_4242 got hole card 8 of Clubs (8, Clubs)
+I, [2014-01-25T17:55:07.671962 #13576]  INFO -- : Jim Java got hole card 5 of Spades (5, Spades)
+I, [2014-01-25T17:55:07.699518 #13576]  INFO -- : Korda György got hole card King of Spades (13, Spades)
+I, [2014-01-25T17:55:07.729835 #13576]  INFO -- : devill_4242 made a bet of 20 (raise) and is left with 1340 chips. The pot now contains 20 chips.
+I, [2014-01-25T17:55:07.764487 #13576]  INFO -- : Jim Java made a bet of 40 (raise) and is left with 80 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:07.841096 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 1520 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:07.880465 #13576]  INFO -- : devill_4242 made a bet of 20 (call) and is left with 1320 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:07.910775 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 80 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:07.944331 #13576]  INFO -- : community card King of Clubs
+I, [2014-01-25T17:55:07.972167 #13576]  INFO -- : community card 10 of Diamonds
+I, [2014-01-25T17:55:08.003371 #13576]  INFO -- : community card 6 of Spades
+I, [2014-01-25T17:55:08.039715 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1320 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:08.078458 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 80 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:08.114296 #13576]  INFO -- : community card 3 of Spades
+I, [2014-01-25T17:55:08.145386 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1320 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:08.177194 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 80 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:08.210746 #13576]  INFO -- : community card 7 of Clubs
+I, [2014-01-25T17:55:08.245803 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1320 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:08.280832 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 80 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:08.321441 #13576]  INFO -- : devill_4242 showed 3 of Clubs,3 of Spades,6 of Spades,7 of Clubs,8 of Clubs,10 of Diamonds,King of Clubs making a pair
+I, [2014-01-25T17:55:08.354901 #13576]  INFO -- : devill_4242 won 80
+I, [2014-01-25T17:55:08.455178 #13576]  INFO -- : devill_4242 has 1400 chips
+I, [2014-01-25T17:55:08.455521 #13576]  INFO -- : Jim Java has 80 chips
+I, [2014-01-25T17:55:08.455627 #13576]  INFO -- : Korda György has 1520 chips
+I, [2014-01-25T17:55:08.456742 #13576]  INFO -- : Jim Java got hole card King of Clubs (13, Clubs)
+I, [2014-01-25T17:55:08.484974 #13576]  INFO -- : Korda György got hole card Jack of Diamonds (11, Diamonds)
+I, [2014-01-25T17:55:08.486241 #13576]  INFO -- : devill_4242 got hole card 2 of Clubs (2, Clubs)
+I, [2014-01-25T17:55:08.486978 #13576]  INFO -- : Jim Java got hole card 8 of Hearts (8, Hearts)
+I, [2014-01-25T17:55:08.513271 #13576]  INFO -- : Korda György got hole card 5 of Clubs (5, Clubs)
+I, [2014-01-25T17:55:08.514093 #13576]  INFO -- : devill_4242 got hole card 3 of Diamonds (3, Diamonds)
+I, [2014-01-25T17:55:08.545135 #13576]  INFO -- : Jim Java made a bet of 20 (raise) and is left with 60 chips. The pot now contains 20 chips.
+I, [2014-01-25T17:55:08.580069 #13576]  INFO -- : Korda György made a bet of 40 (raise) and is left with 1480 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:08.609878 #13576]  INFO -- : devill_4242 made a bet of 40 (call) and is left with 1360 chips. The pot now contains 100 chips.
+I, [2014-01-25T17:55:08.648221 #13576]  INFO -- : Jim Java made a bet of 20 (call) and is left with 40 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:08.724138 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 1480 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:08.760720 #13576]  INFO -- : community card Ace of Hearts
+I, [2014-01-25T17:55:08.792529 #13576]  INFO -- : community card 6 of Clubs
+I, [2014-01-25T17:55:08.821324 #13576]  INFO -- : community card Ace of Clubs
+I, [2014-01-25T17:55:08.851478 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 40 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:08.924915 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 1480 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:08.951388 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1360 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:08.987351 #13576]  INFO -- : community card 9 of Hearts
+I, [2014-01-25T17:55:09.020945 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 40 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:09.087752 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 1480 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:09.124942 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1360 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:09.154304 #13576]  INFO -- : community card 10 of Hearts
+I, [2014-01-25T17:55:09.187423 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 40 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:09.253853 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 1480 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:09.290050 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1360 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:09.315603 #13576]  INFO -- : Jim Java showed 6 of Clubs,8 of Hearts,9 of Hearts,10 of Hearts,King of Clubs,Ace of Hearts,Ace of Clubs making a pair
+I, [2014-01-25T17:55:09.345642 #13576]  INFO -- : Jim Java won 120
+I, [2014-01-25T17:55:09.431210 #13576]  INFO -- : devill_4242 has 1360 chips
+I, [2014-01-25T17:55:09.431529 #13576]  INFO -- : Jim Java has 160 chips
+I, [2014-01-25T17:55:09.431744 #13576]  INFO -- : Korda György has 1480 chips
+I, [2014-01-25T17:55:09.458908 #13576]  INFO -- : Korda György got hole card 9 of Spades (9, Spades)
+I, [2014-01-25T17:55:09.460135 #13576]  INFO -- : devill_4242 got hole card Queen of Diamonds (12, Diamonds)
+I, [2014-01-25T17:55:09.461394 #13576]  INFO -- : Jim Java got hole card 10 of Diamonds (10, Diamonds)
+I, [2014-01-25T17:55:09.491300 #13576]  INFO -- : Korda György got hole card 10 of Spades (10, Spades)
+I, [2014-01-25T17:55:09.492578 #13576]  INFO -- : devill_4242 got hole card 4 of Diamonds (4, Diamonds)
+I, [2014-01-25T17:55:09.493403 #13576]  INFO -- : Jim Java got hole card 6 of Clubs (6, Clubs)
+I, [2014-01-25T17:55:09.522523 #13576]  INFO -- : Korda György made a bet of 20 (raise) and is left with 1460 chips. The pot now contains 20 chips.
+I, [2014-01-25T17:55:09.552830 #13576]  INFO -- : devill_4242 made a bet of 40 (raise) and is left with 1320 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:09.587525 #13576]  INFO -- : Jim Java made a bet of 40 (call) and is left with 120 chips. The pot now contains 100 chips.
+I, [2014-01-25T17:55:09.659240 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 1460 chips. The pot now contains 100 chips.
+I, [2014-01-25T17:55:09.696381 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1320 chips. The pot now contains 100 chips.
+I, [2014-01-25T17:55:09.734086 #13576]  INFO -- : community card 3 of Hearts
+I, [2014-01-25T17:55:09.766253 #13576]  INFO -- : community card Queen of Spades
+I, [2014-01-25T17:55:09.802285 #13576]  INFO -- : community card 5 of Diamonds
+I, [2014-01-25T17:55:09.830206 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1320 chips. The pot now contains 100 chips.
+I, [2014-01-25T17:55:09.858345 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 120 chips. The pot now contains 100 chips.
+I, [2014-01-25T17:55:09.890494 #13576]  INFO -- : community card 2 of Clubs
+I, [2014-01-25T17:55:09.926101 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1320 chips. The pot now contains 100 chips.
+I, [2014-01-25T17:55:09.954577 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 120 chips. The pot now contains 100 chips.
+I, [2014-01-25T17:55:09.986380 #13576]  INFO -- : community card 10 of Hearts
+I, [2014-01-25T17:55:10.014858 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1320 chips. The pot now contains 100 chips.
+I, [2014-01-25T17:55:10.046273 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 120 chips. The pot now contains 100 chips.
+I, [2014-01-25T17:55:10.079191 #13576]  INFO -- : devill_4242 showed 2 of Clubs,3 of Hearts,4 of Diamonds,5 of Diamonds,10 of Hearts,Queen of Spades,Queen of Diamonds making a pair
+I, [2014-01-25T17:55:10.106601 #13576]  INFO -- : devill_4242 won 100
+I, [2014-01-25T17:55:10.191863 #13576]  INFO -- : devill_4242 has 1420 chips
+I, [2014-01-25T17:55:10.191980 #13576]  INFO -- : Jim Java has 120 chips
+I, [2014-01-25T17:55:10.192032 #13576]  INFO -- : Korda György has 1460 chips
+I, [2014-01-25T17:55:10.192817 #13576]  INFO -- : devill_4242 got hole card 5 of Spades (5, Spades)
+I, [2014-01-25T17:55:10.193500 #13576]  INFO -- : Jim Java got hole card Jack of Spades (11, Spades)
+I, [2014-01-25T17:55:10.230872 #13576]  INFO -- : Korda György got hole card 6 of Hearts (6, Hearts)
+I, [2014-01-25T17:55:10.231776 #13576]  INFO -- : devill_4242 got hole card 3 of Clubs (3, Clubs)
+I, [2014-01-25T17:55:10.233197 #13576]  INFO -- : Jim Java got hole card Jack of Clubs (11, Clubs)
+I, [2014-01-25T17:55:10.262044 #13576]  INFO -- : Korda György got hole card 9 of Diamonds (9, Diamonds)
+I, [2014-01-25T17:55:10.296934 #13576]  INFO -- : devill_4242 made a bet of 20 (raise) and is left with 1400 chips. The pot now contains 20 chips.
+I, [2014-01-25T17:55:10.325345 #13576]  INFO -- : Jim Java made a bet of 40 (raise) and is left with 80 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:10.398869 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 1460 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:10.432130 #13576]  INFO -- : devill_4242 made a bet of 0 (fold) and is left with 1400 chips. The pot now contains 60 chips.
+I, [2014-01-25T17:55:10.466414 #13576]  INFO -- : Jim Java made a bet of 80 (allin) and is left with 0 chips. The pot now contains 140 chips.
+I, [2014-01-25T17:55:10.501654 #13576]  INFO -- : Jim Java won 140
+I, [2014-01-25T17:55:10.589930 #13576]  INFO -- : devill_4242 has 1400 chips
+I, [2014-01-25T17:55:10.590299 #13576]  INFO -- : Jim Java has 140 chips
+I, [2014-01-25T17:55:10.590528 #13576]  INFO -- : Korda György has 1460 chips
+I, [2014-01-25T17:55:10.592029 #13576]  INFO -- : Jim Java got hole card 10 of Spades (10, Spades)
+I, [2014-01-25T17:55:10.621898 #13576]  INFO -- : Korda György got hole card King of Spades (13, Spades)
+I, [2014-01-25T17:55:10.623626 #13576]  INFO -- : devill_4242 got hole card 5 of Diamonds (5, Diamonds)
+I, [2014-01-25T17:55:10.625997 #13576]  INFO -- : Jim Java got hole card Queen of Diamonds (12, Diamonds)
+I, [2014-01-25T17:55:10.655693 #13576]  INFO -- : Korda György got hole card Jack of Hearts (11, Hearts)
+I, [2014-01-25T17:55:10.656892 #13576]  INFO -- : devill_4242 got hole card 4 of Diamonds (4, Diamonds)
+I, [2014-01-25T17:55:10.692592 #13576]  INFO -- : Jim Java made a bet of 40 (raise) and is left with 100 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:55:10.730961 #13576]  INFO -- : Korda György made a bet of 80 (raise) and is left with 1380 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:10.767191 #13576]  INFO -- : devill_4242 made a bet of 80 (call) and is left with 1320 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:10.800850 #13576]  INFO -- : Jim Java made a bet of 100 (allin) and is left with 0 chips. The pot now contains 300 chips.
+I, [2014-01-25T17:55:10.870749 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 1380 chips. The pot now contains 300 chips.
+I, [2014-01-25T17:55:10.908588 #13576]  INFO -- : devill_4242 made a bet of 60 (call) and is left with 1260 chips. The pot now contains 360 chips.
+I, [2014-01-25T17:55:10.945354 #13576]  INFO -- : community card 8 of Hearts
+I, [2014-01-25T17:55:10.981063 #13576]  INFO -- : community card 2 of Spades
+I, [2014-01-25T17:55:11.015781 #13576]  INFO -- : community card 3 of Clubs
+I, [2014-01-25T17:55:11.048103 #13576]  INFO -- : community card 8 of Clubs
+I, [2014-01-25T17:55:11.080060 #13576]  INFO -- : community card 9 of Hearts
+I, [2014-01-25T17:55:11.113397 #13576]  INFO -- : Jim Java showed 2 of Spades,3 of Clubs,8 of Clubs,8 of Hearts,9 of Hearts,10 of Spades,Queen of Diamonds making a pair
+I, [2014-01-25T17:55:11.147038 #13576]  INFO -- : Jim Java won 360
+I, [2014-01-25T17:55:11.249120 #13576]  INFO -- : devill_4242 has 1260 chips
+I, [2014-01-25T17:55:11.249525 #13576]  INFO -- : Jim Java has 360 chips
+I, [2014-01-25T17:55:11.249778 #13576]  INFO -- : Korda György has 1380 chips
+I, [2014-01-25T17:55:11.284444 #13576]  INFO -- : Korda György got hole card 4 of Spades (4, Spades)
+I, [2014-01-25T17:55:11.285688 #13576]  INFO -- : devill_4242 got hole card Ace of Clubs (14, Clubs)
+I, [2014-01-25T17:55:11.287218 #13576]  INFO -- : Jim Java got hole card King of Diamonds (13, Diamonds)
+I, [2014-01-25T17:55:11.319463 #13576]  INFO -- : Korda György got hole card 5 of Clubs (5, Clubs)
+I, [2014-01-25T17:55:11.321193 #13576]  INFO -- : devill_4242 got hole card 10 of Spades (10, Spades)
+I, [2014-01-25T17:55:11.322300 #13576]  INFO -- : Jim Java got hole card 2 of Hearts (2, Hearts)
+I, [2014-01-25T17:55:11.353681 #13576]  INFO -- : Korda György made a bet of 40 (raise) and is left with 1340 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:55:11.385775 #13576]  INFO -- : devill_4242 made a bet of 80 (raise) and is left with 1180 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:11.416521 #13576]  INFO -- : Jim Java made a bet of 80 (call) and is left with 280 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:11.495763 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 1340 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:11.533853 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1180 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:11.567163 #13576]  INFO -- : community card 3 of Hearts
+I, [2014-01-25T17:55:11.598956 #13576]  INFO -- : community card 9 of Spades
+I, [2014-01-25T17:55:11.628613 #13576]  INFO -- : community card 9 of Hearts
+I, [2014-01-25T17:55:11.659610 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1180 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:11.688711 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 280 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:11.723584 #13576]  INFO -- : community card 6 of Diamonds
+I, [2014-01-25T17:55:11.760647 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1180 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:11.798588 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 280 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:11.835937 #13576]  INFO -- : community card Queen of Clubs
+I, [2014-01-25T17:55:11.869706 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1180 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:11.903244 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 280 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:11.936834 #13576]  INFO -- : devill_4242 showed 3 of Hearts,6 of Diamonds,9 of Spades,9 of Hearts,10 of Spades,Queen of Clubs,Ace of Clubs making a pair
+I, [2014-01-25T17:55:11.966010 #13576]  INFO -- : devill_4242 won 200
+I, [2014-01-25T17:55:12.057876 #13576]  INFO -- : devill_4242 has 1380 chips
+I, [2014-01-25T17:55:12.058031 #13576]  INFO -- : Jim Java has 280 chips
+I, [2014-01-25T17:55:12.058088 #13576]  INFO -- : Korda György has 1340 chips
+I, [2014-01-25T17:55:12.058501 #13576]  INFO -- : devill_4242 got hole card 6 of Spades (6, Spades)
+I, [2014-01-25T17:55:12.058990 #13576]  INFO -- : Jim Java got hole card Queen of Spades (12, Spades)
+I, [2014-01-25T17:55:12.084922 #13576]  INFO -- : Korda György got hole card 3 of Spades (3, Spades)
+I, [2014-01-25T17:55:12.086453 #13576]  INFO -- : devill_4242 got hole card 4 of Spades (4, Spades)
+I, [2014-01-25T17:55:12.087733 #13576]  INFO -- : Jim Java got hole card Jack of Clubs (11, Clubs)
+I, [2014-01-25T17:55:12.117305 #13576]  INFO -- : Korda György got hole card Jack of Spades (11, Spades)
+I, [2014-01-25T17:55:12.151521 #13576]  INFO -- : devill_4242 made a bet of 40 (raise) and is left with 1340 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:55:12.183047 #13576]  INFO -- : Jim Java made a bet of 80 (raise) and is left with 200 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:12.251594 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 1340 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:12.290923 #13576]  INFO -- : devill_4242 made a bet of 40 (call) and is left with 1300 chips. The pot now contains 160 chips.
+I, [2014-01-25T17:55:12.323541 #13576]  INFO -- : Jim Java made a bet of 80 (raise) and is left with 120 chips. The pot now contains 240 chips.
+I, [2014-01-25T17:55:12.356117 #13576]  INFO -- : devill_4242 made a bet of 80 (call) and is left with 1220 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:12.385159 #13576]  INFO -- : community card 9 of Clubs
+I, [2014-01-25T17:55:12.416118 #13576]  INFO -- : community card Ace of Hearts
+I, [2014-01-25T17:55:12.448126 #13576]  INFO -- : community card 6 of Clubs
+I, [2014-01-25T17:55:12.482333 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1220 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:12.516622 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 120 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:12.542316 #13576]  INFO -- : community card 2 of Spades
+I, [2014-01-25T17:55:12.572378 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1220 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:12.599174 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 120 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:12.634936 #13576]  INFO -- : community card 7 of Hearts
+I, [2014-01-25T17:55:12.667103 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1220 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:12.700381 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 120 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:12.738832 #13576]  INFO -- : devill_4242 showed 2 of Spades,4 of Spades,6 of Spades,6 of Clubs,7 of Hearts,9 of Clubs,Ace of Hearts making a pair
+I, [2014-01-25T17:55:12.770643 #13576]  INFO -- : devill_4242 won 320
+I, [2014-01-25T17:55:12.870772 #13576]  INFO -- : devill_4242 has 1540 chips
+I, [2014-01-25T17:55:12.871091 #13576]  INFO -- : Jim Java has 120 chips
+I, [2014-01-25T17:55:12.871321 #13576]  INFO -- : Korda György has 1340 chips
+I, [2014-01-25T17:55:12.872738 #13576]  INFO -- : Jim Java got hole card Queen of Diamonds (12, Diamonds)
+I, [2014-01-25T17:55:12.910474 #13576]  INFO -- : Korda György got hole card 5 of Spades (5, Spades)
+I, [2014-01-25T17:55:12.911603 #13576]  INFO -- : devill_4242 got hole card Jack of Spades (11, Spades)
+I, [2014-01-25T17:55:12.913080 #13576]  INFO -- : Jim Java got hole card 3 of Clubs (3, Clubs)
+I, [2014-01-25T17:55:12.946296 #13576]  INFO -- : Korda György got hole card Jack of Hearts (11, Hearts)
+I, [2014-01-25T17:55:12.947640 #13576]  INFO -- : devill_4242 got hole card 3 of Diamonds (3, Diamonds)
+I, [2014-01-25T17:55:12.984134 #13576]  INFO -- : Jim Java made a bet of 40 (raise) and is left with 80 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:55:13.012065 #13576]  INFO -- : Korda György made a bet of 80 (raise) and is left with 1260 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:13.045004 #13576]  INFO -- : devill_4242 made a bet of 0 (fold) and is left with 1540 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:13.075829 #13576]  INFO -- : Jim Java made a bet of 40 (call) and is left with 40 chips. The pot now contains 160 chips.
+I, [2014-01-25T17:55:13.145366 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 1260 chips. The pot now contains 160 chips.
+I, [2014-01-25T17:55:13.180241 #13576]  INFO -- : community card 9 of Clubs
+I, [2014-01-25T17:55:13.214248 #13576]  INFO -- : community card Queen of Clubs
+I, [2014-01-25T17:55:13.242142 #13576]  INFO -- : community card Ace of Hearts
+I, [2014-01-25T17:55:13.274930 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 40 chips. The pot now contains 160 chips.
+I, [2014-01-25T17:55:13.342208 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 1260 chips. The pot now contains 160 chips.
+I, [2014-01-25T17:55:13.370274 #13576]  INFO -- : community card 9 of Diamonds
+I, [2014-01-25T17:55:13.400051 #13576]  INFO -- : Jim Java made a bet of 40 (allin) and is left with 0 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:13.475536 #13576]  INFO -- : Korda György made a bet of 40 (call) and is left with 1220 chips. The pot now contains 240 chips.
+I, [2014-01-25T17:55:13.514268 #13576]  INFO -- : community card 9 of Hearts
+I, [2014-01-25T17:55:13.552743 #13576]  INFO -- : Jim Java showed 3 of Clubs,9 of Clubs,9 of Hearts,9 of Diamonds,Queen of Clubs,Queen of Diamonds,Ace of Hearts making a full house
+I, [2014-01-25T17:55:13.581957 #13576]  INFO -- : Jim Java won 240
+I, [2014-01-25T17:55:13.678598 #13576]  INFO -- : devill_4242 has 1540 chips
+I, [2014-01-25T17:55:13.678891 #13576]  INFO -- : Jim Java has 240 chips
+I, [2014-01-25T17:55:13.678995 #13576]  INFO -- : Korda György has 1220 chips
+I, [2014-01-25T17:55:13.705525 #13576]  INFO -- : Korda György got hole card 4 of Diamonds (4, Diamonds)
+I, [2014-01-25T17:55:13.706684 #13576]  INFO -- : devill_4242 got hole card 2 of Spades (2, Spades)
+I, [2014-01-25T17:55:13.707498 #13576]  INFO -- : Jim Java got hole card 3 of Diamonds (3, Diamonds)
+I, [2014-01-25T17:55:13.730296 #13576]  INFO -- : Korda György got hole card Jack of Hearts (11, Hearts)
+I, [2014-01-25T17:55:13.730820 #13576]  INFO -- : devill_4242 got hole card 10 of Diamonds (10, Diamonds)
+I, [2014-01-25T17:55:13.731278 #13576]  INFO -- : Jim Java got hole card 2 of Hearts (2, Hearts)
+I, [2014-01-25T17:55:13.764305 #13576]  INFO -- : Korda György made a bet of 40 (raise) and is left with 1180 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:55:13.792322 #13576]  INFO -- : devill_4242 made a bet of 80 (raise) and is left with 1460 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:13.825912 #13576]  INFO -- : Jim Java made a bet of 80 (call) and is left with 160 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:13.886292 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 1180 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:13.920101 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1460 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:13.956204 #13576]  INFO -- : community card Queen of Spades
+I, [2014-01-25T17:55:13.992089 #13576]  INFO -- : community card 6 of Hearts
+I, [2014-01-25T17:55:14.026450 #13576]  INFO -- : community card 9 of Spades
+I, [2014-01-25T17:55:14.060995 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1460 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:14.092062 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 160 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:14.126169 #13576]  INFO -- : community card 2 of Diamonds
+I, [2014-01-25T17:55:14.159489 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1460 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:14.193499 #13576]  INFO -- : Jim Java made a bet of 0 (check) and is left with 160 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:14.228385 #13576]  INFO -- : community card Queen of Hearts
+I, [2014-01-25T17:55:14.259398 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1460 chips. The pot now contains 200 chips.
+I, [2014-01-25T17:55:14.296870 #13576]  INFO -- : Jim Java made a bet of 80 (raise) and is left with 80 chips. The pot now contains 280 chips.
+I, [2014-01-25T17:55:14.322518 #13576]  INFO -- : devill_4242 made a bet of 80 (call) and is left with 1380 chips. The pot now contains 360 chips.
+I, [2014-01-25T17:55:14.352356 #13576]  INFO -- : Jim Java showed 2 of Diamonds,2 of Hearts,3 of Diamonds,6 of Hearts,9 of Spades,Queen of Spades,Queen of Hearts making a two pairs
+I, [2014-01-25T17:55:14.391610 #13576]  INFO -- : devill_4242 showed 2 of Spades,2 of Diamonds,6 of Hearts,9 of Spades,10 of Diamonds,Queen of Spades,Queen of Hearts making a two pairs
+I, [2014-01-25T17:55:14.426295 #13576]  INFO -- : devill_4242 won 360
+I, [2014-01-25T17:55:14.519564 #13576]  INFO -- : devill_4242 has 1740 chips
+I, [2014-01-25T17:55:14.519883 #13576]  INFO -- : Jim Java has 80 chips
+I, [2014-01-25T17:55:14.520063 #13576]  INFO -- : Korda György has 1180 chips
+I, [2014-01-25T17:55:14.521174 #13576]  INFO -- : devill_4242 got hole card 2 of Clubs (2, Clubs)
+I, [2014-01-25T17:55:14.522422 #13576]  INFO -- : Jim Java got hole card 10 of Diamonds (10, Diamonds)
+I, [2014-01-25T17:55:14.557990 #13576]  INFO -- : Korda György got hole card Jack of Diamonds (11, Diamonds)
+I, [2014-01-25T17:55:14.559223 #13576]  INFO -- : devill_4242 got hole card 8 of Clubs (8, Clubs)
+I, [2014-01-25T17:55:14.560587 #13576]  INFO -- : Jim Java got hole card 5 of Hearts (5, Hearts)
+I, [2014-01-25T17:55:14.594707 #13576]  INFO -- : Korda György got hole card 9 of Hearts (9, Hearts)
+I, [2014-01-25T17:55:14.626440 #13576]  INFO -- : devill_4242 made a bet of 40 (raise) and is left with 1700 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:55:14.661447 #13576]  INFO -- : Jim Java made a bet of 80 (allin) and is left with 0 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:14.735398 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 1180 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:14.770423 #13576]  INFO -- : devill_4242 made a bet of 40 (call) and is left with 1660 chips. The pot now contains 160 chips.
+I, [2014-01-25T17:55:14.801033 #13576]  INFO -- : community card 5 of Diamonds
+I, [2014-01-25T17:55:14.834350 #13576]  INFO -- : community card 3 of Diamonds
+I, [2014-01-25T17:55:14.861930 #13576]  INFO -- : community card 7 of Diamonds
+I, [2014-01-25T17:55:14.894652 #13576]  INFO -- : community card Queen of Clubs
+I, [2014-01-25T17:55:14.929026 #13576]  INFO -- : community card 8 of Spades
+I, [2014-01-25T17:55:14.966513 #13576]  INFO -- : Jim Java showed 3 of Diamonds,5 of Hearts,5 of Diamonds,7 of Diamonds,8 of Spades,10 of Diamonds,Queen of Clubs making a pair
+I, [2014-01-25T17:55:15.003003 #13576]  INFO -- : devill_4242 showed 2 of Clubs,3 of Diamonds,5 of Diamonds,7 of Diamonds,8 of Clubs,8 of Spades,Queen of Clubs making a pair
+I, [2014-01-25T17:55:15.030327 #13576]  INFO -- : devill_4242 won 160
+I, [2014-01-25T17:55:15.140018 #13576]  INFO -- : devill_4242 has 1820 chips
+I, [2014-01-25T17:55:15.140145 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:15.140214 #13576]  INFO -- : Korda György has 1180 chips
+I, [2014-01-25T17:55:15.168273 #13576]  INFO -- : Korda György got hole card 4 of Clubs (4, Clubs)
+I, [2014-01-25T17:55:15.168956 #13576]  INFO -- : devill_4242 got hole card 3 of Spades (3, Spades)
+I, [2014-01-25T17:55:15.194493 #13576]  INFO -- : Korda György got hole card 8 of Diamonds (8, Diamonds)
+I, [2014-01-25T17:55:15.195399 #13576]  INFO -- : devill_4242 got hole card 6 of Hearts (6, Hearts)
+I, [2014-01-25T17:55:15.221400 #13576]  INFO -- : Korda György made a bet of 40 (raise) and is left with 1140 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:55:15.251583 #13576]  INFO -- : devill_4242 made a bet of 80 (raise) and is left with 1740 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:15.311780 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 1140 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:15.346634 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1740 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:15.384669 #13576]  INFO -- : devill_4242 won 120
+I, [2014-01-25T17:55:15.478847 #13576]  INFO -- : devill_4242 has 1860 chips
+I, [2014-01-25T17:55:15.479241 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:15.479534 #13576]  INFO -- : Korda György has 1140 chips
+I, [2014-01-25T17:55:15.480722 #13576]  INFO -- : devill_4242 got hole card 3 of Clubs (3, Clubs)
+I, [2014-01-25T17:55:15.517218 #13576]  INFO -- : Korda György got hole card Queen of Spades (12, Spades)
+I, [2014-01-25T17:55:15.518680 #13576]  INFO -- : devill_4242 got hole card 9 of Hearts (9, Hearts)
+I, [2014-01-25T17:55:15.557306 #13576]  INFO -- : Korda György got hole card 3 of Hearts (3, Hearts)
+I, [2014-01-25T17:55:15.592679 #13576]  INFO -- : devill_4242 made a bet of 40 (raise) and is left with 1820 chips. The pot now contains 40 chips.
+I, [2014-01-25T17:55:15.626790 #13576]  INFO -- : Korda György made a bet of 80 (raise) and is left with 1060 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:15.655705 #13576]  INFO -- : devill_4242 made a bet of 0 (fold) and is left with 1820 chips. The pot now contains 120 chips.
+I, [2014-01-25T17:55:15.686699 #13576]  INFO -- : Korda György won 120
+I, [2014-01-25T17:55:15.770405 #13576]  INFO -- : devill_4242 has 1820 chips
+I, [2014-01-25T17:55:15.770783 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:15.770963 #13576]  INFO -- : Korda György has 1180 chips
+I, [2014-01-25T17:55:15.804425 #13576]  INFO -- : Korda György got hole card King of Hearts (13, Hearts)
+I, [2014-01-25T17:55:15.806042 #13576]  INFO -- : devill_4242 got hole card Ace of Hearts (14, Hearts)
+I, [2014-01-25T17:55:15.834592 #13576]  INFO -- : Korda György got hole card 4 of Diamonds (4, Diamonds)
+I, [2014-01-25T17:55:15.836375 #13576]  INFO -- : devill_4242 got hole card 8 of Hearts (8, Hearts)
+I, [2014-01-25T17:55:15.866264 #13576]  INFO -- : Korda György made a bet of 80 (raise) and is left with 1100 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:15.899903 #13576]  INFO -- : devill_4242 made a bet of 160 (raise) and is left with 1660 chips. The pot now contains 240 chips.
+I, [2014-01-25T17:55:15.977818 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 1100 chips. The pot now contains 240 chips.
+I, [2014-01-25T17:55:16.012493 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1660 chips. The pot now contains 240 chips.
+I, [2014-01-25T17:55:16.046163 #13576]  INFO -- : devill_4242 won 240
+I, [2014-01-25T17:55:16.138784 #13576]  INFO -- : devill_4242 has 1900 chips
+I, [2014-01-25T17:55:16.138911 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:16.138963 #13576]  INFO -- : Korda György has 1100 chips
+I, [2014-01-25T17:55:16.139789 #13576]  INFO -- : devill_4242 got hole card King of Diamonds (13, Diamonds)
+I, [2014-01-25T17:55:16.168550 #13576]  INFO -- : Korda György got hole card Queen of Clubs (12, Clubs)
+I, [2014-01-25T17:55:16.169452 #13576]  INFO -- : devill_4242 got hole card 6 of Diamonds (6, Diamonds)
+I, [2014-01-25T17:55:16.198204 #13576]  INFO -- : Korda György got hole card Queen of Spades (12, Spades)
+I, [2014-01-25T17:55:16.229042 #13576]  INFO -- : devill_4242 made a bet of 80 (raise) and is left with 1820 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:16.259276 #13576]  INFO -- : Korda György made a bet of 160 (raise) and is left with 940 chips. The pot now contains 240 chips.
+I, [2014-01-25T17:55:16.289907 #13576]  INFO -- : devill_4242 made a bet of 80 (call) and is left with 1740 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:16.318301 #13576]  INFO -- : community card Ace of Clubs
+I, [2014-01-25T17:55:16.347749 #13576]  INFO -- : community card Jack of Spades
+I, [2014-01-25T17:55:16.372187 #13576]  INFO -- : community card Queen of Hearts
+I, [2014-01-25T17:55:16.405568 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1740 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:16.493091 #13576]  INFO -- : Korda György made a bet of 250 (raise) and is left with 690 chips. The pot now contains 570 chips.
+I, [2014-01-25T17:55:16.534697 #13576]  INFO -- : devill_4242 made a bet of 250 (call) and is left with 1490 chips. The pot now contains 820 chips.
+I, [2014-01-25T17:55:16.563102 #13576]  INFO -- : community card 9 of Diamonds
+I, [2014-01-25T17:55:16.596853 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1490 chips. The pot now contains 820 chips.
+I, [2014-01-25T17:55:16.670706 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 690 chips. The pot now contains 820 chips.
+I, [2014-01-25T17:55:16.703419 #13576]  INFO -- : community card 10 of Hearts
+I, [2014-01-25T17:55:16.742485 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1490 chips. The pot now contains 820 chips.
+I, [2014-01-25T17:55:16.817284 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 690 chips. The pot now contains 820 chips.
+I, [2014-01-25T17:55:16.855419 #13576]  INFO -- : devill_4242 showed 6 of Diamonds,9 of Diamonds,10 of Hearts,Jack of Spades,Queen of Hearts,King of Diamonds,Ace of Clubs making a straight
+I, [2014-01-25T17:55:16.887957 #13576]  INFO -- : devill_4242 won 820
+I, [2014-01-25T17:55:16.981135 #13576]  INFO -- : devill_4242 has 2310 chips
+I, [2014-01-25T17:55:16.981569 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:16.981887 #13576]  INFO -- : Korda György has 690 chips
+I, [2014-01-25T17:55:17.017157 #13576]  INFO -- : Korda György got hole card 6 of Hearts (6, Hearts)
+I, [2014-01-25T17:55:17.018620 #13576]  INFO -- : devill_4242 got hole card 8 of Diamonds (8, Diamonds)
+I, [2014-01-25T17:55:17.047905 #13576]  INFO -- : Korda György got hole card King of Clubs (13, Clubs)
+I, [2014-01-25T17:55:17.049398 #13576]  INFO -- : devill_4242 got hole card 2 of Hearts (2, Hearts)
+I, [2014-01-25T17:55:17.085076 #13576]  INFO -- : Korda György made a bet of 80 (raise) and is left with 610 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:17.116252 #13576]  INFO -- : devill_4242 made a bet of 160 (raise) and is left with 2150 chips. The pot now contains 240 chips.
+I, [2014-01-25T17:55:17.183609 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 610 chips. The pot now contains 240 chips.
+I, [2014-01-25T17:55:17.219068 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 2150 chips. The pot now contains 240 chips.
+I, [2014-01-25T17:55:17.255832 #13576]  INFO -- : devill_4242 won 240
+I, [2014-01-25T17:55:17.349924 #13576]  INFO -- : devill_4242 has 2390 chips
+I, [2014-01-25T17:55:17.350292 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:17.350520 #13576]  INFO -- : Korda György has 610 chips
+I, [2014-01-25T17:55:17.351882 #13576]  INFO -- : devill_4242 got hole card 8 of Diamonds (8, Diamonds)
+I, [2014-01-25T17:55:17.380686 #13576]  INFO -- : Korda György got hole card Queen of Clubs (12, Clubs)
+I, [2014-01-25T17:55:17.382179 #13576]  INFO -- : devill_4242 got hole card 3 of Spades (3, Spades)
+I, [2014-01-25T17:55:17.407468 #13576]  INFO -- : Korda György got hole card 5 of Diamonds (5, Diamonds)
+I, [2014-01-25T17:55:17.440053 #13576]  INFO -- : devill_4242 made a bet of 80 (raise) and is left with 2310 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:17.478599 #13576]  INFO -- : Korda György made a bet of 160 (raise) and is left with 450 chips. The pot now contains 240 chips.
+I, [2014-01-25T17:55:17.510803 #13576]  INFO -- : devill_4242 made a bet of 0 (fold) and is left with 2310 chips. The pot now contains 240 chips.
+I, [2014-01-25T17:55:17.545362 #13576]  INFO -- : Korda György won 240
+I, [2014-01-25T17:55:17.634899 #13576]  INFO -- : devill_4242 has 2310 chips
+I, [2014-01-25T17:55:17.635289 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:17.635495 #13576]  INFO -- : Korda György has 690 chips
+I, [2014-01-25T17:55:17.665753 #13576]  INFO -- : Korda György got hole card 5 of Hearts (5, Hearts)
+I, [2014-01-25T17:55:17.666555 #13576]  INFO -- : devill_4242 got hole card 6 of Diamonds (6, Diamonds)
+I, [2014-01-25T17:55:17.700073 #13576]  INFO -- : Korda György got hole card 10 of Hearts (10, Hearts)
+I, [2014-01-25T17:55:17.701432 #13576]  INFO -- : devill_4242 got hole card 10 of Spades (10, Spades)
+I, [2014-01-25T17:55:17.728565 #13576]  INFO -- : Korda György made a bet of 80 (raise) and is left with 610 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:17.763270 #13576]  INFO -- : devill_4242 made a bet of 160 (raise) and is left with 2150 chips. The pot now contains 240 chips.
+I, [2014-01-25T17:55:17.831149 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 610 chips. The pot now contains 240 chips.
+I, [2014-01-25T17:55:17.871808 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 2150 chips. The pot now contains 240 chips.
+I, [2014-01-25T17:55:17.913028 #13576]  INFO -- : devill_4242 won 240
+I, [2014-01-25T17:55:17.998607 #13576]  INFO -- : devill_4242 has 2390 chips
+I, [2014-01-25T17:55:17.998948 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:17.999186 #13576]  INFO -- : Korda György has 610 chips
+I, [2014-01-25T17:55:18.000533 #13576]  INFO -- : devill_4242 got hole card 7 of Diamonds (7, Diamonds)
+I, [2014-01-25T17:55:18.034214 #13576]  INFO -- : Korda György got hole card Queen of Hearts (12, Hearts)
+I, [2014-01-25T17:55:18.035152 #13576]  INFO -- : devill_4242 got hole card 5 of Diamonds (5, Diamonds)
+I, [2014-01-25T17:55:18.062012 #13576]  INFO -- : Korda György got hole card 2 of Diamonds (2, Diamonds)
+I, [2014-01-25T17:55:18.095406 #13576]  INFO -- : devill_4242 made a bet of 80 (raise) and is left with 2310 chips. The pot now contains 80 chips.
+I, [2014-01-25T17:55:18.129216 #13576]  INFO -- : Korda György made a bet of 160 (raise) and is left with 450 chips. The pot now contains 240 chips.
+I, [2014-01-25T17:55:18.167285 #13576]  INFO -- : devill_4242 made a bet of 80 (call) and is left with 2230 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:18.204500 #13576]  INFO -- : community card King of Hearts
+I, [2014-01-25T17:55:18.241830 #13576]  INFO -- : community card Ace of Diamonds
+I, [2014-01-25T17:55:18.275972 #13576]  INFO -- : community card 4 of Hearts
+I, [2014-01-25T17:55:18.313605 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 2230 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:18.393323 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 450 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:18.426314 #13576]  INFO -- : community card 8 of Hearts
+I, [2014-01-25T17:55:18.466385 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 2230 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:18.543716 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 450 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:18.579056 #13576]  INFO -- : community card King of Spades
+I, [2014-01-25T17:55:18.610853 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 2230 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:18.685990 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 450 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:18.722793 #13576]  INFO -- : devill_4242 showed 4 of Hearts,5 of Diamonds,7 of Diamonds,8 of Hearts,King of Hearts,King of Spades,Ace of Diamonds making a pair
+I, [2014-01-25T17:55:18.758894 #13576]  INFO -- : Korda György showed 2 of Diamonds,4 of Hearts,8 of Hearts,Queen of Hearts,King of Hearts,King of Spades,Ace of Diamonds making a pair
+I, [2014-01-25T17:55:18.789574 #13576]  INFO -- : Korda György won 320
+I, [2014-01-25T17:55:18.882184 #13576]  INFO -- : devill_4242 has 2230 chips
+I, [2014-01-25T17:55:18.882554 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:18.882773 #13576]  INFO -- : Korda György has 770 chips
+I, [2014-01-25T17:55:18.909382 #13576]  INFO -- : Korda György got hole card 6 of Diamonds (6, Diamonds)
+I, [2014-01-25T17:55:18.911096 #13576]  INFO -- : devill_4242 got hole card 10 of Spades (10, Spades)
+I, [2014-01-25T17:55:18.939179 #13576]  INFO -- : Korda György got hole card Jack of Hearts (11, Hearts)
+I, [2014-01-25T17:55:18.940743 #13576]  INFO -- : devill_4242 got hole card 5 of Clubs (5, Clubs)
+I, [2014-01-25T17:55:18.974275 #13576]  INFO -- : Korda György made a bet of 160 (raise) and is left with 610 chips. The pot now contains 160 chips.
+I, [2014-01-25T17:55:19.009147 #13576]  INFO -- : devill_4242 made a bet of 320 (raise) and is left with 1910 chips. The pot now contains 480 chips.
+I, [2014-01-25T17:55:19.088768 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 610 chips. The pot now contains 480 chips.
+I, [2014-01-25T17:55:19.128589 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1910 chips. The pot now contains 480 chips.
+I, [2014-01-25T17:55:19.161397 #13576]  INFO -- : devill_4242 won 480
+I, [2014-01-25T17:55:19.259177 #13576]  INFO -- : devill_4242 has 2390 chips
+I, [2014-01-25T17:55:19.259556 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:19.259795 #13576]  INFO -- : Korda György has 610 chips
+I, [2014-01-25T17:55:19.261211 #13576]  INFO -- : devill_4242 got hole card 2 of Spades (2, Spades)
+I, [2014-01-25T17:55:19.291857 #13576]  INFO -- : Korda György got hole card Jack of Spades (11, Spades)
+I, [2014-01-25T17:55:19.292550 #13576]  INFO -- : devill_4242 got hole card 6 of Spades (6, Spades)
+I, [2014-01-25T17:55:19.322830 #13576]  INFO -- : Korda György got hole card 10 of Clubs (10, Clubs)
+I, [2014-01-25T17:55:19.354673 #13576]  INFO -- : devill_4242 made a bet of 160 (raise) and is left with 2230 chips. The pot now contains 160 chips.
+I, [2014-01-25T17:55:19.386174 #13576]  INFO -- : Korda György made a bet of 320 (raise) and is left with 290 chips. The pot now contains 480 chips.
+I, [2014-01-25T17:55:19.414445 #13576]  INFO -- : devill_4242 made a bet of 160 (call) and is left with 2070 chips. The pot now contains 640 chips.
+I, [2014-01-25T17:55:19.450209 #13576]  INFO -- : community card Ace of Hearts
+I, [2014-01-25T17:55:19.487815 #13576]  INFO -- : community card 3 of Hearts
+I, [2014-01-25T17:55:19.523128 #13576]  INFO -- : community card Queen of Spades
+I, [2014-01-25T17:55:19.557236 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 2070 chips. The pot now contains 640 chips.
+I, [2014-01-25T17:55:19.620814 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 290 chips. The pot now contains 640 chips.
+I, [2014-01-25T17:55:19.656118 #13576]  INFO -- : community card 8 of Clubs
+I, [2014-01-25T17:55:19.693333 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 2070 chips. The pot now contains 640 chips.
+I, [2014-01-25T17:55:19.768200 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 290 chips. The pot now contains 640 chips.
+I, [2014-01-25T17:55:19.794661 #13576]  INFO -- : community card 10 of Hearts
+I, [2014-01-25T17:55:19.824797 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 2070 chips. The pot now contains 640 chips.
+I, [2014-01-25T17:55:19.890153 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 290 chips. The pot now contains 640 chips.
+I, [2014-01-25T17:55:19.924380 #13576]  INFO -- : devill_4242 showed 2 of Spades,3 of Hearts,6 of Spades,8 of Clubs,10 of Hearts,Queen of Spades,Ace of Hearts making a high card
+I, [2014-01-25T17:55:19.958331 #13576]  INFO -- : Korda György showed 3 of Hearts,8 of Clubs,10 of Clubs,10 of Hearts,Jack of Spades,Queen of Spades,Ace of Hearts making a pair
+I, [2014-01-25T17:55:19.990866 #13576]  INFO -- : Korda György won 640
+I, [2014-01-25T17:55:20.096030 #13576]  INFO -- : devill_4242 has 2070 chips
+I, [2014-01-25T17:55:20.096463 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:20.096617 #13576]  INFO -- : Korda György has 930 chips
+I, [2014-01-25T17:55:20.128818 #13576]  INFO -- : Korda György got hole card 3 of Spades (3, Spades)
+I, [2014-01-25T17:55:20.130554 #13576]  INFO -- : devill_4242 got hole card Jack of Spades (11, Spades)
+I, [2014-01-25T17:55:20.159361 #13576]  INFO -- : Korda György got hole card 9 of Spades (9, Spades)
+I, [2014-01-25T17:55:20.160625 #13576]  INFO -- : devill_4242 got hole card 10 of Clubs (10, Clubs)
+I, [2014-01-25T17:55:20.198015 #13576]  INFO -- : Korda György made a bet of 160 (raise) and is left with 770 chips. The pot now contains 160 chips.
+I, [2014-01-25T17:55:20.230600 #13576]  INFO -- : devill_4242 made a bet of 320 (raise) and is left with 1750 chips. The pot now contains 480 chips.
+I, [2014-01-25T17:55:20.293860 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 770 chips. The pot now contains 480 chips.
+I, [2014-01-25T17:55:20.327904 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1750 chips. The pot now contains 480 chips.
+I, [2014-01-25T17:55:20.352858 #13576]  INFO -- : devill_4242 won 480
+I, [2014-01-25T17:55:20.437994 #13576]  INFO -- : devill_4242 has 2230 chips
+I, [2014-01-25T17:55:20.438312 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:20.438491 #13576]  INFO -- : Korda György has 770 chips
+I, [2014-01-25T17:55:20.439535 #13576]  INFO -- : devill_4242 got hole card 2 of Spades (2, Spades)
+I, [2014-01-25T17:55:20.471872 #13576]  INFO -- : Korda György got hole card 3 of Spades (3, Spades)
+I, [2014-01-25T17:55:20.473545 #13576]  INFO -- : devill_4242 got hole card Jack of Clubs (11, Clubs)
+I, [2014-01-25T17:55:20.508631 #13576]  INFO -- : Korda György got hole card King of Clubs (13, Clubs)
+I, [2014-01-25T17:55:20.544380 #13576]  INFO -- : devill_4242 made a bet of 160 (raise) and is left with 2070 chips. The pot now contains 160 chips.
+I, [2014-01-25T17:55:20.579784 #13576]  INFO -- : Korda György made a bet of 320 (raise) and is left with 450 chips. The pot now contains 480 chips.
+I, [2014-01-25T17:55:20.616573 #13576]  INFO -- : devill_4242 made a bet of 0 (fold) and is left with 2070 chips. The pot now contains 480 chips.
+I, [2014-01-25T17:55:20.647697 #13576]  INFO -- : Korda György won 480
+I, [2014-01-25T17:55:20.747546 #13576]  INFO -- : devill_4242 has 2070 chips
+I, [2014-01-25T17:55:20.747669 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:20.747727 #13576]  INFO -- : Korda György has 930 chips
+I, [2014-01-25T17:55:20.783353 #13576]  INFO -- : Korda György got hole card Ace of Clubs (14, Clubs)
+I, [2014-01-25T17:55:20.784894 #13576]  INFO -- : devill_4242 got hole card 6 of Diamonds (6, Diamonds)
+I, [2014-01-25T17:55:20.819099 #13576]  INFO -- : Korda György got hole card 5 of Clubs (5, Clubs)
+I, [2014-01-25T17:55:20.820267 #13576]  INFO -- : devill_4242 got hole card 3 of Hearts (3, Hearts)
+I, [2014-01-25T17:55:20.864446 #13576]  INFO -- : Korda György made a bet of 160 (raise) and is left with 770 chips. The pot now contains 160 chips.
+I, [2014-01-25T17:55:20.897781 #13576]  INFO -- : devill_4242 made a bet of 320 (raise) and is left with 1750 chips. The pot now contains 480 chips.
+I, [2014-01-25T17:55:20.963888 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 770 chips. The pot now contains 480 chips.
+I, [2014-01-25T17:55:20.991051 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1750 chips. The pot now contains 480 chips.
+I, [2014-01-25T17:55:21.023292 #13576]  INFO -- : devill_4242 won 480
+I, [2014-01-25T17:55:21.115650 #13576]  INFO -- : devill_4242 has 2230 chips
+I, [2014-01-25T17:55:21.116010 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:21.116189 #13576]  INFO -- : Korda György has 770 chips
+I, [2014-01-25T17:55:21.117621 #13576]  INFO -- : devill_4242 got hole card King of Spades (13, Spades)
+I, [2014-01-25T17:55:21.156220 #13576]  INFO -- : Korda György got hole card Queen of Spades (12, Spades)
+I, [2014-01-25T17:55:21.157454 #13576]  INFO -- : devill_4242 got hole card 9 of Spades (9, Spades)
+I, [2014-01-25T17:55:21.190743 #13576]  INFO -- : Korda György got hole card 6 of Diamonds (6, Diamonds)
+I, [2014-01-25T17:55:21.227105 #13576]  INFO -- : devill_4242 made a bet of 160 (raise) and is left with 2070 chips. The pot now contains 160 chips.
+I, [2014-01-25T17:55:21.263497 #13576]  INFO -- : Korda György made a bet of 320 (raise) and is left with 450 chips. The pot now contains 480 chips.
+I, [2014-01-25T17:55:21.301508 #13576]  INFO -- : devill_4242 made a bet of 160 (call) and is left with 1910 chips. The pot now contains 640 chips.
+I, [2014-01-25T17:55:21.337963 #13576]  INFO -- : community card 9 of Hearts
+I, [2014-01-25T17:55:21.378952 #13576]  INFO -- : community card King of Clubs
+I, [2014-01-25T17:55:21.415661 #13576]  INFO -- : community card 10 of Clubs
+I, [2014-01-25T17:55:21.450677 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1910 chips. The pot now contains 640 chips.
+I, [2014-01-25T17:55:21.516784 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 450 chips. The pot now contains 640 chips.
+I, [2014-01-25T17:55:21.553388 #13576]  INFO -- : community card Jack of Clubs
+I, [2014-01-25T17:55:21.589156 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1910 chips. The pot now contains 640 chips.
+I, [2014-01-25T17:55:21.669445 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 450 chips. The pot now contains 640 chips.
+I, [2014-01-25T17:55:21.695630 #13576]  INFO -- : community card 6 of Clubs
+I, [2014-01-25T17:55:21.727776 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1910 chips. The pot now contains 640 chips.
+I, [2014-01-25T17:55:21.802594 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 450 chips. The pot now contains 640 chips.
+I, [2014-01-25T17:55:21.836221 #13576]  INFO -- : devill_4242 showed 6 of Clubs,9 of Spades,9 of Hearts,10 of Clubs,Jack of Clubs,King of Clubs,King of Spades making a two pairs
+I, [2014-01-25T17:55:21.877306 #13576]  INFO -- : Korda György showed 6 of Clubs,6 of Diamonds,9 of Hearts,10 of Clubs,Jack of Clubs,Queen of Spades,King of Clubs making a straight
+I, [2014-01-25T17:55:21.912354 #13576]  INFO -- : Korda György won 640
+I, [2014-01-25T17:55:22.006068 #13576]  INFO -- : devill_4242 has 1910 chips
+I, [2014-01-25T17:55:22.006385 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:22.006563 #13576]  INFO -- : Korda György has 1090 chips
+I, [2014-01-25T17:55:22.033886 #13576]  INFO -- : Korda György got hole card 4 of Diamonds (4, Diamonds)
+I, [2014-01-25T17:55:22.034758 #13576]  INFO -- : devill_4242 got hole card 2 of Spades (2, Spades)
+I, [2014-01-25T17:55:22.066280 #13576]  INFO -- : Korda György got hole card Jack of Spades (11, Spades)
+I, [2014-01-25T17:55:22.067150 #13576]  INFO -- : devill_4242 got hole card 6 of Diamonds (6, Diamonds)
+I, [2014-01-25T17:55:22.101365 #13576]  INFO -- : Korda György made a bet of 320 (raise) and is left with 770 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:22.131133 #13576]  INFO -- : devill_4242 made a bet of 640 (raise) and is left with 1270 chips. The pot now contains 960 chips.
+I, [2014-01-25T17:55:22.200193 #13576]  INFO -- : Korda György made a bet of 0 (fold) and is left with 770 chips. The pot now contains 960 chips.
+I, [2014-01-25T17:55:22.234322 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1270 chips. The pot now contains 960 chips.
+I, [2014-01-25T17:55:22.263481 #13576]  INFO -- : devill_4242 won 960
+I, [2014-01-25T17:55:22.366763 #13576]  INFO -- : devill_4242 has 2230 chips
+I, [2014-01-25T17:55:22.367150 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:22.367385 #13576]  INFO -- : Korda György has 770 chips
+I, [2014-01-25T17:55:22.368843 #13576]  INFO -- : devill_4242 got hole card 8 of Diamonds (8, Diamonds)
+I, [2014-01-25T17:55:22.404743 #13576]  INFO -- : Korda György got hole card 5 of Spades (5, Spades)
+I, [2014-01-25T17:55:22.406112 #13576]  INFO -- : devill_4242 got hole card 7 of Spades (7, Spades)
+I, [2014-01-25T17:55:22.440586 #13576]  INFO -- : Korda György got hole card King of Diamonds (13, Diamonds)
+I, [2014-01-25T17:55:22.470384 #13576]  INFO -- : devill_4242 made a bet of 320 (raise) and is left with 1910 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:22.500886 #13576]  INFO -- : Korda György made a bet of 640 (raise) and is left with 130 chips. The pot now contains 960 chips.
+I, [2014-01-25T17:55:22.535406 #13576]  INFO -- : devill_4242 made a bet of 320 (call) and is left with 1590 chips. The pot now contains 1280 chips.
+I, [2014-01-25T17:55:22.571726 #13576]  INFO -- : community card 6 of Hearts
+I, [2014-01-25T17:55:22.608226 #13576]  INFO -- : community card 9 of Spades
+I, [2014-01-25T17:55:22.644852 #13576]  INFO -- : community card King of Clubs
+I, [2014-01-25T17:55:22.682666 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1590 chips. The pot now contains 1280 chips.
+I, [2014-01-25T17:55:22.755141 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 130 chips. The pot now contains 1280 chips.
+I, [2014-01-25T17:55:22.798586 #13576]  INFO -- : community card 5 of Hearts
+I, [2014-01-25T17:55:22.835493 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1590 chips. The pot now contains 1280 chips.
+I, [2014-01-25T17:55:22.919638 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 130 chips. The pot now contains 1280 chips.
+I, [2014-01-25T17:55:22.951685 #13576]  INFO -- : community card 9 of Hearts
+I, [2014-01-25T17:55:22.993561 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 1590 chips. The pot now contains 1280 chips.
+I, [2014-01-25T17:55:23.065416 #13576]  INFO -- : Korda György made a bet of 0 (check) and is left with 130 chips. The pot now contains 1280 chips.
+I, [2014-01-25T17:55:23.093300 #13576]  INFO -- : devill_4242 showed 5 of Hearts,6 of Hearts,7 of Spades,8 of Diamonds,9 of Spades,9 of Hearts,King of Clubs making a straight
+I, [2014-01-25T17:55:23.121314 #13576]  INFO -- : devill_4242 won 1280
+I, [2014-01-25T17:55:23.209558 #13576]  INFO -- : devill_4242 has 2870 chips
+I, [2014-01-25T17:55:23.209890 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:23.210069 #13576]  INFO -- : Korda György has 130 chips
+I, [2014-01-25T17:55:23.246342 #13576]  INFO -- : Korda György got hole card 10 of Spades (10, Spades)
+I, [2014-01-25T17:55:23.246822 #13576]  INFO -- : devill_4242 got hole card 10 of Clubs (10, Clubs)
+I, [2014-01-25T17:55:23.279260 #13576]  INFO -- : Korda György got hole card 7 of Spades (7, Spades)
+I, [2014-01-25T17:55:23.280747 #13576]  INFO -- : devill_4242 got hole card Queen of Clubs (12, Clubs)
+I, [2014-01-25T17:55:23.316870 #13576]  INFO -- : Korda György made a bet of 130 (allin) and is left with 0 chips. The pot now contains 130 chips.
+I, [2014-01-25T17:55:23.351282 #13576]  INFO -- : devill_4242 made a bet of 640 (raise) and is left with 2230 chips. The pot now contains 770 chips.
+I, [2014-01-25T17:55:23.390262 #13576]  INFO -- : devill_4242 made a bet of 0 (check) and is left with 2230 chips. The pot now contains 770 chips.
+I, [2014-01-25T17:55:23.424059 #13576]  INFO -- : community card 3 of Hearts
+I, [2014-01-25T17:55:23.460967 #13576]  INFO -- : community card 7 of Diamonds
+I, [2014-01-25T17:55:23.495795 #13576]  INFO -- : community card Queen of Hearts
+I, [2014-01-25T17:55:23.519281 #13576]  INFO -- : community card Jack of Spades
+I, [2014-01-25T17:55:23.557057 #13576]  INFO -- : community card 7 of Hearts
+I, [2014-01-25T17:55:23.581445 #13576]  INFO -- : devill_4242 showed 3 of Hearts,7 of Hearts,7 of Diamonds,10 of Clubs,Jack of Spades,Queen of Hearts,Queen of Clubs making a two pairs
+I, [2014-01-25T17:55:23.610716 #13576]  INFO -- : Korda György showed 3 of Hearts,7 of Spades,7 of Hearts,7 of Diamonds,10 of Spades,Jack of Spades,Queen of Hearts making a three of a kind
+I, [2014-01-25T17:55:23.639787 #13576]  INFO -- : Korda György won 260
+I, [2014-01-25T17:55:23.668373 #13576]  INFO -- : devill_4242 won 510
+I, [2014-01-25T17:55:23.759557 #13576]  INFO -- : devill_4242 has 2740 chips
+I, [2014-01-25T17:55:23.759889 #13576]  INFO -- : Jim Java has 0 chips
+I, [2014-01-25T17:55:23.760089 #13576]  INFO -- : Korda György has 260 chips
+I, [2014-01-25T17:55:23.761154 #13576]  INFO -- : devill_4242 got hole card King of Clubs (13, Clubs)
+I, [2014-01-25T17:55:23.795727 #13576]  INFO -- : Korda György got hole card Jack of Clubs (11, Clubs)
+I, [2014-01-25T17:55:23.797307 #13576]  INFO -- : devill_4242 got hole card King of Hearts (13, Hearts)
+I, [2014-01-25T17:55:23.836325 #13576]  INFO -- : Korda György got hole card 6 of Spades (6, Spades)
+I, [2014-01-25T17:55:23.868363 #13576]  INFO -- : devill_4242 made a bet of 320 (raise) and is left with 2420 chips. The pot now contains 320 chips.
+I, [2014-01-25T17:55:23.902869 #13576]  INFO -- : Korda György made a bet of 260 (allin) and is left with 0 chips. The pot now contains 580 chips.
+I, [2014-01-25T17:55:23.936931 #13576]  INFO -- : devill_4242 made a bet of 2420 (allin) and is left with 0 chips. The pot now contains 3000 chips.
+I, [2014-01-25T17:55:23.965320 #13576]  INFO -- : community card 3 of Clubs
+I, [2014-01-25T17:55:23.998526 #13576]  INFO -- : community card 5 of Hearts
+I, [2014-01-25T17:55:24.031119 #13576]  INFO -- : community card 5 of Diamonds
+I, [2014-01-25T17:55:24.064180 #13576]  INFO -- : community card 3 of Spades
+I, [2014-01-25T17:55:24.097783 #13576]  INFO -- : community card 6 of Hearts
+I, [2014-01-25T17:55:24.132791 #13576]  INFO -- : devill_4242 showed 3 of Clubs,3 of Spades,5 of Hearts,5 of Diamonds,6 of Hearts,King of Hearts,King of Clubs making a two pairs
+I, [2014-01-25T17:55:24.171315 #13576]  INFO -- : devill_4242 won 3000
+I, [2014-01-25T17:55:24.197575 #13576]  INFO -- : Place 1: devill_4242
+I, [2014-01-25T17:55:24.197851 #13576]  INFO -- : Place 2: Korda György
+I, [2014-01-25T17:55:24.198093 #13576]  INFO -- : Place 3: Jim Java
