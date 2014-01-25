@@ -1,0 +1,445 @@
+# Logfile created on 2014-01-25 10:56:41 +0100 by logger.rb/44203
+I, [2014-01-25T10:56:41.658356 #4523]  INFO -- : Connected Rudy Ruby at localhost:9200
+I, [2014-01-25T10:56:42.101062 #4523]  INFO -- : Connected PHilip Potts at http://localhost:8080/php/player_service.php
+I, [2014-01-25T10:56:42.275713 #4523]  INFO -- : Rudy Ruby has 1000 chips
+I, [2014-01-25T10:56:42.275848 #4523]  INFO -- : PHilip Potts has 1000 chips
+I, [2014-01-25T10:56:42.327916 #4523]  INFO -- : PHilip Potts got hole card 7 of Clubs (7, Clubs)
+I, [2014-01-25T10:56:42.331173 #4523]  INFO -- : Rudy Ruby got hole card 2 of Hearts (2, Hearts)
+I, [2014-01-25T10:56:42.398578 #4523]  INFO -- : PHilip Potts got hole card 9 of Clubs (9, Clubs)
+I, [2014-01-25T10:56:42.399467 #4523]  INFO -- : Rudy Ruby got hole card 8 of Diamonds (8, Diamonds)
+I, [2014-01-25T10:56:42.489328 #4523]  INFO -- : PHilip Potts made a bet of 10 (raise) and is left with 990 chips. The pot now contains 10 chips.
+I, [2014-01-25T10:56:42.555632 #4523]  INFO -- : Rudy Ruby made a bet of 20 (raise) and is left with 980 chips. The pot now contains 30 chips.
+I, [2014-01-25T10:56:42.680739 #4523]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 990 chips. The pot now contains 30 chips.
+I, [2014-01-25T10:56:42.778194 #4523]  INFO -- : Rudy Ruby made a bet of 20 (raise) and is left with 960 chips. The pot now contains 50 chips.
+I, [2014-01-25T10:56:42.833786 #4523]  INFO -- : Rudy Ruby won 50
+I, [2014-01-25T10:56:42.955885 #4523]  INFO -- : Rudy Ruby has 1010 chips
+I, [2014-01-25T10:56:42.956070 #4523]  INFO -- : PHilip Potts has 990 chips
+I, [2014-01-25T10:56:42.958160 #4523]  INFO -- : Rudy Ruby got hole card Ace of Hearts (14, Hearts)
+I, [2014-01-25T10:56:43.012504 #4523]  INFO -- : PHilip Potts got hole card 7 of Diamonds (7, Diamonds)
+I, [2014-01-25T10:56:43.014069 #4523]  INFO -- : Rudy Ruby got hole card 9 of Diamonds (9, Diamonds)
+I, [2014-01-25T10:56:43.071707 #4523]  INFO -- : PHilip Potts got hole card 6 of Spades (6, Spades)
+I, [2014-01-25T10:56:43.139972 #4523]  INFO -- : Rudy Ruby made a bet of 10 (raise) and is left with 1000 chips. The pot now contains 10 chips.
+I, [2014-01-25T10:56:43.199983 #4523]  INFO -- : PHilip Potts made a bet of 20 (raise) and is left with 970 chips. The pot now contains 30 chips.
+I, [2014-01-25T10:56:43.291937 #4523]  INFO -- : Rudy Ruby made a bet of 10 (call) and is left with 990 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:56:43.408513 #4523]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 970 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:56:43.467726 #4523]  INFO -- : community card 7 of Spades
+I, [2014-01-25T10:56:43.535319 #4523]  INFO -- : community card 2 of Diamonds
+I, [2014-01-25T10:56:43.603302 #4523]  INFO -- : community card Jack of Spades
+I, [2014-01-25T10:56:43.691691 #4523]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 990 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:56:43.813202 #4523]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 970 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:56:43.882098 #4523]  INFO -- : community card 4 of Hearts
+I, [2014-01-25T10:56:43.966325 #4523]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 990 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:56:44.070720 #4523]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 970 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:56:44.124170 #4523]  INFO -- : community card Ace of Spades
+I, [2014-01-25T10:56:44.208695 #4523]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 990 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:56:44.312024 #4523]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 970 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:56:44.373017 #4523]  INFO -- : Rudy Ruby showed 2 of Diamonds,4 of Hearts,7 of Spades,9 of Diamonds,Jack of Spades,Ace of Hearts,Ace of Spades making a pair
+I, [2014-01-25T10:56:44.422805 #4523]  INFO -- : Rudy Ruby won 40
+I, [2014-01-25T10:56:44.565098 #4523]  INFO -- : Rudy Ruby has 1030 chips
+I, [2014-01-25T10:56:44.565239 #4523]  INFO -- : PHilip Potts has 970 chips
+I, [2014-01-25T10:56:44.621209 #4523]  INFO -- : PHilip Potts got hole card 4 of Diamonds (4, Diamonds)
+I, [2014-01-25T10:56:44.622014 #4523]  INFO -- : Rudy Ruby got hole card 3 of Hearts (3, Hearts)
+I, [2014-01-25T10:56:44.692207 #4523]  INFO -- : PHilip Potts got hole card King of Hearts (13, Hearts)
+I, [2014-01-25T10:56:44.693017 #4523]  INFO -- : Rudy Ruby got hole card 2 of Hearts (2, Hearts)
+I, [2014-01-25T10:56:44.780768 #4523]  INFO -- : PHilip Potts made a bet of 20 (raise) and is left with 950 chips. The pot now contains 20 chips.
+I, [2014-01-25T10:56:44.835242 #4523]  INFO -- : Rudy Ruby made a bet of 40 (raise) and is left with 990 chips. The pot now contains 60 chips.
+I, [2014-01-25T10:56:44.954019 #4523]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 950 chips. The pot now contains 60 chips.
+I, [2014-01-25T10:56:45.044889 #4523]  INFO -- : Rudy Ruby made a bet of 80 (raise) and is left with 910 chips. The pot now contains 140 chips.
+I, [2014-01-25T10:56:45.106282 #4523]  INFO -- : Rudy Ruby won 140
+I, [2014-01-25T10:56:45.235804 #4523]  INFO -- : Rudy Ruby has 1050 chips
+I, [2014-01-25T10:56:45.235935 #4523]  INFO -- : PHilip Potts has 950 chips
+I, [2014-01-25T10:56:45.237069 #4523]  INFO -- : Rudy Ruby got hole card Queen of Hearts (12, Hearts)
+I, [2014-01-25T10:56:45.291780 #4523]  INFO -- : PHilip Potts got hole card 10 of Spades (10, Spades)
+I, [2014-01-25T10:56:45.292666 #4523]  INFO -- : Rudy Ruby got hole card King of Clubs (13, Clubs)
+I, [2014-01-25T10:56:45.354796 #4523]  INFO -- : PHilip Potts got hole card Queen of Spades (12, Spades)
+I, [2014-01-25T10:56:45.416102 #4523]  INFO -- : Rudy Ruby made a bet of 20 (raise) and is left with 1030 chips. The pot now contains 20 chips.
+I, [2014-01-25T10:56:45.480077 #4523]  INFO -- : PHilip Potts made a bet of 40 (raise) and is left with 910 chips. The pot now contains 60 chips.
+I, [2014-01-25T10:56:45.560469 #4523]  INFO -- : Rudy Ruby made a bet of 20 (call) and is left with 1010 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:56:45.690013 #4523]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 910 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:56:45.749384 #4523]  INFO -- : community card Ace of Spades
+I, [2014-01-25T10:56:45.823656 #4523]  INFO -- : community card 9 of Hearts
+I, [2014-01-25T10:56:45.888568 #4523]  INFO -- : community card 4 of Spades
+I, [2014-01-25T10:56:45.973267 #4523]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 1010 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:56:46.073357 #4523]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 910 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:56:46.133368 #4523]  INFO -- : community card 9 of Spades
+I, [2014-01-25T10:56:46.220286 #4523]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 1010 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:56:46.340909 #4523]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 910 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:56:46.390460 #4523]  INFO -- : community card 8 of Diamonds
+I, [2014-01-25T10:56:46.481880 #4523]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 1010 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:56:46.583649 #4523]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 910 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:56:46.634759 #4523]  INFO -- : Rudy Ruby showed 4 of Spades,8 of Diamonds,9 of Spades,9 of Hearts,Queen of Hearts,King of Clubs,Ace of Spades making a pair
+I, [2014-01-25T10:56:46.711853 #4523]  INFO -- : PHilip Potts showed 4 of Spades,8 of Diamonds,9 of Spades,9 of Hearts,10 of Spades,Queen of Spades,Ace of Spades making a flush
+I, [2014-01-25T10:56:46.767926 #4523]  INFO -- : PHilip Potts won 80
+I, [2014-01-25T10:56:46.910393 #4523]  INFO -- : Rudy Ruby has 1010 chips
+I, [2014-01-25T10:56:46.910519 #4523]  INFO -- : PHilip Potts has 990 chips
+I, [2014-01-25T10:56:46.967015 #4523]  INFO -- : PHilip Potts got hole card 5 of Spades (5, Spades)
+I, [2014-01-25T10:56:46.967895 #4523]  INFO -- : Rudy Ruby got hole card 3 of Hearts (3, Hearts)
+I, [2014-01-25T10:56:47.030526 #4523]  INFO -- : PHilip Potts got hole card Queen of Spades (12, Spades)
+I, [2014-01-25T10:56:47.031844 #4523]  INFO -- : Rudy Ruby got hole card 6 of Clubs (6, Clubs)
+I, [2014-01-25T10:56:47.110878 #4523]  INFO -- : PHilip Potts made a bet of 40 (raise) and is left with 950 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:56:47.194599 #4523]  INFO -- : Rudy Ruby made a bet of 80 (raise) and is left with 930 chips. The pot now contains 120 chips.
+I, [2014-01-25T10:56:47.299865 #4523]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 950 chips. The pot now contains 120 chips.
+I, [2014-01-25T10:56:47.380204 #4523]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 930 chips. The pot now contains 120 chips.
+I, [2014-01-25T10:56:47.448319 #4523]  INFO -- : Rudy Ruby won 120
+I, [2014-01-25T10:56:47.594466 #4523]  INFO -- : Rudy Ruby has 1050 chips
+I, [2014-01-25T10:56:47.594595 #4523]  INFO -- : PHilip Potts has 950 chips
+I, [2014-01-25T10:56:47.595380 #4523]  INFO -- : Rudy Ruby got hole card 8 of Spades (8, Spades)
+I, [2014-01-25T10:56:47.661686 #4523]  INFO -- : PHilip Potts got hole card Ace of Clubs (14, Clubs)
+I, [2014-01-25T10:56:47.662305 #4523]  INFO -- : Rudy Ruby got hole card King of Clubs (13, Clubs)
+I, [2014-01-25T10:56:47.721387 #4523]  INFO -- : PHilip Potts got hole card 3 of Hearts (3, Hearts)
+I, [2014-01-25T10:56:47.800861 #4523]  INFO -- : Rudy Ruby made a bet of 40 (raise) and is left with 1010 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:56:47.867974 #4523]  INFO -- : PHilip Potts made a bet of 80 (raise) and is left with 870 chips. The pot now contains 120 chips.
+I, [2014-01-25T10:56:47.955562 #4523]  INFO -- : Rudy Ruby made a bet of 40 (call) and is left with 970 chips. The pot now contains 160 chips.
+I, [2014-01-25T10:56:48.073640 #4523]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 870 chips. The pot now contains 160 chips.
+I, [2014-01-25T10:56:48.139338 #4523]  INFO -- : community card 4 of Diamonds
+I, [2014-01-25T10:56:48.207560 #4523]  INFO -- : community card 5 of Spades
+I, [2014-01-25T10:56:48.267933 #4523]  INFO -- : community card Queen of Spades
+I, [2014-01-25T10:56:48.358906 #4523]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 970 chips. The pot now contains 160 chips.
+I, [2014-01-25T10:56:48.463024 #4523]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 870 chips. The pot now contains 160 chips.
+I, [2014-01-25T10:56:48.519457 #4523]  INFO -- : community card 2 of Spades
+I, [2014-01-25T10:56:48.607599 #4523]  INFO -- : Rudy Ruby made a bet of 80 (raise) and is left with 890 chips. The pot now contains 240 chips.
+I, [2014-01-25T10:56:48.733089 #4523]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 870 chips. The pot now contains 240 chips.
+I, [2014-01-25T10:56:48.788886 #4523]  INFO -- : Rudy Ruby won 240
+I, [2014-01-25T10:56:48.931858 #4523]  INFO -- : Rudy Ruby has 1130 chips
+I, [2014-01-25T10:56:48.931991 #4523]  INFO -- : PHilip Potts has 870 chips
+I, [2014-01-25T10:56:48.983515 #4523]  INFO -- : PHilip Potts got hole card 8 of Spades (8, Spades)
+I, [2014-01-25T10:56:48.985937 #4523]  INFO -- : Rudy Ruby got hole card Jack of Spades (11, Spades)
+I, [2014-01-25T10:56:49.045388 #4523]  INFO -- : PHilip Potts got hole card 7 of Spades (7, Spades)
+I, [2014-01-25T10:56:49.050633 #4523]  INFO -- : Rudy Ruby got hole card 7 of Diamonds (7, Diamonds)
+I, [2014-01-25T10:56:49.131257 #4523]  INFO -- : PHilip Potts made a bet of 80 (raise) and is left with 790 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:56:49.215981 #4523]  INFO -- : Rudy Ruby made a bet of 160 (raise) and is left with 970 chips. The pot now contains 240 chips.
+I, [2014-01-25T10:56:49.331632 #4523]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 790 chips. The pot now contains 240 chips.
+I, [2014-01-25T10:56:49.414204 #4523]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 970 chips. The pot now contains 240 chips.
+I, [2014-01-25T10:56:49.478933 #4523]  INFO -- : Rudy Ruby won 240
+I, [2014-01-25T10:56:49.601123 #4523]  INFO -- : Rudy Ruby has 1210 chips
+I, [2014-01-25T10:56:49.601250 #4523]  INFO -- : PHilip Potts has 790 chips
+I, [2014-01-25T10:56:49.601969 #4523]  INFO -- : Rudy Ruby got hole card 7 of Diamonds (7, Diamonds)
+I, [2014-01-25T10:56:49.664435 #4523]  INFO -- : PHilip Potts got hole card Queen of Hearts (12, Hearts)
+I, [2014-01-25T10:56:49.665266 #4523]  INFO -- : Rudy Ruby got hole card 8 of Hearts (8, Hearts)
+I, [2014-01-25T10:56:49.740984 #4523]  INFO -- : PHilip Potts got hole card 3 of Diamonds (3, Diamonds)
+I, [2014-01-25T10:56:49.816354 #4523]  INFO -- : Rudy Ruby made a bet of 80 (raise) and is left with 1130 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:56:49.889585 #4523]  INFO -- : PHilip Potts made a bet of 160 (raise) and is left with 630 chips. The pot now contains 240 chips.
+I, [2014-01-25T10:56:49.979573 #4523]  INFO -- : Rudy Ruby made a bet of 320 (raise) and is left with 810 chips. The pot now contains 560 chips.
+I, [2014-01-25T10:56:50.082856 #4523]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 630 chips. The pot now contains 560 chips.
+I, [2014-01-25T10:56:50.139304 #4523]  INFO -- : Rudy Ruby won 560
+I, [2014-01-25T10:56:50.269525 #4523]  INFO -- : Rudy Ruby has 1370 chips
+I, [2014-01-25T10:56:50.269677 #4523]  INFO -- : PHilip Potts has 630 chips
+I, [2014-01-25T10:56:50.326779 #4523]  INFO -- : PHilip Potts got hole card 8 of Hearts (8, Hearts)
+I, [2014-01-25T10:56:50.328301 #4523]  INFO -- : Rudy Ruby got hole card 8 of Clubs (8, Clubs)
+I, [2014-01-25T10:56:50.397672 #4523]  INFO -- : PHilip Potts got hole card 6 of Spades (6, Spades)
+I, [2014-01-25T10:56:50.398504 #4523]  INFO -- : Rudy Ruby got hole card 7 of Spades (7, Spades)
+I, [2014-01-25T10:56:50.496953 #4523]  INFO -- : PHilip Potts made a bet of 160 (raise) and is left with 470 chips. The pot now contains 160 chips.
+I, [2014-01-25T10:56:50.567040 #4523]  INFO -- : Rudy Ruby made a bet of 320 (raise) and is left with 1050 chips. The pot now contains 480 chips.
+I, [2014-01-25T10:56:50.693944 #4523]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 470 chips. The pot now contains 480 chips.
+I, [2014-01-25T10:56:50.782526 #4523]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 1050 chips. The pot now contains 480 chips.
+I, [2014-01-25T10:56:50.848019 #4523]  INFO -- : Rudy Ruby won 480
+I, [2014-01-25T10:56:50.971071 #4523]  INFO -- : Rudy Ruby has 1530 chips
+I, [2014-01-25T10:56:50.971112 #4523]  INFO -- : PHilip Potts has 470 chips
+I, [2014-01-25T10:56:50.974046 #4523]  INFO -- : Rudy Ruby got hole card 4 of Spades (4, Spades)
+I, [2014-01-25T10:56:51.025913 #4523]  INFO -- : PHilip Potts got hole card Jack of Clubs (11, Clubs)
+I, [2014-01-25T10:56:51.026705 #4523]  INFO -- : Rudy Ruby got hole card 7 of Diamonds (7, Diamonds)
+I, [2014-01-25T10:56:51.092044 #4523]  INFO -- : PHilip Potts got hole card Ace of Diamonds (14, Diamonds)
+I, [2014-01-25T10:56:51.164228 #4523]  INFO -- : Rudy Ruby made a bet of 160 (raise) and is left with 1370 chips. The pot now contains 160 chips.
+I, [2014-01-25T10:56:51.242805 #4523]  INFO -- : PHilip Potts made a bet of 320 (raise) and is left with 150 chips. The pot now contains 480 chips.
+I, [2014-01-25T10:56:51.330060 #4523]  INFO -- : Rudy Ruby made a bet of 160 (call) and is left with 1210 chips. The pot now contains 640 chips.
+I, [2014-01-25T10:56:51.434397 #4523]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 150 chips. The pot now contains 640 chips.
+I, [2014-01-25T10:56:51.481489 #4523]  INFO -- : community card 6 of Spades
+I, [2014-01-25T10:56:51.551237 #4523]  INFO -- : community card 8 of Hearts
+I, [2014-01-25T10:56:51.619290 #4523]  INFO -- : community card 2 of Hearts
+I, [2014-01-25T10:56:51.714748 #4523]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 1210 chips. The pot now contains 640 chips.
+I, [2014-01-25T10:56:51.816678 #4523]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 150 chips. The pot now contains 640 chips.
+I, [2014-01-25T10:56:51.874442 #4523]  INFO -- : community card 2 of Clubs
+I, [2014-01-25T10:56:51.962142 #4523]  INFO -- : Rudy Ruby made a bet of 1210 (allin) and is left with 0 chips. The pot now contains 1850 chips.
+I, [2014-01-25T10:56:52.064593 #4523]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 150 chips. The pot now contains 1850 chips.
+I, [2014-01-25T10:56:52.117680 #4523]  INFO -- : Rudy Ruby won 1850
+I, [2014-01-25T10:56:52.247862 #4523]  INFO -- : Rudy Ruby has 1850 chips
+I, [2014-01-25T10:56:52.248044 #4523]  INFO -- : PHilip Potts has 150 chips
+I, [2014-01-25T10:56:52.309153 #4523]  INFO -- : PHilip Potts got hole card 6 of Spades (6, Spades)
+I, [2014-01-25T10:56:52.310459 #4523]  INFO -- : Rudy Ruby got hole card King of Clubs (13, Clubs)
+I, [2014-01-25T10:56:52.377327 #4523]  INFO -- : PHilip Potts got hole card King of Hearts (13, Hearts)
+I, [2014-01-25T10:56:52.378116 #4523]  INFO -- : Rudy Ruby got hole card 6 of Clubs (6, Clubs)
+I, [2014-01-25T10:56:52.466670 #4523]  INFO -- : PHilip Potts made a bet of 150 (allin) and is left with 0 chips. The pot now contains 150 chips.
+I, [2014-01-25T10:56:52.523954 #4523]  INFO -- : Rudy Ruby made a bet of 640 (raise) and is left with 1210 chips. The pot now contains 790 chips.
+I, [2014-01-25T10:56:52.610103 #4523]  INFO -- : Rudy Ruby made a bet of 1210 (allin) and is left with 0 chips. The pot now contains 2000 chips.
+I, [2014-01-25T10:56:52.675585 #4523]  INFO -- : community card 8 of Spades
+I, [2014-01-25T10:56:52.741130 #4523]  INFO -- : community card 4 of Clubs
+I, [2014-01-25T10:56:52.811400 #4523]  INFO -- : community card 3 of Hearts
+I, [2014-01-25T10:56:52.882646 #4523]  INFO -- : community card 4 of Hearts
+I, [2014-01-25T10:56:52.960587 #4523]  INFO -- : community card 3 of Diamonds
+I, [2014-01-25T10:56:53.024270 #4523]  INFO -- : Rudy Ruby showed 3 of Diamonds,3 of Hearts,4 of Hearts,4 of Clubs,6 of Clubs,8 of Spades,King of Clubs making a two pairs
+I, [2014-01-25T10:56:53.088024 #4523]  INFO -- : PHilip Potts showed 3 of Diamonds,3 of Hearts,4 of Hearts,4 of Clubs,6 of Spades,8 of Spades,King of Hearts making a two pairs
+I, [2014-01-25T10:56:53.152381 #4523]  INFO -- : Rudy Ruby won 150
+I, [2014-01-25T10:56:53.217710 #4523]  INFO -- : PHilip Potts won 150
+I, [2014-01-25T10:56:53.281292 #4523]  INFO -- : Rudy Ruby won 1700
+I, [2014-01-25T10:56:53.403470 #4523]  INFO -- : Rudy Ruby has 1850 chips
+I, [2014-01-25T10:56:53.403596 #4523]  INFO -- : PHilip Potts has 150 chips
+I, [2014-01-25T10:56:53.404322 #4523]  INFO -- : Rudy Ruby got hole card 4 of Clubs (4, Clubs)
+I, [2014-01-25T10:56:53.459124 #4523]  INFO -- : PHilip Potts got hole card 5 of Hearts (5, Hearts)
+I, [2014-01-25T10:56:53.460117 #4523]  INFO -- : Rudy Ruby got hole card 9 of Spades (9, Spades)
+I, [2014-01-25T10:56:53.521780 #4523]  INFO -- : PHilip Potts got hole card King of Clubs (13, Clubs)
+I, [2014-01-25T10:56:53.590607 #4523]  INFO -- : Rudy Ruby made a bet of 320 (raise) and is left with 1530 chips. The pot now contains 320 chips.
+I, [2014-01-25T10:56:53.658107 #4523]  INFO -- : PHilip Potts made a bet of 150 (allin) and is left with 0 chips. The pot now contains 470 chips.
+I, [2014-01-25T10:56:53.750260 #4523]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 1530 chips. The pot now contains 470 chips.
+I, [2014-01-25T10:56:53.827639 #4523]  INFO -- : community card King of Diamonds
+I, [2014-01-25T10:56:53.917535 #4523]  INFO -- : community card 8 of Clubs
+I, [2014-01-25T10:56:54.007746 #4523]  INFO -- : community card 2 of Diamonds
+I, [2014-01-25T10:56:54.096136 #4523]  INFO -- : community card Jack of Hearts
+I, [2014-01-25T10:56:54.186067 #4523]  INFO -- : community card Jack of Spades
+I, [2014-01-25T10:56:54.279785 #4523]  INFO -- : Rudy Ruby showed 2 of Diamonds,4 of Clubs,8 of Clubs,9 of Spades,Jack of Spades,Jack of Hearts,King of Diamonds making a pair
+I, [2014-01-25T10:56:54.371547 #4523]  INFO -- : PHilip Potts showed 2 of Diamonds,5 of Hearts,8 of Clubs,Jack of Spades,Jack of Hearts,King of Clubs,King of Diamonds making a two pairs
+I, [2014-01-25T10:56:54.455345 #4523]  INFO -- : PHilip Potts won 300
+I, [2014-01-25T10:56:54.555291 #4523]  INFO -- : Rudy Ruby won 170
+I, [2014-01-25T10:56:54.725077 #4523]  INFO -- : Rudy Ruby has 1700 chips
+I, [2014-01-25T10:56:54.725227 #4523]  INFO -- : PHilip Potts has 300 chips
+I, [2014-01-25T10:56:54.785787 #4523]  INFO -- : PHilip Potts got hole card 7 of Diamonds (7, Diamonds)
+I, [2014-01-25T10:56:54.786468 #4523]  INFO -- : Rudy Ruby got hole card Jack of Spades (11, Spades)
+I, [2014-01-25T10:56:54.856533 #4523]  INFO -- : PHilip Potts got hole card 8 of Hearts (8, Hearts)
+I, [2014-01-25T10:56:54.857480 #4523]  INFO -- : Rudy Ruby got hole card 7 of Hearts (7, Hearts)
+I, [2014-01-25T10:56:54.947876 #4523]  INFO -- : PHilip Potts made a bet of 300 (allin) and is left with 0 chips. The pot now contains 300 chips.
+I, [2014-01-25T10:56:55.017084 #4523]  INFO -- : Rudy Ruby made a bet of 1280 (raise) and is left with 420 chips. The pot now contains 1580 chips.
+I, [2014-01-25T10:56:55.136965 #4523]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 420 chips. The pot now contains 1580 chips.
+I, [2014-01-25T10:56:55.215219 #4523]  INFO -- : community card King of Clubs
+I, [2014-01-25T10:56:55.297137 #4523]  INFO -- : community card Queen of Hearts
+I, [2014-01-25T10:56:55.372405 #4523]  INFO -- : community card 9 of Clubs
+I, [2014-01-25T10:56:55.443429 #4523]  INFO -- : community card 9 of Hearts
+I, [2014-01-25T10:56:55.558568 #4523]  INFO -- : community card 4 of Diamonds
+I, [2014-01-25T10:56:55.669074 #4523]  INFO -- : Rudy Ruby showed 4 of Diamonds,7 of Hearts,9 of Hearts,9 of Clubs,Jack of Spades,Queen of Hearts,King of Clubs making a pair
+I, [2014-01-25T10:56:55.735637 #4523]  INFO -- : Rudy Ruby won 1580
+I, [2014-01-25T10:56:55.813048 #4523]  INFO -- : Place 1: Rudy Ruby
+I, [2014-01-25T10:56:55.816289 #4523]  INFO -- : Place 2: PHilip Potts
+I, [2014-01-25T10:57:26.746973 #5099]  INFO -- : Connected Rudy Ruby at localhost:9200
+I, [2014-01-25T10:57:26.802370 #5099]  INFO -- : Connected PHilip Potts at http://localhost:8080/php/player_service.php
+I, [2014-01-25T10:57:26.981261 #5099]  INFO -- : Rudy Ruby has 1000 chips
+I, [2014-01-25T10:57:26.981393 #5099]  INFO -- : PHilip Potts has 1000 chips
+I, [2014-01-25T10:57:27.042127 #5099]  INFO -- : PHilip Potts got hole card 10 of Spades (10, Spades)
+I, [2014-01-25T10:57:27.043034 #5099]  INFO -- : Rudy Ruby got hole card King of Clubs (13, Clubs)
+I, [2014-01-25T10:57:27.106322 #5099]  INFO -- : PHilip Potts got hole card Ace of Spades (14, Spades)
+I, [2014-01-25T10:57:27.107090 #5099]  INFO -- : Rudy Ruby got hole card 3 of Clubs (3, Clubs)
+I, [2014-01-25T10:57:27.198243 #5099]  INFO -- : PHilip Potts made a bet of 10 (raise) and is left with 990 chips. The pot now contains 10 chips.
+I, [2014-01-25T10:57:27.266083 #5099]  INFO -- : Rudy Ruby made a bet of 20 (raise) and is left with 980 chips. The pot now contains 30 chips.
+I, [2014-01-25T10:57:27.398384 #5099]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 990 chips. The pot now contains 30 chips.
+I, [2014-01-25T10:57:27.475937 #5099]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 980 chips. The pot now contains 30 chips.
+I, [2014-01-25T10:57:27.540349 #5099]  INFO -- : Rudy Ruby won 30
+I, [2014-01-25T10:57:27.705958 #5099]  INFO -- : Rudy Ruby has 1010 chips
+I, [2014-01-25T10:57:27.706086 #5099]  INFO -- : PHilip Potts has 990 chips
+I, [2014-01-25T10:57:27.706753 #5099]  INFO -- : Rudy Ruby got hole card King of Hearts (13, Hearts)
+I, [2014-01-25T10:57:27.762143 #5099]  INFO -- : PHilip Potts got hole card Queen of Clubs (12, Clubs)
+I, [2014-01-25T10:57:27.763056 #5099]  INFO -- : Rudy Ruby got hole card 3 of Hearts (3, Hearts)
+I, [2014-01-25T10:57:27.844296 #5099]  INFO -- : PHilip Potts got hole card Queen of Hearts (12, Hearts)
+I, [2014-01-25T10:57:27.912763 #5099]  INFO -- : Rudy Ruby made a bet of 10 (raise) and is left with 1000 chips. The pot now contains 10 chips.
+I, [2014-01-25T10:57:27.984171 #5099]  INFO -- : PHilip Potts made a bet of 20 (raise) and is left with 970 chips. The pot now contains 30 chips.
+I, [2014-01-25T10:57:28.076324 #5099]  INFO -- : Rudy Ruby made a bet of 10 (call) and is left with 990 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:57:28.184426 #5099]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 970 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:57:28.237338 #5099]  INFO -- : community card 4 of Hearts
+I, [2014-01-25T10:57:28.303202 #5099]  INFO -- : community card 7 of Hearts
+I, [2014-01-25T10:57:28.372514 #5099]  INFO -- : community card 9 of Clubs
+I, [2014-01-25T10:57:28.455160 #5099]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 990 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:57:28.575793 #5099]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 970 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:57:28.671439 #5099]  INFO -- : community card 8 of Diamonds
+I, [2014-01-25T10:57:28.764799 #5099]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 990 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:57:28.870763 #5099]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 970 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:57:28.939575 #5099]  INFO -- : community card 4 of Clubs
+I, [2014-01-25T10:57:29.032768 #5099]  INFO -- : Rudy Ruby made a bet of 80 (raise) and is left with 910 chips. The pot now contains 120 chips.
+I, [2014-01-25T10:57:29.140214 #5099]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 970 chips. The pot now contains 120 chips.
+I, [2014-01-25T10:57:29.193363 #5099]  INFO -- : Rudy Ruby won 120
+I, [2014-01-25T10:57:29.331903 #5099]  INFO -- : Rudy Ruby has 1030 chips
+I, [2014-01-25T10:57:29.332027 #5099]  INFO -- : PHilip Potts has 970 chips
+I, [2014-01-25T10:57:29.390128 #5099]  INFO -- : PHilip Potts got hole card 7 of Spades (7, Spades)
+I, [2014-01-25T10:57:29.390977 #5099]  INFO -- : Rudy Ruby got hole card 4 of Diamonds (4, Diamonds)
+I, [2014-01-25T10:57:29.465435 #5099]  INFO -- : PHilip Potts got hole card Jack of Spades (11, Spades)
+I, [2014-01-25T10:57:29.468375 #5099]  INFO -- : Rudy Ruby got hole card Jack of Clubs (11, Clubs)
+I, [2014-01-25T10:57:29.559260 #5099]  INFO -- : PHilip Potts made a bet of 20 (raise) and is left with 950 chips. The pot now contains 20 chips.
+I, [2014-01-25T10:57:29.622226 #5099]  INFO -- : Rudy Ruby made a bet of 40 (raise) and is left with 990 chips. The pot now contains 60 chips.
+I, [2014-01-25T10:57:29.745218 #5099]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 950 chips. The pot now contains 60 chips.
+I, [2014-01-25T10:57:29.835314 #5099]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 990 chips. The pot now contains 60 chips.
+I, [2014-01-25T10:57:29.900944 #5099]  INFO -- : Rudy Ruby won 60
+I, [2014-01-25T10:57:30.026038 #5099]  INFO -- : Rudy Ruby has 1050 chips
+I, [2014-01-25T10:57:30.026161 #5099]  INFO -- : PHilip Potts has 950 chips
+I, [2014-01-25T10:57:30.027072 #5099]  INFO -- : Rudy Ruby got hole card 7 of Spades (7, Spades)
+I, [2014-01-25T10:57:30.094787 #5099]  INFO -- : PHilip Potts got hole card Jack of Clubs (11, Clubs)
+I, [2014-01-25T10:57:30.095895 #5099]  INFO -- : Rudy Ruby got hole card 9 of Hearts (9, Hearts)
+I, [2014-01-25T10:57:30.181553 #5099]  INFO -- : PHilip Potts got hole card 6 of Spades (6, Spades)
+I, [2014-01-25T10:57:30.259862 #5099]  INFO -- : Rudy Ruby made a bet of 20 (raise) and is left with 1030 chips. The pot now contains 20 chips.
+I, [2014-01-25T10:57:30.343793 #5099]  INFO -- : PHilip Potts made a bet of 40 (raise) and is left with 910 chips. The pot now contains 60 chips.
+I, [2014-01-25T10:57:30.438324 #5099]  INFO -- : Rudy Ruby made a bet of 20 (call) and is left with 1010 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:57:30.567803 #5099]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 910 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:57:30.630741 #5099]  INFO -- : community card Ace of Clubs
+I, [2014-01-25T10:57:30.702822 #5099]  INFO -- : community card 10 of Spades
+I, [2014-01-25T10:57:30.771360 #5099]  INFO -- : community card 9 of Clubs
+I, [2014-01-25T10:57:30.867193 #5099]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 1010 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:57:30.983887 #5099]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 910 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:57:31.044099 #5099]  INFO -- : community card 10 of Diamonds
+I, [2014-01-25T10:57:31.139178 #5099]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 1010 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:57:31.249898 #5099]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 910 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:57:31.302931 #5099]  INFO -- : community card 3 of Hearts
+I, [2014-01-25T10:57:31.394736 #5099]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 1010 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:57:31.506633 #5099]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 910 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:57:31.566945 #5099]  INFO -- : Rudy Ruby showed 3 of Hearts,7 of Spades,9 of Clubs,9 of Hearts,10 of Diamonds,10 of Spades,Ace of Clubs making a two pairs
+I, [2014-01-25T10:57:31.626719 #5099]  INFO -- : Rudy Ruby won 80
+I, [2014-01-25T10:57:31.762395 #5099]  INFO -- : Rudy Ruby has 1090 chips
+I, [2014-01-25T10:57:31.762518 #5099]  INFO -- : PHilip Potts has 910 chips
+I, [2014-01-25T10:57:31.825868 #5099]  INFO -- : PHilip Potts got hole card King of Hearts (13, Hearts)
+I, [2014-01-25T10:57:31.827661 #5099]  INFO -- : Rudy Ruby got hole card Jack of Clubs (11, Clubs)
+I, [2014-01-25T10:57:31.901537 #5099]  INFO -- : PHilip Potts got hole card 2 of Hearts (2, Hearts)
+I, [2014-01-25T10:57:31.903850 #5099]  INFO -- : Rudy Ruby got hole card 5 of Hearts (5, Hearts)
+I, [2014-01-25T10:57:31.996549 #5099]  INFO -- : PHilip Potts made a bet of 40 (raise) and is left with 870 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:57:32.060439 #5099]  INFO -- : Rudy Ruby made a bet of 80 (raise) and is left with 1010 chips. The pot now contains 120 chips.
+I, [2014-01-25T10:57:32.180078 #5099]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 870 chips. The pot now contains 120 chips.
+I, [2014-01-25T10:57:32.275083 #5099]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 1010 chips. The pot now contains 120 chips.
+I, [2014-01-25T10:57:32.340312 #5099]  INFO -- : Rudy Ruby won 120
+I, [2014-01-25T10:57:32.477348 #5099]  INFO -- : Rudy Ruby has 1130 chips
+I, [2014-01-25T10:57:32.477474 #5099]  INFO -- : PHilip Potts has 870 chips
+I, [2014-01-25T10:57:32.478236 #5099]  INFO -- : Rudy Ruby got hole card 6 of Spades (6, Spades)
+I, [2014-01-25T10:57:32.551951 #5099]  INFO -- : PHilip Potts got hole card 7 of Spades (7, Spades)
+I, [2014-01-25T10:57:32.553306 #5099]  INFO -- : Rudy Ruby got hole card 6 of Hearts (6, Hearts)
+I, [2014-01-25T10:57:32.619436 #5099]  INFO -- : PHilip Potts got hole card King of Hearts (13, Hearts)
+I, [2014-01-25T10:57:32.700868 #5099]  INFO -- : Rudy Ruby made a bet of 40 (raise) and is left with 1090 chips. The pot now contains 40 chips.
+I, [2014-01-25T10:57:32.768478 #5099]  INFO -- : PHilip Potts made a bet of 80 (raise) and is left with 790 chips. The pot now contains 120 chips.
+I, [2014-01-25T10:57:32.858489 #5099]  INFO -- : Rudy Ruby made a bet of 40 (call) and is left with 1050 chips. The pot now contains 160 chips.
+I, [2014-01-25T10:57:32.971686 #5099]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 790 chips. The pot now contains 160 chips.
+I, [2014-01-25T10:57:33.027056 #5099]  INFO -- : community card 3 of Spades
+I, [2014-01-25T10:57:33.107099 #5099]  INFO -- : community card 7 of Hearts
+I, [2014-01-25T10:57:33.181041 #5099]  INFO -- : community card 8 of Diamonds
+I, [2014-01-25T10:57:33.273097 #5099]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 1050 chips. The pot now contains 160 chips.
+I, [2014-01-25T10:57:33.385998 #5099]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 790 chips. The pot now contains 160 chips.
+I, [2014-01-25T10:57:33.441400 #5099]  INFO -- : community card Jack of Spades
+I, [2014-01-25T10:57:33.541817 #5099]  INFO -- : Rudy Ruby made a bet of 80 (raise) and is left with 970 chips. The pot now contains 240 chips.
+I, [2014-01-25T10:57:33.661501 #5099]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 790 chips. The pot now contains 240 chips.
+I, [2014-01-25T10:57:33.738649 #5099]  INFO -- : Rudy Ruby won 240
+I, [2014-01-25T10:57:33.877601 #5099]  INFO -- : Rudy Ruby has 1210 chips
+I, [2014-01-25T10:57:33.877731 #5099]  INFO -- : PHilip Potts has 790 chips
+I, [2014-01-25T10:57:33.936537 #5099]  INFO -- : PHilip Potts got hole card 7 of Spades (7, Spades)
+I, [2014-01-25T10:57:33.938233 #5099]  INFO -- : Rudy Ruby got hole card 6 of Spades (6, Spades)
+I, [2014-01-25T10:57:34.004540 #5099]  INFO -- : PHilip Potts got hole card 5 of Diamonds (5, Diamonds)
+I, [2014-01-25T10:57:34.005516 #5099]  INFO -- : Rudy Ruby got hole card 9 of Spades (9, Spades)
+I, [2014-01-25T10:57:34.088069 #5099]  INFO -- : PHilip Potts made a bet of 80 (raise) and is left with 710 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:57:34.149404 #5099]  INFO -- : Rudy Ruby made a bet of 160 (raise) and is left with 1050 chips. The pot now contains 240 chips.
+I, [2014-01-25T10:57:34.268453 #5099]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 710 chips. The pot now contains 240 chips.
+I, [2014-01-25T10:57:34.359756 #5099]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 1050 chips. The pot now contains 240 chips.
+I, [2014-01-25T10:57:34.435683 #5099]  INFO -- : Rudy Ruby won 240
+I, [2014-01-25T10:57:34.565422 #5099]  INFO -- : Rudy Ruby has 1290 chips
+I, [2014-01-25T10:57:34.565546 #5099]  INFO -- : PHilip Potts has 710 chips
+I, [2014-01-25T10:57:34.566300 #5099]  INFO -- : Rudy Ruby got hole card 8 of Spades (8, Spades)
+I, [2014-01-25T10:57:34.622662 #5099]  INFO -- : PHilip Potts got hole card King of Clubs (13, Clubs)
+I, [2014-01-25T10:57:34.623470 #5099]  INFO -- : Rudy Ruby got hole card 4 of Clubs (4, Clubs)
+I, [2014-01-25T10:57:34.726433 #5099]  INFO -- : PHilip Potts got hole card Queen of Diamonds (12, Diamonds)
+I, [2014-01-25T10:57:34.787764 #5099]  INFO -- : Rudy Ruby made a bet of 80 (raise) and is left with 1210 chips. The pot now contains 80 chips.
+I, [2014-01-25T10:57:34.859300 #5099]  INFO -- : PHilip Potts made a bet of 160 (raise) and is left with 550 chips. The pot now contains 240 chips.
+I, [2014-01-25T10:57:34.961343 #5099]  INFO -- : Rudy Ruby made a bet of 80 (call) and is left with 1130 chips. The pot now contains 320 chips.
+I, [2014-01-25T10:57:35.085633 #5099]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 550 chips. The pot now contains 320 chips.
+I, [2014-01-25T10:57:35.147148 #5099]  INFO -- : community card 7 of Clubs
+I, [2014-01-25T10:57:35.208507 #5099]  INFO -- : community card 6 of Diamonds
+I, [2014-01-25T10:57:35.283943 #5099]  INFO -- : community card 3 of Hearts
+I, [2014-01-25T10:57:35.376484 #5099]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 1130 chips. The pot now contains 320 chips.
+I, [2014-01-25T10:57:35.485886 #5099]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 550 chips. The pot now contains 320 chips.
+I, [2014-01-25T10:57:35.557308 #5099]  INFO -- : community card 5 of Clubs
+I, [2014-01-25T10:57:35.650765 #5099]  INFO -- : Rudy Ruby made a bet of 320 (raise) and is left with 810 chips. The pot now contains 640 chips.
+I, [2014-01-25T10:57:35.773516 #5099]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 550 chips. The pot now contains 640 chips.
+I, [2014-01-25T10:57:35.832500 #5099]  INFO -- : Rudy Ruby won 640
+I, [2014-01-25T10:57:35.969619 #5099]  INFO -- : Rudy Ruby has 1450 chips
+I, [2014-01-25T10:57:35.969793 #5099]  INFO -- : PHilip Potts has 550 chips
+I, [2014-01-25T10:57:36.036705 #5099]  INFO -- : PHilip Potts got hole card 8 of Hearts (8, Hearts)
+I, [2014-01-25T10:57:36.041296 #5099]  INFO -- : Rudy Ruby got hole card 3 of Diamonds (3, Diamonds)
+I, [2014-01-25T10:57:36.114099 #5099]  INFO -- : PHilip Potts got hole card Queen of Diamonds (12, Diamonds)
+I, [2014-01-25T10:57:36.114948 #5099]  INFO -- : Rudy Ruby got hole card Queen of Hearts (12, Hearts)
+I, [2014-01-25T10:57:36.210958 #5099]  INFO -- : PHilip Potts made a bet of 160 (raise) and is left with 390 chips. The pot now contains 160 chips.
+I, [2014-01-25T10:57:36.272484 #5099]  INFO -- : Rudy Ruby made a bet of 320 (raise) and is left with 1130 chips. The pot now contains 480 chips.
+I, [2014-01-25T10:57:36.394371 #5099]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 390 chips. The pot now contains 480 chips.
+I, [2014-01-25T10:57:36.488175 #5099]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 1130 chips. The pot now contains 480 chips.
+I, [2014-01-25T10:57:36.554527 #5099]  INFO -- : Rudy Ruby won 480
+I, [2014-01-25T10:57:36.698707 #5099]  INFO -- : Rudy Ruby has 1610 chips
+I, [2014-01-25T10:57:36.698882 #5099]  INFO -- : PHilip Potts has 390 chips
+I, [2014-01-25T10:57:36.699743 #5099]  INFO -- : Rudy Ruby got hole card 5 of Spades (5, Spades)
+I, [2014-01-25T10:57:36.767846 #5099]  INFO -- : PHilip Potts got hole card Queen of Hearts (12, Hearts)
+I, [2014-01-25T10:57:36.768887 #5099]  INFO -- : Rudy Ruby got hole card 9 of Hearts (9, Hearts)
+I, [2014-01-25T10:57:36.842904 #5099]  INFO -- : PHilip Potts got hole card 2 of Spades (2, Spades)
+I, [2014-01-25T10:57:36.903523 #5099]  INFO -- : Rudy Ruby made a bet of 160 (raise) and is left with 1450 chips. The pot now contains 160 chips.
+I, [2014-01-25T10:57:36.976878 #5099]  INFO -- : PHilip Potts made a bet of 320 (raise) and is left with 70 chips. The pot now contains 480 chips.
+I, [2014-01-25T10:57:37.071054 #5099]  INFO -- : Rudy Ruby made a bet of 160 (call) and is left with 1290 chips. The pot now contains 640 chips.
+I, [2014-01-25T10:57:37.178826 #5099]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 70 chips. The pot now contains 640 chips.
+I, [2014-01-25T10:57:37.235769 #5099]  INFO -- : community card 6 of Spades
+I, [2014-01-25T10:57:37.300398 #5099]  INFO -- : community card Queen of Diamonds
+I, [2014-01-25T10:57:37.371489 #5099]  INFO -- : community card King of Hearts
+I, [2014-01-25T10:57:37.468622 #5099]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 1290 chips. The pot now contains 640 chips.
+I, [2014-01-25T10:57:37.579541 #5099]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 70 chips. The pot now contains 640 chips.
+I, [2014-01-25T10:57:37.633866 #5099]  INFO -- : community card 7 of Diamonds
+I, [2014-01-25T10:57:37.728557 #5099]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 1290 chips. The pot now contains 640 chips.
+I, [2014-01-25T10:57:37.857742 #5099]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 70 chips. The pot now contains 640 chips.
+I, [2014-01-25T10:57:37.916461 #5099]  INFO -- : community card Jack of Spades
+I, [2014-01-25T10:57:38.007021 #5099]  INFO -- : Rudy Ruby made a bet of 0 (check) and is left with 1290 chips. The pot now contains 640 chips.
+I, [2014-01-25T10:57:38.124113 #5099]  INFO -- : PHilip Potts made a bet of 0 (check) and is left with 70 chips. The pot now contains 640 chips.
+I, [2014-01-25T10:57:38.185786 #5099]  INFO -- : Rudy Ruby showed 5 of Spades,6 of Spades,7 of Diamonds,9 of Hearts,Jack of Spades,Queen of Diamonds,King of Hearts making a high card
+I, [2014-01-25T10:57:38.259597 #5099]  INFO -- : PHilip Potts showed 2 of Spades,6 of Spades,7 of Diamonds,Jack of Spades,Queen of Diamonds,Queen of Hearts,King of Hearts making a pair
+I, [2014-01-25T10:57:38.334533 #5099]  INFO -- : PHilip Potts won 640
+I, [2014-01-25T10:57:38.462817 #5099]  INFO -- : Rudy Ruby has 1290 chips
+I, [2014-01-25T10:57:38.462940 #5099]  INFO -- : PHilip Potts has 710 chips
+I, [2014-01-25T10:57:38.518278 #5099]  INFO -- : PHilip Potts got hole card Ace of Diamonds (14, Diamonds)
+I, [2014-01-25T10:57:38.519284 #5099]  INFO -- : Rudy Ruby got hole card 2 of Clubs (2, Clubs)
+I, [2014-01-25T10:57:38.570063 #5099]  INFO -- : PHilip Potts got hole card Queen of Clubs (12, Clubs)
+I, [2014-01-25T10:57:38.570884 #5099]  INFO -- : Rudy Ruby got hole card King of Spades (13, Spades)
+I, [2014-01-25T10:57:38.663517 #5099]  INFO -- : PHilip Potts made a bet of 320 (raise) and is left with 390 chips. The pot now contains 320 chips.
+I, [2014-01-25T10:57:38.742733 #5099]  INFO -- : Rudy Ruby made a bet of 640 (raise) and is left with 650 chips. The pot now contains 960 chips.
+I, [2014-01-25T10:57:38.881562 #5099]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 390 chips. The pot now contains 960 chips.
+I, [2014-01-25T10:57:38.966862 #5099]  INFO -- : Rudy Ruby made a bet of 650 (allin) and is left with 0 chips. The pot now contains 1610 chips.
+I, [2014-01-25T10:57:39.026410 #5099]  INFO -- : Rudy Ruby won 1610
+I, [2014-01-25T10:57:39.147355 #5099]  INFO -- : Rudy Ruby has 1610 chips
+I, [2014-01-25T10:57:39.147480 #5099]  INFO -- : PHilip Potts has 390 chips
+I, [2014-01-25T10:57:39.150379 #5099]  INFO -- : Rudy Ruby got hole card 9 of Hearts (9, Hearts)
+I, [2014-01-25T10:57:39.211132 #5099]  INFO -- : PHilip Potts got hole card 6 of Spades (6, Spades)
+I, [2014-01-25T10:57:39.212140 #5099]  INFO -- : Rudy Ruby got hole card 4 of Diamonds (4, Diamonds)
+I, [2014-01-25T10:57:39.287794 #5099]  INFO -- : PHilip Potts got hole card 10 of Diamonds (10, Diamonds)
+I, [2014-01-25T10:57:39.360187 #5099]  INFO -- : Rudy Ruby made a bet of 320 (raise) and is left with 1290 chips. The pot now contains 320 chips.
+I, [2014-01-25T10:57:39.438659 #5099]  INFO -- : PHilip Potts made a bet of 390 (allin) and is left with 0 chips. The pot now contains 710 chips.
+I, [2014-01-25T10:57:39.538055 #5099]  INFO -- : Rudy Ruby made a bet of 70 (call) and is left with 1220 chips. The pot now contains 780 chips.
+I, [2014-01-25T10:57:39.601420 #5099]  INFO -- : community card 5 of Diamonds
+I, [2014-01-25T10:57:39.690745 #5099]  INFO -- : community card 2 of Spades
+I, [2014-01-25T10:57:39.753647 #5099]  INFO -- : community card 5 of Clubs
+I, [2014-01-25T10:57:39.829482 #5099]  INFO -- : community card Jack of Diamonds
+I, [2014-01-25T10:57:39.888279 #5099]  INFO -- : community card 3 of Spades
+I, [2014-01-25T10:57:39.969463 #5099]  INFO -- : PHilip Potts showed 2 of Spades,3 of Spades,5 of Diamonds,5 of Clubs,6 of Spades,10 of Diamonds,Jack of Diamonds making a pair
+I, [2014-01-25T10:57:40.035212 #5099]  INFO -- : PHilip Potts won 780
+I, [2014-01-25T10:57:40.167119 #5099]  INFO -- : Rudy Ruby has 1220 chips
+I, [2014-01-25T10:57:40.167273 #5099]  INFO -- : PHilip Potts has 780 chips
+I, [2014-01-25T10:57:40.218155 #5099]  INFO -- : PHilip Potts got hole card 4 of Spades (4, Spades)
+I, [2014-01-25T10:57:40.218935 #5099]  INFO -- : Rudy Ruby got hole card Ace of Spades (14, Spades)
+I, [2014-01-25T10:57:40.276570 #5099]  INFO -- : PHilip Potts got hole card 3 of Clubs (3, Clubs)
+I, [2014-01-25T10:57:40.277551 #5099]  INFO -- : Rudy Ruby got hole card 6 of Spades (6, Spades)
+I, [2014-01-25T10:57:40.370361 #5099]  INFO -- : PHilip Potts made a bet of 640 (raise) and is left with 140 chips. The pot now contains 640 chips.
+I, [2014-01-25T10:57:40.429489 #5099]  INFO -- : Rudy Ruby made a bet of 1220 (allin) and is left with 0 chips. The pot now contains 1860 chips.
+I, [2014-01-25T10:57:40.550244 #5099]  INFO -- : PHilip Potts made a bet of 0 (fold) and is left with 140 chips. The pot now contains 1860 chips.
+I, [2014-01-25T10:57:40.620996 #5099]  INFO -- : Rudy Ruby won 1860
+I, [2014-01-25T10:57:40.834764 #5099]  INFO -- : Rudy Ruby has 1860 chips
+I, [2014-01-25T10:57:40.834961 #5099]  INFO -- : PHilip Potts has 140 chips
+I, [2014-01-25T10:57:40.836108 #5099]  INFO -- : Rudy Ruby got hole card Ace of Spades (14, Spades)
+I, [2014-01-25T10:57:40.900030 #5099]  INFO -- : PHilip Potts got hole card Jack of Diamonds (11, Diamonds)
+I, [2014-01-25T10:57:40.900977 #5099]  INFO -- : Rudy Ruby got hole card 4 of Diamonds (4, Diamonds)
+I, [2014-01-25T10:57:40.996565 #5099]  INFO -- : PHilip Potts got hole card Queen of Clubs (12, Clubs)
+I, [2014-01-25T10:57:41.085004 #5099]  INFO -- : Rudy Ruby made a bet of 640 (raise) and is left with 1220 chips. The pot now contains 640 chips.
+I, [2014-01-25T10:57:41.158871 #5099]  INFO -- : PHilip Potts made a bet of 140 (allin) and is left with 0 chips. The pot now contains 780 chips.
+I, [2014-01-25T10:57:41.278331 #5099]  INFO -- : Rudy Ruby made a bet of 1220 (allin) and is left with 0 chips. The pot now contains 2000 chips.
+I, [2014-01-25T10:57:41.370870 #5099]  INFO -- : community card Ace of Hearts
+I, [2014-01-25T10:57:41.455384 #5099]  INFO -- : community card King of Hearts
+I, [2014-01-25T10:57:41.535002 #5099]  INFO -- : community card 8 of Clubs
+I, [2014-01-25T10:57:41.598757 #5099]  INFO -- : community card King of Spades
+I, [2014-01-25T10:57:41.698361 #5099]  INFO -- : community card 2 of Hearts
+I, [2014-01-25T10:57:41.764414 #5099]  INFO -- : Rudy Ruby showed 2 of Hearts,4 of Diamonds,8 of Clubs,King of Spades,King of Hearts,Ace of Hearts,Ace of Spades making a two pairs
+I, [2014-01-25T10:57:41.826171 #5099]  INFO -- : Rudy Ruby won 2000
+I, [2014-01-25T10:57:41.912335 #5099]  INFO -- : Place 1: Rudy Ruby
+I, [2014-01-25T10:57:41.912446 #5099]  INFO -- : Place 2: PHilip Potts
+E, [2014-01-25T11:01:28.083242 #5750] ERROR -- : Could not connect to localhost:9200: Connection refused - connect(2) for 127.0.0.1:9200
+E, [2014-01-25T11:02:15.148774 #5815] ERROR -- : Could not connect to localhost:9200: Connection refused - connect(2) for 127.0.0.1:9200
+E, [2014-01-25T11:02:32.695465 #5815] ERROR -- : Could not connect to localhost:9200: Connection refused - connect(2) for 127.0.0.1:9200
+I, [2014-01-25T11:04:22.714266 #5869]  INFO -- : Connected Rudy Ruby at localhost:9200
+I, [2014-01-25T11:04:22.806810 #5869]  INFO -- : Connected Korda PHP György at http://localhost:8080/php/player_service.php
+I, [2014-01-25T11:05:47.308636 #5869]  INFO -- : Connected Rudy Ruby at localhost:9200
+I, [2014-01-25T11:05:47.353925 #5869]  INFO -- : Connected Korda PHP György at http://localhost:8080/php/player_service.php
+I, [2014-01-25T11:08:04.159788 #5949]  INFO -- : Connected Rudy Ruby at localhost:9200
+I, [2014-01-25T11:08:04.223154 #5949]  INFO -- : Connected Korda PHP György at http://localhost:8080/php/player_service.php
+I, [2014-01-25T11:08:43.732671 #6011]  INFO -- : Connected Rudy Ruby at localhost:9200
+I, [2014-01-25T11:08:43.816429 #6011]  INFO -- : Connected Korda PHP György at http://localhost:8080/php/player_service.php
+I, [2014-01-25T11:10:14.670669 #6096]  INFO -- : Connected Rudy Ruby at localhost:9200
+I, [2014-01-25T11:10:14.749601 #6096]  INFO -- : Connected Korda PHP György at http://localhost:8080/php/player_service.php
+I, [2014-01-25T11:11:17.125566 #6154]  INFO -- : Connected Rudy Ruby at localhost:9200
+I, [2014-01-25T11:11:17.187909 #6154]  INFO -- : Connected Korda PHP Gyorgy at http://localhost:8080/php/player_service.php
+I, [2014-01-25T11:12:04.454049 #6154]  INFO -- : Connected Rudy Ruby at localhost:9200
+I, [2014-01-25T11:12:04.517504 #6154]  INFO -- : Connected PHilip Potts at http://localhost:8080/php/player_service.php
