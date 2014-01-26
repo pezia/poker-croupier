@@ -1,0 +1,233 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'sass-bootstrap/lib/bootstrap';
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 40px 0;
+}
+
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
+
+.player-panel {
+    width: 150px;
+    float: left;
+    margin: 15px;
+    text-align: center;
+}
+
+.player-panel .panel-body div:first-child {
+    margin-left: 15px;
+}
+
+.container.game-container {
+    max-width: 930px;
+}
+
+.spades{
+    color: black;
+}
+.spades:after {
+    content: '♠';
+    display: block;
+}
+
+.clubs {
+    color: black;
+}
+.clubs:after {
+    content: '♣';
+    display: block;
+}
+
+.diamonds{
+    color: red;
+}
+
+.diamonds:after{
+    content: '♦';
+    display: block;
+}
+.hearts{
+    color: red;
+}
+
+.hearts:after{
+    content: '♥';
+    display: block;
+}
+
+.card {
+    float: left;
+    margin-right: 5px;
+    font-size: 30px;
+    border-radius: 3px;
+    border: 1px lightgrey solid;
+    width: 40px;
+    height: 60px;
+    text-align: center;
+    padding-top: 10px;
+    background-color: white;
+    line-height: 20px;
+}
+
+.pokertable {
+    clear:both;
+    background-color: #cdf5ca;
+}
+
+#community-cards {
+}
+
+#community-cards>div {
+    margin-right: 10px;
+    float:left;
+}
+
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+#pot {
+    font-size: 25px;
+    display:block;
+    float:right;
+}
+
+#controls {
+    float:right;
+    clear:right;
+    margin-top: 10px;
+}
+
+#templates {
+    display: none;
+}
+
+.dealer {
+    .panel-heading, .panel-footer {
+        background-color: #dde7fd;
+    }
+}
+
+.on-turn  {
+    border-color: indianred;
+    border-width: 3px;
+    border-style: solid;
+}
+
+.message-container, #message {
+    clear: both;
+    text-align:center;
+    width:100%;
+}
+
+#controls a {
+    display: inline-block;
+    padding: 5px 10px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #5CB85C;
+    border-radius: 0.25em;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.status-active {
+    @include label-variant($label-success-bg);
+}
+
+.status-folded {
+    @include label-variant($label-danger-bg);
+}
+
+.status-out {
+    @include label-variant($label-default-bg);
+}

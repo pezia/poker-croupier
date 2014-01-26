@@ -1,0 +1,60 @@
+<div class="container game-container">
+    {{currentStateIndex}} / {{totalStates}}
+    <div class="panel panel-body pokertable">
+        <div id="community-cards">
+            <div id="flop">
+                <div ng-repeat="flopCard in currentState.flopCards" class="card {{flopCard.suit}}">
+                    {{flopCard.rank}}
+                </div>
+            </div>
+            <div id="turn">
+                <div  ng-if="currentState.turnCard !== undefined" class="card {{currentState.turnCard.suit}}">
+                    {{currentState.turnCard.rank}}
+                </div>
+            </div>
+            <div id="river">
+                <div ng-if="currentState.riverCard !== undefined" class="card {{currentState.riverCard.suit}}">
+                    {{currentState.riverCard.rank}}
+                </div>
+            </div>
+        </div>
+        <div id="pot">
+            <span class="label label-success">Pot: {{currentState.pot}} €</span>
+        </div>
+        <div id="controls">
+            <a id="beginning-button">Beginning</a>
+            <a id="back-button" ng-click="previousState()">Back</a>
+            <a id="play-button">Play</a>
+            <a id="next-button" ng-click="nextState()">Next</a>
+            <a id="end-button">End</a>
+        </div>
+    </div>
+
+    <div id="playerContainer">
+        <div ng-repeat="player in currentState.players">
+            <div class="panel panel-default player-panel {{currentState.dealer === player.id ? 'dealer' : ''}} {{currentState.on_turn === player.id ? 'on-turn' : ''}}">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="name">{{player.name}}</span><br/>
+                        <span class="label label-default">{{player.stack}} €</span></h3>
+                </div>
+                <div class="panel-body hole-cards">
+                    <div ng-repeat="playerCard in player.hole_cards" class="card {{playerCard.suit}}">
+                        {{playerCard.rank}}
+                    </div>
+                </div>
+                <div class="panel-footer">Current status:<br/>
+                    <span ng-switch on="player.status" class="label status-{{player.status}}">
+                        <span ng-switch-when="active">Bet: {{player.bet}} &euro;</span>
+                        <span ng-switch-when="folded">Folded</span>
+                        <span ng-switch-when="out">Out</span>
+                        <span ng-switch-default>{{player.status}}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-info clearfix message-container">
+        <h4>{{currentState.message}}</h4>
+    </div>
+</div>

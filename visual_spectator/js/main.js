@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    "user strict";
+    "use strict";
 
     function refreshCard(holecard, dom_card) {
         $(dom_card).removeClass("spades clubs hearts diamonds");
@@ -44,6 +44,7 @@ $(document).ready(function() {
 
     function render(index) {
         var event = window.pokerEvents[index];
+        var gameState = new GameState();
 
         $("#pot-amount").text(event.pot);
         $('#community-cards div.card').each(function (index, dom_card) {
