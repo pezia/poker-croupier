@@ -3,19 +3,13 @@
     <div class="panel panel-body pokertable">
         <div id="community-cards">
             <div id="flop">
-                <div ng-repeat="flopCard in currentState.flopCards" class="card {{flopCard.suit}}">
-                    {{flopCard.rank}}
-                </div>
+                <card ng-repeat="flopCard in currentState.flopCards" ng-attr-card="flopCard" />
             </div>
             <div id="turn">
-                <div  ng-if="currentState.turnCard !== undefined" class="card {{currentState.turnCard.suit}}">
-                    {{currentState.turnCard.rank}}
-                </div>
+                <card ng-if="currentState.turnCard !== undefined" ng-attr-card="currentState.turnCard" />
             </div>
             <div id="river">
-                <div ng-if="currentState.riverCard !== undefined" class="card {{currentState.riverCard.suit}}">
-                    {{currentState.riverCard.rank}}
-                </div>
+                <card ng-if="currentState.riverCard !== undefined" ng-attr-card="currentState.riverCard" />
             </div>
         </div>
         <div id="pot">
@@ -38,9 +32,7 @@
                         <span class="label label-default">{{player.stack}} €</span></h3>
                 </div>
                 <div class="panel-body hole-cards">
-                    <div ng-repeat="playerCard in player.hole_cards" class="card {{playerCard.suit}}">
-                        {{playerCard.rank}}
-                    </div>
+                    <card ng-repeat="playerCard in player.hole_cards" ng-attr-card="playerCard" />
                 </div>
                 <div class="panel-footer">Current status:<br/>
                     <span ng-switch on="player.status" class="label status-{{player.status}}">
